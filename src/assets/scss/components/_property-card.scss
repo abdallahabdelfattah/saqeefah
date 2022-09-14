@@ -1,0 +1,167 @@
+.card {
+    border: 0;
+    .img-panel {
+        position: relative;
+        .img-container {
+            min-height: 150px;
+            background: #ededed;
+            max-height: 150px;
+            overflow-y: hidden;
+        }
+        .img-container.project {
+            min-height: 250px;
+            max-height: 250px;
+        }
+        .moreSpcs {
+            position: absolute;
+            bottom: 10%;
+            right: 2px;
+            background: #272727ba;
+            padding: 4px 10px;
+            z-index: 200;
+            color: white;
+        }
+    }
+    .card-label,
+    .fav-icon,
+    .card-mask {
+        position: absolute;
+    }
+    .unit-price {
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        background: #272727ba;
+        padding: 10px 18px;
+        color: white;
+    }
+    .edit-project {
+        position: absolute;
+        z-index: 5;
+        top: 50px;
+        padding: 10px 20px;
+        background: #0a3077;
+        color: white;
+    }
+    .fav-icon {
+        left: 9px;
+        top: 7px;
+        font-size: 21px;
+        color: white;
+        z-index: 2;
+        &:hover {
+            cursor: pointer;
+            color: #fe5e5e;
+        }
+    }
+    .fav-icon.active {
+        color: #fe5e5e;
+    }
+    .card-mask {
+        background-image: linear-gradient(rgb(0 0 0 / 39%), rgba(0, 0, 0, 0));
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .compare {
+        position: absolute;
+        background: white;
+        padding: 1px 9px;
+        border-radius: 12px;
+        color: $mainColor;
+        z-index: 3;
+        cursor: pointer;
+        top: 9px;
+        left: 36px;
+        font-size: 13px;
+        &:hover {
+            color: white;
+            background: $mainColor;
+        }
+    }
+    .compare.active {
+        color: white;
+        background: $mainColor;
+    }
+    .card-label {
+        top: 7px;
+        right: -7px;
+        padding: 7px 25px;
+        font-size: 16px;
+        font-weight: 400;
+        z-index: 2;
+        color: white;
+        font-weight: 400;
+        &:after {
+            content: '';
+            bottom: -19px;
+            right: 0;
+            position: absolute;
+            border-left: 0px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 19px solid #555;
+        }
+    }
+}
+
+.card-body {
+    .unit-location {
+        border-bottom: 2px dashed #afafaf;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        .tagr-vector {
+            color: $secondaryColor;
+            font-size: 25px;
+            vertical-align: bottom;
+        }
+        .link-togmap {
+            background: $secondaryColor;
+            padding: 11px 11px;
+            width: 140px;
+            display: inline-block;
+            color: white;
+            border-radius: 0px 0px 20px 0px;
+            margin: 0 4px;
+        }
+    }
+    .unit-specs {
+        padding-top: 5px;
+        color: #8f8432;
+        font-size: 17px;
+        font-weight: 600;
+        .specs-ele {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            i,
+            img {
+                font-size: 20px;
+                line-height: 0;
+                margin: 0 4px;
+            }
+            .specs-count {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.project-card {
+    .specs-ele {
+        font-size: 16px;
+        font-weight: 100;
+    }
+}
+
+.other-specs {
+    li.list-inline-item {
+        background: #d2d1ca;
+        color: black;
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 10px;
+    }
+}

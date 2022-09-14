@@ -1,0 +1,157 @@
+
+// @use '../style/transitions';
+/*bootstap style*/
+.container-fluid{
+    min-height: 92.8vh;
+}
+
+
+app-header{
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+
+}
+
+section{
+    padding: 30px 0 50px 0;
+}
+
+
+
+  .accordion-button:not(.collapsed)::after{
+    background-image:none !important;
+    transform: none !important;
+    content: '-' !important;
+    // float: right !important;
+    font-size: 25px !important;
+    color:#fff !important;
+
+  }
+
+  .accordion-button.collapsed:after {
+    background-image:none !important;
+    transform: none !important;
+    content: '+' !important;
+    font-size: 25px !important;
+    color: #fff !important;
+    // float: right !important;
+  }
+  .accordion-body{
+    box-shadow: inset 0px 2px 4px #858584;
+    background: #1c1c1c;
+  }
+
+
+.sidebar{
+    min-height: 92.8vh;
+    background:-webkit-linear-gradient(#000000 50%,rgb(134 129 91) );
+    background:-moz-linear-gradient(#000000 50%,rgb(134 129 91) );
+    background:-o-linear-gradient(#000000 50%,rgb(134 129 91) );
+    background:linear-gradient(#000000 50%,rgb(134 129 91) );
+ box-shadow:0px 5px 15px #515658;
+//  padding-top: 65px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover,a:active{
+    color: lightgray;
+  }
+
+  .btn:disabled{
+    background-color: lightgrey !important;
+    border: none !important;
+}
+  li {
+
+      color:#fff !important
+  }
+  li:hover{
+    box-shadow: inset 0px 0px 5px #d6dadc;
+    background-color: transparent;
+
+  }
+  .full-width {
+    width: 100%;
+    padding: 15px 20px;
+   border-bottom:1px solid rgb(136 131 89 / 36%);
+  }
+
+
+
+
+
+.matero-user-panel {
+  padding: 10px 10px;
+  text-align: center;
+  border-bottom: 1.3px solid #312f20;
+}
+
+// Set default width and height can avoid flashing before avatar image loaded.
+.matero-user-panel-avatar {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  border-radius: 50rem;
+  // transition: transitions.swift-ease-out(transform);
+}
+
+.matero-user-panel-name,
+.matero-user-panel-email {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.matero-user-panel-name,
+.matero-user-panel-email,
+.matero-user-panel-icons {
+  opacity: 1;
+  color:#fff
+
+  // transition: transitions.swift-ease-out(opacity);
+}
+.matero-user-panel-name{
+  font-size: 16px;
+
+}
+.matero-user-panel-email{
+  font-size: 12px;
+  color:var(--main-color);
+}
+.matero-user-panel-icons:hover{
+  cursor: pointer;
+
+
+}
+.matero-user-panel-icons a img:hover{
+  cursor: pointer;
+  transform:translateY(2px) ;
+
+
+
+}
+.matero-user-panel-icons {
+  white-space: nowrap;
+
+  .mat-icon-button {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+  }
+}
+th,h4,li{
+  text-transform: capitalize !important;
+}
+
+.active li
+{     box-shadow: inset 0px 0px 12px #d6dadc;
+  background-color: black;
+
+}

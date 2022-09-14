@@ -1,0 +1,65 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="projectDetails">
+        <div class="col-md-12">
+            <h3 class="secondary-color mb-0">{{projectDetails.projectName | translate}}</h3>
+            <h6>{{projectDetails.adress | translate}}, {{projectDetails.city | translate}}</h6>
+            <p>{{projectDetails.numberOfBuildings}} {{'Buildings' | translate}} | {{projectDetails.numberOfUnits}} {{'Appartments' | translate}}</p>
+
+
+            <div id="myTab" role="tablist">
+                <a class="nav-link" (click)="activeBuildingTab = false" [class.active]="!activeBuildingTab" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" [attr.aria-selected]="!activeBuildingTab">{{'MasterPlan' | translate}}</a>
+                <a class="nav-link" (click)="activeBuildingTab = true" [class.active]="activeBuildingTab" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" [attr.aria-selected]="activeBuildingTab">{{'Buildings' | translate}}</a>
+                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">{{'Specifications' | translate}}</a>
+
+            </div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" [ngClass]="{'show active':!activeBuildingTab}" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-md-8 mb-5">
+
+
+                            <img *ngIf="projectDetails.masterPlane != null" [src]="appRootUrl+projectDetails.masterPlane.masterPlaneImage" usemap="#image-map" class="img-fluid">
+                            <map name="image-map" *ngIf="projectDetails.masterPlane.mapCodeArray.length > 0">
+                                <area *ngFor="let item of projectDetails.masterPlane.mapCodeArray" (click)="goToSpecialBuilding(item.id)"   [attr.coords]="item.cords" [attr.shape]="item.shape">
+                                
+                            </map>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="secondary-color">{{'ProjectOverview' | translate}}</h4>
+                            <p *ngIf="projectDetails && projectDetails.masterPlane != null&& projectDetails.masterPlane.projectOverview!='undefined'">
+                                {{projectDetails.masterPlane.projectOverview |translate}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="{'show active':activeBuildingTab}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <app-buildings *ngIf="projectDetails" [activeBuilding]="sendBuildId" [buildings]="projectDetails.buildingApartments"></app-buildings>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="col-md-12 mb-5">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="secondary-color">{{'Specifications' | translate}}</h5>
+                                <div class="specs-panel">
+
+                                    <img [src]="appRootUrl+projectDetails.specifications.specificationsImage" *ngIf="projectDetails.specifications != null" class="img-fluid" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="secondary-color">{{'Granties' | translate}}</h5>
+                                <div class="specs-panel">
+
+                                    <img *ngIf="projectDetails.specifications != null" [src]="appRootUrl+projectDetails.specifications.grantiesImage" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

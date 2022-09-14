@@ -1,0 +1,94 @@
+.location-onMap {
+    position: absolute;
+    top: 2px;
+    z-index: 4;
+    font-size: 28px;
+    left: 33px;
+    color: #ffa468;
+}
+.edit-project{
+  box-shadow: 2px 5px 5px #aeaeae;
+    border-bottom: 3px solid #afafaf;
+}
+.edit-project:hover{
+  cursor: pointer !important;
+  transform: translateY(2px);
+}
+
+.unit-specs {
+    position: absolute;
+    bottom: 5px;
+    z-index: 6;
+    background: #000000bf;
+    color: white;
+    padding: 5px 16px;
+}
+
+.unit-location {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.card.list{
+    display: flex !important;
+
+
+}
+.card.list .img-panel{
+    width: 40% !important;
+}
+.card.list .img-panel {
+    position: static !important;
+}
+.card.list .img-panel .card-mask {
+    background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
+}
+.card.list .card-body
+{position: absolute;
+left: 45%;
+top: 10px;
+color: #86815b;
+}
+
+.card.list .unit-location h6{
+    font-size: 20px !important;
+}
+.card.list .unit-specs{
+    z-index: 6;
+    background:transparent !important;
+    left: 45% !important;
+    top: 35% !important;
+    bottom: initial !important;
+}
+.card.list .list-inline-item{
+    display: block !important;
+    margin-bottom: 5px !important;
+    color: rgba(0, 0, 0, 0.7490196078) !important;
+    font-weight: bold !important;
+}
+.card.list .icon{
+    margin-right: 5px !important;
+    font-weight: bold !important;
+}
+ .project-card .specs-ele{
+
+    font-weight: 700 !important;
+
+}
+.card.list .img-panel .img-container {
+    min-height: 211px !important;
+}
+.card.list .img-panel .card-label{
+    width: 150px !important;
+}
+.card.list .card-img-top {
+    border-top-left-radius: 0 !important;
+     border-top-right-radius: 0 !important;
+}
+.card.list .card-img-top:hover{
+    cursor: pointer !important;
+
+
+
+}

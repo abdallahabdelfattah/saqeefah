@@ -1,0 +1,92 @@
+
+      <!-- <h4 class="mb-3 font-weight-normal secondary-color">{{'Add User' | translate}}</h4>
+      <hr class="my-3" > -->
+        <form class="row g-4 my-5" [formGroup]="form" (submit)="setAdmin($event)">
+
+          <div class="col-md-6 mt-2">
+            <div class="my-1">
+                <label for="exampleFormControlInput1" class="form-label">{{'email' | translate}}
+
+                </label>
+                <div class="formg">
+                    <input type="text" class="form-control" formControlName="email"
+                        placeholder="Fill Field">
+
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6 mt-2">
+              <div class="my-1">
+                  <label for="exampleFormControlInput1" class="form-label">{{'phone' | translate}}
+
+                  </label>
+                  <div class="formg">
+                      <input type="text"  class="form-control" formControlName="phone"
+                          placeholder="Fill Field">
+
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-6 mt-2">
+                <div class="my-1">
+                    <label for="exampleFormControlInput1" class="form-label">{{'password' | translate}}
+
+                    </label>
+                    <div class="formg">
+                        <input type="text"  class="form-control" formControlName="password"
+                            placeholder="Fill Field">
+
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                  <div class="my-1">
+                      <label for="exampleFormControlInput1" class="form-label">{{'fullName' | translate}}
+
+                      </label>
+                      <div class="formg">
+                          <input type="text"  class="form-control" formControlName="fullName"
+                              placeholder="Fill Field">
+
+                      </div>
+                  </div>
+                  </div>
+<div class=" col-md-12 ">
+  <button class="btn btn-lg btn-primary btn-block w-25" type="submit">{{'Add User' | translate}}</button>
+</div>
+
+        </form>
+
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="h3 mb-3 font-weight-normal secondary-color"> {{'Users' | translate}} </h4>
+
+        <div class=" mt-2 table-responsive py-5 px-2">
+          <table class="table table-bordered row-border hover">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">#</th>
+                    <th scope="col">{{'email' | translate}}</th>
+                    <th scope="col">{{'phone' | translate}}</th>
+                    <th scope="col">{{'fullName' | translate}}</th>
+                    <th scope="col">{{'Action' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of allAdmin">
+                    <td>{{item.adminId}}</td>
+                    <td>{{item.email | translate}}</td>
+                    <td>{{item.phone | translate}}</td>
+                    <td>{{item.fullName | translate}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteAdmin(item.adminId)">{{'Delete' | translate}}</button></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+

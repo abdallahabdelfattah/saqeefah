@@ -1,0 +1,119 @@
+<div class="accordion-item mb-5">
+    <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-' +collapseId" aria-expanded="true" aria-controls="collapseOne">
+            <h5 class="secondary-color">{{SettingTypeTitle | translate}}</h5>
+        </button>
+    </h2>
+    <div id="{{'collapse-'+collapseId}}" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+        <div class="accordion-body">
+            <form action="" class="row g-4" *ngIf="currentFormData" [formGroup]="myFormGroup" (submit)="onClickSubmit()" enctype="multipart/form-data">
+                <input type="hidden" formControlName="settingTypeId">
+                <div class="col-md-6">
+                    <div class="my-1 ">
+                        <label for="exampleFormControlInput1" class="form-label">{{'Title En' | translate}}
+                            <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['TitleEn'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+
+                        </label>
+                        <div class="formg">
+                            <input type="text" class="form-control" formControlName="TitleEn" [(ngModel)]="currentFormData.titleEn" placeholder="Fill Field">
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <label for="exampleFormControlInput1" class="form-label mb-2">{{'Description  En' | translate}}
+                            <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['DescriptionEn'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                        </label>
+                        <div class="formg">
+                          <ngx-editor-menu [editor]="editor1" [toolbar]="toolbar">
+                          </ngx-editor-menu>
+                          <ngx-editor [editor]="editor1" formControlName="DescriptionEn"  [(ngModel)]="currentFormData.descriptionEn">
+                          </ngx-editor>
+                            <!-- <textarea class="form-control" formControlName="DescriptionEn" rows="3" [(ngModel)]="currentFormData.descriptionEn"></textarea> -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="my-1">
+                        <label for="exampleFormControlInput1" class="form-label">{{'Title Ar' | translate}}
+                            <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['TitleAr'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+
+                        </label>
+                        <div class="formg">
+                            <input type="text" class="form-control" formControlName="TitleAr" [(ngModel)]="currentFormData.titleAr" placeholder="Fill Field">
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <label for="exampleFormControlInput1" class="form-label mb-2">{{'Description Ar' | translate}}
+                            <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['DescriptionAr'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                        </label>
+                        <div class="formg">
+                          <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                          </ngx-editor-menu>
+                          <ngx-editor [editor]="editor" formControlName="DescriptionAr" [(ngModel)]="currentFormData.descriptionAr">
+                          </ngx-editor>
+                            <!-- <textarea class="form-control" formControlName="DescriptionAr" [(ngModel)]="currentFormData.descriptionAr" rows="3"></textarea> -->
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="my-1">
+                        <label for="exampleFormControlInput1" class="form-label">{{'Select Icon' | translate}}
+                            <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['iconCss'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                        </label>
+                        <div class="formg w-100 input-group">
+                            <span class="input-group-text"><i [ngClass]="currentFormData.iconCss"></i></span>
+
+                            <input type="text" name="iconCss" [(ngModel)]="currentFormData.iconCss" class="form-control" formControlName="iconCss" [iconPicker]="iconCss" [ipIconPack]="['fa5']" [ipPosition]="'bottom'" [ipWidth]="'250px'" [ipIconSize]="'16px'" [ipIconVerticalPadding]="'6px'"
+                                [ipIconHorizontalPadding]="'10px'" [ipKeepSearchFilter]="'false'" [ipPlaceHolder]="'Choose an icon'" (iconPickerSelect)="onIconPickerSelect($event)" />
+
+
+                        </div>
+                    </div>
+                    <div class="my-1">
+                        <label for="exampleFormControlInput1" class="form-label">{{'Select Image' | translate}}
+                         </label>
+                        <div class="formg w-100">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <input type="file" class="form-control mb-3" (change)="onInputChange($event)" id="thumbnail">
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="current-image" *ngIf="currentFormData.imagePath != null">
+                                    <div class="imagBox d-inline-block mx-1 mb-2">
+                                      <i class="far fa-times-circle delete-img" (click)="delete()"></i>
+                                      <img [src]="appRootUrl+currentFormData.imagePath" class="img-fluid" style="height:150px" alt="" >
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <button type="submit" [disabled]="myFormGroup.invalid" class="btn btn-small btn-primary w-25 float-end  px-4  mt-2">
+                            {{'Update' | translate}}
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

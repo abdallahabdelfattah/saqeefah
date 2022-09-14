@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-12">
+      <h4 class="secondary-color textshadow">{{'Placeorder' | translate}}</h4>
+<hr>
+     <div class=" mt-2 table-responsive py-5 px-2">
+      <table class="table table-bordered row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th> {{'interest_Date' | translate}} </th>
+                <th> {{'project_Ref' | translate}} </th>
+                <th> {{'building_Ref' | translate }} </th>
+                <th> {{'apartment_Ref' | translate}} </th>
+                <th> {{'client_Name' | translate }} </th>
+                <th> {{'client_Mail' | translate}} </th>
+                <th> {{'client_Mobile'| translate }} </th>
+                <th> {{'city' | translate}} </th>
+                <th> {{'district' | translate }} </th>
+                <th> {{'payment_Method' | translate }} </th>
+                <th> {{'price_Avg' | translate}} </th>
+                <th> {{'space_Avg' | translate}} </th>
+                <th> {{'bed_Room'| translate }} </th>
+                <th> {{'parking' | translate}} </th>
+                <th> {{'terace' | translate }} </th>
+                <th> {{'balcony' | translate }} </th>
+                <th> {{'roof' | translate}} </th>
+                <th> {{'servent_Room' | translate }} </th>
+                <th> {{'store' | translate}} </th>
+                <th> {{'additional_Reqst' | translate}} </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of this.Allplaceorder">
+                <td> {{item.id}} </td>
+                <td> {{item.interest_Date  | translate}} </td>
+                <td> {{item.project_Ref | translate}} </td>
+                <td> {{item.building_Ref | translate }} </td>
+                <td> {{item.apartment_Ref | translate}} </td>
+                <td> {{item.client_Name | translate }} </td>
+                <td> {{item.client_Mail  | translate}} </td>
+                <td> {{item.client_Mobile | translate }} </td>
+                <td> {{item.city | translate}} </td>
+                <td> {{item.district | translate }} </td>
+                <td> {{item.payment_Method | translate }} </td>
+                <td> {{item.price_Avg | translate}} </td>
+                <td> {{item.space_Avg | translate}} </td>
+                <td> {{item.bed_Room | translate }} </td>
+                <td> {{item.parking | translate}} </td>
+                <td> {{item.terace | translate }} </td>
+                <td> {{item.balcony | translate }} </td>
+                <td> {{item.roof | translate}} </td>
+                <td> {{item.servent_Room | translate }} </td>
+                <td> {{item.store | translate}} </td>
+                <td> {{item.additional_Reqst | translate}} </td>
+
+
+            </tr>
+
+
+        </tbody>
+    </table>
+     </div>
+
+
+</div>
+</div>

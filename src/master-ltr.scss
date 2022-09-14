@@ -1,0 +1,14 @@
+$direction :ltr;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+$fontFamily: 'Merriweather',
+serif;
+$left: left;
+$right: right;
+@import'./node_modules/bootstrap/scss/bootstrap';
+@import './styles.scss';
+.card.list .card-body {
+  position: absolute;
+  left: 40%;
+  top: 30px;
+  color: var(--main-color);
+}

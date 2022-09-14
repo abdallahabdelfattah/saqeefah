@@ -1,0 +1,102 @@
+<footer class="footer-panel section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class=" col-md-2 mb-3">
+                        <img src="assets/images/footerlogo.png" class="mt-1 img-fluid" width="75" alt="" />
+                    </div>
+                    <div class=" col-md-10">
+                        <h5 class="">{{ "aboutIndexTitle" | translate }}</h5>
+                        <p>{{ siteInformation?.aboutSaqeefafooterDesc }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class=" col-md-6">
+
+                                <h5> <a [href]="siteInformation?.companyLocation" target="_blank"><i class="fas fa-map-marker-alt"></i></a> {{'ourOffice' | translate}}</h5>
+                                <p>{{ siteInformation?.address }}</p>
+
+                                <h6>
+                                    <i class="fas fa-clock"></i> {{'Working Hours' | translate}}
+                                </h6>
+
+
+                                <p>
+                                    {{siteInformation?.workinfHours}}
+                                </p>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <p>{{siteInformation?.address}}</p>
+                            </div> -->
+                            <div class=" col-md-6 row">
+                                <h5>{{ "Contact Information" | translate }}</h5>
+                                <div class="col-md-12">
+                                    <p class="mb-0">
+                                        <a class="contact" href="tel:{{ siteInformation?.phone }}">
+                                            <i class="icon tagr-icon-mobile-phone"></i
+                      ><span class="text">{{ siteInformation?.phone }}</span>
+                    </a>
+                  </p>
+                  <p class="mb-0">
+                    <a class="contact" href="fax:{{ siteInformation?.fax }}"
+                      ><i class="icon tagr-icon-fax"></i>
+                                            <span class="text">{{ siteInformation?.fax }}</span></a>
+                                    </p>
+                                    <p class="mb-2">
+                                        <a class="contact" href="mail:{{ siteInformation?.mail }}"><i class="icon tagr-icon-mail"></i
+                      ><span class="text"> {{ siteInformation?.mail }}</span></a
+                    >
+                  </p>
+                </div>
+                <div class="col-md-12 mt-3 media text-center">
+                  <p class="" style="margin-left: 45px;">
+                    <a [href]="siteInformation?.facebookURL" target="_blank"
+                      ><i class="icon tagr-social-facebook" ></i
+                    ></a>
+
+                                        <a [href]="siteInformation?.linkedinURL" target="_blank"><i class="icon tagr-social-linkedin" ></i
+                    ></a>
+                                        <a [href]="siteInformation?.twitterURL" target="_blank"><i class="icon tagr-social-twitter"></i
+                    ></a>
+                                        <a [href]="siteInformation?.googleURL" target="_blank"><i class="icon tagr-social-google-plus"></i
+                    ></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <form action="" [formGroup]="form" (submit)="onSubmit()">
+                            <h5 class="mb-3">{{ "Feedback" | translate }}</h5>
+                            <input type="hidden" formControlName="id" />
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-3" formControlName="email" placeholder="{{ 'Email' | translate }}" />
+                                <!-- <span class="text-danger error" *ngIf="showError && form.controls['email'].errors?.['required']">
+                            * Required Field
+                        </span>
+                                <span class="text-danger error" *ngIf="showError && form.controls['email'].errors?.['email']">
+                           *Invalid email pattern (should have '@')
+                      </span>-->
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" placeholder="{{ 'Subject' | translate }}" formControlName="subject" class="form-control mb-3" id="" cols="30" rows="3"></textarea>
+                                <!-- <span class="text-danger error" *ngIf="showError && form.controls['subject'].errors?.['required']">
+                            * Required Field
+                        </span> -->
+                            </div>
+
+                            <button type="submit" class="btn more-btn" [disabled]="form.invalid">
+                {{ "Submit" | translate }}
+              </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

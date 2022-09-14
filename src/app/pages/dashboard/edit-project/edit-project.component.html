@@ -1,0 +1,142 @@
+<div class="row">
+  <div class="col-md-8">
+      <h4 class="secondary-color mb-3">{{'project Overview and Master Plane' | translate}}</h4>
+      <label for="maserPlane">{{'Add Master Plane photo' | translate}}</label>
+      <input type="file" class="form-control mb-3" id="masterPlane" (change)="onMasterPlaneInputChange($event)">
+      <div class="row" *ngFor="let i of masterPlanData; let ind = index">
+          <div class="col-md-6 col-12">
+              <div class="form-group">
+                  <label for="">{{'Shape' | translate}}</label>
+                  <select class="form-select" (change)="onchange($event,ind,1)" [ngModel]="i.shape">
+                          <option value=""></option>
+                          <option *ngFor="let i of types" [value]="i.id">{{i.value}}</option>
+                      </select>
+              </div>
+          </div>
+          <div class="col-md-6 col-12">
+              <div class="form-group">
+                  <label for="">{{'Link' | translate}}</label>
+                  <input type="text" class="form-control"   [ngModel]="i.id" (change)="onchange($event,ind,2)">
+              </div>
+
+          </div>
+          <div class="col-md-6 col-12">
+              <div class="form-group">
+                  <label for="">{{'Cords'| translate}}</label>
+                  <input type="text" class="form-control"   [ngModel]="i.cords" (change)="onchange($event,ind,3)">
+              </div>
+          </div>
+          <div class="col-md-3 col-12" *ngIf="masterPlanData.length-1==ind">
+              <div class="form-group">
+                <p></p>
+                  <button type="button" class="btn btn-primary" (click)="addData()">+</button>
+              </div>
+          </div>
+          <div class="col-md-3 col-12" *ngIf="masterPlanData.length>1 ">
+              <div class="form-group">
+                  <p></p>
+                  <button type="button" class="btn btn-primary" (click)="DeleteData(ind)">-</button>
+              </div>
+          </div>
+      </div>
+      <p></p>
+      <!-- <textarea rows="3" class="form-control mb-3" cols="" placeholder="add image map hard code" [(ngModel)]="imageMapHardCode"></textarea> -->
+      <textarea rows="3" class="form-control mb-3" cols="" placeholder="project OverView" [(ngModel)]="projectOverView"></textarea>
+      <div class="col-md-3" *ngIf="mastePlanImage">
+        <div class="current-image w-100">
+          <div class="imagBox position-relative w-100">
+              <i class="fa fa-times-circle delete-img" (click)="deleteAttachment(1)"></i>
+              <img [src]="appRootUrl+mastePlanImage" class="img-fluid w-100" alt="">
+              </div>
+          </div>
+      </div>
+      <p>
+
+      </p>
+      <button [disabled]="uploadWorking" type="submit" class="btn btn-primary" (click)="UploadMasterPlane($event)">{{'Update' | translate}}</button>
+      <!-- <button type="submit" [disabled]="uploadWorking" class="btn btn-primary" (click)="UploadMasterPlane($event)">{{'Update' | translate}}</button> -->
+      <!-- <span *ngIf="uploadWorking">Loading ......</span> -->
+       <span>{{masterPlaneUploadMessage}}</span>
+  </div>
+
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-8">
+      <form enctype="multipart/form-data"  #myForm="ngForm">
+          <h4 class="secondary-color mb-3">{{'Project Gallery' | translate}}</h4>
+          <label for="thumbnail">{{'Add Project Cover Photo' | translate}}</label>
+          <input type="file" class="form-control mb-3" (change)="onInputChange($event)" id="thumbnail">
+          <div class="col-md-3" *ngIf="coverImage">
+            <div class="current-image w-100">
+              <div class="imagBox position-relative w-100">
+                  <i class="fa fa-times-circle delete-img" (click)="deleteAttachment(4)"></i>
+                  <img [src]="appRootUrl+coverImage" class="img-fluid w-100" alt="">
+                  </div>
+              </div>
+          </div>
+          <p>
+
+          </p>
+          <label for="gallery">{{'Add Project Gallery' | translate}}</label>
+          <input type="file" class="form-control mb-3" (change)="onGalleryInputChange($event)" id="gallery" multiple>
+         <div class="row">
+
+          <div class="col-md-12 mt-2">
+
+              <div class="current-image"  *ngIf="gallaryImages != null">
+                <div class="imagBox d-inline-block mx-1 mb-2"  *ngFor="let image of gallaryImages" >
+                  <i class="fa fa-times-circle delete-img"  *ngIf="image.path !=null" (click)="delete(image.attachmentId)"></i>
+                  <img [src]="appRootUrl+image.path"  class="img-fluid imageborders"  style="height:150px" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <p>
+
+      </p>
+      <button [disabled]="uploadWorking" type="submit" class="btn btn-primary" (click)="uploadImage($event)">{{'Upload' | translate}}</button>
+          <!-- <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary" (click)="uploadImage($event)">{{'Upload' | translate}}</button> -->
+          <!-- <span *ngIf="uploadWorking">Loading ......</span> -->
+
+      </form>
+  </div>
+</div>
+<hr>
+<div class="row mb-5">
+  <div class="col-md-8">
+      <h4 class="secondary-color mb-3">{{'Project Specifications' | translate}}</h4>
+      <label for="specifications">{{'Add Project Specification Photo' | translate}}</label>
+      <input type="file" (change)="onSpecificationsInputChange($event)" class="form-control mb-3" id="specifications">
+      <div class="col-md-3" *ngIf="PspecificationsImage">
+          <div class="current-image  w-100">
+            <div class="imagBox position-relative w-100">
+              <i class="fa fa-times-circle delete-img" (click)="deleteAttachment(2)"></i>
+              <img [src]="appRootUrl+PspecificationsImage" class="img-fluid w-100" alt="">
+              </div>
+          </div>
+      </div>
+      <p>
+
+      </p>
+      <label for="granties">{{'Add Project Granties' | translate}}</label>
+      <input type="file" (change)="onGrantiesInputChange($event)" class="form-control mb-3" id="granties">
+      <div class="col-md-3" *ngIf="PgrantiesImage">
+        <div class="current-image  w-100">
+          <div class="imagBox position-relative w-100">
+              <i class="fa fa-times-circle delete-img" (click)="deleteAttachment(3)"></i>
+              <img [src]="appRootUrl+PgrantiesImage" class="img-fluid w-100" alt="">
+          </div>
+          </div>
+      </div>
+      <p>
+
+      </p>
+      <button [disabled]="uploadWorking"  type="submit" (click)="UploadSpecifications($event)" class="btn btn-primary">{{'Upload'|translate}}</button>
+      <!-- <button type="submit" [disabled]="uploadWorking" (click)="UploadSpecifications($event)" class="btn btn-primary">{{'Upload'|translate}}</button> -->
+
+      <!-- <span *ngIf="uploadWorking">Loading ......</span> -->
+
+
+  </div>
+</div>

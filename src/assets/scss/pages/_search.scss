@@ -1,0 +1,25 @@
+.serch-form {
+    padding: 25px 30px;
+    background: #fff;
+    border: 1px solid #dedede;
+}
+
+.filter-panel {
+    background: $secondaryColor;
+    height: 47px;
+    color: white;
+    line-height: 44px;
+    padding: 0 20px;
+    font-weight: 400;
+    .filter-select {
+        padding: 2px 5px;
+        background: $secondaryColor;
+        border: 1px solid #fff;
+        color: white;
+        margin-top: 8px;
+    }
+    .view-icons {
+        font-size: 22px;
+        vertical-align: middle;
+    }
+}

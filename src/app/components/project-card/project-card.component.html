@@ -1,0 +1,50 @@
+<div class="card project-card {{viewType}}">
+    <div class="img-panel">
+        <div class="img-container project">
+            <img [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'" class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId" style="cursor: pointer;">
+
+            <!-- <img [src]="'assets/images/list/p1.jpg'" class="card-img-top" alt="..." [routerLink]="['/project',project.projectId]" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"> -->
+        </div>
+        <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="project.projectId" [class.active]="project.favorite" (click)="favorites.toggleFavorites(project)"></i>
+        <div class="card-label " [class]="{'green': project.statusId == 1,'moave':project.statusId == 4, 'orange': project.statusId == 2, 'pink': project.statusId == 3}">{{project.status | translate}}</div>
+        <span class="edit-project" *ngIf="EditMode" [routerLink]="'../edit-project/'+project.projectId">{{'Edit' | translate}}</span>
+        <a [href]="'https://maps.google.com/?q='+project.latitude+','+project.longitude+'&ll='+project.latitude+','+project.longitude+'&z=11'" target="_blank" [title]="project.projectName+' location on google map'" class="location-onMap"><i class="icon tagr-vector "></i></a>
+        <div class="card-mask" data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"></div>
+        <div class="unit-specs">
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                    <span class="specs-ele"> <i class="icon tagr-icon-building-line"></i>  <span class="specs-count"><span class="counter me-1">{{'Buildings' | translate}}</span>{{project.numberOfBuildings}}</span>
+                    </span>
+                </li>
+                <li class="list-inline-item">
+                    <span class="specs-ele"> <i class="icon tagr-icon-home"></i>  <span class="specs-count"><span class="counter me-1">{{'Appartments'|translate}}</span>{{project.numberOfUnits}}</span>
+                    </span>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="unit-location">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="secondary-color">{{project.projectName | translate}}</h5>
+                    <h6>{{project.adress | translate}}</h6>
+
+                </div>
+                <!-- <div class="col-md-7">
+                    <div class="location-panel">
+                        <i class="icon tagr-vector"></i>
+                        <a href="" class="link-togmap">{{'unitLocationDetails' | translate}}</a>
+                    </div>
+
+                </div> -->
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<app-modal [Gallery]="project.images" [modalId]="project.projectId" [projectDetails]="project"></app-modal>

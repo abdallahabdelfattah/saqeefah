@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('iconfonts/icomoon.eot?tn9dch');
+  src:  url('iconfonts/icomoon.eot?tn9dch#iefix') format('embedded-opentype'),
+    url('iconfonts/icomoon.ttf?tn9dch') format('truetype'),
+    url('iconfonts/icomoon.woff?tn9dch') format('woff'),
+    url('iconfonts/icomoon.svg?tn9dch#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak-as: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-hall-PhotoRoom:before {
+  content: "\e900";
+}
+.icon-images-PhotoRoom:before {
+  content: "\e901";
+}
+.icon-kitchen-furniture:before {
+  content: "\e902";
+}
+.icon-room-PhotoRoom:before {
+  content: "\e903";
+}
+.icon-salon-PhotoRoom:before {
+  content: "\e904";
+}
+.icon-toilet-PhotoRoom:before {
+  content: "\e905";
+}

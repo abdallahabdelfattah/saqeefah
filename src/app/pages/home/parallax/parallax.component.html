@@ -1,0 +1,40 @@
+<div class="parallax" style="background-image: url('assets/images/paralax.jpg');">
+    <div class="mask"></div>
+    <div class="indecators-panel">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-4 text-center" style="text-shadow: 3px 3px 4px black;">
+                    <span class="icon-home-icon"></span>
+                    <p class="counter secondary-color"> <span [countUp]="1200" [options]="{ enableScrollSpy: true }">0</span> + </p>
+
+                    <!-- <p class="counter secondary-color"><span>+</span>{{siteInformation?.CountApartmentsStatistic}}</p> -->
+                    <p class="subject">{{'CountApartmentsStatistic' | translate}}
+                    </p>
+
+                </div>
+                <div class=" col-md-4 text-center" style="text-shadow: 3px 3px 4px black;">
+                    <span class="icon-download"></span>
+                    <!-- <p class="counter secondary-color">{{siteInformation?.CountEmployessSoudiStatistic}}</p> -->
+                    <p class="counter secondary-color" [countUp]="50" [options]="{ enableScrollSpy: true }"><span>+</span>0</p>
+
+                    <p class="subject">{{'CountEmployessSoudiStatistic' | translate}}
+
+                    </p>
+                </div>
+                <!-- test -->
+                <div class=" col-md-4 text-center" style="text-shadow: 3px 3px 4px black;">
+
+                    <span class="icon-office-building"></span>
+                    <p class="counter secondary-color" [countUp]="55" [options]="{ enableScrollSpy: true }"><span>+</span>0</p>
+
+                    <!-- <p class="counter secondary-color"><span>+</span>{{siteInformation?.CountProjectsStatistic}}</p> -->
+                    <p class="subject">{{'CountProjectsStatistic' | translate}}
+
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

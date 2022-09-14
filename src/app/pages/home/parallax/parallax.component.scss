@@ -1,0 +1,48 @@
+.parallax {
+    /* The image used */
+    /* Set a specific height */
+    min-height: 300px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .mask {
+        background: rgb(0 0 0 / 69%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+    }
+    .indecators-panel {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .counter {
+        font-size: 60px;
+        margin: 0;
+        font-weight: 600;
+    }
+    .subject {
+        color: #e0ca50;
+        font-size: 16px;
+    }
+}
+
+.icon-home-icon,
+.icon-download,
+.icon-office-building {
+    font-size: 35px;
+    color: #9e9e9e !important;
+}
+
+.secondary-color {
+    color: #d2d0c8 !important;
+}

@@ -1,0 +1,40 @@
+
+
+<h1>  Test </h1>
+
+<div>
+ <h2> Base Url </h2>
+<h1>   {{appRoot}} </h1>
+</div> -->
+
+
+  
+<!--  ------main----------------- -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">apartment_Num</th>
+        <th scope="col">build_Code</th>
+        <th scope="col">build_Descrip</th>
+        <th scope="col">build_Id</th>
+        <th scope="col">floor_Num</th>
+        <th scope="col">project_Ref</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+            <tr *ngFor="let item of items">
+            <th scope="row">{{item.apartment_Num}}</th>
+            <td>{{item.build_Code}}</td>
+            <td>{{item.build_Descrip}}</td>
+            <td>{{item.build_Id}}</td>
+            <td>{{item.floor_Num}}</td>
+            <td>{{item.project_Ref}}</td>
+
+          </tr>
+  
+    </tbody>
+  </table>
+  

@@ -1,0 +1,130 @@
+<div class="card property-card {{viewType}}" style="cursor: pointer;">
+    <div class="img-panel d-flex">
+        <div class="imagebox">
+            <div class="img-container">
+                <img [src]="property.coverImage ? appRootUrl+property.coverImage :'assets/images/home-placeHolder.webp'" width="100%" class="card-img-top" alt="...">
+            </div>
+            <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="property.apartment_Id" [class.active]="property.favorite" (click)="favorites.toggleFavorites(property)"></i>
+
+            <div class="card-label" [class]="{'green': property.statusId == 1, 'orange': property.statusId == 2, 'pink': property.statusId == 3,  'yellow': property.statusId == 4}">{{property.status | translate}}</div>
+            <span class="edit-project" *ngIf="EditMode" [routerLink]="'../edit-property/'+property.project_Ref+'/'+property.apartment_Id">{{'Edit' | translate}}</span>
+            <div class="compare" [attr.data-cardCompico-id]="property.apartment_Id" [class.active]="property.Compare" (click)="compare.toggleCompare(property)">{{'Compare' | translate}}</div>
+            <div class="card-mask" *ngIf="appRootUrl && property.statusId == 1" [routerLink]="propertyLink+property.apartment_Id"></div>
+            <div class="card-mask notLinkable" *ngIf="appRootUrl && property.statusId != 1"></div>
+
+            <div class="unit-price">
+                <h5 class="mb-0">{{'Price :' | translate}} {{property.apartment_Price | number: '.2'}} {{'ر.س' | translate}}</h5>
+
+            </div>
+            <div class="moreSpcs" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+property.apartment_Id">
+                {{'more specs' | translate}}
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body">
+
+        <div class="unit-specs">
+            <div class="row">
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-room-PhotoRoom"></span> <span class="text mx-1">{{property.bed_Room_Num}} {{'Rooms'| translate}}</span>
+                </div>
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-toilet-PhotoRoom"></span> <span class="text mx-1">{{property.toilet_Num}} {{'Bathroom' | translate}}</span>
+                </div>
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-kitchen-furniture"></span><span class="text mx-1">  {{property.servant_Room}} {{'Kitchen' | translate}}</span>
+                </div>
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-salon-PhotoRoom"></span> <span class="text mx-1"> {{property.salon}} {{'Salon' | translate}}</span>
+                </div>
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-hall-PhotoRoom"></span> <span class="text mx-1">{{property.hall}} {{'Hall' | translate}}</span>
+                </div>
+                <div class="col-md-4 col-6 mb-2">
+                    <span class="icon-images-PhotoRoom"></span> <span class="text mx-1">{{property.floor_Num}} {{'Floor'| translate}}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="property" class="modal fade" [id]="'exampleModal'+property.apartment_Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{'more specs' | translate}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="basic-info">
+
+
+
+                    <ul class="list-inline other-specs">
+                        <li class="list-inline-item "><span class="">{{'Project Reference:'| translate}}{{property.project_Ref}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Build Reference:'| translate}}{{property.build_Ref}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Appartment Number:'| translate}}{{property.apartment_Num}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Appartment Space:'| translate}}{{property.apartment_Space}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Additional Space:'| translate}}{{property.additional_Space}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Basic Space:'| translate}}{{property.basic_Space}}</span></li>
+
+
+                        <li class="list-inline-item "><span class="">{{'roof'| translate}}: <span>
+                       <svg class="icon " [ngClass]="{'icon-cross':property.roof ==0,
+                    
+                       'icon-checkmark':property.roof ==1 }"><use [attr.xlink:href]="property.roof ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                        </span></span>
+                        </li>
+                        <li class="list-inline-item "><span class="">{{'p_Intrance'| translate}}: <span>
+                            <svg class="icon " [ngClass]="{'icon-cross':property.p_Intrance ==0,
+                         
+                            'icon-checkmark':property.p_Intrance ==1 }"><use [attr.xlink:href]="property.p_Intrance ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                             </span></span>
+                        </li>
+                        <li class="list-inline-item "><span class="">{{'dressRoom'| translate}}: <span>
+                                <svg class="icon " [ngClass]="{'icon-cross':property.dressRoom ==0,
+                             
+                                'icon-checkmark':property.dressRoom ==1 }"><use [attr.xlink:href]="property.dressRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                 </span></span>
+                        </li>
+                        <li class="list-inline-item "><span class="">{{'serventRoom'| translate}}: <span>
+                                    <svg class="icon " [ngClass]="{'icon-cross':property.serventRoom ==0,
+                                 
+                                    'icon-checkmark':property.serventRoom ==1 }"><use [attr.xlink:href]="property.serventRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                     </span></span>
+                        </li>
+                        <li class="list-inline-item "><span class="">{{'store'| translate}}: <span>
+                                        <svg class="icon " [ngClass]="{'icon-cross':property.store ==0,
+                                     
+                                        'icon-checkmark':property.store ==1 }"><use [attr.xlink:href]="property.store ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                         </span></span>
+                        </li>
+                        <li class="list-inline-item "><span class="">{{'salon'| translate}}: <span>
+                                            <svg class="icon " [ngClass]="{'icon-cross':property.salon ==0,
+                                         
+                                            'icon-checkmark':property.salon ==1 }"><use [attr.xlink:href]="property.salon ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                             </span></span>
+                        </li>
+
+
+
+
+
+                    </ul>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'Close' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</div>

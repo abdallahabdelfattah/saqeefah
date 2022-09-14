@@ -1,0 +1,10 @@
+<div class="panoram" style="width: 100%;height:90vh">
+    <div class="panorama-text container" *ngIf="Panorama">
+        <div class="content-panel">
+            <h3>{{Panorama.title}}
+                <div [innerHTML]="Panorama.description"></div>
+            </h3>
+        </div>
+    </div>
+    <div id="container" style="width: 100%;height:100vh"></div>
+</div>

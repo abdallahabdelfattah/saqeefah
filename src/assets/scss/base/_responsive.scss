@@ -1,0 +1,45 @@
+@media only screen and (max-width: 600px) {
+    body {
+        padding-top: 85px;
+    }
+    .filter-panel {
+        height: 54px;
+        padding: 0 7px;
+    }
+    .top-header {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+    }
+    .fixed-header-mobile {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 50px;
+    }
+    .content-panel {
+        width: 90%;
+        height: 185px;
+    }
+    .panorama-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .panorama-text {
+        h3 {
+            max-width: 100% !important;
+            font-size: 40px !important;
+            width: 100% !important;
+            p {
+                width: 83% !important;
+            }
+        }
+    }
+    .parallax {
+        height: 600px;
+    }
+    .card .img-panel .moreSpcs {
+        bottom: 37%;
+    }
+}

@@ -1,0 +1,25 @@
+.form-group{
+    position: relative;
+}
+.error{
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
+    font-size: 11px;
+    /* color: #fff !important; */
+    font-weight: 700;
+}
+.media .icon{
+  font-size: 25px !important;
+}
+a.contact{
+  float: right;
+}
+.text{
+  min-width: 120px;
+  font-size: 15px;
+  color: #e0d7aa;
+  text-align: right;
+  direction: ltr;
+  display: inline-flex;
+}

@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [46.885942, 24.779163]
+            },
+            "properties": {
+                "state": "booked",
+                "name": "project 1",
+                "countery": "Alridah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [46.885942, 24.879163]
+            },
+            "properties": {
+                "state": "booked",
+                "name": "project 2",
+                "countery": "Alridah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [46.185942, 24.579163]
+            },
+            "properties": {
+                "state": "booked",
+                "name": "project 1",
+                "countery": "Alridah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [40.485942, 20.479163]
+            },
+            "properties": {
+                "state": "booked",
+                "name": "project 1",
+                "countery": "Alridah"
+            }
+        }
+    ]
+}

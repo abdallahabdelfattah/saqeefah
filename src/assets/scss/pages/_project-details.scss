@@ -1,0 +1,17 @@
+.building-types {
+    li {
+        background: #bebebe;
+        padding: 5px 16px;
+        color: gray;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+            color: white;
+            background: $secondaryColor;
+        }
+    }
+    li.active {
+        color: white;
+        background: $secondaryColor;
+    }
+}

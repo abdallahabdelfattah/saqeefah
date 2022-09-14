@@ -1,0 +1,63 @@
+<div class="card property-card {{viewType}}" style="cursor: pointer;">
+    <div class="img-panel d-flex">
+        <div class="imagebox">
+            <div class="img-container">
+                <img [src]="property.coverImage ? appRootUrl+property.coverImage :'assets/images/home-placeHolder.webp'" class="card-img-top" alt="...">
+            </div>
+            <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="property.apartmentId" [class.active]="property.favorite" (click)="favorites.toggleFavorites(property)"></i>
+
+            <div class="card-label">{{'Price : ' | translate}}{{property.apartment_Price}}</div>
+            <span class="edit-project" *ngIf="EditMode" [routerLink]="'../edit-property/'+property.project_Ref+'/'+property.apartment_Id">Edit</span>
+            <div class="compare" [attr.data-cardCompico-id]="property.apartmentId" [class.active]="property.Compare" (click)="compare.toggleCompare(property)">Compare</div>
+            <div class="card-mask" [routerLink]="'property/'+property.apartmentId"></div>
+        </div>
+        <div class="basic-info">
+
+            <div class="pt-5">
+
+                <ul class="list-inline">
+                    <li class="list-inline-item "><span class="">{{'Project Reference:'| translate}}{{property.project_Ref}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'Build Reference:'| translate}}{{property.build_Ref}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'Appartment Number:'| translate}}{{property.apartment_Num}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'Appartment Space:'| translate}}{{property.apartment_Space}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'Additional Space:'| translate}}{{property.additional_Space}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'Basic Space:'| translate}}{{property.basic_Space}}</span></li>
+                    <li class="list-inline-item "><span class="">{{'P-Intrance:'| translate}} {{property.p_Intrance}}</span></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="unit-location">
+            <div class="row">
+                <div class="col-md-5">
+                    <h5>Unit Name</h5>
+                    <h6>Country</h6>
+
+                </div>
+                <!-- <div class="col-md-7">
+                    <div class="location-panel">
+                        <i class="icon tagr-vector"></i>
+                        <a href="" class="link-togmap">{{'unitLocationDetails' | translate}}</a>
+                    </div>
+
+                </div> -->
+            </div>
+
+
+        </div>
+        <div class="unit-specs">
+            <div class="row">
+                <div class="col-md-4 mb-2" *ngFor="let item of homespecs; let i = index">
+                    <span class="specs-ele"> <i *ngIf="itemSpecsIcon[i].icon" [class]="itemSpecsIcon[i].src"></i> <img [src]="itemSpecsIcon[i].src" width="20"  *ngIf="!itemSpecsIcon[i].icon" alt=""> <span class="specs-count"><span class="counter me-1">{{itemSpecsIcon[i].count}}</span>{{itemSpecsIcon[i].type}}</span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

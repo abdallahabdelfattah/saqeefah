@@ -1,0 +1,8 @@
+.accordion-button:not(.collapsed) {
+  /* color: #af8f79; */
+  background-color: #eeeded !important;
+}
+.btn:disabled{
+  background-color: lightgrey !important;
+  border: none !important;
+}

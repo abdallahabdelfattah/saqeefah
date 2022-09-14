@@ -1,0 +1,96 @@
+<div class="" >
+    <div class="box">
+  
+        <form (ngSubmit)="ApplyFilterProperty()" [formGroup]="form">
+            <div class="serch-form">
+                <a *ngIf="!searchInallProjects" routerLink="/property">{{'searchAllProjects' | translate}}</a>
+                <br/>   <br/>
+                <div class="mb-3" *ngIf="searchInallProjects">
+                    <label class="form-label">{{'ProjectId' | translate}}</label>
+                    <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProperty()" formControlName="projectId" aria-label=".form-select-lg example">
+                    <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let p of projects"   value="{{p.id}}">{{p.value}}</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">{{'STATUS' | translate}}</label>
+                    <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProperty()" formControlName="status" aria-label=".form-select-lg example">
+                    <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let state of apartmentsStatus"   value="{{state.id}}">{{state.value}}</option>
+                </select>
+                </div>
+                <div class="mb-3 slider-container">
+                    <label for="priceRange" class="form-label">{{'PRICE' | translate}}</label>
+                    <input type="range" class="form-range slider w-100" (change)=" ApplyFilterProperty()" formControlName="price" [min]="minPrice" [max]="maxPrice" [step]="priceStep" id="priceRange" #priceSilder>
+                    <span>{{priceSilder.value}}{{'ر.س' | translate}}</span>
+                </div>
+                <div class="mb-3 slider-container">
+                    <label for="AreaRange" class="form-label">{{'Area' | translate}}</label>
+                    <input type="range" class="form-range slider w-100" (change)=" ApplyFilterProperty()" formControlName="totalArea" [min]="minArea" [max]="maxArea" [step]="areaStep" id="areaRange" #areaSilder>
+                    <span>{{areaSilder.value}}{{'م2' | translate}}</span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">{{'NUM. OF BEDROOMS' | translate}}</label>
+                    <input type="number" (input)=" ApplyFilterProperty()" name="" min="0" formControlName="bedroom" class="form-control" >
+                </div>
+            </div>
+            <br/>
+            <div class="serch-form">
+                <div class="row mb-3">
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="InternalStation" formControlName="internalStation">
+                        <label class="form-check-label" for="InternalStation" >{{'InternalStation' | translate}}</label>
+                      </div>
+                    
+                </div>
+                <div class="row mb-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="dressRoom" formControlName="dressRoom">
+                        <label class="form-check-label" for="dressRoom" >{{'dressRoom' | translate}}</label>
+                      </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="serventRoom" formControlName="serventRoom">
+                        <label class="form-check-label" for="serventRoom" >{{'serventRoom' | translate}}</label>
+                      </div>
+                </div>
+                <div class="row mb-3">
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="store" formControlName="store">
+                        <label class="form-check-label" for="store" >{{'store' | translate}}</label>
+                      </div>
+
+                </div>
+                <div class="row mb-3">
+                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="roof" formControlName="roof">
+                        <label class="form-check-label" for="roof" >{{'roof' | translate}}</label>
+                      </div>
+                </div>
+                <div class="row mb-3">
+                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="salon" formControlName="salon">
+                        <label class="form-check-label" for="salon" >{{'salon' | translate}}</label>
+                      </div>
+                </div>
+
+                <div class="row mb-3">
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="p_Intrance" formControlName="p_Intrance">
+                        <label class="form-check-label" for="p_Intrance" >{{'p_Intrance' | translate}}</label>
+                      </div>
+
+                </div>
+                <div class="row mb-3">
+                    <button type="button" (click)="clearFilter()" class="btn btn-small btn-primary ">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

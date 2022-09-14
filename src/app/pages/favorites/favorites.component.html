@@ -1,0 +1,44 @@
+<div class="section-container back">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">{{'favorites'| translate}}</h4>
+                <p class="text-center">
+                  Your home should fit the way you live, with spaces and features that appeal to the entire family. Before you begin looking at homes, make a list of your priorities: location, size, lot, amenities, etc. Establish a set of minimum requirements
+                    and a "wish list". Minimum requirements are things that a house must have for you to consider it, while a "wish list" covers things that you'd like to have but aren't essential.</p>
+            </div>
+            <div class="col-md-12">
+
+                <div class="text-center" id="myTab" role="tablist">
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{{'Projects' | translate}}</a>
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{{'properties' | translate}}</a>
+
+                </div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-4 mb-4" *ngFor="let item of projectFavorites">
+
+                                <app-project-card [project]="item"></app-project-card>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-4 mb-4" *ngFor="let property of propertyFavorites">
+                                <app-property-card [property]="property"></app-property-card>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

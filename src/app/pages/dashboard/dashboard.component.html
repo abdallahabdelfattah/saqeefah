@@ -1,0 +1,106 @@
+<!-- <ngx-spinner type="timer">
+    <h5>Loading</h5>
+</ngx-spinner> -->
+<!-- <app-header></app-header> -->
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-2 sidebar px-0">
+            <!--  admin imgf -->
+            <div class="matero-user-panel" fxLayout="column" fxLayoutAlign="center center">
+
+                <img class="matero-user-panel-avatar" src="../../../assets/images/logo/user.png" alt="avatar" />
+                <!-- <img src="../../../assets/images/logo/user.png" width="80" height="80"> -->
+                <!-- <i class="fa fa-user-circle-o" aria-hidden="true"></i> -->
+
+                <h4 class="matero-user-panel-name">{{user}}</h4>
+                <h5 class="matero-user-panel-email">{{email}}</h5>
+                <div class="matero-user-panel-icons">
+                    <!-- <a routerLink="/profile/overview" mat-icon-button>
+                <mat-icon class="icon-18">account_circle</mat-icon>
+              </a> -->
+                    <a (click)="logout()" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{'Logout' |translate}}">
+                        <img src="../../../assets/images/logo/lo-PhotoRoom.png" width="15" height="15">
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <ul class="px-0">
+                <a routerLink="user" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <li class="full-width">{{'Users' | translate}}</li>
+                </a>
+                <!-- <a routerLink="test">
+                    <li class="full-width"> Test</li>
+                </a> -->
+                <a>
+                    <li class="accordion-button full-width collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemain" aria-expanded="false" aria-controls="collapsemain">{{'Website Settings' | translate}}</li>
+                </a>
+                <div id="collapsemain" class="accordion-collapse collapse" aria-labelledby="headingOne">
+
+                    <div class="accordion-body">
+                        <ul class="px-0">
+                            <a routerLink="settings" routerLinkActive="active">
+                                <li class="full-width">{{'Settings' | translate}}</li>
+                            </a>
+                            <!-- <a routerLink="social">
+                                <li class="full-width">Social</li>
+                            </a> -->
+                            <a routerLink="partner" routerLinkActive="active">
+                                <li class="full-width">{{'Partner' | translate}}</li>
+                            </a>
+                            <a routerLink="websiteInfo" routerLinkActive="active">
+                                <li class="full-width">{{'WebsiteInformation' | translate}}</li>
+
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <a>
+                    <li class="accordion-button full-width collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseclient" aria-expanded="false" aria-controls="collapsemain">{{'Client Interest' | translate}}</li>
+                </a>
+                <div id="collapseclient" class="accordion-collapse collapse" aria-labelledby="headingOne">
+
+                    <div class="accordion-body">
+                        <ul class="px-0">
+                            <a routerLink="feedbacklist" routerLinkActive="active">
+                                <li class="full-width">{{'FeedbackList' | translate}}</li>
+                            </a>
+                            <a routerLink="contactlist" routerLinkActive="active">
+                                <li class="full-width">{{'ContactList' | translate}}</li>
+                            </a>
+                            <a routerLink="placeOrder" routerLinkActive="active">
+                                <li class="full-width">{{'PlaceOrderList' | translate}}</li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <a routerLink="projects" routerLinkActive="active">
+                    <li class="full-width"> {{'Projects' | translate}}</li>
+                </a>
+                <a routerLink="Appartments" routerLinkActive="active">
+                    <li class="full-width">{{'Appartment' | translate}}</li>
+                </a>
+
+            </ul>
+        </div>
+        <div class="col-md-10 ps-5 ">
+
+            <section id="info-utile" class="">
+                <div class="container">
+                    <ngx-spinner type="timer">
+                        <h5>{{'Loading' | translate}}</h5>
+                    </ngx-spinner>
+                    <router-outlet></router-outlet>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

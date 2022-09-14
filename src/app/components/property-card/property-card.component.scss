@@ -1,0 +1,121 @@
+.imgIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.imgIcon1 {
+    height: 18px;
+    width: 18px;
+}
+
+.col-md-4 {
+    display: inline-flex;
+}
+
+.unit-specs span.text {
+    font-size: 12px;
+}
+
+.card.grid6 .unit-specs span {
+    font-size: 9px !important;
+}
+
+.card.list {
+    display: flex !important;
+}
+
+.notLinkable {
+    cursor: no-drop;
+}
+
+.card.list .img-panel {
+    width: 40% !important;
+}
+
+.card.list .img-panel {
+    position: static !important;
+}
+
+.card.list .img-panel .card-mask {
+    background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
+}
+
+// .card.list .card-body
+// {position: absolute;
+// left: 40%;
+// top: 30px;
+// color: #86815b;
+// }
+.card.list .unit-location h6 {
+    font-size: 20px !important;
+}
+
+.card.list .unit-specs {
+    z-index: 6;
+    background: transparent !important;
+    left: 45% !important;
+    top: 35% !important;
+    bottom: initial !important;
+}
+
+.card.list .list-inline-item {
+    display: block !important;
+    margin-bottom: 5px !important;
+    color: rgba(0, 0, 0, 0.7490196078) !important;
+    font-weight: bold !important;
+}
+
+.card.list .icon {
+    margin-right: 5px !important;
+    font-weight: bold !important;
+}
+
+.project-card .specs-ele {
+    font-weight: 700 !important;
+}
+
+.card.list .img-panel .img-container {
+    height: 211px !important;
+}
+
+.card.list .img-panel .card-label {
+    width: 150px !important;
+}
+
+.card.list .card-img-top {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.card.list .card-img-top:hover {
+    cursor: pointer !important;
+}
+
+.imagebox,
+.img-container,
+.img-container img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.card.grid6 .img-panel .moreSpcs {
+    font-size: 13px !important;
+}
+
+.card.grid6 h5 {
+    font-size: .8rem !important;
+}
+
+.edit-project {
+    box-shadow: 2px 3px 3px #aeaeae;
+    border-bottom: 3px solid #afafaf;
+}
+
+.edit-project:hover {
+    cursor: pointer !important;
+    transform: translateY(2px);
+}
+
+h5 {
+    font-size: 1rem;
+}

@@ -1,0 +1,77 @@
+<!-- <mat-toolbar>
+    <div>
+        <button mat-icon-button (click)="onToggleSidenav()"  >
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div class="" style="height: 100%;">
+        <a routerLink="#">
+            <img src="../../../../../assets/images/logo/logo3.png" height="50"/>
+            
+        </a>
+    </div>
+
+  
+   
+   
+   
+    <div fxFlex fxLayout="row" fxLayoutAlign="end center" >
+        <ul fxLayout fxLayoutGap="15px" class="navigation.items">
+            <li>
+                <button mat-button>
+                    <mat-icon class="mr-1">person_pin</mat-icon>
+                    user name
+                    
+               </button>
+               </li>
+
+           
+        </ul>
+    </div>
+
+</mat-toolbar> -->
+
+<app-top-header></app-top-header>
+<nav class="navbar navbar-expand-lg  "  [class]="generalService.checkNavIsTRansparent() ? 'navbar-dark' : 'navbar-light white-nav'">
+    <div class="container">
+        <div class="position-relative">
+            <a class="navbar-brand " [class]="generalService.checkNavIsTRansparent() ? 'home-logo' : 'inner-logo'" href="#">
+                <img [src]="generalService.checkNavIsTRansparent() ? '../../../assets/images/homelogo.jpg':'../../../assets/images/innerlogo.jpg'" alt="" srcset="">
+
+            </a>
+         
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">{{'home' |translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/about">{{'about' |translate}} </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/search">{{'properties' |translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/projects">{{'Projects' |translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/place-order"> {{'placeOrder' |translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/contact">{{'contact' |translate}}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="changeLanguage('en')">en</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+

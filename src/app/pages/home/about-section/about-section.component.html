@@ -1,0 +1,29 @@
+<div class="about-section section-container gray-bg" *ngIf="AboutUs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <h3> <span class="secondary-color">{{AboutUs.title | translate}}</span></h3>
+                <div [innerHTML]="AboutUs.description"></div>
+            </div>
+            <div class="col-md-6 pt-3">
+                <div class="image-rounded">
+                    <img [src]="setting.appRootUrl+AboutUs.imagePath" class="img-fluid" alt="" srcset="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section-panel">
+                    <h4>{{OurVision.title |translate}}</h4>
+                    <div [innerHTML]="OurVision.description"></div>
+                </div>
+                <div class="section-panel">
+                    <h4>{{OurGoals.title | translate}}</h4>
+                    <div [innerHTML]="OurGoals.description"></div>
+                </div>
+                <div class="section-panel">
+                    <h4>{{OurStory.title | translate}}</h4>
+                    <div [innerHTML]="OurStory.description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

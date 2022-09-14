@@ -1,0 +1,43 @@
+.panoram {
+    width: 100%;
+    position: relative;
+    cursor: grab;
+    .panorama-text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 22;
+        h3,
+        p {
+            position: absolute;
+            z-index: 6;
+            color: white;
+        }
+        h3 {
+            max-width: 85%;
+            font-size: 60px;
+            line-height: 0.9;
+            span {
+                color: $secondaryColor;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                margin-top: 10px;
+            }
+        }
+    }
+    #container {
+        position: absolute;
+    }
+}
+
+.content-panel {
+    background: #86815be0;
+    width: 50%;
+    display: list-item;
+    height: 250px;
+    position: absolute;
+    padding: 36px;
+}

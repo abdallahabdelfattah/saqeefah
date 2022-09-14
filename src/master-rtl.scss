@@ -1,0 +1,47 @@
+$direction :rtl;
+$left: right;
+$right: left;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+$fontFamily: 'Cairo',
+sans-serif;
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+button,
+div,
+li {
+    font-family: $fontFamily;
+}
+
+@import './assets/scss/base/bootstrap5-rtl';
+@import './styles.scss';
+// @import '../node_modules/bootstrap/dist/css/bootstrap.rtl.css';
+// @import '../node_modules/bootstrap/dist/css/bootstrap-utilities.rtl.css';
+@import './assets/scss/base/ar';
+// .short-cut-menu{
+//   right: -80px !important;
+
+// }
+.short-cut-menu {
+  right: initial !important;
+  left: -80px !important;
+  rotate: 180deg;
+}
+.containerRadio ,.form-group.input-group{
+  direction: ltr;
+}
+
+.card.list .card-body {
+  position: absolute;
+  right: 40%;
+  top: 20px;
+  color: var(--main-color);
+}

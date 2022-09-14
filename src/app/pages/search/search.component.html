@@ -1,0 +1,61 @@
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="secondary-color mb-0">APARTMENTS</h3>
+            <h6 style="font-size: 15px;font-weight:400;" class="mb-0">46 list founded</h6>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="filter-panel mt-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-auto">
+                                        <label for="inputPassword6" class="col-form-label"> {{'SortBy' |translate}}</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select class="filter-select" aria-label=".form-select-lg example">
+                                            <option selected>{{'priceHigh' | translate}}</option>
+                                            <option value="1">{{'priceLow' | translate}}</option>
+                                            
+                                          </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 text-end">
+
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><span style="font-weight: 400;">{{'view' | translate}}</span></li>
+                                    <li class="list-inline-item view-icons"><span class="icon tagr-layout"></span></li>
+                                    <li class="list-inline-item view-icons"><span class="icon tagr-android-apps"></span></li>
+                                    <li class="list-inline-item view-icons"><span class="icon tagr-list-bullet"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="secondary-color mb-0">{{'Filter' |translate}}</h3>
+                    <h6 class="mb-3" style="font-size: 13px;font-weight:400;">{{'FilterDesc' | translate}}</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row">
+                <div class="col-md-6 mb-3" *ngFor="let item of listResult">
+                    <app-property-card [property]="item"></app-property-card>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="btn more-btn">Load more</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <app-search-form></app-search-form>
+        </div>
+    </div>
+</div>

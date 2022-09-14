@@ -1,0 +1,27 @@
+<div class="panorama-container">
+    <app-panorama></app-panorama>
+</div>
+
+<!-- <app-about-section></app-about-section> -->
+<app-about-section-facility></app-about-section-facility>
+<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale"  [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
+
+<div class="slider-1 container" *ngFor="let slide of AllSlider">
+
+    <div class="row my-5"  *ngIf="slide.isActive" >
+        <div class="col-md-12">
+            <h4 class="text-center">{{slide.title | translate}}</h4>
+            <p class="text-center" [innerHtml]="slide.description">
+
+            </p>
+        </div>
+        <div class="col-md-12">
+            <app-logo-slider-one [logos]="slide.sliderAttachment"></app-logo-slider-one>
+
+        </div>
+    </div>
+</div>
+
+
+<app-map></app-map>
+<app-parallax></app-parallax>

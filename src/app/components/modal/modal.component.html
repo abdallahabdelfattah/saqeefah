@@ -1,0 +1,71 @@
+<!-- Modal -->
+<div class="project-modal">
+    <div class="modal fade" [id]="'modal'+modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" *ngIf="projectDetails">{{projectDetails.projectName  | translate}}</h5>
+                    <h6 class="modal-title">{{projectDetails.adress | translate}}, {{projectDetails.city | translate}}</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div *ngIf="Gallery.length > 0;else defaultImage" [id]="'carouselExampleIndicators'+modalId" class="carousel slide" data-bs-ride="carousel">
+                        <!-- <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div> -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item" [class.active]="i == 0" *ngFor="let item of Gallery;let i = index">
+                                <img [src]="appRootUrl+'/'+item.path" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'+modalId" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                        <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'+modalId" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                    </div>
+                    <ng-template #defaultImage>
+                        <img class="img-fluid" [src]="projectDetails.coverImage ? appRootUrl+projectDetails.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
+                    </ng-template>
+
+                </div>
+                <div class="modal-footer">
+
+                    <div class="row">
+
+                        <div class="col-md-3 col-4">
+                            <h5>{{'AvailableUnits' | translate}}</h5>
+                            <h6>{{projectDetails.numberOFAvailableUnits}}
+                            </h6>
+                        </div>
+
+                        <div class="col-md-3 col-4">
+                            <h5>{{'Appartments' | translate}}</h5>
+                            <h6>{{projectDetails.numberOfUnits}}</h6>
+                        </div>
+
+                        <div class="col-md-3 col-4">
+                            <h5>{{'Buildings' | translate}}</h5>
+                            <h6>{{projectDetails.numberOfBuildings}}</h6>
+                        </div>
+
+                        <div class="col-md-3">
+                            <a [routerLink]="['../project',modalId]" class="btn btn-primary" data-bs-dismiss="modal">
+                                <i class="fas fa-eye"></i> {{'Watch The Project' | translate}}
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

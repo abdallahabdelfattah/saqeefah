@@ -1,0 +1,234 @@
+ a {
+     -webkit-transition: .3s all ease;
+     -o-transition: .3s all ease;
+     transition: .3s all ease;
+     color: #af8f79
+ }
+ 
+ a:hover,
+ a:focus {
+     text-decoration: none;
+     color: #af8f79;
+     outline: none !important
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ .h1,
+ .h2,
+ .h3,
+ .h4,
+ .h5 {
+     line-height: 1.5;
+     color: #333;
+     font-weight: 400
+ }
+ 
+ .bg-light {
+     background: #fafafa !important
+ }
+ 
+ .btn {
+     cursor: pointer;
+     -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+     -ms-border-radius: 2px;
+     border-radius: 2px;
+     -webkit-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
+     -moz-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
+     box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1)
+ }
+ 
+ .btn:hover,
+ .btn:active,
+ .btn:focus {
+     outline: none
+ }
+ 
+ .btn.btn-primary {
+     background: #af8f79;
+     border: 1px solid #af8f79;
+     color: #fff
+ }
+ 
+ .btn.btn-primary:hover {
+     border: 1px solid #af8f79;
+     background: transparent;
+     color: #af8f79
+ }
+ 
+ .heading-section h2 {
+     font-size: 35px;
+     font-weight: 700;
+     line-height: 10px;
+     margin: 20px 0 30px 0;
+ }
+ 
+ .hero-wrap {
+     width: 100%;
+     height: 350px;
+     position: inherit;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: top center;
+     position: relative;
+     background-attachment: fixed
+ }
+ 
+ .hero-wrap .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     content: '';
+     opacity: .5;
+     background: #000
+ }
+ 
+ .hero-wrap .slider-text {
+     height: 250px;
+     z-index: 1000;
+     position: relative
+ }
+ 
+ .hero-wrap .slider-text .bread {
+     font-weight: 900;
+     color: #fff;
+     font-size: 50px
+ }
+ 
+ .section {
+     padding: 7em 0;
+     position: relative
+ }
+ /*===== About CSS =====*/
+ 
+ .about-text-section h2 {
+     color: #86815b;
+     text-transform: capitalize;
+     font-weight: 600;
+     margin-bottom: 15px
+ }
+ 
+ .about-text-section p {
+     font-size: 16px;
+ }
+ 
+ //  .about-div img {
+ //      width: 100%;
+ //      height: 300px;
+ //      object-fit: cover
+ //  }
+ .about-div p {
+     font-size: 15px;
+ }
+ 
+ .about-div .about-div-text {
+     padding: 50px 30px
+ }
+ 
+ .sectopn-parallex {
+     width: 100%;
+     height: 350px;
+     position: inherit;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: top center;
+     position: relative;
+     background-attachment: fixed
+ }
+ 
+ .sectopn-parallex .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     content: '';
+     opacity: .5;
+     background: #000
+ }
+ 
+ .sectopn-parallex .slider-text {
+     padding-top: 80px;
+     z-index: 1000;
+     position: relative
+ }
+ 
+ .sectopn-parallex .slider-text h2 {
+     font-weight: 600;
+     color: #fff;
+     font-size: 40px;
+     margin-bottom: 10px
+ }
+ 
+ .sectopn-parallex .slider-text p {
+     color: #fff;
+ }
+ 
+ @media screen and (max-width: 768px) {
+     .section {
+         padding: 4em 0;
+     }
+     .hero-wrap {
+         height: 270px;
+     }
+     .hero-wrap .slider-text {
+         height: 195px;
+     }
+     .hero-wrap .slider-text .bread {
+         font-size: 35px;
+     }
+     .about-div img {
+         height: 250px;
+     }
+     .about-div .about-div-text {
+         padding: 30px;
+     }
+     .sectopn-parallex .slider-text h2 {
+         font-size: 30px;
+     }
+     .sectopn-parallex .slider-text {
+         padding-top: 22px;
+     }
+ }
+
+
+ ///
+ /// 
+ /// 
+/* --------------------------- */
+
+element.style {}
+
+p.saqeefah-benfits {
+    background: #86815b;
+    color: white;
+    width: 350px;
+    height: 350px;
+    padding: 32px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px #c7c7c7;
+    border: 11px solid white;
+    font-size: 28px;
+    line-height: 45px;
+    text-align: center;
+    margin: 12px 26px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    font-weight: 500;
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        border-color: #86815b;
+        color: #86815b;
+        transition: all 0.5s;
+    }
+}
+
+

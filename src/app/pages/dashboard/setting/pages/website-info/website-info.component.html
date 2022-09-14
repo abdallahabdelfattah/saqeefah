@@ -1,0 +1,74 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item shadow">
+      <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapsepartner"
+              aria-expanded="true" aria-controls="collapseOne">
+              <h5 class="secondary-color">{{'Website Information' | translate}}</h5>
+          </button>
+      </h2>
+      <div id="collapsepartner" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+          <div class="accordion-body">
+              <form action="" class="row g-4" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
+                  enctype="multipart/form-data">
+                  <!-- <div class="col-12 mt-2">
+
+                      <div class="my-3">
+                          <label for="exampleFormControlInput1" class="form-label my-2">Website Information
+
+                          </label>
+                          <div class="formg">
+                            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                            </ngx-editor-menu>
+                            <ngx-editor [editor]="editor"
+                            [disabled]="false"
+                            [placeholder]="'Type here...'" formControlName="websiteInfo">
+                            </ngx-editor>
+
+                          </div>
+                      </div>
+
+                  </div> --><p></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">{{'Information Type' | translate}}</label>
+                            <select class="form-select" formControlName="key" (change)="onChange($event)">
+                                <option  value=""  ></option>
+                                <option *ngFor="let i of items" [value]="i.id">{{i.value}}</option>
+
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">{{'Arabic Value' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="text"  formControlName="valueAr" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">{{'English Value' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="text"  formControlName="valueEn" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-12">
+                      <div class="my-1">
+                          <div class="formg w-100">
+                              <button type="submit" class="btn btn-small btn-primary w-25 float-end  px-4  mt-2"
+                                  [disabled]="myFormGroup.invalid">{{'Update' | translate}}
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+
+
+
+          </div>
+      </div>
+  </div>

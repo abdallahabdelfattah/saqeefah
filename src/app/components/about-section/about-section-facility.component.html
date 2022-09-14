@@ -1,0 +1,68 @@
+<!--===== Start About Section =====-->
+<div class="about-us-area" *ngIf="AboutUs">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title-area ltn__section-title-2--- mb-20">
+                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                        {{ "about" | translate }}
+                    </h6>
+                    <h1 class="section-title">
+                        {{ "saqeefahStory" | translate }} <span></span>
+                    </h1>
+                    <p [innerHTML]="AboutUs.description"></p>
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="about-us-img-wrap about-img-left">
+                    <img src="../../../assets/images/about-section-img.jpg" alt="About Us Image" class="about-section-img" />
+                    <div class="about-us-img-info about-us-img-info-2 about-us-img-info-3">
+                        <div class="ltn__video-img ltn__animation-pulse1">
+                            <img src="../../../assets/images/about-section-img2.webp" alt="video popup bg image" class="about-section-img2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="about-us-info-wrap">
+                    <ul class="ltn__list-item-half clearfix">
+                        <li>
+                            <i class="fas fa-home"></i> {{ OurVision.title | translate }}
+                        </li>
+                        <li class="px-5">
+                            <div [innerHTML]="OurVision.description"></div>
+                        </li>
+                        <li>
+                            <i class="fas fa-warehouse"></i> {{ OurGoals.title | translate }}
+                        </li>
+                        <li class="px-5">
+                            <div [innerHTML]="OurGoals.description"></div>
+                        </li>
+                        <li>
+                            <i class="fas fa-user"></i> {{ OurStory.title | translate }}
+                        </li>
+                        <li class="px-5">
+                            <div [innerHTML]="OurStory.description"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 align-self-center">
+                <div class="about-us-info-wrap">
+                    <div class="section-title-area ltn__section-title-2---">
+                        <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                            {{ "services" | translate }}
+                        </h6>
+                        <h1 class="section-title">
+                            {{ "saqeefahservices" | translate }} <span></span>
+                        </h1>
+                        <p [innerHTML]="OurServices.description"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== End About Section =====-->
