@@ -6,7 +6,7 @@
     "about": "عن سقيفة",
     "properties": "الوحدات",
     "placeOrder": "طلبك محل اهتمامنا",
-    "contact": "تواصل معنا",
+    "contact": "الاقتراحات والشكاوي",
     "bannerTitle": "أفضل طريقة للعثور على منزلك المثالي",
     "bannerDesc": "مع أكثر من 700000 قائمة نشطة ، تمتلك سقيفة أكبر مخزون من الشقق في المملكة العربية السعودية",
     "aboutIndexTitle": "نبذة عن سقيفة",
@@ -316,7 +316,7 @@
    "Cords":"الاحداثيات",
    "Link":"الرابط",
    "serventRoom":"غرفة خادمة",
-   "dressRoom":"غرفة ملابس ", 
+   "dressRoom":"غرفة ملابس ",
    "CountApartmentsStatistic":"وحدة سكنية",
    "CountEmployessSoudiStatistic":"موظف سعودي محترف",
    "CountProjectsStatistic":"مشروع سكني",
@@ -325,5 +325,8 @@
    "saqeefahStory":"قصة سقيفة ",
    "services":"خدماتنا",
    "saqeefahservices":"خدمات سقيفة ",
-   "whysaqeefah":"ميزة سقيفة"
+   "whysaqeefah":"ميزة سقيفة",
+   "Forsuggestionsandcomplaints":" للاقتراحات والشكاوي",
+   "InternalStation":"محطة داخلية",
+   "NUM. OF Available Apartments":"عدد الشقق المتاحة"
 }

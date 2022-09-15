@@ -20,20 +20,21 @@
                     <a class="nav-link " aria-current="page" routerLink="/about" routerLinkActive="active">{{'about' |translate}} </a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " aria-current="page" routerLink="/projects" routerLinkActive="active">{{'Projects' |translate}}</a>
+              </li>
+                <li class="nav-item">
                     <a class="nav-link " aria-current="page" routerLink="/property" routerLinkActive="active">{{'properties' |translate}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/projects" routerLinkActive="active">{{'Projects' |translate}}</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" routerLink="/place-order" routerLinkActive="active"> {{'placeOrder' |translate}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" routerLink="/contact" routerLinkActive="active">{{'contact' |translate}}</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link " aria-current="page" routerLink="/dashboard" routerLinkActive="active">{{'dashboard' | translate}}</a>
-                </li>
+                </li> -->
                 <li class="nav-item d-lg-none">
                     <a class="nav-link " aria-current="page" (click)="changeLanguage(language.getCurrentLanguage()=='en'?'ar':'en')">{{'lang' | translate}}</a>
                 </li>

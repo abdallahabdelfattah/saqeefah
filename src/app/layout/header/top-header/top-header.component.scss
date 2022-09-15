@@ -13,6 +13,21 @@ button {
     cursor: pointer;
 
   }
+  i.fab{
+
+    border: 2.3999px solid white;
+
+    border-radius: 50%;
+    position: relative;
+  }
+  .fa-snapchat-ghost:before {
+    content: "\f2ac";
+    font-size: 11px;
+    /* line-height: 1; */
+    position: absolute;
+    left: 2.1px;
+    top: 3.3px;
+}
 
   @media screen and (max-width: 480px) {
     .topheader-link li a, .social-links li a{
