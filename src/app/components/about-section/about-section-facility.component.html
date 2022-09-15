@@ -4,16 +4,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title-area ltn__section-title-2--- mb-20">
-                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                    <!-- <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
                         {{ "about" | translate }}
-                    </h6>
+                    </h6> -->
                     <h1 class="section-title">
                         {{ "saqeefahStory" | translate }} <span></span>
                     </h1>
                     <p [innerHTML]="AboutUs.description"></p>
                 </div>
             </div>
-            <div class="col-lg-6 align-self-center">
+            <!-- <div class="col-lg-6 align-self-center">
                 <div class="about-us-img-wrap about-img-left">
                     <img src="../../../assets/images/about-section-img.jpg" alt="About Us Image" class="about-section-img" />
                     <div class="about-us-img-info about-us-img-info-2 about-us-img-info-3">
@@ -61,7 +61,73 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+
+
+            <!-- ----------------test------------------------------- -->
+
+
+            <section class="section about-text-section about-div" *ngIf="OurVision">
+              <div class="container">
+
+                  <div class="row mb-md-5 mb-3">
+
+                      <div class="col-md-6">
+                          <img [src]="setting.appRootUrl+OurVision.imagePath" class="img-fluid">
+                      </div>
+                      <div class="col-md-6 about-div-text">
+                          <h2>{{OurVision.title}}</h2>
+
+                          <div [innerHTML]="OurVision.description">
+
+                          </div>
+
+                      </div>
+
+                  </div>
+                  <div class="row mb-md-5 mb-3" *ngIf="OurStory">
+
+                      <div class="col-md-6  order-md-1">
+                          <div class="">
+                              <img [src]="setting.appRootUrl+OurStory.imagePath" class="img-fluid">
+
+                          </div>
+                      </div>
+                      <div class="col-md-6 about-div-text">
+                          <h2>{{OurStory.title}}</h2>
+
+                          <div [innerHTML]="OurStory.description">
+
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row mb-md-5 mb-3" *ngIf="OurGoals">
+
+                      <div class="col-md-6">
+                          <img [src]="setting.appRootUrl+OurGoals.imagePath" class="img-fluid">
+                      </div>
+                      <div class="col-md-6 about-div-text">
+                          <h2>{{OurGoals.title}}</h2>
+
+                          <div [innerHTML]="OurGoals.description">
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+
+
+              </div>
+          </section>
+
+
+
+            <!-- -----------end test-------------- -->
         </div>
     </div>
 </div>

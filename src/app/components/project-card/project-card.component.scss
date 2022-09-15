@@ -44,23 +44,12 @@
 .card.list .img-panel .card-mask {
     background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
 }
-.card.list .card-body
-{position: absolute;
-left: 45%;
-top: 10px;
-color: #86815b;
-}
+
 
 .card.list .unit-location h6{
     font-size: 20px !important;
 }
-.card.list .unit-specs{
-    z-index: 6;
-    background:transparent !important;
-    left: 45% !important;
-    top: 35% !important;
-    bottom: initial !important;
-}
+
 .card.list .list-inline-item{
     display: block !important;
     margin-bottom: 5px !important;
