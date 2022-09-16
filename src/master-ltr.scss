@@ -12,3 +12,23 @@ $right: right;
   top: 30px;
   color: var(--main-color);
 }
+
+.card.list .unit-specs{
+  z-index: 6;
+  background:transparent !important;
+  left: 45% !important;
+  top: 50% !important;
+  bottom: initial !important;
+}
+app-project-card .card.list .card-body{
+  position: absolute;
+  left: 45%;
+  top: 30px;
+  color: #86815b;
+}
+
+
+.tagline-2::before {
+  content: "";
+  left: -60px;
+}

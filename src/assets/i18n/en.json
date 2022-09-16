@@ -316,7 +316,7 @@
    "Cords":"Cords",
    "Link":"Link",
    "serventRoom":"Servent Room",
-   "dressRoom":"Dress Room", 
+   "dressRoom":"Dress Room",
    "CountApartmentsStatistic":"Housing units",
    "CountEmployessSoudiStatistic":"A professional Saudi employee",
    "CountProjectsStatistic":"Housing project",
@@ -325,8 +325,11 @@
   "saqeefahStory":"saqeefah story",
   "services":"Services",
   "saqeefahservices":"saqeefah services",
-  "whysaqeefah":"why saqeefah"
-
+  "whysaqeefah":"why saqeefah",
+  "Forsuggestionsandcomplaints":"For Suggestions and Complaints",
+  "InternalStation":"Internal Station",
+"NUM. OF Available Apartments":"NUM. OF Available Apartments",
+"Clear":"Clear"
 
 
 

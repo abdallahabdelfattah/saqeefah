@@ -21,7 +21,9 @@ export interface siteInfo{
     CountApartmentsStatistic:string,
     CountEmployessSoudiStatistic:string,
     CountProjectsStatistic:string,
-    companyLocation:string
+    companyLocation:string,
+    snap:string,
+    Forsuggestionsandcomplaints:string,
 
 }
 export interface adminSiteInfo{

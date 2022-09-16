@@ -29,6 +29,14 @@
                                 <p>
                                     {{siteInformation?.workinfHours}}
                                 </p>
+                                <h6>
+                                  <i class="fas fa-envelope-open-text"></i>{{'Forsuggestionsandcomplaints' | translate}}
+                              </h6>
+
+
+                              <p>
+                                <a class="contact" href="mail:{{siteInformation?.Forsuggestionsandcomplaints}}"> <span class="text"> {{siteInformation?.Forsuggestionsandcomplaints}}</span></a>
+                              </p>
                             </div>
                             <!-- <div class="col-md-4">
                                 <p>{{siteInformation?.address}}</p>
@@ -55,9 +63,8 @@
                 </div>
                 <div class="col-md-12 mt-3 media text-center">
                   <p class="" style="margin-left: 45px;">
-                    <a [href]="siteInformation?.facebookURL" target="_blank"
-                      ><i class="icon tagr-social-facebook" ></i
-                    ></a>
+
+                   <a [href]="siteInformation?.snap"  target="_blank"><i class="icon fab fa-snapchat-ghost"></i></a>
 
                                         <a [href]="siteInformation?.linkedinURL" target="_blank"><i class="icon tagr-social-linkedin" ></i
                     ></a>

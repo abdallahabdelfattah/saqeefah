@@ -23,3 +23,18 @@ a.contact{
   direction: ltr;
   display: inline-flex;
 }
+
+i.fab{
+
+  border: 2.4px solid #e0d7aa;
+
+  border-radius: 50%;
+  position: relative;
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+    font-size: 14px;
+    position: absolute;
+    left: 2.3px;
+    top: 3.3px;
+}

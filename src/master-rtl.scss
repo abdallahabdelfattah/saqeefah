@@ -45,3 +45,23 @@ li {
   top: 20px;
   color: var(--main-color);
 }
+
+.card.list .unit-specs{
+  z-index: 6;
+  background:transparent !important;
+  right: 45% !important;
+  top: 50% !important;
+  bottom: initial !important;
+}
+app-project-card .card.list .card-body{
+  position: absolute;
+  right: 45%;
+  top: 10px;
+  color: #86815b;
+}
+
+
+.tagline-2::before {
+  content: "";
+  right: -60px;
+}

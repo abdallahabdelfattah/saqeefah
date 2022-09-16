@@ -3,14 +3,28 @@
 </div>
 
 <!-- <app-about-section></app-about-section> -->
+
+  <!-- About Section in Home  -->
 <app-about-section-facility></app-about-section-facility>
+
+  <!-- End About Section in Home  -->
+
+  <!-- our Features  in Home  -->
+  
+  <app-our-features></app-our-features>
+   <!-- End our Features  in Home  -->
+
+
+
+
+  
 <app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale"  [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
 
 <div class="slider-1 container" *ngFor="let slide of AllSlider">
 
     <div class="row my-5"  *ngIf="slide.isActive" >
         <div class="col-md-12">
-            <h4 class="text-center">{{slide.title | translate}}</h4>
+            <h4 class="text-center section-title">{{slide.title | translate}}</h4>
             <p class="text-center" [innerHtml]="slide.description">
 
             </p>
