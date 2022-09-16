@@ -29,7 +29,6 @@ import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
-import { EmbedVideo } from 'ngx-embed-video';
 
 
 
