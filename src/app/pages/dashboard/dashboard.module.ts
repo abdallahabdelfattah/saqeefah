@@ -34,6 +34,9 @@ import { DataTablesModule } from 'angular-datatables';
 import { PlaceOrderComponent } from './clientInterest/place-order/place-order.component';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { GenaricService } from 'src/app/services/Genaric.service';
+import { PriceRangeComponent } from './setting/pages/price-range/price-range.component';
+import { PriceRangeService } from './setting/services/priceRange.service';
+import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
 
 
 
@@ -57,6 +60,8 @@ import { GenaricService } from 'src/app/services/Genaric.service';
             FeedbackListComponent,
             ContactUsListComponent,
             PlaceOrderComponent,
+            PriceRangeComponent,
+            AreaRangeComponent
 
   ],
   imports: [
@@ -102,7 +107,7 @@ import { GenaricService } from 'src/app/services/Genaric.service';
   ],
   providers:[{provide:HTTP_INTERCEPTORS , useClass:LoadingInterceptor , multi:true},
              {provide:HTTP_INTERCEPTORS , useClass:ErrorInterceptor , multi:true},
-             changeLanguageService, GenaricService,
+             changeLanguageService, GenaricService,PriceRangeService
   ],
   exports:[
     DashboardComponent
