@@ -74,10 +74,18 @@
 .card.list .card-img-top {
     border-top-left-radius: 0 !important;
      border-top-right-radius: 0 !important;
+
 }
 .card.list .card-img-top:hover{
     cursor: pointer !important;
+}
 
 
 
+.card.grid6 .img-panel .img-container.project {
+    height: 250px;
+   
+    img{
+        height: 100%;
+    }
 }

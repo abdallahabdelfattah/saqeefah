@@ -201,38 +201,3 @@
      }
  }
 
-
- ///
- ///
- ///
-/* --------------------------- */
-
-
-
-p.saqeefah-benfits {
-    background: #86815b;
-    color: white;
-    width: 350px;
-    height: 350px;
-    padding: 32px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 5px #c7c7c7;
-    border: 11px solid white;
-    font-size: 28px;
-    line-height: 45px;
-    text-align: center;
-    margin: 12px 26px;
-    display: flex;
-    align-items: center;
-    transition: all 0.5s;
-    font-weight: 500;
-    &:hover {
-        cursor: pointer;
-        background-color: white;
-        border-color: #86815b;
-        color: #86815b;
-        transition: all 0.5s;
-    }
-}
-
-

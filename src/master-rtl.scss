@@ -59,3 +59,9 @@ app-project-card .card.list .card-body{
   top: 10px;
   color: #86815b;
 }
+
+
+.tagline-2::before {
+  content: "";
+  right: -60px;
+}

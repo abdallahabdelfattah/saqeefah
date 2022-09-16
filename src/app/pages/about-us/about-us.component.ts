@@ -25,30 +25,6 @@ export class AboutUsComponent implements OnInit {
   projectsForSaleSoon = []
 
   
-  saqeefahBenefits=[]; 
-  saqeefahBenefitsAr = [
-    ' سنوات طويلة من الخبرة ',
-    '	الجودة قيمة عُليا في المشاريع والخدمات',
-    '	تقديم خدمات مميزة لما بعد البيع',
-    '	وحدات سكنية عصرية',
-    '	واجهات تصميمية فارقة',
-    '	وحدات سكنية بمساحات واسعة',
-    '	نخبة من الكوادر البشرية',
-    '	إنجاز سريع للمشاريع',
-    '	شبكة من العلاقات المهنية',
-  ]
-
-  saqeefahBenefitsEN = [
-    ' Many years of experience',
-    'Quality is a supreme value in projects and services',
-    'Providing excellent after-sales services',
-    'Modern Residential Units',
-    '	Distinguished Design Interfaces',
-    'Residential units with large areas',
-    'Elite human cadres',
-    'Fast completion of projects',
-    'network of professional relationships',
-  ]
 
 
 public ourMeetingBg
@@ -109,12 +85,9 @@ getAllProjects(){
     // this. getAboutSetting()
     this. getAboutSetting()
     this.getAllProjects();
-    this.saqeefahBenefits=this.language.getLanguageID()=="1"?this.saqeefahBenefitsAr:this.saqeefahBenefitsEN; 
-
     this.language.changeLanguageStatus.subscribe((data)=>{
       this. getAboutSetting()
       this.getAllProjects();
-         this.saqeefahBenefits=this.language.getLanguageID()=="1"?this.saqeefahBenefitsAr:this.saqeefahBenefitsEN; 
     })
   }
 

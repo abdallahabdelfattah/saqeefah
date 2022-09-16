@@ -26,3 +26,9 @@ app-project-card .card.list .card-body{
   top: 30px;
   color: #86815b;
 }
+
+
+.tagline-2::before {
+  content: "";
+  left: -60px;
+}

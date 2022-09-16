@@ -28,6 +28,7 @@ import { SwipperGalleryComponent } from './swipper-gallery/swipper-gallery.compo
 import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
+import { OurFeaturesComponent } from './our-features/our-features.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AboutSectionFacilityComponent } from './about-section/about-section-fac
     LogoSliderOneComponent,
     LogoSlidertowComponent,
     SwipperGalleryComponent,
-    SvgComponent
+    SvgComponent,
+    OurFeaturesComponent
   ],
   imports: [
     CommonModule,
@@ -76,7 +78,8 @@ import { AboutSectionFacilityComponent } from './about-section/about-section-fac
     LogoSliderOneComponent,
     LogoSlidertowComponent,
     SwipperGalleryComponent,
-    SvgComponent
+    SvgComponent,
+    OurFeaturesComponent
   ],
   providers: [
     MarkerService,
