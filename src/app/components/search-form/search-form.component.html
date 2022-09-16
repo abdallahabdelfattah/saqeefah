@@ -3,7 +3,7 @@
   
         <form (ngSubmit)="ApplyFilterProperty()" [formGroup]="form">
             <div class="serch-form">
-                <a *ngIf="!searchInallProjects" routerLink="/property">{{'searchAllProjects' | translate}}</a>
+              <a  class="secondary-color" *ngIf="!searchInallProjects" routerLink="/property">{{'searchAllProjects' | translate}}</a>
                 <br/>   <br/>
                 <div class="mb-3" *ngIf="searchInallProjects">
                     <label class="form-label">{{'ProjectId' | translate}}</label>
@@ -88,7 +88,7 @@
 
                 </div>
                 <div class="row mb-3">
-                    <button type="button" (click)="clearFilter()" class="btn btn-small btn-primary ">Clear</button>
+                    <button type="button" (click)="clearFilter()" class="btn btn-small btn-primary ">{{'Clear' | translate}}</button>
                 </div>
             </div>
         </form>

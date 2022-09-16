@@ -1,7 +1,8 @@
 .icon:hover{
     cursor: pointer;
-    background-color: #7c7b7661;
-    padding: 3px;
+    
+    transform: translateY(.6px);
+  
 }
 .list-inline-item.view-icons{
     width:30px !important;

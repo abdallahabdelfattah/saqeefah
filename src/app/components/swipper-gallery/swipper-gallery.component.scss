@@ -46,7 +46,7 @@
 }
 
 .mySwiper2 {
-    height: 600px;
+     height: 415px !important;
     width: auto !important;
 }
 
@@ -54,6 +54,7 @@
     height: 14%;
     box-sizing: border-box;
     padding: 10px 0;
+    display: none;
 }
 
 .mySwiper .swiper-slide {
