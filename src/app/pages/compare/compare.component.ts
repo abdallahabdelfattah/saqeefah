@@ -29,7 +29,7 @@ getCompareList(){
     this.compareAvalable = true
     this.appartments.getCompareAppartmens(parsingCompare).subscribe((item:any)=>{
       this.compareList = item.data
-      console.log(item)
+      console.log(item.data)
     })
   } else {
     this.compareAvalable = false

@@ -11,12 +11,21 @@
             <div class="col-md-12">
 
                 <div class="text-center" id="myTab" role="tablist">
-                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{{'Projects' | translate}}</a>
-                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{{'properties' | translate}}</a>
+                    <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">{{'properties' | translate}}</a>
+                    <a class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false">{{'Projects' | translate}}</a>
+   
 
                 </div>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-4 mb-4" *ngFor="let property of propertyFavorites">
+                                <app-property-card [property]="property"></app-property-card>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
                             <div class="col-md-4 mb-4" *ngFor="let item of projectFavorites">
 
@@ -27,14 +36,7 @@
                         </div>
 
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="row">
-                            <div class="col-md-4 mb-4" *ngFor="let property of propertyFavorites">
-                                <app-property-card [property]="property"></app-property-card>
-                            </div>
-
-                        </div>
-                    </div>
+                
 
                 </div>
             </div>

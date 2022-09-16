@@ -186,7 +186,9 @@
                         <tr *ngFor="let key of getKeys()">
                             <ng-container *ngIf="key != 'apartment_Id' && key != 'coverImage'
                             && key != 'images'&& key != 'videos' &&key!='statusId'
-                            &&key!='project_Ref'&&key!='build_Ref'&&key!='loor_Ref'">
+                            &&key!='project_Ref'&&key!='build_Ref'&&key!='floor_Ref'
+                            &&key!='projectName' &&key!='buildingName' &&key!='apartment_Num'
+                            &&key!='floor_Num'">
                                 <th scope="row">
                                     <span class="" style="margin: 0 5px;">
                                 <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
@@ -195,7 +197,25 @@
                                 </th>
 
                                 <td *ngFor="let item of compareList">
-                                    {{item[key]}}
+                                    <div *ngIf="key==='balcon'||key==='hall'
+                                    ||key==='p_Intrance'||key==='roof'||key==='salon'
+                                    ||key==='servant_Room'||key==='store'||key==='toilet_Num'
+                                    ||key==='trace'||key==='dress_Room'; else elseBlock">
+                                     <svg class="icon " [ngClass]="{'icon-cross':item[key] ==0,
+                                    'icon-checkmark':item[key] ==1 }"><use [attr.xlink:href]="item[key] ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                    </div>
+                                    <ng-template #elseBlock> 
+                                        <div  *ngIf="key==='status'; else elseBl">
+                                            <div class="card-label " [class]="{'green': item['statusId'] == '1','moave':item['statusId'] == '4', 'orange': item['statusId'] == '2', 'pink': item['statusId'] == '3'}">
+                                                {{item[key]}}
+                                            </div>
+                                        </div>
+                                        <ng-template #elseBl> 
+                                            {{item[key]}}
+                                        </ng-template>
+                                        <!-- {{item[key]}} -->
+                                    </ng-template>
+                                   
                                 </td>
                             </ng-container>
 

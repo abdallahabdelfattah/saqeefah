@@ -64,50 +64,61 @@
 
 
                     <ul class="list-inline other-specs">
-                        <li class="list-inline-item "><span class="">{{'Project Reference:'| translate}}{{property.project_Ref}}</span></li>
-                        <li class="list-inline-item "><span class="">{{'Build Reference:'| translate}}{{property.build_Ref}}</span></li>
+                        <!-- <li class="list-inline-item "><span class="">{{'Project Reference:'| translate}}{{property.project_Ref}}</span></li>
+                        <li class="list-inline-item "><span class="">{{'Build Reference:'| translate}}{{property.build_Ref}}</span></li> -->
                         <li class="list-inline-item "><span class="">{{'Appartment Number:'| translate}}{{property.apartment_Num}}</span></li>
                         <li class="list-inline-item "><span class="">{{'Appartment Space:'| translate}}{{property.apartment_Space}}</span></li>
                         <li class="list-inline-item "><span class="">{{'Additional Space:'| translate}}{{property.additional_Space}}</span></li>
                         <li class="list-inline-item "><span class="">{{'Basic Space:'| translate}}{{property.basic_Space}}</span></li>
 
-
-                        <li class="list-inline-item "><span class="">{{'roof'| translate}}: <span>
-                       <svg class="icon " [ngClass]="{'icon-cross':property.roof ==0,
-                    
-                       'icon-checkmark':property.roof ==1 }"><use [attr.xlink:href]="property.roof ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
-                        </span></span>
-                        </li>
-                        <li class="list-inline-item "><span class="">{{'p_Intrance'| translate}}: <span>
-                            <svg class="icon " [ngClass]="{'icon-cross':property.p_Intrance ==0,
+                        <div *ngIf="property.roof>0">
+                            <li class="list-inline-item "><span class="">{{'roof'| translate}} <span>
+                                <!-- <svg class="icon " [ngClass]="{'icon-cross':property.roof ==0,
+                            
+                                'icon-checkmark':property.roof ==1 }"><use [attr.xlink:href]="property.roof ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
+                                </span></span>
+                            </li>
+                        </div>
+                        <div *ngIf="property.p_Intrance>0">
+                        <li class="list-inline-item "><span class="">{{'p_Intrance'| translate}} <span>
+                            <!-- <svg class="icon " [ngClass]="{'icon-cross':property.p_Intrance ==0,
                          
-                            'icon-checkmark':property.p_Intrance ==1 }"><use [attr.xlink:href]="property.p_Intrance ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                            'icon-checkmark':property.p_Intrance ==1 }"><use [attr.xlink:href]="property.p_Intrance ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                              </span></span>
                         </li>
-                        <li class="list-inline-item "><span class="">{{'dressRoom'| translate}}: <span>
-                                <svg class="icon " [ngClass]="{'icon-cross':property.dressRoom ==0,
+                    </div>
+                    <div *ngIf="property.dressRoom>0">
+                        <li class="list-inline-item "><span class="">{{'dressRoom'| translate}} <span>
+                                <!-- <svg class="icon " [ngClass]="{'icon-cross':property.dressRoom ==0,
                              
-                                'icon-checkmark':property.dressRoom ==1 }"><use [attr.xlink:href]="property.dressRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                'icon-checkmark':property.dressRoom ==1 }"><use [attr.xlink:href]="property.dressRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                                  </span></span>
                         </li>
-                        <li class="list-inline-item "><span class="">{{'serventRoom'| translate}}: <span>
-                                    <svg class="icon " [ngClass]="{'icon-cross':property.serventRoom ==0,
+                    </div>
+                    <div *ngIf="property.serventRoom>0">
+                        <li class="list-inline-item "><span class="">{{'serventRoom'| translate}} <span>
+                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.serventRoom ==0,
                                  
-                                    'icon-checkmark':property.serventRoom ==1 }"><use [attr.xlink:href]="property.serventRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                    'icon-checkmark':property.serventRoom ==1 }"><use [attr.xlink:href]="property.serventRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                                      </span></span>
                         </li>
-                        <li class="list-inline-item "><span class="">{{'store'| translate}}: <span>
-                                        <svg class="icon " [ngClass]="{'icon-cross':property.store ==0,
+                    </div>
+                    <div *ngIf="property.store>0">
+                        <li class="list-inline-item "><span class="">{{'store'| translate}} <span>
+                                        <!-- <svg class="icon " [ngClass]="{'icon-cross':property.store ==0,
                                      
-                                        'icon-checkmark':property.store ==1 }"><use [attr.xlink:href]="property.store ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                        'icon-checkmark':property.store ==1 }"><use [attr.xlink:href]="property.store ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                                          </span></span>
                         </li>
-                        <li class="list-inline-item "><span class="">{{'salon'| translate}}: <span>
-                                            <svg class="icon " [ngClass]="{'icon-cross':property.salon ==0,
+                    </div>
+                    <div *ngIf="property.salon>0">
+                        <li class="list-inline-item "><span class="">{{'salon'| translate}} <span>
+                                            <!-- <svg class="icon " [ngClass]="{'icon-cross':property.salon ==0,
                                          
-                                            'icon-checkmark':property.salon ==1 }"><use [attr.xlink:href]="property.salon ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                            'icon-checkmark':property.salon ==1 }"><use [attr.xlink:href]="property.salon ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                                              </span></span>
                         </li>
+                    </div>
 
 
 
