@@ -9,7 +9,7 @@ import { ISettingType } from '../models/settingType.interface';
   providedIn: 'root'
 })
 export class SettingsService {
-  appRootUrl=environment.appRoot+'/'; 
+ public appRootUrl=environment.appRoot+'/'; 
   constructor(private aPICallerService:APICallerService) {
   }
 

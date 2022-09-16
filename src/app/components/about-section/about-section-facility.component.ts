@@ -20,11 +20,12 @@ import { environment } from 'src/environments/environment';
 export class AboutSectionFacilityComponent implements OnInit {
 
   AboutUs
- public OurVision
+  public OurVision
   OurGoals
   OurStory
   OurServices
   imgURL = 'https://api-stage.saqeefah.com/StaticFiles/Settings/Images/%20637989142134938590%20melanie-deziel-U33fHryBYBU-unsplash.jpg'
+  bgOurVision
   public ourMeetingBg
   get settingTypes() {
     return SettingTypes
@@ -41,7 +42,11 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
 
-        console.log(this.OurVision?.imagePath); 
+        let bg = this.sanitizer.bypassSecurityTrustStyle('url("' + this.setting.appRootUrl + this.OurVision?.imagePath + '")');
+        debugger
+        this.bgOurVision = bg["changingThisBreaksApplicationSecurity"];
+
+        console.log(this.bgOurVision);
 
       }
     })
@@ -55,8 +60,14 @@ export class AboutSectionFacilityComponent implements OnInit {
     })
   }
 
-  removeSpace(string){
-    return string.replace(/ /g,'')
+  removeSpace(string) {
+    return string.replace(/ /g, '')
   }
+
+  getUrl(path) {
+    debugger;
+    return "url('" + path + "')";
+  }
+
 
 }
