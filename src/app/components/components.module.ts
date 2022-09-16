@@ -29,6 +29,7 @@ import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
+import { VideoPlayerComponent } from './video-player/video-player.component';
 
 
 
@@ -49,6 +50,8 @@ import { OurFeaturesComponent } from './our-features/our-features.component';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
+    VideoPlayerComponent,
+    
     // VedioComponent
   ],
   imports: [
@@ -82,6 +85,7 @@ import { OurFeaturesComponent } from './our-features/our-features.component';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
+    VideoPlayerComponent
     // VedioComponent
   ],
   providers: [

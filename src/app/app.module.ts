@@ -63,7 +63,7 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
     HeaderComponent,
     FooterComponent,
     TopHeaderComponent,
-    PropertiesComponent
+    PropertiesComponent,
  
   
   ],
@@ -76,6 +76,7 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
     NgxSpinnerModule,
     // LoginModule,
     // FormsModule,
+
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
