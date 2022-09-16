@@ -29,8 +29,6 @@ import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
-import { VedioComponent } from './vedio/vedio.component';
-import { EmbedVideoService } from 'ngx-embed-video';
 import { EmbedVideo } from 'ngx-embed-video';
 
 
@@ -58,7 +56,6 @@ import { EmbedVideo } from 'ngx-embed-video';
     CommonModule,
     HttpClientModule,
     RouterModule,
-    EmbedVideo.forRoot(),
     ReactiveFormsModule,
     CarouselModule,
     SwiperModule,
