@@ -12,7 +12,12 @@ $right: right;
   top: 30px;
   color: var(--main-color);
 }
-
+a.contact{
+  float: left;
+}
+.social{
+  margin-right: 45px;
+}
 .card.list .unit-specs{
   z-index: 6;
   background:transparent !important;

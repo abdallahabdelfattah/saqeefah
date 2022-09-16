@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?c9eyei');
-  src:  url('fonts/icomoon.eot?c9eyei#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?c9eyei') format('truetype'),
-    url('fonts/icomoon.woff?c9eyei') format('woff'),
-    url('fonts/icomoon.svg?c9eyei#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?g28grq');
+  src:  url('fonts/icomoon.eot?g28grq#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?g28grq') format('truetype'),
+    url('fonts/icomoon.woff?g28grq') format('woff'),
+    url('fonts/icomoon.svg?g28grq#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,7 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-aircondition:before {
+.icon-globe:before {
   content: "\e900";
 }
 .icon-area:before {
@@ -34,78 +34,42 @@
 .icon-balcon:before {
   content: "\e902";
 }
-.icon-bath:before {
+.icon-bedroom:before {
   content: "\e903";
 }
-.icon-camera:before {
+.icon-download:before {
   content: "\e904";
 }
-.icon-elevator:before {
+.icon-floor:before {
   content: "\e905";
 }
-.icon-floor:before {
+.icon-hall-PhotoRoom:before {
   content: "\e906";
 }
-.icon-garden:before {
+.icon-images-PhotoRoom:before {
   content: "\e907";
 }
-.icon-hall:before {
+.icon-kitchen-furniture:before {
   content: "\e908";
 }
-.icon-hall-PhotoRoom:before {
+.icon-location:before {
   content: "\e909";
 }
-.icon-images-PhotoRoom:before {
+.icon-parking:before {
   content: "\e90a";
 }
-.icon-kitchen:before {
+.icon-price:before {
   content: "\e90b";
 }
-.icon-kitchen-furniture:before {
+.icon-roof:before {
   content: "\e90c";
 }
-.icon-lamp:before {
+.icon-room-PhotoRoom:before {
   content: "\e90d";
 }
-.icon-location:before {
+.icon-salon-PhotoRoom:before {
   content: "\e90e";
 }
-.icon-parking:before {
-  content: "\e90f";
-}
-.icon-price:before {
-  content: "\e910";
-}
-.icon-roof:before {
-  content: "\e911";
-}
-.icon-room:before {
-  content: "\e912";
-}
-.icon-room-PhotoRoom:before {
-  content: "\e913";
-}
-.icon-salon:before {
-  content: "\e914";
-}
-.icon-salon-PhotoRoom:before {
-  content: "\e915";
-}
-.icon-servant:before {
-  content: "\e916";
-}
-.icon-store:before {
-  content: "\e917";
-}
-.icon-toilet:before {
-  content: "\e918";
-}
 .icon-toilet-PhotoRoom:before {
-  content: "\e919";
-}
-.icon-trace:before {
-  content: "\e91a";
-}
-.icon-watsh:before {
-  content: "\e91b";
+  content: "\e90f";
 }
