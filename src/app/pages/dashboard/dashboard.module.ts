@@ -63,7 +63,7 @@ import { GenaricService } from 'src/app/services/Genaric.service';
     CommonModule,
     DashboardRoutingModule,
     ComponentsModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     IconPickerModule,
