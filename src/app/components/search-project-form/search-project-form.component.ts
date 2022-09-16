@@ -31,16 +31,20 @@ export class SearchProjectFormComponent implements OnInit {
 
   ngOnInit(): void {
       this.loadCity();
+      this.loadDistricts();
+
       this.loadStatus();
     this.language.changeLanguageStatus.subscribe((data) => {
       this.loadCity();
       this.loadStatus();
-      this.loadDistricts(this.cities.filter(c=>c.value==this.form.value.city)[0]?.id);
+      this.loadDistricts();
+
+      // this.loadDistricts(this.cities.filter(c=>c.value==this.form.value.city)[0]?.id);
     })
   }
   loadCity(){
     this.cities=[] as pickList[];
-    this.service.getAllCities(this.language.getLanguageID()).subscribe(res=>{
+    this.service.getCitiesForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result.data.length>0)
@@ -82,9 +86,9 @@ export class SearchProjectFormComponent implements OnInit {
     })
 
   }
-  loadDistricts(cityId:any){
+  loadDistricts(){
     this.districts=[] as pickList[];
-    this.service.getAllDistricts(this.language.getLanguageID(),cityId).subscribe(res=>{
+    this.service.getDistrictForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result.data.length>0)
@@ -115,7 +119,7 @@ export class SearchProjectFormComponent implements OnInit {
       this.obj.emit(this.FilteredProject);
   }
   cityChange(event){
-    this.loadDistricts(this.cities.filter(c=>c.value==event.target.value)[0].id);
+    // this.loadDistricts(this.cities.filter(c=>c.value==event.target.value)[0].id);
     this.ApplyFilterProject();
   }
   clearFilter(){

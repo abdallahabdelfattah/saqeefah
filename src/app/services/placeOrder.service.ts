@@ -22,6 +22,18 @@ export class PlaceOrderService  {
         var result = this.callApi.get(`api/Client/Cities?languageId=${languageId}`,false)
         return result; 
     }
+    getCitiesForFilter(languageId:string){
+        var result = this.callApi.get(`api/Client/CitiesForFilter?languageId=${languageId}`,false)
+        return result; 
+    }
+    getDistrictForFilter(languageId:string){
+        var result = this.callApi.get(`api/Client/DistrictsForFilter?languageId=${languageId}`,false)
+        return result; 
+    }
+    getCategory(rangeType:any,languageId:string){
+        var result = this.callApi.get(`api/Setting/GetRanges?rangeTypeId=${rangeType}&languageId=${languageId}`,false)
+        return result; 
+    }
     getAllApartmentStatus(languageId:string){
         var result = this.callApi.get(`api/Client/ApartmentStatus?languageId=${languageId}`,false)
         return result; 

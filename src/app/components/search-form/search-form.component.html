@@ -19,15 +19,29 @@
                     <option *ngFor="let state of apartmentsStatus"   value="{{state.id}}">{{state.value}}</option>
                 </select>
                 </div>
-                <div class="mb-3 slider-container">
+                <!-- <div class="mb-3 slider-container">
                     <label for="priceRange" class="form-label">{{'PRICE' | translate}}</label>
                     <input type="range" class="form-range slider w-100" (change)=" ApplyFilterProperty()" formControlName="price" [min]="minPrice" [max]="maxPrice" [step]="priceStep" id="priceRange" #priceSilder>
                     <span>{{priceSilder.value}}{{'ر.س' | translate}}</span>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label">{{'PRICE' | translate}}</label>
+                    <select class="form-select form-select-lg mb-3" (change)="changeRange(1)" formControlName="price" aria-label=".form-select-lg example">
+                    <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let item of priceCategory"   value="{{item.id}}">{{item.value}}</option>
+                </select>
                 </div>
-                <div class="mb-3 slider-container">
+                <!-- <div class="mb-3 slider-container">
                     <label for="AreaRange" class="form-label">{{'Area' | translate}}</label>
                     <input type="range" class="form-range slider w-100" (change)=" ApplyFilterProperty()" formControlName="totalArea" [min]="minArea" [max]="maxArea" [step]="areaStep" id="areaRange" #areaSilder>
                     <span>{{areaSilder.value}}{{'م2' | translate}}</span>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label">{{'Area' | translate}}</label>
+                    <select class="form-select form-select-lg mb-3" (change)="changeRange(2)" formControlName="totalArea" aria-label=".form-select-lg example">
+                    <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let item of areaCategory"   value="{{item.id}}">{{item.value}}</option>
+                </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">{{'NUM. OF BEDROOMS' | translate}}</label>
