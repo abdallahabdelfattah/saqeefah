@@ -1,0 +1,93 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item shadow">
+      <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapsepartner"
+              aria-expanded="true" aria-controls="collapseOne">
+              <h5 class="secondary-color">{{'priceRangeSetting' | translate}}</h5>
+          </button>
+      </h2>
+      <div id="collapsepartner" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+          <div class="accordion-body">
+              <form action="" class="row g-4" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
+                  enctype="multipart/form-data">
+                  <p></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">{{'Arabic Value' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="text"  formControlName="nameAr" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">{{'English Value' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="text"  formControlName="nameEn" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">{{'from' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="number"  formControlName="from" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">{{'to' | translate}}</label>
+
+                        <div class="form-group input-group">
+                            <input type="number"  formControlName="to" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-12">
+                      <div class="my-1">
+                          <div class="formg w-100">
+                              <button type="submit" class="btn btn-small btn-primary w-25 float-end  px-4  mt-2"
+                                  [disabled]="myFormGroup.invalid">{{'Add' | translate}}
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+
+
+
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <h4 class="h3 mb-3 font-weight-normal secondary-color"> {{'areaRangeSetting' | translate}} </h4>
+    
+            <div class=" mt-2 table-responsive py-5 px-2">
+              <table class="table table-bordered row-border hover">
+                <thead class="thead-dark">
+                    <tr>
+    
+                        <th scope="col">#</th>
+                        <th scope="col">{{'Arabic Value' | translate}}</th>
+                        <th scope="col">{{'English Value' | translate}}</th>
+                        <th scope="col">{{'from' | translate}}</th>
+                        <th scope="col">{{'to' | translate}}</th>
+                        <th scope="col">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of ranges">
+                        <th scope="col"></th>
+                        <td>{{item.nameAr}}</td>
+                        <td>{{item.nameEn }}</td>
+                        <td>{{item.from }}</td>
+                        <td>{{item.to }}</td>
+                        <td><button class="btn btn-danger" (click)="deleteRange(item.id)">{{'Delete' | translate}}</button></td>
+                    </tr>
+    
+    
+                </tbody>
+            </table>
+            </div>
+        </div>
+  </div>

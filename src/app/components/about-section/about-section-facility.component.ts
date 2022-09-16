@@ -24,6 +24,7 @@ export class AboutSectionFacilityComponent implements OnInit {
   OurGoals
   OurStory
   OurServices
+  imgURL = 'https://api-stage.saqeefah.com/StaticFiles/Settings/Images/%20637989142134938590%20melanie-deziel-U33fHryBYBU-unsplash.jpg'
   public ourMeetingBg
   get settingTypes() {
     return SettingTypes
@@ -39,8 +40,8 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurGoals = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurGoals)[0];
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
-debugger
-        console.log(this.setting.appRootUrl+this.OurVision?.imagePath); 
+
+        console.log(this.OurVision?.imagePath); 
 
       }
     })
@@ -49,13 +50,13 @@ debugger
 
   ngOnInit(): void {
     this.getAboutSetting()
-  
     this.language.changeLanguageStatus.subscribe((data) => {
       this.getAboutSetting()
     })
-    
-
   }
 
+  removeSpace(string){
+    return string.replace(/ /g,'')
+  }
 
 }

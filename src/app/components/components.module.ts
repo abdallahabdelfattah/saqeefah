@@ -29,7 +29,7 @@ import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
-import { EmbedVideo } from 'ngx-embed-video';
+import { VideoPlayerComponent } from './video-player/video-player.component';
 
 
 
@@ -50,6 +50,8 @@ import { EmbedVideo } from 'ngx-embed-video';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
+    VideoPlayerComponent,
+    
     // VedioComponent
   ],
   imports: [
@@ -83,6 +85,7 @@ import { EmbedVideo } from 'ngx-embed-video';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
+    VideoPlayerComponent
     // VedioComponent
   ],
   providers: [

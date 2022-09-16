@@ -9,7 +9,9 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PropertyComponent } from './property/property.component';
+import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
 import { PartnerComponent } from './setting/pages/partner/partner.component';
+import { PriceRangeComponent } from './setting/pages/price-range/price-range.component';
 import { SettingComponent } from './setting/pages/setting.component';
 
 import { WebsiteInfoComponent } from './setting/pages/website-info/website-info.component';
@@ -56,6 +58,14 @@ const routes: Routes = [
     },
     {path:'websiteInfo',
     component:WebsiteInfoComponent,
+
+    },
+    {path:'priceRange',
+    component:PriceRangeComponent,
+
+    },
+    {path:'areaRange',
+    component:AreaRangeComponent,
 
     },
     {

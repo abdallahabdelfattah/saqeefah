@@ -14,10 +14,11 @@
             <section class="section about-text-section about-div" *ngIf="OurVision">
               <div class="container">
 
-                  <div class="row mb-md-5 mb-3">
+                  <div class="row mb-md-5 mb-3 flex-item-center">
 
                       <div class="col-md-6">
-                        <div  class="img-container" [ngStyle]="{'background-image': 'url('+setting.appRootUrl+OurVision?.imagePath+')'}"></div>
+                            <div  class="img-container" [ngStyle]="{'background-image': 'url('+imgURL+')'}"  >
+                        </div>
 
                       </div>
                       <div class="col-md-6 about-div-text">

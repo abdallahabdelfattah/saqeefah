@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthGuard } from './services/auth.guards';
+import { PauseDirective } from './directives/pause.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PauseDirective
+  ],
   imports: [
     CommonModule
   ],

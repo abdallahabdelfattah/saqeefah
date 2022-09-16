@@ -1,0 +1,25 @@
+<div class="videoWrapper">
+  <div id="instructions">
+    <video
+      id="my_video_1"
+      class="video-js vjs-default-skin"
+      muted      
+      width="100%"
+      height="100%"
+      preload="none"
+      poster="http://video-js.zencoder.com/oceans-clip.jpg"
+      data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'
+     
+    >
+      <source [src]="src" [type]="type" />
+      <source [src]="src" type="video/webm" />
+    </video>
+  </div>
+</div>
+
+<!-- <div class="video">
+	<video controls (click)="toggleVideo($event)" #videoPlayer>
+		<source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+		Browser not supported
+	</video>
+</div> -->
