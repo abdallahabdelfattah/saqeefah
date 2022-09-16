@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
 export class AboutSectionFacilityComponent implements OnInit {
 
   AboutUs
-  OurVision
+ public OurVision
   OurGoals
   OurStory
   OurServices
@@ -39,6 +39,9 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurGoals = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurGoals)[0];
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
+debugger
+        console.log(this.setting.appRootUrl+this.OurVision?.imagePath); 
+
       }
     })
 
@@ -50,6 +53,9 @@ export class AboutSectionFacilityComponent implements OnInit {
     this.language.changeLanguageStatus.subscribe((data) => {
       this.getAboutSetting()
     })
+    
+
   }
+
 
 }

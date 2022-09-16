@@ -299,8 +299,8 @@
   "Message":"Message",
   "Placeorder":"Place Order List",
   "Interest_Date":"Interest Date",
-  "Ready for sale":"Ready for Sale",
-  "Soon for sale":"Soon for Sale",
+  "Ready for sale":"For Sale",
+  "Soon for sale":"Soon",
   "Add Project Granties":"Add Project Granties",
   "Add Project Specification Photo":"Add Project Specification Photo",
   "Project Specifications":"Project Specifications",
@@ -333,7 +333,10 @@
   "Forsuggestionsandcomplaints":"For Suggestions and Complaints",
   "InternalStation":"Internal Station",
 "NUM. OF Available Apartments":"NUM. OF Available Apartments",
-"Clear":"Clear"
+"Clear":"Clear",
+"Project Name :":"Project Name :",
+"Building:":"Building:",
+"PLACE ORDER":"Place Your Order"
 
 
 

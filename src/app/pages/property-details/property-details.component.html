@@ -1,231 +1,219 @@
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="secondary-color mb-3" *ngIf="propertyDetails && propertyDetails.projectName != null">Project Name : {{propertyDetails.projectName}}</h3>
-            <h5 *ngIf="propertyDetails && propertyDetails.buildingName != null">Building: {{propertyDetails.buildingName}}</h5>
-
-        </div>
-        <div class="col-md-9 mb-5">
-            <!-- <app-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-gallery> -->
-            <app-swipper-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-swipper-gallery>
-            <img src="assets/images/home-placeHolder.webp" class="img-fluid" *ngIf="propertyDetails && propertyDetails.images.length == 0" alt="">
-            <hr class="mt-5 mb-5">
-            <div class="property-section">
-                <div class="row">
-
-
-                    <div class="col-lg-12">
-
-
-
-
-
-                        <div class="property-info" *ngIf="propertyDetails">
-
-
-
-                            <div class="row mb-4">
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Intrance</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.p_Intrance}} </h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Basic Space</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.basic_Space}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>additional Space</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.additional_Space}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Balacon</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.balcon}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Toilet</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.toilet_Num}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Servant Room</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.servant_Room}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Roof</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.roof}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>parking</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.parking > 0 ? 'yes':'No'}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Trace</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.trace}}</h6>
-                                </div>
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/area.png" alt="">
-                                    <p>Area</p>
-                                    <hr>
-                                    <h6>{{propertyDetails.apartment_Space}}</h6>
-                                </div>
-
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/room.png" alt="">
-                                    <p>Rooms</p>
-                                    <hr>
-                                    <h6>{{propertyDetails.bed_Room_Num}}</h6>
-                                </div>
-
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/kitchen.png" alt="">
-                                    <p>Floor</p>
-                                    <hr>
-                                    <h6>{{propertyDetails.floor_Num}}</h6>
-                                </div>
-
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/bathroom.png" alt="">
-                                    <p>Hall</p>
-                                    <hr>
-                                    <h6>{{propertyDetails.hall}}</h6>
-                                </div>
-
-                                <div class="col-lg-2 col-6 bg-secondary">
-                                    <img src="assets/images/compare-icons/air-conditioner.png" alt="">
-                                    <p>Salon</p>
-                                    <hr>
-                                    <h6> {{propertyDetails.salon}}</h6>
-                                </div>
-
-                            </div>
-
-                            <!-- <div class="row space-div">
-                                <h5>The Space</h5>
-
-                                <div class="col-lg-4 col-6">
-                                    <h6>year buit:
-                                        <p>1971</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                    <h6>exterior material:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>fireplace description:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>floors:
-                                        <p>carpet, ceramic</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                </div>
-
-                                <div class="col-lg-4 col-6">
-                                    <h6>year buit:
-                                        <p>1971</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                    <h6>exterior material:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>fireplace description:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>floors:
-                                        <p>carpet, ceramic</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                </div>
-
-                                <div class="col-lg-4 col-6">
-                                    <h6>year buit:
-                                        <p>1971</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                    <h6>exterior material:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>fireplace description:
-                                        <p>brick</p>
-                                    </h6>
-                                    <h6>floors:
-                                        <p>carpet, ceramic</p>
-                                    </h6>
-                                    <h6>basement:
-                                        <p>full</p>
-                                    </h6>
-                                </div>
-
-                            </div> -->
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="row mb-1" *ngIf="propertyDetails">
-                <div class="col-md-12 text-left">
-                    <b class="mainColor" style="font-size: 20px;">
-   {{propertyDetails.apartment_Price | number: '.2'}} ر.س
-
-</b>
-                </div>
-                <div class="col-md-12 mb-1  text-center">
-                    <div class="p-5" [class]="{'green': propertyDetails.statusId == 1, 'orange': propertyDetails.statusId == 2, 'pink': propertyDetails.statusId == 3}" class="status">
-                        {{propertyDetails.status}}
-
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)" enctype="multipart/form-data">
-                <h5 class="secondary-color mb-3">PLACE ORDER</h5>
-                <input type="text" class="form-control mb-3" placeholder="Name" formControlName="client_Name">
-                <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
-                * Required Field
-                 </span>
-                <input type="text" class="form-control mb-3" placeholder="Email" formControlName="client_Mail">
-                <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
-                * Email form Field
-        </span>
-                <input type="text" class="form-control mb-3" placeholder="Phone" formControlName="client_Mobile">
-                <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
-                * Required Field
-        </span>
-                <textarea name="" placeholder="Subject" class="form-control mb-3" id="" cols="30" rows="3" formControlName="additional_Reqst"></textarea>
-                <input class="btn secondary-btn" type="submit" value="Submit">
-            </form>
-        </div>
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <h3
+        class="secondary-color mb-3"
+        *ngIf="propertyDetails && propertyDetails.projectName != null"
+      >
+        {{ "Project Name :" | translate }}
+        {{ propertyDetails.projectName | translate }}
+      </h3>
+      <h5
+        class="secondary-color"
+        *ngIf="propertyDetails && propertyDetails.buildingName != null"
+      >
+        {{ "Building:" | translate }}
+        <span class="text-secondary fw-bold">{{
+          propertyDetails.buildingName
+        }}</span>
+      </h5>
     </div>
+    <div class="col-md-9 mt-3">
+      <!-- <app-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-gallery> -->
+      <app-swipper-gallery
+        [galleryImage]="propertyDetails.images"
+        *ngIf="propertyDetails && propertyDetails.images"
+      ></app-swipper-gallery>
+      <img
+        src="assets/images/home-placeHolder.webp"
+        class="img-fluid"
+        *ngIf="propertyDetails && propertyDetails.images.length == 0"
+        alt=""
+      />
+    </div>
+    <div class="col-md-3">
+      <div class="row mb-1" *ngIf="propertyDetails">
+        <div class="col-md-12 text-left">
+          <b class="mainColor" style="font-size: 20px">
+            {{ propertyDetails.apartment_Price | number: ".2" }}
+            {{ "ر.س" | translate }}
+          </b>
+        </div>
+        <div class="col-md-12 mb-1 text-center">
+          <div
+            class="p-5"
+            [class]="{
+              green: propertyDetails.statusId == 1,
+              orange: propertyDetails.statusId == 2,
+              pink: propertyDetails.statusId == 3
+            }"
+            class="status"
+          >
+            {{ propertyDetails.status | translate }}
+          </div>
+        </div>
+      </div>
+      <hr />
+      <form
+        action=""
+        [formGroup]="myFormGroup"
+        (submit)="onClickSubmit($event)"
+        enctype="multipart/form-data"
+      >
+        <h5 class="secondary-color mb-3">{{ "PLACE ORDER" | translate }}</h5>
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="{{ 'Name' | translate }}"
+          formControlName="client_Name"
+        />
+        <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
+                * Required Field
+                 </span> -->
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="{{ 'Email' | translate }}"
+          formControlName="client_Mail"
+        />
+        <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
+                * Email form Field
+        </span> -->
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="{{ 'Phone' | translate }}"
+          formControlName="client_Mobile"
+        />
+        <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
+                * Required Field
+        </span> -->
+        <textarea
+          name=""
+          placeholder="{{ 'Subject' | translate }}"
+          class="form-control mb-3"
+          id=""
+          cols="30"
+          rows="3"
+          formControlName="additional_Reqst"
+        ></textarea>
+        <input
+          class="btn secondary-btn"
+          type="submit"
+          value="{{ 'Submit' | translate }}"
+          [disabled]="myFormGroup.invalid"
+        />
+      </form>
+    </div>
+    <!-- <hr class="my-3"> -->
+    <div class="property-section col-md-12 col-lg-12 my-3">
+      <!-- <div class=" w-100"> -->
+      <!-- <div class="row">
+
+                    <div class="col-lg-12"> -->
+
+      <div class="property-info row" *ngIf="propertyDetails">
+        <!-- <div class="row mb-4"> -->
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/floor.svg" alt=""  class="image-property"/>
+          <p>{{ "p_Intrance" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.p_Intrance }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/floor.svg" alt=""  class="image-property"/>
+          <p>{{ "basic_Space" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.basic_Space }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/floor.svg" alt=""  class="image-property" />
+          <p>{{ "additional_Space" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.additional_Space }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/trace.svg" alt=""  class="image-property" />
+          <p>{{ "balcon" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.balcon }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/toilet.svg" alt=""  class="image-property" />
+          <p>{{ "Toilet" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.toilet_Num }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/servant.svg" alt=""  class="image-property" />
+          <p>{{ "servant_Room" | translate }}</p>
+          <hr />
+          <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
+          'icon-checkmark': propertyDetails.servant_Room ==1 }"><use [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/servant.svg" alt=""  class="image-property"/>
+          <p>{{ "roof" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.roof }}</h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/servant.svg" alt=""  class="image-property" />
+          <p>{{ "parking" | translate }}</p>
+          <hr />
+          <h6>
+            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.parking ==0,
+            'icon-checkmark': propertyDetails.parking ==1 }"><use [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+          </h6>
+        </div>
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/trace.svg" alt=""  class="image-property" />
+          <p>{{ "trace" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.trace }}</h6>
+        </div>
+
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/servant.svg" alt=""  class="image-property" />
+          <p>{{ "Area" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.apartment_Space | translate }}</h6>
+        </div>
+
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/room.svg" alt=""   class="image-property"/>
+          <p>{{ "Rooms" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.bed_Room_Num }}</h6>
+        </div>
+
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/floor.svg" alt=""  class="image-property" />
+          <p>{{ "Floor" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.floor_Num }}</h6>
+        </div>
+
+        <div class="col-md-2 col-lg-2 bg-secondary ">
+          <img src="assets/WithoutText/hall.svg" alt=""  class="image-property" />
+          <p>{{ "Hall" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.hall }}</h6>
+        </div>
+
+        <div class="col-md-2 col-lg-2 bg-secondary">
+          <img src="assets/WithoutText/salon.svg" alt=""  class="image-property" />
+          <p>{{ "Salon" | translate }}</p>
+          <hr />
+          <h6>{{ propertyDetails.salon }}</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+
+    <!-- </div>
+            </div> -->
+    <!-- </div> -->
+  </div>
 </div>

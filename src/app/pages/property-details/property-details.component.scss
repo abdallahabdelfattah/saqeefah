@@ -11,7 +11,9 @@ a {
     color: #af8f79;
     outline: none !important
   }
-  
+  .spec{
+    width: 10%;
+  }
 
   
 
@@ -179,11 +181,11 @@ a {
 }
 
 .property-section .property-info .bg-secondary{
-  background: #e2e2e2 !important;
-  padding-top: 20px;
-  text-align: center;
-  justify-content: center;
-  border: solid 1px #fff
+  background: #fff !important;
+    padding-top: 20px;
+    text-align: center;
+    justify-content: center;
+    border: solid 1px #e9e4df;
 
 }
 

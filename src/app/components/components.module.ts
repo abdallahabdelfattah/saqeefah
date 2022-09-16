@@ -29,6 +29,8 @@ import { SwiperModule } from 'swiper/angular';
 import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
+import { EmbedVideo } from 'ngx-embed-video';
+
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import { OurFeaturesComponent } from './our-features/our-features.component';
     LogoSlidertowComponent,
     SwipperGalleryComponent,
     SvgComponent,
-    OurFeaturesComponent
+    OurFeaturesComponent,
+    // VedioComponent
   ],
   imports: [
     CommonModule,
@@ -79,11 +82,13 @@ import { OurFeaturesComponent } from './our-features/our-features.component';
     LogoSlidertowComponent,
     SwipperGalleryComponent,
     SvgComponent,
-    OurFeaturesComponent
+    OurFeaturesComponent,
+    // VedioComponent
   ],
   providers: [
     MarkerService,
-    PopupService
+    PopupService,
+    // EmbedVideoService
    
   ]
 })
