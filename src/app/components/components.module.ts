@@ -52,7 +52,7 @@ import { EmbedVideo } from 'ngx-embed-video';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
-    VedioComponent
+    // VedioComponent
   ],
   imports: [
     CommonModule,
@@ -86,12 +86,12 @@ import { EmbedVideo } from 'ngx-embed-video';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
-    VedioComponent
+    // VedioComponent
   ],
   providers: [
     MarkerService,
     PopupService,
-    EmbedVideoService
+    // EmbedVideoService
    
   ]
 })
