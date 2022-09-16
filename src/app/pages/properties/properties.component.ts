@@ -10,8 +10,8 @@ import { ProjectAndListService } from 'src/app/services/project-lists.service';
 export class PropertiesComponent implements OnInit {
   view:string='grid3';
   Total=0;
-  AllProperties:[] = []
-  filteredProperties:[] = []
+  AllProperties:never[] = []
+  filteredProperties:never[] = []
 
   // listResult = [
   //   {
@@ -41,7 +41,8 @@ export class PropertiesComponent implements OnInit {
       
   if(!response.isError){
     this.AllProperties = response.result.data
-    this.filteredProperties = response.result.data
+    this.AllProperties=this.AllProperties.filter(x=>x['statusId']!=3&&x['statusId']!=2)
+    this.filteredProperties =  this.AllProperties
     console.log('all properities', this.AllProperties)
     this.Total=response.result.data.length;
     // console.log('total',this.Total)

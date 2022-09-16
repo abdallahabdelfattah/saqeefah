@@ -20,7 +20,7 @@ customOptions: OwlOptions = {
   pullDrag: false,
   dots: false,
   autoplay:true,
-  autoplayTimeout:1000 ,
+  autoplayTimeout:3000 ,
   margin:10,
   center:true,
 

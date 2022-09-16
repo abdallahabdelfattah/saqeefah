@@ -22,10 +22,7 @@ export class SearchProjectFormComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     city: new FormControl('all'),
     district: new FormControl('all'),
-    status: new FormControl('all'),
-    buildingNo: new FormControl(null),
-    appartmentNo: new FormControl(null),
-    appartmentAvailableNo: new FormControl(null),
+    status: new FormControl('all')
   });
  
   constructor(private language: changeLanguageService
@@ -34,16 +31,20 @@ export class SearchProjectFormComponent implements OnInit {
 
   ngOnInit(): void {
       this.loadCity();
+      this.loadDistricts();
+
       this.loadStatus();
     this.language.changeLanguageStatus.subscribe((data) => {
       this.loadCity();
       this.loadStatus();
-      this.loadDistricts(this.cities.filter(c=>c.value==this.form.value.city)[0]?.id);
+      this.loadDistricts();
+
+      // this.loadDistricts(this.cities.filter(c=>c.value==this.form.value.city)[0]?.id);
     })
   }
   loadCity(){
     this.cities=[] as pickList[];
-    this.service.getAllCities(this.language.getLanguageID()).subscribe(res=>{
+    this.service.getCitiesForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result.data.length>0)
@@ -54,6 +55,7 @@ export class SearchProjectFormComponent implements OnInit {
             item.value=element.name
             this.cities.push(item);
           });
+          this.form.patchValue({city:this.cities[0].value});
         }
       }
       else{
@@ -68,10 +70,14 @@ export class SearchProjectFormComponent implements OnInit {
         if(res.result.data.length>0)
         {
           res.result.data.forEach(element => {
-            let item:pickList={} as pickList;
-            item.id=element.id
-            item.value=element.name
-            this.status.push(item);
+            if(element.id!=4)
+            {
+              let item:pickList={} as pickList;
+              item.id=element.id
+              item.value=element.name
+              this.status.push(item);
+            }
+         
           });
         }
       }
@@ -80,9 +86,9 @@ export class SearchProjectFormComponent implements OnInit {
     })
 
   }
-  loadDistricts(cityId:any){
+  loadDistricts(){
     this.districts=[] as pickList[];
-    this.service.getAllDistricts(this.language.getLanguageID(),cityId).subscribe(res=>{
+    this.service.getDistrictForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result.data.length>0)
@@ -108,26 +114,19 @@ export class SearchProjectFormComponent implements OnInit {
       this.FilteredProject=this.allProjects.filter(x=>{
      return (this.form.value.city=='all'?x:this.form.value.city==x.city)&&
         (this.form.value.district=='all'?x:this.form.value.district==x.district) &&
-        (this.form.value.status=='all'?x:this.form.value.status==x.statusId) &&
-        (this.form.value.appartmentNo==null?x:this.form.value.appartmentNo==x.numberOfUnits) &&
-        (this.form.value.appartmentAvailableNo==null?x:this.form.value.appartmentAvailableNo==x.numberOFAvailableUnits) &&
-        (this.form.value.buildingNo==null?x:this.form.value.buildingNo==x.numberOfBuildings) ;
+        (this.form.value.status=='all'?x:this.form.value.status==x.statusId) ;
       });
       this.obj.emit(this.FilteredProject);
   }
   cityChange(event){
-    this.loadDistricts(this.cities.filter(c=>c.value==event.target.value)[0].id);
+    // this.loadDistricts(this.cities.filter(c=>c.value==event.target.value)[0].id);
     this.ApplyFilterProject();
   }
   clearFilter(){
       this.form.patchValue({
-        city: 'all',
+        city: this.cities[0].value,
         district: 'all',
-        status:'all',
-        buildingNo: null,
-        appartmentNo: null,
-        appartmentAvailableNo: null,
-
+        status:'all'
     })
       this.ApplyFilterProject();
   }

@@ -12,8 +12,8 @@ export class ProjectsComponent implements OnInit {
    view:string='grid3';
   //  Total=0;
   constructor(private generalService:GenaricService, private projects:ProjectAndListService,private language:changeLanguageService) { }
-  AllProjects:[] = []
-  filteredProjects:[] = []
+  AllProjects:never[] = []
+  filteredProjects:never[] = []
 
   getAllProjects(){
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
@@ -22,7 +22,8 @@ export class ProjectsComponent implements OnInit {
       
   if(!response.isError){
     this.AllProjects = response.result.data
-    this.filteredProjects=response.result.data
+    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4);
+    this.filteredProjects=this.AllProjects;
     // this.Total= response.result.data.length;
   }
   
