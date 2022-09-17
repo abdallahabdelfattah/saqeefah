@@ -20,7 +20,9 @@ export class AboutUsComponent implements OnInit {
   AllProjects = []
  ourMeetingBg
  ceoWordUrl
-  siteInformation:siteInfo;
+ bannerAboutUS
+ bannerAboutUsUrl
+ siteInformation:siteInfo;
   
   get settingTypes() {
     return SettingTypes
@@ -33,10 +35,14 @@ export class AboutUsComponent implements OnInit {
       if (!response.isError) {
         let allSetting = response.result.data
         this.AboutUs = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.AboutUs)[0];
+        this.bannerAboutUS=allSetting.filter((a:any)=>a.settingTypeId ==SettingTypes.BannerAboutUS)[0];
+        this.bannerAboutUsUrl=this.getUrl(this.setting.appRootUrl+this.bannerAboutUS?.imagePath);
         this.ceoWord = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.ceoWord)[0];
         this.ourMeeting = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.ourMeeting)[0];
         this.ourMeetingBg = this.getUrl(this.setting.appRootUrl + this.ourMeeting?.imagePath);
         this.ceoWordUrl= this.getUrl(this.setting.appRootUrl + this.ceoWord?.imagePath);
+        debugger
+        
         console.log('website setting from about us page', allSetting)
 
       }

@@ -6,6 +6,8 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { siteInfo } from 'src/app/pages/Models/siteInfo';
+import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
 
 @Component({
   selector: 'app-video-player',
@@ -13,11 +15,11 @@ import {
   styleUrls: ['./video-player.component.scss'],
 })
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
-  constructor() {}
+  constructor(private shared:SiteInformationSharedService) {}
   @Input() src: string = 'https://vjs.zencdn.net/v/oceans.mp4';
   @Input() type: string = 'video/mp4';
   @Input() loop: string;
-
+  siteInformation:siteInfo
   ngOnInit(): void {}
 
   ngAfterViewInit() {
@@ -25,6 +27,10 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.playPause();
     }, 100);
+  }
+  ngAfterContentChecked() {
+    this.siteInformation=this.shared.siteInformation;
+    
   }
 
   name = 'Angular';

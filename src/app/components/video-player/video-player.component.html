@@ -1,17 +1,49 @@
-<div class="videoWrapper" (click)="playPause()">
-  <div id="instructions">
-    <video
-      #videoPlayer
-      id="my_video_1"
-      class="video-js vjs-default-skin"
-      muted="muted"
-      width="100%"
-      height="100%"
-      preload="none"
-      poster="http://video-js.zencoder.com/oceans-clip.jpg"
-    >
-      <source [src]="src" [type]="type" />
-      <source [src]="src" type="video/webm" />
-    </video>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center section-title">
+          {{ siteInformation?.vedioTitle }}
+        </h4>
+        <p class="text-center">
+          {{ siteInformation?.vedioDescription }}
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+  <div class="videoWrapper" (click)="playPause()">
+      <div id="instructions">
+        <video
+        controls
+          #videoPlayer
+          id="my_video_1"
+          class="video-js vjs-default-skin"
+          muted="muted"
+          width="100%"
+          height="100%"
+          preload="none"
+          poster="http://video-js.zencoder.com/oceans-clip.jpg"
+        >
+          <source [src]="src" [type]="type" />
+          <source [src]="src" type="video/webm" />
+        </video>
+      </div>
+    </div> 
+    <!-- <div class="videoWrapper">
+    <iframe  src="https://vjs.zencdn.net/v/oceans.mp4" title="YouTube video player"  width="100%"
+    height="100%"
+     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe> 
+
+  </div>-->
+    </div>
+    </div>
+    
+  
   </div>
-</div>
+  
+  
+  </section>

@@ -25,9 +25,12 @@ export enum SettingTypes{
   ceoWord = 600,
   ourMeeting = 700,
   OurMission=800,
-  OurServices=900
-
+  OurServices=900,
+  BannerAboutUS=1000,
+  PlaceOrderBanar=1100,
+  ContactBanar=1200
 }
+
 
 
 export enum SliderTypes{

@@ -5,7 +5,9 @@ import { ToastrService } from 'ngx-toastr';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { ContactUsService } from 'src/app/services/contact-us.service';
 import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
+import { SettingTypes } from 'src/app/shared/Enums/enums';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
+import { SettingsService } from '../dashboard/setting/services/settings.service';
 import { siteInfo } from '../Models/siteInfo';
 
 @Component({
@@ -15,6 +17,8 @@ import { siteInfo } from '../Models/siteInfo';
 })
 export class ContactComponent implements OnInit {
   showError:boolean=false;
+  bannerContact
+  bannerContactUrl
   emailRegex=/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
   spaceRegex=/^(\s+\S+\s*)*(?!\s).*$/;
   phoneregex='(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})'
@@ -29,10 +33,13 @@ export class ContactComponent implements OnInit {
 
 
   constructor(private contact:ContactUsService ,private toastr : ToastrService,private shared:SiteInformationSharedService,
-    private siteInfo:siteInformationService,private language:changeLanguageService, private translate:TranslateService) { }
+    public setting: SettingsService, private siteInfo:siteInformationService,private language:changeLanguageService, private translate:TranslateService) { }
 
   ngOnInit(): void {
+    this.getContactSetting();
     this.initializeForm();
+    
+  
     // this.getAllSiteInformation();
     // this.translate.onLangChange.subscribe((event: LangChangeEvent) => 
     // {
@@ -90,6 +97,38 @@ export class ContactComponent implements OnInit {
 
 
   }
+
+
+
+
+
+  get settingTypes() {
+    return SettingTypes
+  }
+  // /////////////////////////////////
+
+  getContactSetting() {
+    return this.setting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
+      if (!response.isError) {
+        let allSetting = response.result.data
+        
+        this.bannerContact=allSetting.filter((a)=>a.settingTypeId==this.settingTypes.ContactBanar)[0]
+        this.bannerContactUrl=this.getUrl(this.setting.appRootUrl+this.bannerContact?.imagePath);
+      
+
+      }
+    })
+
+  }
+
+  getUrl(path: string) {
+    path = path.replace(/[\/\\]/g, '/');
+    path = path.replace(/ /g, '%20');
+    return path;
+  }
+
+
+  //////////////////////////////////////////////
 
 
   initializeForm(){

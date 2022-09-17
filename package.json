@@ -26,6 +26,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.5",
     "angular-datatables": "^14.0.0",
+    "aos": "^2.3.4",
     "bootstrap": "^5.2.0",
     "datatables.net": "^1.12.1",
     "datatables.net-dt": "^1.12.1",

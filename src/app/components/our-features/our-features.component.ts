@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
+import AOS from "aos";
 
 @Component({
   selector: 'app-our-features',
@@ -86,7 +87,7 @@ export class OurFeaturesComponent implements OnInit {
     ]
   constructor(private language: changeLanguageService) { }
   ngOnInit(): void {
-
+  // AOS.init();
     this.saqeefahBenefits = this.language.getLanguageID() == "1" ? this.saqeefahBenefitsAr : this.saqeefahBenefitsEN;
     this.language.changeLanguageStatus.subscribe((data) => {
       this.saqeefahBenefits = this.language.getLanguageID() == "1" ? this.saqeefahBenefitsAr : this.saqeefahBenefitsEN;

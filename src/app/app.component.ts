@@ -9,7 +9,7 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
 import { ViewportScroller } from '@angular/common';
 import { AnimationEvent } from "@angular/animations";
 import { animate, state, style, transition, trigger } from '@angular/animations';
-
+import AOS from "aos";
 
 @Component({
   selector: 'app-root',
@@ -54,6 +54,7 @@ ngOnInit(): void {
 
   ngAfterViewInit() {
     this.loader.idle();
+    AOS.init();
   }
 
   scrollToTop(){

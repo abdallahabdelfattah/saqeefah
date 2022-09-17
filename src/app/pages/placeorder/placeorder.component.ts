@@ -6,7 +6,9 @@ import { ToastrService } from 'ngx-toastr';
 import { siteInfo } from 'src/app/pages/Models/siteInfo';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { PlaceOrderService } from 'src/app/services/placeOrder.service';
+import { SettingTypes } from 'src/app/shared/Enums/enums';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
+import { SettingsService } from '../dashboard/setting/services/settings.service';
 
 @Component({
   selector: 'app-placeorder',
@@ -21,7 +23,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   paymentMethods:pickList[]=[] as pickList[];
   cities:pickList[]=[] as pickList[];
   districts:pickList[]=[] as pickList[];
-
+  bannerPlaceOrderUrl
+  bannerPlaceOrder
 
   public myFormGroup: FormGroup = new FormGroup({
     interest_Date:new FormControl(new Date(),[]),
@@ -54,10 +57,12 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
 
 
   constructor(private toastr: ToastrService,
+    public setting: SettingsService,
     private language:changeLanguageService,
     private service:PlaceOrderService) { }
 
   ngOnInit(): void {
+    this.getPLaceSetting();
     this.loadProjects();
     this.loadCities();
     // this.loadDistricts();
@@ -218,6 +223,41 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     }
     
 }
+
+
+
+
+get settingTypes() {
+  return SettingTypes
+}
+// /////////////////////////////////
+
+getPLaceSetting() {
+  return this.setting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
+    if (!response.isError) {
+      let allSetting = response.result.data
+      
+      this.bannerPlaceOrder=allSetting.filter((a)=>a.settingTypeId==this.settingTypes.PlaceOrderBanar)[0]
+      this.bannerPlaceOrderUrl=this.getUrl(this.setting.appRootUrl+this.bannerPlaceOrder?.imagePath);
+    
+
+    }
+  })
+
+}
+
+getUrl(path: string) {
+  path = path.replace(/[\/\\]/g, '/');
+  path = path.replace(/ /g, '%20');
+  return path;
+}
+
+
+
+
+
+
+
 
 }
 
