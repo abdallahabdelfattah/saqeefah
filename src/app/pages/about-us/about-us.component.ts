@@ -63,7 +63,7 @@ public ourMeetingBg
  
 getAllProjects(){
   this.projects.getFilteredProjects(this.language.getLanguageID(),0/*both reserved and sold projects*/ ).subscribe((response:any)=>{
-    console.log('all projects',response)
+     
     this.AllProjects = []
     // this.projectsForSale =[]
     // this.projectsForSaleSoon = []

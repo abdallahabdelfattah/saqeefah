@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit,OnDestroy {
 
 getAllProjects(){
   this.projects.getFilteredProjects(this.language.getLanguageID(),0/*both ready for sale and soon for sale*/ ).subscribe((response:any)=>{
-    console.log('all projects',response)
+     
     this.AllProjects = []
     this.projectsForSale =[]
     this.projectsForSaleSoon = []
