@@ -191,7 +191,7 @@
   "Choose Files":"اختار صور",
   "Save":"حفظ",
   "priceRangeSetting":"اعدادات نطاق السعر",
-  "areaRangeSetting":"اعدادات نطاق المساحة",
+  "areaRangeSetting":"اعدادات نطاق السعر",
   "to":"القيمة النهائية",
   "from":"القيمة البدائية",
   "Title En":" العنوان بالانجليزي",
@@ -344,5 +344,9 @@
    "كاش":"نقدي",
    "كريدت كارد":"تمويل بنكي",
    "numberOfUnits":"الوحدات",
-"numberOfBuildings":"المباني"
+"numberOfBuildings":"المباني",
+"Our Services":"خدماتنا",
+"About Us Banar":"اللافته الاعلانية عن سقيفة",
+"PlaceOrder Banar":"اللافتة الاعلانية عن الطلبات",
+"Contact Banar":"اللافتة الاعلانية عن الاقتراحات والشكاوي"
 }

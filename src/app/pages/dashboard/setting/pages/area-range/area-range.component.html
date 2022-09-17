@@ -53,43 +53,43 @@
                       </div>
                   </div>
               </form>
-
-
+<hr>
+              <div class="row">
+                <div class="col-md-12">
+                    <h4 class="h3 mb-3 font-weight-normal secondary-color"> {{'areaRangeSetting' | translate}} </h4>
+            
+                    <div class=" mt-2 table-responsive py-5 px-2">
+                      <table class="table table-bordered row-border hover">
+                        <thead class="thead-dark">
+                            <tr>
+            
+                                <th scope="col">#</th>
+                                <th scope="col">{{'Arabic Value' | translate}}</th>
+                                <th scope="col">{{'English Value' | translate}}</th>
+                                <th scope="col">{{'from' | translate}}</th>
+                                <th scope="col">{{'to' | translate}}</th>
+                                <th scope="col">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of ranges">
+                                <td></td>
+                                <td>{{item.nameAr}}</td>
+                                <td>{{item.nameEn }}</td>
+                                <td>{{item.from }}</td>
+                                <td>{{item.to }}</td>
+                                <td><button class="btn btn-danger" (click)="deleteRange(item.id)">{{'Delete' | translate}}</button></td>
+                            </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
 
           </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-            <h4 class="h3 mb-3 font-weight-normal secondary-color"> {{'areaRangeSetting' | translate}} </h4>
-    
-            <div class=" mt-2 table-responsive py-5 px-2">
-              <table class="table table-bordered row-border hover">
-                <thead class="thead-dark">
-                    <tr>
-    
-                        <th scope="col">#</th>
-                        <th scope="col">{{'Arabic Value' | translate}}</th>
-                        <th scope="col">{{'English Value' | translate}}</th>
-                        <th scope="col">{{'from' | translate}}</th>
-                        <th scope="col">{{'to' | translate}}</th>
-                        <th scope="col">#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of ranges">
-                        <td></td>
-                        <td>{{item.nameAr}}</td>
-                        <td>{{item.nameEn }}</td>
-                        <td>{{item.from }}</td>
-                        <td>{{item.to }}</td>
-                        <td><button class="btn btn-danger" (click)="deleteRange(item.id)">{{'Delete' | translate}}</button></td>
-                    </tr>
-    
-    
-                </tbody>
-            </table>
-            </div>
-        </div>
-    </div>
+     
   </div>
