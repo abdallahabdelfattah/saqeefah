@@ -224,12 +224,12 @@
     "feedback":"Feedback List",
     "The area of the apartment":"The area of the apartment",
     "Number Of Bedrooms":"Number Of Bedrooms",
-    "include 'Parking' in the unit":"Include 'Parking' in the unit",
-    "include 'Store' in the unit":"Include 'Store' in the unit",
-    "include 'Terrace' in the unit":"Include 'Terrace' in the unit",
-    "include 'Balcony' in the unit":"Include 'Balcony' in the unit",
-    "include 'Roof' in the unit":"Include 'Roof' in the unit",
-    "include 'Servant Room' in the unit":"Include 'Servant Room' in  the unit",
+    "include 'Parking' in the unit":"'Parking'",
+    "include 'Store' in the unit":"'Store'",
+    "include 'Terrace' in the unit":"'Terrace",
+    "include 'Balcony' in the unit":"'Balcony'",
+    "include 'Roof' in the unit":"'Roof'",
+    "include 'Servant Room' in the unit":"'Servant Room'",
     "Would you like to add additional notes?":"Add additional notes",
     "Yes":"Yes",
     "No":"No",
@@ -337,6 +337,10 @@
 "Project Name :":"Project Name :",
 "Building:":"Building:",
 "PLACE ORDER":"Place Your Order",
-"dress_Room":"Dress Room"
+"dress_Room":"Dress Room",
+"كاش":"Cash",
+"كريدت كارد":"Credit Card",
+"numberOfUnits":"Units",
+"numberOfBuildings":"Buildings"
 
 }

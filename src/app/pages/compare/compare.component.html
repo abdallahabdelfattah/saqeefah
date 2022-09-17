@@ -206,7 +206,7 @@
                                     </div>
                                     <ng-template #elseBlock> 
                                         <div  *ngIf="key==='status'; else elseBl">
-                                            <div class="card-label " [class]="{'green': item['statusId'] == '1','moave':item['statusId'] == '4', 'orange': item['statusId'] == '2', 'pink': item['statusId'] == '3'}">
+                                            <div class="card-label py-1" [class]="{'green': item['statusId'] == '1','moave':item['statusId'] == '4', 'orange': item['statusId'] == '2', 'pink': item['statusId'] == '3'}">
                                                 {{item[key]}}
                                             </div>
                                         </div>
@@ -226,10 +226,10 @@
 
                             </th>
 
-                            <td *ngFor="let item of compareList">
+                            <td  class="p-0" *ngFor="let item of compareList">
                                 <!-- <a [routerLink]="['/property',item.apartment_Id]"
                                     class="btn btn-primary px-4 ml-2">Buy</a> -->
-                                <a class="btn btn-danger px-4" (click)="compareServ.deleteListFromCompare(item.apartment_Id)">{{'Delete' | translate}}</a>
+                                <a class="btn btn-danger px-4 w-100 h-100 m-0" (click)="compareServ.deleteListFromCompare(item.apartment_Id)">{{'Delete' | translate}}</a>
                             </td>
 
 

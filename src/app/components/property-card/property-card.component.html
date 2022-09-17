@@ -1,8 +1,8 @@
 <div class="card property-card {{viewType}}" style="cursor: pointer;">
     <div class="img-panel d-flex">
         <div class="imagebox">
-            <div class="img-container">
-                <img [src]="property.coverImage ? appRootUrl+property.coverImage :'assets/images/home-placeHolder.webp'" width="100%" class="card-img-top" alt="...">
+            <div class="image-container"  [ngStyle]="{ 'background-image': 'url(' + propertyImageUrl + ')' }">
+                <!-- <img [src]="property.coverImage ? appRootUrl+property.coverImage :'assets/images/home-placeHolder.webp'" width="100%" class="card-img-top" alt="..."> -->
             </div>
             <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="property.apartment_Id" [class.active]="property.favorite" (click)="favorites.toggleFavorites(property)"></i>
 

@@ -1,9 +1,9 @@
-<div class="container">
+
   <div class="row">
     <div class="col-12">
       <div class="info-table">
         <table
-          class="table table-bordered table-hover table-responsive text-center"
+          class="table  table-hover table-responsive text-center"
         >
           <thead style="padding-left: 10px">
             <tr>
@@ -11,8 +11,8 @@
               <th class="text-center">{{'projectName'|translate}}</th>
               <th class="text-center">{{'city'|translate}}  </th>
               <th class="text-center">{{'district'|translate}}</th>
-              <th class="text-center">{{'adress'|translate}}</th>
-              <th class="text-center">{{'numberOFAvailableUnits'|translate}}</th>
+              <th class="text-center">{{'Address'|translate}}</th>
+              <th class="text-center">{{'AvailableUnits'|translate}}</th>
               <th class="text-center">{{'numberOfUnits'|translate}}</th>
               <th class="text-center">{{'numberOfBuildings'|translate}}</th>
               <th class="text-center">{{'status'|translate}}</th>
@@ -30,9 +30,9 @@
               <td>{{ row.numberOFAvailableUnits }}</td>
               <td>{{ row.numberOfUnits }}</td>
               <td>{{ row.numberOfBuildings }}</td>
-              <td>
+              <td class="p-2">
                 <span
-                  class="card-label status"
+                  class="status"
                   [class]="{
                     green: row.statusId == 1,
                     moave: row.statusId == 4,
@@ -48,4 +48,3 @@
       </div>
     </div>
   </div>
-</div>

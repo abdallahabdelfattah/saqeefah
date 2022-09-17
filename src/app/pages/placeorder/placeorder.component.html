@@ -40,7 +40,7 @@
             <form action="" class="row g-4" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
             enctype="multipart/form-data">
 
-                <div class="col-md-12 mb-5">
+                <div class="col-md-12 mb-3">
 
                     <h4 class="fw-bold">
                         <i class="fas fa-users"></i>{{'Personal Information' | translate}}</h4>
@@ -84,7 +84,7 @@
                                 <label for="">{{'Project' | translate}}</label>
                                 <select class="form-select" formControlName="project_Ref">
                                         <option value=0></option>
-                                        <option *ngFor="let i of projects" [value]="i.id">{{i.value}}</option>
+                                        <option *ngFor="let i of projects" [value]="i.id">{{i.value | translate}}</option>
                                     </select>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <label for="">{{'Payment method' | translate}}</label>
                                 <select class="form-select" formControlName="payment_Method">
                                         <option value=0></option>
-                                        <option *ngFor="let i of paymentMethods" [value]="i.id">{{i.value}}</option>
+                                        <option *ngFor="let i of paymentMethods" [value]="i.id">{{i.value | translate}}</option>
                                    </select>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
 
                 </div>
 
-                <div class="col-md-12 mb-5">
+                <div class="col-md-12 mb-3">
                     <h4 class="fw-bold">
                         <i class="fas fa-map"></i> {{'Project Site Data' | translate}}</h4>
 
@@ -133,7 +133,7 @@
 
                 </div>
 
-                <div class="col-md-12 mb-5">
+                <div class="col-md-12 mb-3">
                     <h4 class="fw-bold">
                         <i class="fas fa-home"></i> {{'Apartment & Project Specifications' | translate}}</h4>
 
@@ -141,7 +141,7 @@
                     <div class="row">
 
 
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4">
                           <div class="form-group">
                             <label for="">{{'Price' | translate}}</label>
                             <input type="number" class="form-control" formControlName="price_Avg">
@@ -151,15 +151,15 @@
 
 
 
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4">
                             <div class="form-group">
 
                                 <label  class="form-label">{{'Number Of Bedrooms' | translate}}</label>
-                                <input type="number" name="" min="0"  class="form-control" formControlName="bed_Room">
+                                <input type="number" name="" min="0" max="5"  class="form-control" formControlName="bed_Room">
                             </div>
                         </div>
 
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">{{'The area of the apartment' | translate}}</label>
                                 <input type="text" name=""  class="form-control" formControlName="space_Avg">
@@ -171,9 +171,9 @@
                     </div>
 
                     <div class="row">
-                    <div class="col-md-4 mb-4 bg-white">
+                    <div class="col-md-4 mb-4">
 
-                        <div class="col-md-12">
+                        <div class="col-md-12 bg-white  px-2">
                             <div class="form-group pt-3 pb-3">
                                 <label for="">{{"include 'Parking' in the unit" | translate}}</label>
 
@@ -201,9 +201,9 @@
 
 
                     </div>
-                    <div class="col-md-4 mb-4 bg-white">
+                    <div class="col-md-4 mb-4">
 
-                      <div class="col-md-12">
+                      <div class="col-md-12  bg-white  px-2">
                           <div class="form-group pt-3 pb-3">
                               <label for="">{{"include 'Store' in the unit" | translate}}</label>
 
@@ -231,9 +231,9 @@
 
 
                   </div>
-                  <div class="col-md-4 mb-4 bg-white">
+                  <div class="col-md-4 mb-4">
 
-                    <div class="col-md-12">
+                    <div class="col-md-12  bg-white  px-2">
                         <div class="form-group pt-3 pb-3">
                             <label for="">{{"include 'Terrace' in the unit" | translate}}</label>
 
@@ -261,9 +261,9 @@
 
 
                 </div>
-                <div class="col-md-4 mb-4 bg-white">
+                <div class="col-md-4 mb-4 ">
 
-                  <div class="col-md-12">
+                  <div class="col-md-12 bg-white  px-2">
                       <div class="form-group pt-3 pb-3">
                           <label for="">{{"include 'Balcony' in the unit" | translate}}</label>
 
@@ -291,9 +291,9 @@
 
 
               </div>
-              <div class="col-md-4  mb-4 bg-white">
+              <div class="col-md-4  mb-4">
 
-                <div class="col-md-12">
+                <div class="col-md-12  bg-white  px-2">
                     <div class="form-group pt-3 pb-3">
                         <label for="">{{"include 'Roof' in the unit" | translate}}</label>
 
@@ -321,9 +321,9 @@
 
 
             </div>
-            <div class="col-md-4  mb-4 bg-white">
+            <div class="col-md-4  mb-4">
 
-              <div class="col-md-12">
+              <div class="col-md-12  bg-white px-2">
                   <div class="form-group pt-3 pb-3">
                       <label for="">
                        {{"include 'Servant Room' in the unit" | translate}}
@@ -359,8 +359,8 @@
                     <div class="row">
 
 
-                        <div class="col-md-12 bg-white">
-                            <div class="form-group mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group mt-1  bg-white p-3">
                                 <label for="">{{'Would you like to add additional notes?' | translate}}</label>
                                 <textarea class="form-control" rows="5" formControlName="additional_Reqst"></textarea>
                             </div>
