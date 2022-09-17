@@ -14,8 +14,8 @@
 
     <div class="row">
       <div class="col-md-12">
-  <div class="videoWrapper" (click)="playPause()">
-      <div id="instructions">
+  <div class="videoWrapper">
+      <!-- <div id="instructions">
         <video
           #videoPlayer
           id="my_video_1"
@@ -29,8 +29,42 @@
           <source [src]="src" [type]="type" />
           <source [src]="src" type="video/webm" />
         </video>
-      </div>
+      </div> -->
+   
+      <vg-player dir="ltr">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+    
+        <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+    
+        <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
+    
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+    
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+    
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+    
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
+    
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+        <video [vgMedia]="$any(media)" #media id="singleVideo"  preload="auto" crossorigin width="100%" >
+            <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+        </video>
+    </vg-player>
+   
+   
     </div> 
+
     </div>
     </div>
     

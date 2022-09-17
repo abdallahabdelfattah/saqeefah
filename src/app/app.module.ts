@@ -76,7 +76,6 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
     NgxSpinnerModule,
     // LoginModule,
     // FormsModule,
-
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({

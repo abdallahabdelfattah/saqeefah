@@ -31,7 +31,10 @@ import { AboutSectionFacilityComponent } from './about-section/about-section-fac
 import { OurFeaturesComponent } from './our-features/our-features.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { InfoTableComponent } from './info-table/info-table.component';
-
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 
 
 @NgModule({
@@ -64,12 +67,21 @@ import { InfoTableComponent } from './info-table/info-table.component';
     CarouselModule,
     SwiperModule,
     GalleryModule,
+    
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient] }}),
+VgCoreModule,
+VgControlsModule,
+VgOverlayPlayModule,
+VgBufferingModule
+
+
+
+        
       ],
   exports:[
     MapComponent,

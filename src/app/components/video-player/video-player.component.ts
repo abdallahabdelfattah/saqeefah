@@ -15,6 +15,7 @@ import { SiteInformationSharedService } from 'src/app/services/site-information-
   styleUrls: ['./video-player.component.scss'],
 })
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
+$: any;
   constructor(private shared:SiteInformationSharedService) {}
   @Input() src: string = 'https://vjs.zencdn.net/v/oceans.mp4';
   @Input() type: string = 'video/mp4';
