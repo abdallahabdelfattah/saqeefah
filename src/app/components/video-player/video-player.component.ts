@@ -13,33 +13,32 @@ import {
   styleUrls: ['./video-player.component.scss'],
 })
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
-  constructor() { }
+  constructor() {}
   @Input() src: string = 'https://vjs.zencdn.net/v/oceans.mp4';
   @Input() type: string = 'video/mp4';
   @Input() loop: string;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
+    console.log('myVideo.paused');
     setTimeout(() => {
       this.playPause();
     }, 100);
   }
 
   name = 'Angular';
-  @ViewChild('videoPlayer', { static: false }) videoplayer: ElementRef;
+  @ViewChild('videoPlayer', { static: true }) videoplayer: ElementRef;
   isPlay: boolean = false;
 
   playPause() {
     var myVideo: any = document.getElementById('my_video_1');
-    if (myVideo.paused)
-      myVideo.play();
+    if (myVideo.paused) myVideo.play();
     else myVideo.pause();
   }
-
-  PauseVideo(){
+  pause() {
     var myVideo: any = document.getElementById('my_video_1');
-     myVideo.pause();
+    myVideo.pause();
   }
   playLoop() {
     var myVideo: any = document.getElementById('my_video_1');

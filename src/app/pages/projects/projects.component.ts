@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
 
   getAllProjects(){
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
-      console.log('all projects',response)
+       
     
       
   if(!response.isError){
