@@ -1,38 +1,51 @@
-<div class="info-table">
-  <table class="table table-bordered table-hover table-responsive text-center">
-    <thead style="padding-left: 10px">
-      <tr>
-        <th class="text-center">No</th>
-        <th class="text-center">Floors</th>
-        <th class="text-center">المساحة الاجمالية</th>
-        <th class="text-center">Price</th>
-        <th class="text-center">Rooms</th>
-        <th class="text-center">Features</th>
-        <th class="text-center">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of data">
-        <td>{{ row.no }}</td>
-        <td>{{ row.floors }}</td>
-        <td>{{ row.space }}</td>
-        <td>{{ row.price }}</td>
-        <td>{{ row.rooms }}</td>
-        <td>{{ row.feature }}</td>
-        <td>
-          <span class="status">{{ row.status }}</span>
-        </td>
-      </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="info-table">
+        <table
+          class="table table-bordered table-hover table-responsive text-center"
+        >
+          <thead style="padding-left: 10px">
+            <tr>
+              <th class="text-center">#</th>
+              <th class="text-center">{{'projectName'|translate}}</th>
+              <th class="text-center">{{'city'|translate}}  </th>
+              <th class="text-center">{{'district'|translate}}</th>
+              <th class="text-center">{{'adress'|translate}}</th>
+              <th class="text-center">{{'numberOFAvailableUnits'|translate}}</th>
+              <th class="text-center">{{'numberOfUnits'|translate}}</th>
+              <th class="text-center">{{'numberOfBuildings'|translate}}</th>
+              <th class="text-center">{{'status'|translate}}</th>
 
-      <tr>
-        <td colspan="7">
-          <p style="font-size: 13px; color: #000000">
-            <span style="color: #ff0000">*</span> The space includes the private
-            parts &nbsp;&nbsp;&nbsp;
-            <span style="color: #ff0000">*</span> Prices do not include tax
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of data; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ row.projectName }}</td>
+              <td>{{ row.city }}</td>
+              <td>{{ row.district }}</td>
+              <td>{{ row.adress }}</td>
+              <td>{{ row.numberOFAvailableUnits }}</td>
+              <td>{{ row.numberOfUnits }}</td>
+              <td>{{ row.numberOfBuildings }}</td>
+              <td>
+                <span
+                  class="card-label status"
+                  [class]="{
+                    green: row.statusId == 1,
+                    moave: row.statusId == 4,
+                    orange: row.statusId == 2,
+                    pink: row.statusId == 3
+                  }"
+                  >{{ row.status }}</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

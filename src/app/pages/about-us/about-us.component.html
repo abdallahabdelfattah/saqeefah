@@ -1,119 +1,73 @@
 <!--===== Start Banner =====-->
-<section class="hero-wrap" style="background-image: url('assets/images/banner.webp');">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row slider-text align-items-end justify-content-center">
-            <div class="col-md-9  text-center mb-4">
-                <h1 class="mb-2 bread">{{'about' |translate}}</h1>
-            </div>
-        </div>
+<section
+  class="hero-wrap"
+  style="background-image: url('assets/images/banner.webp')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row slider-text align-items-end justify-content-center">
+      <div class="col-md-9 text-center mb-4">
+        <h1 class="mb-2 bread">{{ "about" | translate }}</h1>
+      </div>
     </div>
+  </div>
 </section>
 <!--===== End Banner =====-->
 
-
-
-
-
 <!--===== Start CEO =====-->
 <section class="section bg-light about-text-section" *ngIf="ceoWord">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{ceoWord.title}}</h2>
-                <div [innerHTML]="ceoWord.description">
+  <div class="container">
+    <div class="row mb-md-5 mb-3 flex-item-center">
+      <div class="col-md-6">
+        <div
+          class="img-container"
+          [ngStyle]="{ 'background-image': 'url(' + ceoWordUrl + ')' }"
+        ></div>
+      </div>
+      <div class="col-md-6 about-div-text">
+        <h2>{{ ceoWord.title }}</h2>
 
-                </div>
-
-            </div>
-
-        </div>
+        <div [innerHTML]="ceoWord.description"></div>
+      </div>
     </div>
+  </div>
 </section>
 <!--===== End CEO =====-->
 
-<!--===== Start About =====-->
-<section class="section about-text-section about-div" *ngIf="OurVision">
-    <div class="container">
 
-        <div class="row mb-md-5 mb-3">
-
-            <div class="col-md-6">
-                <img [src]="setting.appRootUrl+OurVision.imagePath" class="img-fluid">
-            </div>
-            <div class="col-md-6 about-div-text">
-                <h2>{{OurVision.title}}</h2>
-
-                <div [innerHTML]="OurVision.description">
-
-                </div>
-
-            </div>
-
-        </div>
-        <div class="row mb-md-5 mb-3" *ngIf="OurStory">
-
-            <div class="col-md-6  order-md-1">
-                <div class="">
-                    <img [src]="setting.appRootUrl+OurStory.imagePath" class="img-fluid">
-
-                </div>
-            </div>
-            <div class="col-md-6 ">
-                <h2>{{OurStory.title}}</h2>
-
-                <div [innerHTML]="OurStory.description">
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mb-md-5 mb-3" *ngIf="OurGoals">
-
-            <div class="col-md-6">
-                <img [src]="setting.appRootUrl+OurGoals.imagePath" class="img-fluid">
-            </div>
-            <div class="col-md-6 about-div-text">
-                <h2>{{OurGoals.title}}</h2>
-
-                <div [innerHTML]="OurGoals.description">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
+<!--===== Start Project Recent  =====-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center section-title">
+        {{ siteInformation?.recentListTitle }}
+      </h4>
+      <p class="text-center">
+        {{ siteInformation?.recentListDescription }}
+      </p>
     </div>
-</section>
+  </div>
+<app-info-table [data]="AllProjects"></app-info-table>
+</div>
+<!--===== End  Project Recent  =====-->
 
-
-
-
-<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale" [projectsForSaleSoon]="projectsForSaleSoon"  [projectsBooked]="projectsBooked" [isHome]="false" [isAbout]="true"></app-recent-list>
-
-<section>
-
-</section>
+<section></section>
 <!--===== End About =====-->
 
-
 <!--===== Start About Meeting =====-->
-<section class="sectopn-parallex" *ngIf="ourMeetingBg" style="background-image: url(assets/images/realstate.jpg);">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row slider-text align-items-end justify-content-center">
-            <div class="col-md-9  text-center">
-                <h2>{{ourMeeting.title}}</h2>
-
-                <div style="color:white" [innerHTML]="ourMeeting.description">
-
-                </div>
-            </div>
-        </div>
+<section
+  class="sectopn-parallex"
+  *ngIf="ourMeetingBg"
+  [ngStyle]="{ 'background-image': 'url(' + ourMeetingBg + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row slider-text align-items-end justify-content-center">
+      <div class="col-md-9 text-center">
+        <h2>{{ ourMeeting.title }}</h2>
+        <div style="color: white" [innerHTML]="ourMeeting.description"></div>
+      </div>
     </div>
+  </div>
 </section>
 <!--===== End About Meeting =====-->

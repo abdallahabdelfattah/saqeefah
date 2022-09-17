@@ -37,6 +37,10 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     else myVideo.pause();
   }
 
+  PauseVideo(){
+    var myVideo: any = document.getElementById('my_video_1');
+     myVideo.pause();
+  }
   playLoop() {
     var myVideo: any = document.getElementById('my_video_1');
     if (this.loop == 'true') myVideo.loop = true;

@@ -1,4 +1,4 @@
-<div class="videoWrapper">
+<div class="videoWrapper"  (click)="PauseVideo()">
   <div id="instructions">
     <video
       id="my_video_1"
@@ -9,7 +9,7 @@
       preload="none"
       poster="http://video-js.zencoder.com/oceans-clip.jpg"
       data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'
-      (click)="playPause()"
+     
       controls="controls"
     >
       <source [src]="src" [type]="type" />
