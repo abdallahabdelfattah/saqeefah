@@ -1,0 +1,38 @@
+<div class="info-table">
+  <table class="table table-bordered table-hover table-responsive text-center">
+    <thead style="padding-left: 10px">
+      <tr>
+        <th class="text-center">No</th>
+        <th class="text-center">Floors</th>
+        <th class="text-center">المساحة الاجمالية</th>
+        <th class="text-center">Price</th>
+        <th class="text-center">Rooms</th>
+        <th class="text-center">Features</th>
+        <th class="text-center">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td>{{ row.no }}</td>
+        <td>{{ row.floors }}</td>
+        <td>{{ row.space }}</td>
+        <td>{{ row.price }}</td>
+        <td>{{ row.rooms }}</td>
+        <td>{{ row.feature }}</td>
+        <td>
+          <span class="status">{{ row.status }}</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="7">
+          <p style="font-size: 13px; color: #000000">
+            <span style="color: #ff0000">*</span> The space includes the private
+            parts &nbsp;&nbsp;&nbsp;
+            <span style="color: #ff0000">*</span> Prices do not include tax
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
