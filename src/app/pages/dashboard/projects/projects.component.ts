@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
 
       debugger; 
-      console.log('all projects',response)
+       
     
       
       this.AllProjects = response.result.data

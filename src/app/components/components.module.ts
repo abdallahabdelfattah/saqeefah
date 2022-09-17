@@ -30,6 +30,7 @@ import { SvgComponent } from './svg/svg.component';
 import { AboutSectionFacilityComponent } from './about-section/about-section-facility.component';
 import { OurFeaturesComponent } from './our-features/our-features.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { InfoTableComponent } from './info-table/info-table.component';
 
 
 
@@ -51,6 +52,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     SvgComponent,
     OurFeaturesComponent,
     VideoPlayerComponent,
+    InfoTableComponent,
     
     // VedioComponent
   ],
@@ -85,7 +87,8 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     SwipperGalleryComponent,
     SvgComponent,
     OurFeaturesComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    InfoTableComponent,
     // VedioComponent
   ],
   providers: [
