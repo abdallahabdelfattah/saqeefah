@@ -21,6 +21,7 @@ export class AboutSectionFacilityComponent implements OnInit {
 
   AboutUs
  public OurVision
+ ourvisionUrl:string;
   OurGoals
   OurStory
   OurServices
@@ -40,14 +41,16 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurGoals = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurGoals)[0];
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
-
-        console.log(this.OurVision?.imagePath); 
-
+        this.ourvisionUrl=this.getUrl(this.setting.appRootUrl+this.OurVision?.imagePath);
       }
     })
 
   }
-
+getUrl(path:string){
+  path= path.replace(/[\/\\]/g,'/');
+  path= path.replace(/ /g,'%20');
+  return path;
+}
   ngOnInit(): void {
     this.getAboutSetting()
     this.language.changeLanguageStatus.subscribe((data) => {
