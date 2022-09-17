@@ -112,8 +112,8 @@
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
                                 <label for="">{{'City' | translate}}</label>
-                                <select class="form-select" formControlName="city" (change)="onChange($event)">
-                                        <option value=0></option>
+                                <select class="form-select" formControlName="city" >
+                                        <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of cities" [value]="i.id">{{i.value}}</option>
                                     </select>
                             </div>
@@ -121,8 +121,8 @@
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
                                 <label for="">{{'District' | translate}}</label>
-                                <select class="form-select" formControlName="district" (change)="onChange2($event)">
-                                        <option value=0></option>
+                                <select class="form-select" formControlName="district" >
+                                    <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of districts" [value]="i.id">{{i.value}}</option>
                                     </select>
                             </div>

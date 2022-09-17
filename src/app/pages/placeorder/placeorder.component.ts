@@ -65,12 +65,12 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     this.getPLaceSetting();
     this.loadProjects();
     this.loadCities();
-    // this.loadDistricts();
+    this.loadDistricts();
     this.loadPaymentMethods();
     this.initializeFormGroup();
   }
   loadCities(){
-    this.service.getAllCities(this.language.getLanguageID()).subscribe(res=>{
+    this.service.getCitiesForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result?.data.length>0)
@@ -89,8 +89,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
       }
     })
   }
-  loadDistricts(cityId:any){
-    this.service.getAllDistricts(this.language.getLanguageID(),cityId).subscribe(res=>{
+  loadDistricts(){
+    this.service.getDistrictForFilter(this.language.getLanguageID()).subscribe(res=>{
       if(!res.isError)
       {
         if(res.result?.data.length>0)
@@ -207,22 +207,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     // this.editor.destroy();
 
   }
-    onChange(event) {
-      if(event.target.value!=""){
-        this.myFormGroup.controls['district'].patchValue(0);
-        this.districts=[] as pickList[];
-       this.loadDistricts(event.target.value);
-      }
-      
-  }
-  onChange2(event) {
-    
-    if(event.target.value!=""){
-      let x=this.myFormGroup.controls['district'].value;
-    //  this.loadDistricts(event.target.value);
-    }
-    
-}
+  
+
 
 
 
