@@ -26,7 +26,7 @@ export interface siteInfo{
     Forsuggestionsandcomplaints:string,
     favorit:string,
     projectListTitle:string,
-    ProjectListDesc:string
+    projectListDesc:string
 
 }
 export interface adminSiteInfo{

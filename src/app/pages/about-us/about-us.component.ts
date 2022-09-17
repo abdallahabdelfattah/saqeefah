@@ -51,7 +51,7 @@ export class AboutUsComponent implements OnInit {
   }
 
   getAllProjects() {
-    this.projects.getFilteredProjects(this.language.getLanguageID(), 4).subscribe((response: any) => {
+    this.projects.getFilteredProjects(this.language.getLanguageID(), 6).subscribe((response: any) => {
       console.log('all projects', response)
       this.AllProjects = []
       if (response.succeeded) {
@@ -60,7 +60,6 @@ export class AboutUsComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-
     this.getAboutSetting()
     this.getAllProjects();
     this.language.changeLanguageStatus.subscribe((data) => {
