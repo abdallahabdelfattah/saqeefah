@@ -11,7 +11,7 @@
         </div>
       </div>
       <!-- ----------------test------------------------------- -->
-      <section class="section about-text-section about-div" *ngIf="OurVision">
+      <section class="section about-text-section about-div pt-0" *ngIf="OurVision">
         <div class="container">
           <div class="row mb-md-5 mb-3 flex-item-center">
             <div class="col-md-6">
@@ -26,7 +26,7 @@
               <div [innerHTML]="OurVision.description"></div>
             </div>
           </div>
-          <div class="row mb-md-5 mb-3" *ngIf="OurStory">
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurStory">
             <div class="col-md-6 order-md-1">
               <div
                 class="img-container"
@@ -40,7 +40,7 @@
             </div>
           </div>
 
-          <div class="row mb-md-5 mb-3" *ngIf="OurGoals">
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurGoals">
             <div class="col-md-6">
               <div
                 class="img-container"
@@ -54,7 +54,7 @@
             </div>
           </div>
 
-          <div class="row mb-md-5 mb-3" *ngIf="OurServices">
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurServices">
             <div class="col-md-6 about-div-text">
               <h2>{{ OurServices.title }}</h2>
 
