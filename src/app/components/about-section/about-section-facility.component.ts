@@ -25,7 +25,7 @@ export class AboutSectionFacilityComponent implements OnInit {
   OurGoals
   OurStory
   OurServices
-  imgURL = 'https://api-stage.saqeefah.com/StaticFiles/Settings/Images/%20637989142134938590%20melanie-deziel-U33fHryBYBU-unsplash.jpg'
+  bgOurVision
   public ourMeetingBg
   get settingTypes() {
     return SettingTypes

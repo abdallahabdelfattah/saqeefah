@@ -85,6 +85,76 @@
           </section>
             <!-- -----------end test-------------- -->
         </div>
+      </div>
+      <!-- ----------------test------------------------------- -->
+      <section class="section about-text-section about-div" *ngIf="OurVision">
+        <div class="container">
+          <div class="row mb-md-5 mb-3 flex-item-center">
+            <div class="col-md-6">
+              <!-- <div
+              [ngStyle]="{'background': 'bgOurVision'}"
+                class="img-container"
+              ></div> -->
+
+              <img
+              [src]="setting.appRootUrl + OurVision.imagePath"
+              class="img-fluid"
+            />
+
+            </div>
+            <div class="col-md-6 about-div-text">
+              <h2>{{ OurVision.title }}</h2>
+
+              <div [innerHTML]="OurVision.description"></div>
+            </div>
+          </div>
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurStory">
+            <div class="col-md-6 order-md-1">
+              <div class="">
+                <img
+                  [src]="setting.appRootUrl + OurStory.imagePath"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+            <div class="col-md-6 about-div-text">
+              <h2>{{ OurStory.title }}</h2>
+
+              <div [innerHTML]="OurStory.description"></div>
+            </div>
+          </div>
+
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurGoals">
+            <div class="col-md-6">
+              <img
+                [src]="setting.appRootUrl + OurGoals.imagePath"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-6 about-div-text">
+              <h2>{{ OurGoals.title }}</h2>
+
+              <div [innerHTML]="OurGoals.description"></div>
+            </div>
+          </div>
+
+          <div class="row mb-md-5 mb-3 flex-item-center" *ngIf="OurServices">
+            <div class="col-md-6 about-div-text">
+              <h2>{{ OurServices.title }}</h2>
+
+              <div [innerHTML]="OurServices.description"></div>
+            </div>
+
+            <div class="col-md-6">
+              <img
+                [src]="setting.appRootUrl + OurServices.imagePath"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- -----------end test-------------- -->
     </div>
-</div>
+
 <!--===== End About Section =====-->
