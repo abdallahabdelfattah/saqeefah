@@ -20,13 +20,17 @@ import { environment } from 'src/environments/environment';
 export class AboutSectionFacilityComponent implements OnInit {
 
   AboutUs
- public OurVision
- ourvisionUrl:string;
+  OurVision
   OurGoals
   OurStory
   OurServices
-  bgOurVision
-  public ourMeetingBg
+
+  AboutUsUrl
+  OurVisionUrl
+  OurGoalsUrl
+  OurStoryUrl
+  OurServicesUrl
+
   get settingTypes() {
     return SettingTypes
   }
@@ -41,7 +45,12 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurGoals = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurGoals)[0];
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
-        this.ourvisionUrl=this.getUrl(this.setting.appRootUrl+this.OurVision?.imagePath);
+
+        this.OurVisionUrl = this.getUrl(this.setting.appRootUrl+this.OurVision?.imagePath);
+        this.AboutUsUrl =this.getUrl(this.setting.appRootUrl+this.AboutUs?.imagePath);
+        this.OurGoalsUrl = this.getUrl(this.setting.appRootUrl+this.OurGoals?.imagePath);
+        this.OurStoryUrl = this.getUrl(this.setting.appRootUrl+this.OurStory?.imagePath);
+        this.OurServicesUrl = this.getUrl(this.setting.appRootUrl+this.OurServices?.imagePath);
       }
     })
 
