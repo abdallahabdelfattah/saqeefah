@@ -9,14 +9,14 @@
                     <label class="form-label">{{'ProjectId' | translate}}</label>
                     <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProperty()" formControlName="projectId" aria-label=".form-select-lg example">
                     <option selected value='all'>{{'--Please Select--' | translate}}</option>
-                    <option *ngFor="let p of projects"   value="{{p.id}}">{{p.value}}</option>
+                    <option *ngFor="let p of projects"   value="{{p.id}}">{{p.value | translate}}</option>
                 </select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">{{'STATUS' | translate}}</label>
                     <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProperty()" formControlName="status" aria-label=".form-select-lg example">
                     <option selected value='all'>{{'--Please Select--' | translate}}</option>
-                    <option *ngFor="let state of apartmentsStatus"   value="{{state.id}}">{{state.value}}</option>
+                    <option *ngFor="let state of apartmentsStatus"   value="{{state.id}}">{{state.value| translate}}</option>
                 </select>
                 </div>
                 <!-- <div class="mb-3 slider-container">
@@ -40,7 +40,7 @@
                     <label class="form-label">{{'Area' | translate}}</label>
                     <select class="form-select form-select-lg mb-3" (change)="changeRange(2)" formControlName="totalArea" aria-label=".form-select-lg example">
                     <option selected value='all'>{{'--Please Select--' | translate}}</option>
-                    <option *ngFor="let item of areaCategory"   value="{{item.id}}">{{item.value}}</option>
+                    <option *ngFor="let item of areaCategory"   value="{{item.id}}">{{item.value | translate}}</option>
                 </select>
                 </div>
                 <div class="mb-3">

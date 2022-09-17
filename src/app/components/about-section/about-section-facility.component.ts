@@ -20,12 +20,17 @@ import { environment } from 'src/environments/environment';
 export class AboutSectionFacilityComponent implements OnInit {
 
   AboutUs
- public OurVision
+  OurVision
   OurGoals
   OurStory
   OurServices
-  imgURL = 'https://api-stage.saqeefah.com/StaticFiles/Settings/Images/%20637989142134938590%20melanie-deziel-U33fHryBYBU-unsplash.jpg'
-  public ourMeetingBg
+
+  AboutUsUrl
+  OurVisionUrl
+  OurGoalsUrl
+  OurStoryUrl
+  OurServicesUrl
+
   get settingTypes() {
     return SettingTypes
   }
@@ -41,13 +46,20 @@ export class AboutSectionFacilityComponent implements OnInit {
         this.OurStory = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurStory)[0];
         this.OurServices = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.OurServices)[0];
 
-        console.log(this.OurVision?.imagePath); 
-
+        this.OurVisionUrl = this.getUrl(this.setting.appRootUrl+this.OurVision?.imagePath);
+        this.AboutUsUrl =this.getUrl(this.setting.appRootUrl+this.AboutUs?.imagePath);
+        this.OurGoalsUrl = this.getUrl(this.setting.appRootUrl+this.OurGoals?.imagePath);
+        this.OurStoryUrl = this.getUrl(this.setting.appRootUrl+this.OurStory?.imagePath);
+        this.OurServicesUrl = this.getUrl(this.setting.appRootUrl+this.OurServices?.imagePath);
       }
     })
 
   }
-
+getUrl(path:string){
+  path= path.replace(/[\/\\]/g,'/');
+  path= path.replace(/ /g,'%20');
+  return path;
+}
   ngOnInit(): void {
     this.getAboutSetting()
     this.language.changeLanguageStatus.subscribe((data) => {

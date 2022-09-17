@@ -5,21 +5,21 @@
                 <label class="form-label">{{'CITY' | translate}}</label>
                 <select class="form-select form-select-lg mb-3" (change)="cityChange($event);" formControlName="city" aria-label=".form-select-lg example">
                 <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let city of cities" value="{{city.value}}">{{city.value}}</option>
+                <option *ngFor="let city of cities" value="{{city.value}}">{{city.value | translate}}</option>
             </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">{{'District' | translate}}</label>
                 <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProject()" formControlName="district" aria-label=".form-select-lg example">
                 <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let dist of districts" value="{{dist.value}}">{{dist.value }}</option>
+                <option *ngFor="let dist of districts" value="{{dist.value}}">{{dist.value | translate }}</option>
             </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">{{'STATUS' | translate}}</label>
                 <select class="form-select form-select-lg mb-3" (change)="ApplyFilterProject()" formControlName="status" aria-label=".form-select-lg example">
                 <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let state of status"   value="{{state.id}}">{{state.value}}</option>
+                <option *ngFor="let state of status"   value="{{state.id}}">{{state.value | translate}}</option>
             </select>
             </div>
             <div class="mb-3">
@@ -35,7 +35,7 @@
                 <input type="number" name="" (input)="ApplyFilterProject()" formControlName="buildingNo" min="0" class="form-control" >
             </div>
             <div class="mb-3">
-                <button type="button" (click)="clearFilter()" class="btn btn-small btn-primary ">Clear</button>
+                <button type="button" (click)="clearFilter()" class="btn btn-small btn-primary ">{{'Clear' | translate}}</button>
             </div>
         </form>
     </div>

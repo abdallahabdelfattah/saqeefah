@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?g28grq');
+  src:  url('fonts/icomoon.eot?g28grq#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?g28grq') format('truetype'),
+    url('fonts/icomoon.woff?g28grq') format('woff'),
+    url('fonts/icomoon.svg?g28grq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-globe:before {
+  content: "\e900";
+}
+.icon-area:before {
+  content: "\e901";
+}
+.icon-balcon:before {
+  content: "\e902";
+}
+.icon-bedroom:before {
+  content: "\e903";
+}
+.icon-download:before {
+  content: "\e904";
+}
+.icon-floor:before {
+  content: "\e905";
+}
+.icon-hall-PhotoRoom:before {
+  content: "\e906";
+}
+.icon-images-PhotoRoom:before {
+  content: "\e907";
+}
+.icon-kitchen-furniture:before {
+  content: "\e908";
+}
+.icon-location:before {
+  content: "\e909";
+}
+.icon-parking:before {
+  content: "\e90a";
+}
+.icon-price:before {
+  content: "\e90b";
+}
+.icon-roof:before {
+  content: "\e90c";
+}
+.icon-room-PhotoRoom:before {
+  content: "\e90d";
+}
+.icon-salon-PhotoRoom:before {
+  content: "\e90e";
+}
+.icon-toilet-PhotoRoom:before {
+  content: "\e90f";
+}

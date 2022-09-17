@@ -16,6 +16,10 @@
     "goodSales": "Good Sales & Marketing",
     "recentList": "Recent List",
     "all": "All",
+    "priceRangeSetting":"Price Range Setting",
+    "areaRangeSetting":"Area Range Setting",
+    "to":"To Range",
+    "from":"From Range",
     "ForSale": "For Sale",
     "searchAllProjects":"Search All Projects",
     "forRent": "For Rent",
@@ -326,16 +330,13 @@
   "services":"Services",
   "saqeefahservices":"saqeefah services",
   "whysaqeefah":"why saqeefah",
-  "Forsuggestionsandcomplaints":"For Suggestions and Complaints",
+  "Forsuggestionsandcomplaints":"Suggestions and Complaints",
   "InternalStation":"Internal Station",
 "NUM. OF Available Apartments":"NUM. OF Available Apartments",
 "Clear":"Clear",
 "Project Name :":"Project Name :",
 "Building:":"Building:",
-"PLACE ORDER":"Place Your Order"
-
-
-
-
+"PLACE ORDER":"Place Your Order",
+"dress_Room":"Dress Room"
 
 }

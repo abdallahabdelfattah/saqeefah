@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
+import { siteInfo } from '../Models/siteInfo';
 
 @Component({
   selector: 'app-favorites',
@@ -10,8 +12,8 @@ export class FavoritesComponent implements OnInit {
   propertyFavorites:any = []
   projectFavorites:any = []
   favoriteList:any = []
-
-  constructor(public favorite:FavoritesService) { }
+   siteInformation:siteInfo
+  constructor(public favorite:FavoritesService, private shared:SiteInformationSharedService) { }
 
   ngOnInit(): void {
     this.getFavorites()
@@ -20,7 +22,10 @@ export class FavoritesComponent implements OnInit {
 
      }
     )}
-
+    ngAfterContentChecked() {
+      this.siteInformation=this.shared.siteInformation;
+    
+    }
    getFavorites(){
     this.propertyFavorites = []
   this.projectFavorites = []

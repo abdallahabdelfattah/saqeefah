@@ -188,10 +188,27 @@ a {
     border: solid 1px #e9e4df;
 
 }
+.image-property{
+  width: 80px;
+  height: 70px;
 
+}
+.icon-svg{
+  font-size: 65px;
+  color: #c5c1bb;
+}
+.plus{
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #c5c1bb;
+  font-size: 30px;
+  font-weight: bold;
+}
 .property-section .property-info .bg-secondary p{
   margin-bottom: 2px;
-  font-size: 14px
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .property-section .property-info .bg-secondary h6{

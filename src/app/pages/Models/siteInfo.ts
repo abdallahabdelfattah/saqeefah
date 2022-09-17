@@ -24,6 +24,7 @@ export interface siteInfo{
     companyLocation:string,
     snap:string,
     Forsuggestionsandcomplaints:string,
+    favorit:string
 
 }
 export interface adminSiteInfo{
