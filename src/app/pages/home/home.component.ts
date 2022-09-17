@@ -45,15 +45,10 @@ getAllProjects(){
     this.AllProjects = []
     this.projectsForSale =[]
     this.projectsForSaleSoon = []
-    // this.projectsBooked = []
-
-
    if(response.succeeded){
     this.AllProjects = response.data
     this.projectsForSale = response.data?.filter((item:any)=> item.statusId == 1 )
     this.projectsForSaleSoon = response.data?.filter((item:any)=> item.status == 2)
-    // this.projectsBooked = response.data?.filter((item:any)=> item.status == 3)
-
    }
 
   })

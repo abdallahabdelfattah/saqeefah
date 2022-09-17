@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { siteInfo } from 'src/app/pages/Models/siteInfo';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { PlaceOrderService } from 'src/app/services/placeOrder.service';
+import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { SettingTypes } from 'src/app/shared/Enums/enums';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
 import { SettingsService } from '../dashboard/setting/services/settings.service';
@@ -59,7 +60,9 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   constructor(private toastr: ToastrService,
     public setting: SettingsService,
     private language:changeLanguageService,
-    private service:PlaceOrderService) { }
+    private service:PlaceOrderService,
+    private projectAndListService:ProjectAndListService
+    ) { }
 
   ngOnInit(): void {
     this.getPLaceSetting();
@@ -132,22 +135,15 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   }
 
   loadProjects(){
-    
-    this.service.getAllProjects(this.language.getLanguageID()).subscribe(res=>{
-      
-      if(!res.isError)
-      {
-        if(res.result.data.length>0)
-        {
-          res.result.data.forEach(element => {
-            let item:pickList={} as pickList;
-            item.id=element.projectId
-            item.value=element.projectName
+    this.projectAndListService.getFilteredProjects(this.language.getLanguageID(),0).subscribe((res: any)=>{
+      if (res.succeeded) {
+        if (res.data.length > 0) {
+          res.data.forEach(element => {
+            let item: pickList = {} as pickList;
+            item.id = element.projectId
+            item.value = element.projectName
             this.projects.push(item);
-    
           });
-        
-    
         }
       }
       else{
@@ -157,6 +153,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
    
  
   }
+
   initializeFormGroup() {
     this.myFormGroup.setValue({
       interest_Date:new Date(),
