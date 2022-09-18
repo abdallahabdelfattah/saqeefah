@@ -2,7 +2,7 @@
 .logo {
 
   position: absolute;
-  left: 38%;
+  left: 40%;
   top:-45px;
 
 
@@ -12,7 +12,7 @@
 .content-body{
   min-height:100vh;
   // padding:48px 1rem 30px 1rem;
-  background-image:url("../../../assets/images/gallery/bg4.jpg") ;
+  background-image:url("../../../assets/content/images/bg4.jpg") ;
 
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -88,6 +88,7 @@ height: 75px;
 }
 .error{
 font-weight: bold;
+font-size: 12px;
 
 }
 .form button {
@@ -111,7 +112,7 @@ background: var(--main-color);
 // margin: 15px 0 0;
 color: crimson;
 font-weight: bold;
-font-size: 16px;
+font-size: 14px;
 }
 .form .message a {
 color: #4CAF50;

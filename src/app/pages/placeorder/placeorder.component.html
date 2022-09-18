@@ -12,26 +12,6 @@
 <!--===== End Banner =====-->
 
 
-<!--===== Start Interest Registration =====-->
-<!-- <section class="section place-order-div">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-                <h2> interest registration</h2>
-                <p>
-
-                    We are keen to meet your housing aspirations and to guarantee you the perfect housing. We invite you to participate in registering your interest and desires request and we will make sure to meet them for you.
-                </p>
-
-                <a href="interest-page.html" class="btn btn-primary py-3 px-3">Interest requests for companies and establishments</a>
-            </div>
-
-
-        </div>
-    </div>
-</section> -->
-<!--===== End Interest Registration =====-->
 
 <!--===== Start  Form =====-->
 <section class="section place-order-form bg-light">
@@ -48,40 +28,46 @@
 
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'Name' | translate}}</label>
+                                <label for="" >{{'Name' | translate}}
+                                 <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['client_Name'].errors?.['required']}">*</span>
+                                   
+                                </label>
                                 <input type="text" class="form-control" formControlName="client_Name">
-                                 <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
-                                        * Required Field
-                                </span>
+                                 
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'Email Address' | translate}}</label>
+                                <label for="" >{{'Email Address' | translate}}
+                                    
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['client_Mail'].errors?.['required']}">*</span>
+                                </label>
                                 <input type="email" class="form-control" formControlName="client_Mail">
-                                <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
-                                    * Email form Field
-                            </span>
+                                
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-12">
-                            <label for="">{{'Phone Number' | translate}}</label>
+                            <label for="" >{{'Phone Number' | translate}}
+                                
+                                <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['client_Mobile'].errors?.['required']}">*</span>
+                            </label>
 
                             <div class="form-group input-group">
                                 <span class="input-group-text">966+</span>
                                 <input type="text" class="form-control" formControlName="client_Mobile">
 
                             </div>
-                            <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
-                                * Required Field
-                        </span>
+                           
                         </div>
 
             <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'Project' | translate}}</label>
+                                <label for="" >{{'Project' | translate}}
+                                    
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['project_Ref'].errors?.['project_Ref']}">*</span>
+                                </label>
                                 <select class="form-select" formControlName="project_Ref">
                                         <option value=0></option>
                                         <option *ngFor="let i of projects" [value]="i.id">{{i.value | translate}}</option>
@@ -90,7 +76,9 @@
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'Payment method' | translate}}</label>
+                                <label for="" >{{'Payment method' | translate}}
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['payment_Method'].errors?.['required']}">*</span>
+                                </label>
                                 <select class="form-select" formControlName="payment_Method">
                                         <option value=0></option>
                                         <option *ngFor="let i of paymentMethods" [value]="i.id">{{i.value | translate}}</option>
@@ -104,14 +92,16 @@
 
                 <div class="col-md-12 mb-3">
                     <h4 class="fw-bold">
-                        <i class="fas fa-map"></i> {{'Project Site Data' | translate}}</h4>
+                        <i class="fas fa-map"></i>{{'Project Site Data' | translate}}</h4>
 
 
                     <div class="row mb-2">
 
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'City' | translate}}</label>
+                                <label for="" >{{'City' | translate}}
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['city'].errors?.['city']}">*</span>
+                                </label>
                                 <select class="form-select" formControlName="city" >
                                         <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of cities" [value]="i.id">{{i.value}}</option>
@@ -120,7 +110,9 @@
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
-                                <label for="">{{'District' | translate}}</label>
+                                <label for="" >{{'District' | translate}}
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['district'].errors?.['required']}">*</span>
+                                </label>
                                 <select class="form-select" formControlName="district" >
                                     <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of districts" [value]="i.id">{{i.value}}</option>
@@ -143,7 +135,9 @@
 
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label for="">{{'Price' | translate}}</label>
+                            <label for="" >{{'Price' | translate}}
+                                <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['price_Avg'].errors?.['required']}">*</span>
+                            </label>
                             <input type="number" class="form-control" formControlName="price_Avg">
                              </div>
                         </div>
@@ -154,14 +148,18 @@
                         <div class="col-md-4">
                             <div class="form-group">
 
-                                <label  class="form-label">{{'Number Of Bedrooms' | translate}}</label>
+                                <label  class="form-label" >{{'Number Of Bedrooms' | translate}}
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['bed_Room'].errors?.['required']}">*</span>
+                                </label>
                                 <input type="number" name="" min="0" max="5"  class="form-control" formControlName="bed_Room">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="">{{'The area of the apartment' | translate}}</label>
+                                <label for="" >{{'The area of the apartment' | translate}} 
+                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['space_Avg'].errors?.['required']}">*</span>
+                                </label>
                                 <input type="text" name=""  class="form-control" formControlName="space_Avg">
                                 <!-- <small>Including private spaces such as the roof and others.</small> -->
                             </div>
@@ -175,7 +173,10 @@
 
                         <div class="col-md-12 bg-white  px-2">
                             <div class="form-group pt-3 pb-3">
-                                <label for="">{{"include 'Parking' in the unit" | translate}}</label>
+                                <label for="" >{{"include 'Parking' in the unit" | translate}}
+                                    
+                                   
+                                </label>
 
                                 <div class="row">
 
@@ -205,7 +206,7 @@
 
                       <div class="col-md-12  bg-white  px-2">
                           <div class="form-group pt-3 pb-3">
-                              <label for="">{{"include 'Store' in the unit" | translate}}</label>
+                              <label for="" >{{"include 'Store' in the unit" | translate}}</label>
 
                               <div class="row">
 
@@ -235,7 +236,7 @@
 
                     <div class="col-md-12  bg-white  px-2">
                         <div class="form-group pt-3 pb-3">
-                            <label for="">{{"include 'Terrace' in the unit" | translate}}</label>
+                            <label for="" >{{"include 'Terrace' in the unit" | translate}}</label>
 
                             <div class="row">
 
@@ -265,7 +266,7 @@
 
                   <div class="col-md-12 bg-white  px-2">
                       <div class="form-group pt-3 pb-3">
-                          <label for="">{{"include 'Balcony' in the unit" | translate}}</label>
+                          <label for="" >{{"include 'Balcony' in the unit" | translate}}</label>
 
                           <div class="row">
 
@@ -295,7 +296,7 @@
 
                 <div class="col-md-12  bg-white  px-2">
                     <div class="form-group pt-3 pb-3">
-                        <label for="">{{"include 'Roof' in the unit" | translate}}</label>
+                        <label for="" >{{"include 'Roof' in the unit" | translate}}</label>
 
                         <div class="row">
 
@@ -325,7 +326,7 @@
 
               <div class="col-md-12  bg-white px-2">
                   <div class="form-group pt-3 pb-3">
-                      <label for="">
+                      <label for="" >
                        {{"include 'Servant Room' in the unit" | translate}}
                       </label>
 

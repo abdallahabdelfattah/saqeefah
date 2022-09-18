@@ -30,7 +30,7 @@ $: any;
     // }, 100);
   }
   ngAfterContentChecked() {
-  //  this.siteInformation=this.shared.siteInformation;
+  this.siteInformation=this.shared.siteInformation;
     
   }
 

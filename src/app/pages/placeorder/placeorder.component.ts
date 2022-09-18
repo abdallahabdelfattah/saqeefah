@@ -1,4 +1,5 @@
 
+import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Editor, Toolbar } from 'ngx-editor';
@@ -29,24 +30,24 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
 
   public myFormGroup: FormGroup = new FormGroup({
     interest_Date:new FormControl(new Date(),[]),
-    project_Ref: new FormControl(0, []), //project Id from api
+    project_Ref: new FormControl(0,[Validators.required]), //project Id from api
      building_Ref: new FormControl(0, []),   
      apartment_Ref: new FormControl(0, []),    
     client_Name: new FormControl('', [Validators.required]), //user input
-    client_Mail: new FormControl('', [Validators.email]),  //user input
+    client_Mail: new FormControl('', [Validators.email,Validators.required]),  //user input
     client_Mobile: new FormControl('', [Validators.required]), //user input
 
-    city: new FormControl(0, []),      //city id from api
-    district: new FormControl(0, []),  //destrictId from api
+    city: new FormControl(0, [Validators.required]),      //city id from api
+    district: new FormControl(0, [Validators.required]),  //destrictId from api
 
-    payment_Method: new FormControl(0, []),  // payment method is from api
+    payment_Method: new FormControl(0,[Validators.required]),  // payment method is from api
 
-    price_Avg: new FormControl(0, []),
-    space_Avg: new FormControl(0, []),
-    bed_Room: new FormControl(0, []),
+    price_Avg: new FormControl(0, [Validators.required]),
+    space_Avg: new FormControl(0,[Validators.required]),
+    bed_Room: new FormControl(0, [Validators.required]),
 
 
-    parking: new FormControl(0, []),
+    parking: new FormControl(0,[]),
     terace: new FormControl(0, []),
     balcony: new FormControl(0, []),
     roof: new FormControl(0, []),
@@ -58,6 +59,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
 
 
   constructor(private toastr: ToastrService,
+    private scroll: ViewportScroller,
     public setting: SettingsService,
     private language:changeLanguageService,
     private service:PlaceOrderService,
@@ -185,17 +187,18 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   this.service.Post(this.myFormGroup.value).subscribe(res=>{
         if(!res.isError)
         {
-          this.toastr.success(":: Successfully Updated")
+          this.toastr.success("Successfully Updated")
           this.showError=false
           this.ngOnInit();
         }
         else{
-          this.toastr.error(':: Failed Updated');
+          this.toastr.error('Failed Updated');
         }
   })
   } else {
    this.showError=true;
-   this.toastr.warning(":: Please Correct your inputs")
+   this.scroll.scrollToPosition([0,400]);
+   this.toastr.warning("Please fill required data")
 
   }
   }

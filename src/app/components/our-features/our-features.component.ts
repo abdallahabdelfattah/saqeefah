@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import AOS from "aos";
 
@@ -7,7 +7,7 @@ import AOS from "aos";
   templateUrl: './our-features.component.html',
   styleUrls: ['./our-features.component.scss']
 })
-export class OurFeaturesComponent implements OnInit {
+export class OurFeaturesComponent implements OnInit{
 
   saqeefahBenefits = [];
   saqeefahBenefitsAr =
@@ -87,11 +87,16 @@ export class OurFeaturesComponent implements OnInit {
     ]
   constructor(private language: changeLanguageService) { }
   ngOnInit(): void {
-  // AOS.init();
+   //AOS.init();
     this.saqeefahBenefits = this.language.getLanguageID() == "1" ? this.saqeefahBenefitsAr : this.saqeefahBenefitsEN;
     this.language.changeLanguageStatus.subscribe((data) => {
       this.saqeefahBenefits = this.language.getLanguageID() == "1" ? this.saqeefahBenefitsAr : this.saqeefahBenefitsEN;
     })
   }
+
+
+  // ngAfterViewInit(){
+  //   AOS.init();
+  // }
 
 }

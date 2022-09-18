@@ -279,7 +279,7 @@
     "Watch The Project":"Watch The Project",
     "Users":"Users",
     "phone":"Phone",
-    "password":"password",
+    "password":"Password",
     "fullName":"fullName",
     "Action":"Action",
     "Add User":"Add User",
@@ -345,6 +345,11 @@
 "Our Services":"Our Services",
 "About Us Banar":"AboutUs Banar",
 "PlaceOrder Banar":"PlaceOrder Banar",
-"Contact Banar":"Contact Banar"
+"Contact Banar":"Contact Banar",
+"Username or Password is Incorrect":"Username or Password is Incorrect",
+"login":"Login",
+"Required Password":"Required Password",
+"Required Username":"Required Username",
+"Username":"Username"
 
 }

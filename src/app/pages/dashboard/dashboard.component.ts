@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     this.language.changeLanguageStatus.subscribe((data)=>{
 
       this.ngOnInit()
-  console.log('language status from dashbao')
+ 
 
     })
 

@@ -213,7 +213,7 @@
     "Contacts":"قائمة جهات التواصل مع العملاء",
     "subject":"الموضوع",
     "Personal Information":"معلومات شخصية",
-    "Email Address":"البريد الالكترونى",
+    "Email Address":"البريد الالكتروني",
     "Phone Number":"رقم الهاتف",
     "Purpose of purchase":"الغرض من الشراء",
    "Payment method":"طريقة الدفع",
@@ -348,5 +348,11 @@
 "Our Services":"خدماتنا",
 "About Us Banar":"اللافته الاعلانية عن سقيفة",
 "PlaceOrder Banar":"اللافتة الاعلانية عن الطلبات",
-"Contact Banar":"اللافتة الاعلانية عن الاقتراحات والشكاوي"
+"Contact Banar":"اللافتة الاعلانية عن الاقتراحات والشكاوي",
+"Username or Password is Incorrect":"اسم المستخدم او كلمة السر غير صحيحة",
+"login":"تسجيل الدخول",
+"Required Password":"كلمة السر مطلوبة",
+"Required Username":"اسم المستخدم مطلوب",
+"Username":"اسم المستخدم"
+
 }

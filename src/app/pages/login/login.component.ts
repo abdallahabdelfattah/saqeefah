@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { LoginService } from 'src/app/services/login.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -13,7 +15,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class LoginComponent implements OnInit {
 
   hide=false;
-  showError:boolean;
+  showError:boolean=false;
   // user = <IUser>{}
   form:FormGroup = new FormGroup({
     userName: new FormControl('', Validators.required),
@@ -23,19 +25,35 @@ export class LoginComponent implements OnInit {
 
  error:any;
 
-  constructor(private router: Router,private titleService :Title,private loginService:LoginService, private  authService :AuthService) {
+  constructor(private router: Router,private titleService :Title,private loginService:LoginService,private language:changeLanguageService ,private  authService :AuthService,private translate: TranslateService) {
     // this.titleService.setTitle("Saqeefa | Login");
-
+    this.translate.setDefaultLang('ar');
+    // this.translate.use('ar')
 
      }
 
   ngOnInit(): void {
+    let l =this.language.getCurrentLanguage();
+    this.language.changeLanguge(l);
+   this.translate.use(l);
+
+
+    this.language.changeLanguageStatus.subscribe((data)=>{
+
+      this.ngOnInit()
+ 
+
+    })
 
   }
 
 
  onSubmit(){
-
+  if(this.form.invalid)
+   {
+   this.showError=true
+      return
+   }
 
 //  if(this.form.valid)
 //  {
@@ -52,7 +70,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token",res.result?.data?.token);
           localStorage.setItem("auth_data",JSON.stringify(res.result));
 
-         this.showError= this.authService.isUserLoggedIn()
+         //this.showError= this.authService.isUserLoggedIn()
          this.router.navigateByUrl('/dashboard');
         }
         else{
