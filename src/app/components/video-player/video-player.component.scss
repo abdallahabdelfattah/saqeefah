@@ -13,4 +13,28 @@
     color: #071c1f;
     margin-bottom: 15px;}
 
-
+    vg-player {
+        background-color:transparent !important;
+        
+    }
+    vg-controls {
+       
+        width: 92.8%;
+        left: 46px;
+        margin-right: 100px;
+        padding-top: 10px;}
+        vg-scrub-bar {
+            
+            width: 92.8%;
+            left: 46px;
+            margin-right: 100px;
+    
+           
+        }
+        vg-playback-button ,vg-time-display{
+           height: initial;
+            align-items: end !important;
+            }
+            vg-track-selector select.trackSelector{
+                margin-top: -5px;
+            }
