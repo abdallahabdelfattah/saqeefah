@@ -24,13 +24,13 @@ $: any;
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    console.log('myVideo.paused');
-    setTimeout(() => {
-      this.playPause();
-    }, 100);
+    // console.log('myVideo.paused');
+    // setTimeout(() => {
+    //   this.playPause();
+    // }, 100);
   }
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+  //  this.siteInformation=this.shared.siteInformation;
     
   }
 
