@@ -30,21 +30,21 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
 
   public myFormGroup: FormGroup = new FormGroup({
     interest_Date:new FormControl(new Date(),[]),
-    project_Ref: new FormControl(0,[Validators.required]), //project Id from api
+    project_Ref: new FormControl(0,[]), //project Id from api
      building_Ref: new FormControl(0, []),   
      apartment_Ref: new FormControl(0, []),    
     client_Name: new FormControl('', [Validators.required]), //user input
-    client_Mail: new FormControl('', [Validators.email,Validators.required]),  //user input
+    client_Mail: new FormControl('', [Validators.email]),  //user input
     client_Mobile: new FormControl('', [Validators.required]), //user input
 
-    city: new FormControl(0, [Validators.required]),      //city id from api
-    district: new FormControl(0, [Validators.required]),  //destrictId from api
+    city: new FormControl(0, []),      //city id from api
+    district: new FormControl(0, []),  //destrictId from api
 
-    payment_Method: new FormControl(0,[Validators.required]),  // payment method is from api
+    payment_Method: new FormControl(0,[]),  // payment method is from api
 
-    price_Avg: new FormControl(0, [Validators.required]),
-    space_Avg: new FormControl(0,[Validators.required]),
-    bed_Room: new FormControl(0, [Validators.required]),
+    price_Avg: new FormControl(0, []),
+    space_Avg: new FormControl(0,[]),
+    bed_Room: new FormControl(0, []),
 
 
     parking: new FormControl(0,[]),

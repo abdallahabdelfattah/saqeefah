@@ -32,7 +32,7 @@
                                  <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['client_Name'].errors?.['required']}">*</span>
                                    
                                 </label>
-                                <input type="text" class="form-control" formControlName="client_Name">
+                                <input type="text" class="form-control form-control-sm" formControlName="client_Name" [ngClass]="{'errorbord':showError && myFormGroup.controls['client_Name'].errors?.['required']}">
                                  
                             </div>
                         </div>
@@ -41,9 +41,9 @@
                             <div class="form-group">
                                 <label for="" >{{'Email Address' | translate}}
                                     
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['client_Mail'].errors?.['required']}">*</span>
+                                  
                                 </label>
-                                <input type="email" class="form-control" formControlName="client_Mail">
+                                <input type="email" class="form-control form-control-sm" formControlName="client_Mail">
                                 
                             </div>
                         </div>
@@ -56,7 +56,7 @@
 
                             <div class="form-group input-group">
                                 <span class="input-group-text">966+</span>
-                                <input type="text" class="form-control" formControlName="client_Mobile">
+                                <input type="text" class="form-control form-control-sm" formControlName="client_Mobile" [ngClass]="{'errorbord':showError && myFormGroup.controls['client_Mobile'].errors?.['required']}">
 
                             </div>
                            
@@ -66,9 +66,9 @@
                             <div class="form-group">
                                 <label for="" >{{'Project' | translate}}
                                     
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['project_Ref'].errors?.['project_Ref']}">*</span>
+                                   
                                 </label>
-                                <select class="form-select" formControlName="project_Ref">
+                                <select class="form-select form-select-sm" formControlName="project_Ref">
                                         <option value=0></option>
                                         <option *ngFor="let i of projects" [value]="i.id">{{i.value | translate}}</option>
                                     </select>
@@ -77,9 +77,9 @@
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
                                 <label for="" >{{'Payment method' | translate}}
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['payment_Method'].errors?.['required']}">*</span>
+                                   
                                 </label>
-                                <select class="form-select" formControlName="payment_Method">
+                                <select class="form-select form-select-sm" formControlName="payment_Method">
                                         <option value=0></option>
                                         <option *ngFor="let i of paymentMethods" [value]="i.id">{{i.value | translate}}</option>
                                    </select>
@@ -90,7 +90,7 @@
 
                 </div>
 
-                <div class="col-md-12 mb-3">
+                <div class="col-md-12 mb-2">
                     <h4 class="fw-bold">
                         <i class="fas fa-map mx-1"></i>{{'Project Site Data' | translate}}</h4>
 
@@ -100,9 +100,9 @@
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
                                 <label for="" >{{'City' | translate}}
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['city'].errors?.['city']}">*</span>
+                                    
                                 </label>
-                                <select class="form-select" formControlName="city" >
+                                <select class="form-select form-select-sm" formControlName="city" >
                                         <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of cities" [value]="i.id">{{i.value}}</option>
                                     </select>
@@ -111,9 +111,9 @@
                         <div class="col-lg-4 col-12">
                             <div class="form-group">
                                 <label for="" >{{'District' | translate}}
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['district'].errors?.['required']}">*</span>
+                                  
                                 </label>
-                                <select class="form-select" formControlName="district" >
+                                <select class="form-select form-select-sm" formControlName="district" >
                                     <option >  {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of districts" [value]="i.id">{{i.value}}</option>
                                     </select>
@@ -136,9 +136,9 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label for="" >{{'Price' | translate}}
-                                <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['price_Avg'].errors?.['required']}">*</span>
+                               
                             </label>
-                            <input type="number" class="form-control" formControlName="price_Avg">
+                            <input type="number" class="form-control form-control-sm" formControlName="price_Avg">
                              </div>
                         </div>
 
@@ -149,18 +149,18 @@
                             <div class="form-group">
 
                                 <label  class="form-label" >{{'Number Of Bedrooms' | translate}}
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['bed_Room'].errors?.['required']}">*</span>
+                                   
                                 </label>
-                                <input type="number" name="" min="0" max="5"  class="form-control" formControlName="bed_Room">
+                                <input type="number" name="" min="0" max="5"  class="form-control form-control-sm" formControlName="bed_Room">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="" >{{'The area of the apartment' | translate}} 
-                                    <span class="asteric" [ngClass]="{'error':showError && myFormGroup.controls['space_Avg'].errors?.['required']}">*</span>
+                                  
                                 </label>
-                                <input type="text" name=""  class="form-control" formControlName="space_Avg">
+                                <input type="text" name=""  class="form-control form-control-sm" formControlName="space_Avg">
                                 <!-- <small>Including private spaces such as the roof and others.</small> -->
                             </div>
                         </div>
@@ -169,25 +169,25 @@
                     </div>
 
                     <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-2">
 
-                        <div class="col-md-12 bg-white  px-2">
-                            <div class="form-group pt-3 pb-3">
+                        <div class="col-md-12   px-2">
+                            <div class="form-group pt-2 pb-3">
                                 <label for="" >{{"include 'Parking' in the unit" | translate}}
                                     
                                    
                                 </label>
 
-                                <div class="row">
+                                <div class="d-flex">
 
-                                    <div class="col-lg-2 col-6">
+                                    <div class="w-50 ">
                                         <label class="containerRadio form-check-label" >{{ 'Yes' | translate}}
                                                 <input class="form-check-input" type="radio" [value]="1" [checked]="myFormGroup.controls['parking'].value" formControlName="parking">
                                                 <span class="checkmark"></span>
                                           </label>
                                     </div>
 
-                                    <div class="col-lg-2 col-6">
+                                    <div class="w-50 ">
                                         <label class="containerRadio form-check-label">{{ 'No' | translate}}
                                                 <input  class="form-check-input" type="radio"  [value]="0" [checked]="!myFormGroup.controls['parking'].value" formControlName="parking">
                                                 <span class="checkmark"></span>
@@ -202,22 +202,22 @@
 
 
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-2">
 
-                      <div class="col-md-12  bg-white  px-2">
-                          <div class="form-group pt-3 pb-3">
+                      <div class="col-md-12   px-2">
+                          <div class="form-group pt-2 pb-3">
                               <label for="" >{{"include 'Store' in the unit" | translate}}</label>
 
-                              <div class="row">
+                              <div class="d-flex">
 
-                                  <div class="col-lg-2 col-6">
+                                  <div class="w-50 ">
                                       <label class="containerRadio">{{ 'Yes' | translate}}
                                               <input type="radio"  [value]="1" [checked]="myFormGroup.controls['store'].value" formControlName="store">
                                               <span class="checkmark"></span>
                                           </label>
                                   </div>
 
-                                  <div class="col-lg-2 col-6">
+                                  <div class="w-50">
                                       <label class="containerRadio">{{ 'No' | translate}}
                                               <input type="radio"  [value]="0" [checked]="!myFormGroup.controls['store'].value" formControlName="store">
                                               <span class="checkmark"></span>
@@ -232,22 +232,22 @@
 
 
                   </div>
-                  <div class="col-md-4 mb-4">
+                  <div class="col-md-2">
 
-                    <div class="col-md-12  bg-white  px-2">
-                        <div class="form-group pt-3 pb-3">
+                    <div class="col-md-12    px-2">
+                        <div class="form-group pt-2 pb-3">
                             <label for="" >{{"include 'Terrace' in the unit" | translate}}</label>
 
-                            <div class="row">
+                            <div class="d-flex">
 
-                                <div class="col-lg-2 col-6">
+                                <div class="w-50">
                                     <label class="containerRadio">{{ 'Yes' | translate}}
                                             <input type="radio"  [value]="1" [checked]="myFormGroup.controls['terace'].value" formControlName="terace">
                                             <span class="checkmark"></span>
                                         </label>
                                 </div>
 
-                                <div class="col-lg-2 col-6">
+                                <div class="w-50">
                                     <label class="containerRadio">{{ 'No' | translate}}
                                             <input type="radio"  [value]="0" [checked]="!myFormGroup.controls['terace'].value" formControlName="terace">
                                             <span class="checkmark"></span>
@@ -262,22 +262,22 @@
 
 
                 </div>
-                <div class="col-md-4 mb-4 ">
+                <div class="col-md-2">
 
-                  <div class="col-md-12 bg-white  px-2">
-                      <div class="form-group pt-3 pb-3">
+                  <div class="col-md-12   px-2">
+                      <div class="form-group pt-2 pb-3">
                           <label for="" >{{"include 'Balcony' in the unit" | translate}}</label>
 
-                          <div class="row">
+                          <div class="d-flex">
 
-                              <div class="col-lg-2 col-6">
+                              <div class="w-50">
                                   <label class="containerRadio">{{ 'Yes' | translate}}
                                           <input type="radio" [value]="1" [checked]="myFormGroup.controls['balcony'].value" formControlName="balcony">
                                           <span class="checkmark"></span>
                                       </label>
                               </div>
 
-                              <div class="col-lg-2 col-6">
+                              <div class="w-50">
                                   <label class="containerRadio">{{ 'No' | translate}}
                                           <input type="radio" [value]="0" [checked]="!myFormGroup.controls['balcony'].value" formControlName="balcony">
                                           <span class="checkmark"></span>
@@ -292,22 +292,22 @@
 
 
               </div>
-              <div class="col-md-4  mb-4">
+              <div class="col-md-2">
 
-                <div class="col-md-12  bg-white  px-2">
-                    <div class="form-group pt-3 pb-3">
+                <div class="col-md-12    px-2">
+                    <div class="form-group pt-2 pb-3">
                         <label for="" >{{"include 'Roof' in the unit" | translate}}</label>
 
-                        <div class="row">
+                        <div class="d-flex">
 
-                            <div class="col-lg-2 col-6">
+                            <div class="w-50">
                                 <label class="containerRadio">{{ 'Yes' | translate}}
                                         <input type="radio" [value]="1" [checked]="myFormGroup.controls['roof'].value" formControlName="roof">
                                         <span class="checkmark"></span>
                                     </label>
                             </div>
 
-                            <div class="col-lg-2 col-6">
+                            <div class="w-50">
                                 <label class="containerRadio">{{ 'No' | translate}}
                                         <input type="radio" [value]="0" [checked]="!myFormGroup.controls['roof'].value" formControlName="roof">
                                         <span class="checkmark"></span>
@@ -322,25 +322,25 @@
 
 
             </div>
-            <div class="col-md-4  mb-4">
+            <div class="col-md-2 ">
 
-              <div class="col-md-12  bg-white px-2">
-                  <div class="form-group pt-3 pb-3">
+              <div class="col-md-12   px-2">
+                  <div class="form-group pt-2 pb-3">
                       <label for="" >
                        {{"include 'Servant Room' in the unit" | translate}}
                       </label>
 
-                      <div class="row">
+                      <div class="d-flex">
 
-                          <div class="col-lg-2 col-6">
-                              <label class="containerRadio">{{ 'Yes' | translate}}
+                          <div class="w-50">
+                              <label class="containerRadio ">{{ 'Yes' | translate}}
                                     <input type="radio" [value]="1" [checked]="myFormGroup.controls['servent_Room'].value" formControlName="servent_Room" >
                                     <span class="checkmark"></span>
                                   </label>
 
                           </div>
 
-                          <div class="col-lg-2 col-6">
+                          <div class="w-50">
                             <label class="containerRadio">{{ 'No' | translate}}
                                 <input type="radio" [value]="0" [checked]="!myFormGroup.controls['servent_Room'].value" formControlName="servent_Room">
                                  <span class="checkmark"></span>
@@ -363,7 +363,7 @@
                         <div class="col-md-12">
                             <div class="form-group mt-1  bg-white p-3">
                                 <label for="">{{'Would you like to add additional notes?' | translate}}</label>
-                                <textarea class="form-control" rows="5" formControlName="additional_Reqst"></textarea>
+                                <textarea class="form-control form-control-sm" rows="5" formControlName="additional_Reqst"></textarea>
                             </div>
 
                         </div>

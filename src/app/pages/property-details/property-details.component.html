@@ -31,17 +31,17 @@
         alt=""
       />
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 mt-2">
       <div class="row mb-1" *ngIf="propertyDetails">
-        <div class="col-md-12 text-left">
-          <b class="mainColor" style="font-size: 20px">
+        <div class="col-md-12 mb-2 text-left">
+          <b class="mainColor " style="font-size: 20px">
             {{ propertyDetails.apartment_Price | number: ".2" }}
             {{ "ر.س" | translate }}
           </b>
         </div>
         <div class="col-md-12 mb-1 text-center">
           <div
-            class="p-5"
+            class="px-5 py-2"
             [class]="{
               green: propertyDetails.statusId == 1,
               orange: propertyDetails.statusId == 2,
@@ -63,7 +63,7 @@
         <h5 class="secondary-color mb-3">{{ "PLACE ORDER" | translate }}</h5>
         <input
           type="text"
-          class="form-control mb-3"
+          class="form-control form-control-sm mb-1"
           placeholder="{{ 'Name' | translate }}"
           formControlName="client_Name"
         />
@@ -72,7 +72,7 @@
                  </span> -->
         <input
           type="text"
-          class="form-control mb-3"
+          class="form-control form-control-sm mb-1"
           placeholder="{{ 'Email' | translate }}"
           formControlName="client_Mail"
         />
@@ -81,7 +81,7 @@
         </span> -->
         <input
           type="text"
-          class="form-control mb-3"
+          class=" form-control form-control-sm mb-1"
           placeholder="{{ 'Phone' | translate }}"
           formControlName="client_Mobile"
         />
@@ -91,14 +91,14 @@
         <textarea
           name=""
           placeholder="{{ 'Subject' | translate }}"
-          class="form-control mb-3"
+          class="form-control form-control-sm mb-3"
           id=""
           cols="30"
           rows="3"
           formControlName="additional_Reqst"
         ></textarea>
         <input
-          class="btn secondary-btn"
+          class="btn secondary-btn btn-sm"
           type="submit"
           value="{{ 'Submit' | translate }}"
           [disabled]="myFormGroup.invalid"
@@ -114,64 +114,68 @@
 
       <div class="property-info row px-2" *ngIf="propertyDetails">
         <!-- <div class="row mb-4"> -->
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <img src="assets/content/WithoutText/floor.svg" alt=""  class="image-property"/>
-          <p>{{ "p_Intrance" | translate }}</p>
-          <hr />
-          <h6>
-          <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.p_Intrance ==0,
-          'icon-checkmark': propertyDetails.p_Intrance ==1 }"><use [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+        <div class="col-12 d-flex px-0">
+          <div class="box bg-secondary">
+            <img src="assets/content/WithoutText/floor.svg" alt=""  class="image-property"/>
+            <p>{{ "p_Intrance" | translate }}</p>
+            <hr />
+            <h6>
+            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.p_Intrance ==0,
+            'icon-checkmark': propertyDetails.p_Intrance ==1 }"><use [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            </h6>
+          </div>
+          <div class="box bg-secondary">
+            <span class="icon-svg icon-area position-relative"> </span>
+            <p>{{ "basic_Space" | translate }}</p>
+            <hr />
+            <h6>{{ propertyDetails.basic_Space }}</h6>
+          </div>
+          <div class="box bg-secondary">
+          
+            <span class="icon-svg icon-area position-relative"> <span class="plus">+</span></span>
+           
+            <p>{{ "additional_Space" | translate }}</p>
+            <hr />
+            <h6>{{ propertyDetails.additional_Space }}</h6>
+          </div>
+          <div class="box bg-secondary">
+            <span class="icon-svg icon-balcon"></span>
+           
+            <p>{{ "balcon" | translate }}</p>
+            <hr />
+            <h6>
+            <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
+            'icon-checkmark': propertyDetails.balcon ==1 }"><use [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
           </h6>
+          </div>
+          <div class="box bg-secondary">
+            <img src="assets/content/WithoutText/toilet.svg" alt=""  class="image-property" />
+            <p>{{ "Toilet" | translate }}</p>
+            <hr />
+            <h6>{{ propertyDetails.toilet_Num }}</h6>
+          </div>
+          <div class="box bg-secondary">
+            <img src="assets/content/WithoutText/servant.svg" alt=""  class="image-property" />
+            <p>{{ "servant_Room" | translate }}</p>
+            <hr />
+            <h6>
+            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
+            'icon-checkmark': propertyDetails.servant_Room ==1 }"><use [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+         </h6>
+          </div>
+          <div class="box bg-secondary">
+            <span class="icon-svg icon-roof"></span>
+            <p>{{ "roof" | translate }}</p>
+            <hr />
+            <h6>
+            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
+            'icon-checkmark': propertyDetails.roof ==1 }"><use [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            </h6>
+          </div>
+
         </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <span class="icon-svg icon-area position-relative"> </span>
-          <p>{{ "basic_Space" | translate }}</p>
-          <hr />
-          <h6>{{ propertyDetails.basic_Space }}</h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-        
-          <span class="icon-svg icon-area position-relative"> <span class="plus">+</span></span>
-         
-          <p>{{ "additional_Space" | translate }}</p>
-          <hr />
-          <h6>{{ propertyDetails.additional_Space }}</h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <span class="icon-svg icon-balcon"></span>
-         
-          <p>{{ "balcon" | translate }}</p>
-          <hr />
-          <h6>
-          <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
-          'icon-checkmark': propertyDetails.balcon ==1 }"><use [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
-        </h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <img src="assets/content/WithoutText/toilet.svg" alt=""  class="image-property" />
-          <p>{{ "Toilet" | translate }}</p>
-          <hr />
-          <h6>{{ propertyDetails.toilet_Num }}</h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <img src="assets/content/WithoutText/servant.svg" alt=""  class="image-property" />
-          <p>{{ "servant_Room" | translate }}</p>
-          <hr />
-          <h6>
-          <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
-          'icon-checkmark': propertyDetails.servant_Room ==1 }"><use [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
-       </h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
-          <span class="icon-svg icon-roof"></span>
-          <p>{{ "roof" | translate }}</p>
-          <hr />
-          <h6>
-          <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
-          'icon-checkmark': propertyDetails.roof ==1 }"><use [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
-          </h6>
-        </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="col-12 d-flex px-0">
+        <div class="box bg-secondary">
           <span class="icon-svg icon-parking"></span>
           <p>{{ "parking" | translate }}</p>
           <hr />
@@ -180,7 +184,7 @@
             'icon-checkmark': propertyDetails.parking ==1 }"><use [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
           </h6>
         </div>
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="box bg-secondary">
           <img src="assets/content/WithoutText/trace.svg" alt=""  class="image-property" />
           <p>{{ "trace" | translate }}</p>
           <hr />
@@ -190,21 +194,21 @@
         </h6>
           </div>
 
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="box bg-secondary">
           <span class="icon-svg icon-area"></span>
           <p>{{ "Area" | translate }}</p>
           <hr />
           <h6>{{ propertyDetails.apartment_Space | translate }}</h6>
         </div>
 
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="box bg-secondary">
           <img src="assets/content/WithoutText/room.svg" alt=""   class="image-property"/>
           <p>{{ "Rooms" | translate }}</p>
           <hr />
           <h6>{{ propertyDetails.bed_Room_Num }}</h6>
         </div>
 
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="box bg-secondary">
           <span class="icon-svg icon-images-PhotoRoom"></span>
         
           <p>{{ "Floor" | translate }}</p>
@@ -215,7 +219,7 @@
        </h6>
         </div>
 
-        <div class="col-md-2 col-lg-2 bg-secondary ">
+        <div class="box bg-secondary ">
           <img src="assets/content/WithoutText/hall.svg" alt=""  class="image-property" />
           <p>{{ "Hall" | translate }}</p>
           <hr />
@@ -225,7 +229,7 @@
         </h6>
         </div>
 
-        <div class="col-md-2 col-lg-2 bg-secondary">
+        <div class="box bg-secondary">
           <img src="assets/content/WithoutText/salon.svg" alt=""  class="image-property" />
           <p>{{ "Salon" | translate }}</p>
           <hr />
@@ -233,6 +237,7 @@
           <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.salon ==0,
           'icon-checkmark': propertyDetails.salon ==1 }"><use [attr.xlink:href]="propertyDetails.salon==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
         </h6>
+        </div>
         </div>
       </div>
     </div>

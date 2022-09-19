@@ -183,18 +183,22 @@ a {
 .property-section .property-info .bg-secondary{
   background: #fff !important;
     padding-top: 20px;
+    height: 135px;
     text-align: center;
     justify-content: center;
     border: solid 1px #e9e4df;
 
 }
 .image-property{
-  width: 80px;
-  height: 70px;
+  width: 50px;
+  height: 45px;
 
 }
+.box{
+  width: 14.29%;
+}
 .icon-svg{
-  font-size: 65px;
+  font-size: 40px;
   color: #c5c1bb;
 }
 .plus{
@@ -207,7 +211,7 @@ a {
 }
 .property-section .property-info .bg-secondary p{
   margin-bottom: 2px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
 }
 
