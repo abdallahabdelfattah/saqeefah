@@ -13,7 +13,7 @@
             <div class="card-mask notLinkable" *ngIf="appRootUrl && property.statusId != 1"></div>
 
             <div class="unit-price">
-                <h5 class="mb-0">{{'Price :' | translate}} {{property.apartment_Price | number: '.2'}} {{'ر.س' | translate}}</h5>
+                <h5 class="mb-0">{{'Price :' | translate}} {{property.apartment_Price | number}} {{'ر.س' | translate}}</h5>
 
             </div>
             <div class="moreSpcs" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+property.apartment_Id">

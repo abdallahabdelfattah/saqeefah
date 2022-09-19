@@ -211,7 +211,13 @@
                                             </div>
                                         </div>
                                         <ng-template #elseBl> 
-                                            {{item[key]}}
+                                            <div  *ngIf="key==='apartment_Price'; else elseB2">
+                                                {{item[key] |number}}
+                                            </div>
+                                            <ng-template #elseB2> 
+                                                {{item[key]}}
+                                            </ng-template>
+
                                         </ng-template>
                                         <!-- {{item[key]}} -->
                                     </ng-template>
