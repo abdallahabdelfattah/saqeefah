@@ -41,8 +41,6 @@ export class AboutUsComponent implements OnInit {
         this.ourMeeting = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.ourMeeting)[0];
         this.ourMeetingBg = this.getUrl(this.setting.appRootUrl + this.ourMeeting?.imagePath);
         this.ceoWordUrl= this.getUrl(this.setting.appRootUrl + this.ceoWord?.imagePath);
-        debugger
-        
         console.log('website setting from about us page', allSetting)
 
       }
