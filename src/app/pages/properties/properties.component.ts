@@ -87,10 +87,10 @@ export class PropertiesComponent implements OnInit {
 
  sortAssending(value){
   if(value == 1) {
-   this.AllProperties.sort((a:any, b:any) => a.price.localeCompare(b.price))
+   this.filteredProperties.sort((a:any, b:any) => a.apartment_Price.localeCompare(b.apartment_Price))
 
   } else {
- this.AllProperties.sort((a:any, b:any) => b.price.localeCompare(a.price))
+ this.filteredProperties.sort((a:any, b:any) => b.apartment_Price.localeCompare(a.apartment_Price))
 
   }
 
@@ -98,9 +98,10 @@ export class PropertiesComponent implements OnInit {
 
 sortByPrice(option){
   if(option =='l2h'){
-    this.AllProperties.sort((a:any, b:any) => Number(a.apartment_Price) - Number(b.apartment_Price));
+   
+    this.filteredProperties.sort((a:any, b:any) => Number(a.apartment_Price) - Number(b.apartment_Price));
   }else if(option =='h2l'){
-    this.AllProperties.sort((a:any, b:any) => Number(b.apartment_Price) - Number(a.apartment_Price));
+    this.filteredProperties.sort((a:any, b:any) => Number(b.apartment_Price) - Number(a.apartment_Price));
   }
 }
 
