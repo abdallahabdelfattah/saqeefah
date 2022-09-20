@@ -10,6 +10,7 @@ import { PlaceOrderService } from 'src/app/services/placeOrder.service';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { SettingTypes } from 'src/app/shared/Enums/enums';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
+import { ranges } from '../dashboard/setting/models/ranges';
 import { SettingsService } from '../dashboard/setting/services/settings.service';
 
 @Component({
@@ -25,6 +26,10 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   paymentMethods:pickList[]=[] as pickList[];
   cities:pickList[]=[] as pickList[];
   districts:pickList[]=[] as pickList[];
+  public priceCategory: pickList[] = [] as pickList[];
+  public areaCategory: pickList[] = [] as pickList[];
+  allAreaRanges: ranges[] = [] as ranges[];
+  allPriceRanges: ranges[] = [] as ranges[];
   bannerPlaceOrderUrl
   bannerPlaceOrder
 
@@ -42,8 +47,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
 
     payment_Method: new FormControl(0,[]),  // payment method is from api
 
-    price_Avg: new FormControl(0, []),
-    space_Avg: new FormControl(0,[]),
+    price_Avg: new FormControl('all'),
+    space_Avg: new FormControl('all'),
     bed_Room: new FormControl(0, []),
 
 
@@ -71,6 +76,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     this.loadProjects();
     this.loadCities();
     this.loadDistricts();
+    this.loadPickList();
     this.loadPaymentMethods();
     this.initializeFormGroup();
   }
@@ -155,6 +161,50 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
    
  
   }
+
+
+  loadPickList() {
+    this.priceCategory = [] as pickList[];
+    this.areaCategory = [] as pickList[];
+
+    this.service.getCategory(1, this.language.getLanguageID()).subscribe(res => {
+      if (!res.isError) {
+        if (res.result.data.length > 0) {
+          this.allAreaRanges = res.result.data;
+          res.result.data.forEach(element => {
+
+            let item: pickList = {} as pickList;
+            item.id = element.id
+            item.value = element.name
+            this.areaCategory.push(item);
+          });
+        }
+      }
+      else {
+      }
+    })
+    this.service.getCategory(2, this.language.getLanguageID()).subscribe(res => {
+      if (!res.isError) {
+        if (res.result.data.length > 0) {
+          this.allPriceRanges = res.result.data;
+          res.result.data.forEach(element => {
+
+            let item: pickList = {} as pickList;
+            item.id = element.id
+            item.value = element.name
+            this.priceCategory.push(item);
+
+
+          });
+        }
+      }
+      else {
+      }
+    })
+  }
+
+
+
 
   initializeFormGroup() {
     this.myFormGroup.setValue({

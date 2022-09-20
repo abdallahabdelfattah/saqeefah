@@ -29,7 +29,9 @@ export interface siteInfo{
     projectListDesc:string,
     vedioTitle:string,
     vedioDescription:string,
-    vedioURL:string
+    vedioURL:string,
+    blogger:string,
+    buildingCount:string
 
 }
 export interface adminSiteInfo{

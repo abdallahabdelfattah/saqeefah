@@ -134,12 +134,20 @@
 
 
                         <div class="col-md-4">
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                             <label for="" >{{'Price' | translate}}
                                
                             </label>
                             <input type="number" class="form-control form-control-sm" formControlName="price_Avg">
-                             </div>
+                             </div> -->
+                             <div class="form-group">
+                                <label class="form-label">{{'Price' | translate}}</label>
+                                <select class="form-select form-select-sm mb-1"formControlName="price_Avg" aria-label=".form-select-lg example">
+                                <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                                <option *ngFor="let item of priceCategory"   value="{{item.id}}">{{item.value}}</option>
+                            </select>
+                            </div>
+
                         </div>
 
 
@@ -156,13 +164,21 @@
                         </div>
 
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="" >{{'The area of the apartment' | translate}} 
                                   
                                 </label>
                                 <input type="text" name=""  class="form-control form-control-sm" formControlName="space_Avg">
-                                <!-- <small>Including private spaces such as the roof and others.</small> -->
+                                
+                            </div> -->
+                            <div class="form-group">
+                                <label class="form-label">{{'The area of the apartment' | translate}}</label>
+                                <select class="form-select form-select-sm mb-1" formControlName="space_Avg" aria-label=".form-select-lg example">
+                                <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                                <option *ngFor="let item of areaCategory"   value="{{item.id}}">{{item.value | translate}}</option>
+                            </select>
                             </div>
+
                         </div>
 
 

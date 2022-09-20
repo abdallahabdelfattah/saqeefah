@@ -323,7 +323,7 @@
    "dressRoom":"Dress Room",
    "CountApartmentsStatistic":"Housing units",
    "CountEmployessSoudiStatistic":"A professional Saudi employee",
-   "CountProjectsStatistic":"Housing project",
+   "CountProjectsStatistic":"Housing projects",
    "ProjectId":"Project",
   "Your home should fit the way you live, with spaces and features that appeal to the entire family. Before you begin looking at homes, make a list of your priorities: location, size, lot, amenities, etc. Establish a set of minimum requirements and a 'wish list'. Minimum requirements are things that a house must have for you to consider it, while a 'wish list' covers things that you'd like to have but aren't essential.":"Your home should fit the way you live, with spaces and features that appeal to the entire family. Before you begin looking at homes, make a list of your priorities: location, size, lot, amenities, etc. Establish a set of minimum requirements and a 'wish list'. Minimum requirements are things that a house must have for you to consider it, while a 'wish list' covers things that you'd like to have but aren't essential.",
   "saqeefahStory":"saqeefah story",
@@ -350,6 +350,7 @@
 "login":"Login",
 "Required Password":"Required Password",
 "Required Username":"Required Username",
-"Username":"Username"
+"Username":"Username",
+"CountBuildingStatistic":"Housing buildings "
 
 }
