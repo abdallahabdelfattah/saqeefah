@@ -1,8 +1,5 @@
 .videoWrapper {
-    border-top: 15px;
-    border-left: 15px;
-    border-bottom: 15px;
-    border-right: 15px;
+    border-width: 10px;
     border-style: solid;
     box-sizing: border-box;
     border-bottom-color: #bebaa3;
@@ -38,8 +35,6 @@ vg-time-display {
     height: initial;
     align-items: end !important;
 }
-
-
 
 .vg-icon-play_arrow:before {
     content: "\e01b";

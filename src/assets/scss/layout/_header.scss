@@ -28,12 +28,12 @@
 .short-cut-menu {
     position: fixed;
     z-index: 1000;
-    right: -104px;
+    right: 0px;
     top: 50%;
-    transform: translateY(-50%) rotate(270deg);
+    // transform: translateY(-50%) rotate(270deg);
     background: $mainColor;
     font-size: 14px;
-    height: 64px;
+    height: 70px;
     padding: 9px 11px;
     a {
         color: white;
