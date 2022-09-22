@@ -10,14 +10,16 @@
                             <div class="col-md-6">
                                 <div class="row g-3 align-items-center">
                                     <div class="col-lg-auto col-md-12 d-none d-lg-block">
-                                        <label for="inputPassword6" class="col-form-label"> {{'SortBy' |translate}}</label>
+                                        <label for="inputPassword6" class="col-form-label"> السعر</label>
                                     </div>
                                     <div class="col-lg-auto col-md-12">
-                                        <select class="filter-select" #sort (change)="sortByPrice(sort.value)" aria-label=".form-select-lg example">
+                                        <!-- <select class="filter-select" #sort (change)="sortByPrice(sort.value)" aria-label=".form-select-lg example">
                                             <option selected value="l2h" >{{'priceLow' | translate}}</option>
                                             <option value="h2l" >{{'priceHigh' | translate}}</option>
 
-                                          </select>
+                                          </select> -->
+                                        <svg class="icon icon-sort-amount-asc" (click)="sortPriceAssending()"><use xlink:href="#icon-sort-amount-asc"></use></svg>
+                                        <svg class="icon icon-sort-amount-desc" (click)="sortPriceDesinding()"><use xlink:href="#icon-sort-amount-desc"></use></svg>
                                     </div>
 
                                 </div>

@@ -104,7 +104,14 @@ sortByPrice(option){
     this.filteredProperties.sort((a:any, b:any) => Number(b.apartment_Price) - Number(a.apartment_Price));
   }
 }
+sortPriceAssending(){
+  this.filteredProperties.sort((a:any, b:any) => Number(a.apartment_Price) - Number(b.apartment_Price));
 
+}
+sortPriceDesinding(){
+  this.filteredProperties.sort((a:any, b:any) => Number(b.apartment_Price) - Number(a.apartment_Price));
+
+}
 
 
 }

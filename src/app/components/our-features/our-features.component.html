@@ -1,30 +1,46 @@
-<!--===== Start our  Features  =====-->
+<section class="why-saqeefah-section">
 
-<div class="full-row bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="mb-2">
-          <!-- <span class="tagline-2"> {{ "OurFeatures" | translate }}</span> -->
-          <h2 class="mb-4">{{ "whysaqeefah" | translate }}</h2>
-        </div>
-      </div>
-      <div class="col-lg-12 mt-2">
+    <div class="container">
+
         <div class="row">
-          <div class="col-md-4 col-12"  *ngFor="let item of saqeefahBenefits; let i = index">
-            <div class="border-geay"  data-aos="fade-up" data-aos-duration="2500">
-                <div class="simple-thumb transation px-2">
-                    <span class="h3 down-line mb-4">
-                      <img src="assets/content/Features-icons/brown/{{ item.icon }}" class="img-brown" alt="" />
-                <img src="assets/content/Features-icons/white/{{ item.icon }}" class="img-white" alt="" />
-               
-              </span>
-              <h5 class="my-3">{{ item.title }}</h5>
+            <div class="why-title">
+                <h2 class="mb-4">{{ "whysaqeefah" | translate }}</h2>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
+
+        <div class="row justify-content-center">
+
+            <div class="col-sm-6 col-lg-4" *ngFor="let item of saqeefahBenefits; let i = index">
+                <div class="feature-box fbox-center fbox-bg fbox-light fbox-effect">
+                    <div class="fbox-icon">
+                        <a href="#">
+                            <i class="i-alt">{{i+1}}</i>
+                        </a>
+                    </div>
+                    <div class="fbox-content">
+                        <h3>
+                            {{ item.title }}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</section>

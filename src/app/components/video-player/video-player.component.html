@@ -1,21 +1,20 @@
+<section class="pt-5 pb-4 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center section-title">
+                    {{siteInformation?.vedioTitle}}
+                </h4>
+                <p class="text-center my-4">
+                    {{siteInformation?.vedioDescription}}
+                </p>
+            </div>
+        </div>
 
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="text-center section-title">
-          {{siteInformation?.vedioTitle}}
-        </h4>
-        <p class="text-center my-4">
-          {{siteInformation?.vedioDescription}}
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-  <div class="videoWrapper">
-      <!-- <div id="instructions">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="videoWrapper">
+                    <!-- <div id="instructions">
         <video
           #videoPlayer
           id="my_video_1"
@@ -30,46 +29,46 @@
           <source [src]="src" type="video/webm" />
         </video>
       </div> -->
-   
-      <vg-player dir="ltr">
-        <vg-overlay-play></vg-overlay-play>
-        <vg-buffering></vg-buffering>
-    
-        <vg-scrub-bar>
-            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-        </vg-scrub-bar>
-    
-        <vg-controls>
-            <vg-play-pause></vg-play-pause>
-            <vg-playback-button></vg-playback-button>
-    
-            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-    
-            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
-    
-            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-    
-           
-            <vg-mute></vg-mute>
-            <vg-volume></vg-volume>
-    
-            <vg-fullscreen></vg-fullscreen>
-        </vg-controls>
-        <video [vgMedia]="$any(media)" #media id="singleVideo"  preload="auto"  crossorigin width="100%" >
+
+                    <vg-player dir="ltr">
+                        <vg-overlay-play></vg-overlay-play>
+                        <vg-buffering></vg-buffering>
+
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                        </vg-scrub-bar>
+
+                        <vg-controls>
+                            <vg-play-pause></vg-play-pause>
+                            <vg-playback-button></vg-playback-button>
+
+                            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+                            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+
+                            <vg-mute></vg-mute>
+                            <vg-volume></vg-volume>
+
+                            <vg-fullscreen></vg-fullscreen>
+                        </vg-controls>
+                        <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin width="100%">
             <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
         </video>
-    </vg-player>
-   
-   
-    </div> 
+                    </vg-player>
+
+
+                </div>
+
+            </div>
+        </div>
+
 
     </div>
-    </div>
-    
-  
-  </div>
-  
-  
-  </section>
+
+
+</section>
