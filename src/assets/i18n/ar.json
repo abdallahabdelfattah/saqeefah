@@ -156,7 +156,7 @@
     "price_Avg":"متوسط السعر",
     "space_Avg": "متوسط المساحة",
     "bed_Room": "غرف النوم",
-    "parking": "موقف سيارات",
+    "parking": "الموقف الداخلي",
     "terace":"تراس",
     "balcony":"شرفة",
     "roof": "سطح",
@@ -222,7 +222,7 @@
     "Project Size":"حجم المشروع",
     "The area of the apartment":"مساحة الشقة",
     "Number Of Bedrooms":"عدد غرف النوم",
-    "include 'Parking' in the unit":"موقف السيارات",
+    "include 'Parking' in the unit":"الموقف الداخلي",
     "include 'Store' in the unit":"المستودع",
     "include 'Terrace' in the unit":" تراس ",
     "include 'Balcony' in the unit":"الشرفة",
@@ -354,6 +354,8 @@
 "Required Password":"كلمة السر مطلوبة",
 "Required Username":"اسم المستخدم مطلوب",
 "Username":"اسم المستخدم",
-"CountBuildingStatistic":"مباني سكنية"
+"CountBuildingStatistic":"مباني سكنية",
+"sort-desc":"من الاعلى الى الاقل",
+"sort-asc":"من الاقل الى الاعلى"
 
 }

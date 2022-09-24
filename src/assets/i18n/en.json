@@ -351,6 +351,8 @@
 "Required Password":"Required Password",
 "Required Username":"Required Username",
 "Username":"Username",
-"CountBuildingStatistic":"Housing buildings "
+"CountBuildingStatistic":"Housing buildings ",
+"sort-desc":"sort-desc",
+"sort-asc":"sort-asc"
 
 }

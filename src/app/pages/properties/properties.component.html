@@ -7,10 +7,10 @@
                 <div class="col-md-9">
                     <div class="filter-panel mt-3">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-6 col-md-6">
                                 <div class="row g-3 align-items-center">
                                     <div class="col-lg-auto col-md-12 d-none d-lg-block">
-                                        <label for="inputPassword6" class="col-form-label"> السعر</label>
+                                        <label for="inputPassword6" class="col-form-label"> {{'Price' | translate}}</label>
                                     </div>
                                     <div class="col-lg-auto col-md-12">
                                         <!-- <select class="filter-select" #sort (change)="sortByPrice(sort.value)" aria-label=".form-select-lg example">
@@ -18,14 +18,17 @@
                                             <option value="h2l" >{{'priceHigh' | translate}}</option>
 
                                           </select> -->
-                                        <svg class="icon icon-sort-amount-asc" (click)="sortPriceAssending()"><use xlink:href="#icon-sort-amount-asc"></use></svg>
-                                        <svg class="icon icon-sort-amount-desc" (click)="sortPriceDesinding()"><use xlink:href="#icon-sort-amount-desc"></use></svg>
+                                          <i class="fas fa-sort-amount-up" (click)="sortPriceAssending()" title="{{'sort-asc' | translate}}"></i>
+                                          <i class="fas fa-sort-amount-down mx-2" (click)="sortPriceDesinding()" title="{{'sort-desc' | translate}}"></i>
+                                        <!-- <svg class="icon icon-sort-amount-asc" (click)="sortPriceAssending()"><use xlink:href="#icon-sort-amount-asc"></use></svg> -->
+                                       
+                                        <!-- <svg class="icon icon-sort-amount-desc" (click)="sortPriceDesinding()"><use xlink:href="#icon-sort-amount-desc"></use></svg> -->
                                     </div>
 
                                 </div>
 
                             </div>
-                            <div class="col-md-6 text-end">
+                            <div class="col-6 col-md-6 text-end">
 
                                 <ul class="list-inline">
                                     <li class="list-inline-item view-icons" (click)="refresh()"><span><i class="fa fa-refresh fa-fw" aria-hidden="true"></i></span></li>
