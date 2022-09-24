@@ -191,7 +191,7 @@
   "Choose Files":"اختار صور",
   "Save":"حفظ",
   "priceRangeSetting":"اعدادات نطاق السعر",
-  "areaRangeSetting":"اعدادات نطاق السعر",
+  "areaRangeSetting":"اعدادات نطاق المساحة",
   "to":"القيمة النهائية",
   "from":"القيمة البدائية",
   "Title En":" العنوان بالانجليزي",
@@ -349,6 +349,7 @@
 "About Us Banar":"اللافته الاعلانية عن سقيفة",
 "PlaceOrder Banar":"اللافتة الاعلانية عن الطلبات",
 "Contact Banar":"اللافتة الاعلانية عن الاقتراحات والشكاوي",
+"Compare Banar":"اللافتة الاعلانية عن  المقارنة",
 "Username or Password is Incorrect":"اسم المستخدم او كلمة السر غير صحيحة",
 "login":"تسجيل الدخول",
 "Required Password":"كلمة السر مطلوبة",
@@ -356,6 +357,7 @@
 "Username":"اسم المستخدم",
 "CountBuildingStatistic":"مباني سكنية",
 "sort-desc":"من الاعلى الى الاقل",
-"sort-asc":"من الاقل الى الاعلى"
+"sort-asc":"من الاقل الى الاعلى",
+"Modify Data":"امكانية تعديل البيانات"
 
 }

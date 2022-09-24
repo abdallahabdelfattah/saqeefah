@@ -346,6 +346,7 @@
 "About Us Banar":"AboutUs Banar",
 "PlaceOrder Banar":"PlaceOrder Banar",
 "Contact Banar":"Contact Banar",
+"Compare Banar":"Compare Banar",
 "Username or Password is Incorrect":"Username or Password is Incorrect",
 "login":"Login",
 "Required Password":"Required Password",
@@ -353,6 +354,7 @@
 "Username":"Username",
 "CountBuildingStatistic":"Housing buildings ",
 "sort-desc":"sort-desc",
-"sort-asc":"sort-asc"
+"sort-asc":"sort-asc",
+"Modify Data":"Modify Data"
 
 }

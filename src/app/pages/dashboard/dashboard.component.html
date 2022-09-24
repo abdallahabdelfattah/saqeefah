@@ -55,14 +55,14 @@
                                 <li class="full-width">{{'WebsiteInformation' | translate}}</li>
 
                             </a>
-                            <a routerLink="priceRange" routerLinkActive="active">
+                            <!-- <a routerLink="priceRange" routerLinkActive="active">
                                 <li class="full-width">{{'priceRangeSetting' | translate}}</li>
 
                             </a>
                             <a routerLink="areaRange" routerLinkActive="active">
                                 <li class="full-width">{{'areaRangeSetting' | translate}}</li>
 
-                            </a>
+                            </a> -->
                         </ul>
                     </div>
                 </div>
@@ -94,6 +94,28 @@
                 <a routerLink="Appartments" routerLinkActive="active">
                     <li class="full-width">{{'Appartment' | translate}}</li>
                 </a>
+
+                <!-- range -->
+                <a>
+                    <li class="accordion-button full-width collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapserange" aria-expanded="false" aria-controls="collapsemain">{{'Modify Data' | translate}}</li>
+                </a>
+                <div id="collapserange" class="accordion-collapse collapse" aria-labelledby="headingOne">
+
+                    <div class="accordion-body">
+                        <ul class="px-0">
+                            
+                            
+                            <a routerLink="priceRange" routerLinkActive="active">
+                                <li class="full-width">{{'priceRangeSetting' | translate}}</li>
+
+                            </a>
+                            <a routerLink="areaRange" routerLinkActive="active">
+                                <li class="full-width">{{'areaRangeSetting' | translate}}</li>
+
+                            </a>
+                        </ul>
+                    </div>
+                </div>
 
             </ul>
         </div>

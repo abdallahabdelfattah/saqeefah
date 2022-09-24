@@ -4,7 +4,7 @@
             <h5 class="secondary-color">{{ SettingTypeTitle | translate}}</h5>
         </button>
     </h2>
-    <div id="{{'collapse-'+collapseId}}" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+    <div id="{{'collapse-'+ collapseId}}" class="accordion-collapse collapse show" aria-labelledby="headingOne">
         <div class="accordion-body">
             <form action="" class="row g-4" *ngIf="currentFormData" [formGroup]="myFormGroup" (submit)="onClickSubmit()" enctype="multipart/form-data">
                 <input type="hidden" formControlName="settingTypeId">
