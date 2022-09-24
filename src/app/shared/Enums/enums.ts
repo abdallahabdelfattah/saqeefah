@@ -28,7 +28,8 @@ export enum SettingTypes{
   OurServices=900,
   BannerAboutUS=1000,
   PlaceOrderBanar=1100,
-  ContactBanar=1200
+  ContactBanar=1200,
+  CompareBanar=1300,
 }
 
 
