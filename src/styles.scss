@@ -123,6 +123,9 @@ i:hover {
   display: flex;
   align-items: center;
 }
+.order-1{
+  margin-top:-60px;
+}
 
 @import "./assets/scss/base/responsive";
 html {
@@ -132,5 +135,41 @@ html {
 @media only screen and (max-width: 1200px) {
   .vs{
     display: none;
+  }
+}
+@media only screen and (min-width:768px) and (max-width:992px) {
+  .bar{
+   flex: 0 0 auto;
+   width: 100%;
+  }
+  .order-1{
+    margin-top:0px;
+  }
+  .unit-specs span{
+    font-size: 12px;
+  }
+  .unit-specs span.text{
+    font-size: 8px !important;
+}
+.card .img-panel .moreSpcs{
+  font-size: 10px;
+}
+.card .unit-price h5{
+  font-size: .6rem;
+}
+.social{
+  display: flex;
+}
+.media .icon{
+  font-size: 20px !important;
+}
+.fa-blogger-b:before ,.fa-snapchat-ghost:before{
+  font-size: 11px !important;
+}
+
+}
+@media only screen and (max-width:768px){
+  .order-1{
+    margin-top:0px;
   }
 }
