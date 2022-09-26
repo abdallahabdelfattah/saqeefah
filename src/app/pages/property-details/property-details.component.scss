@@ -3,25 +3,24 @@ a {
     -o-transition: .3s all ease;
     transition: .3s all ease;
     color: #af8f79
-  }
-  
-  a:hover,
-  a:focus {
+}
+
+a:hover,
+a:focus {
     text-decoration: none;
     color: #af8f79;
     outline: none !important
-  }
-  .spec{
+}
+
+.spec {
     width: 10%;
-  }
+}
 
-  
-
-  .bg-light {
+.bg-light {
     background: #fafafa !important
-  }
-  
-  .btn {
+}
+
+.btn {
     cursor: pointer;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -30,235 +29,251 @@ a {
     -webkit-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
     box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1)
-  }
-  
-  .btn:hover,
-  .btn:active,
-  .btn:focus {
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
     outline: none;
     box-shadow: none;
-  }
-  
-  .btn.btn-primary {
+}
+
+.btn.btn-primary {
     background: #af8f79;
     border: 1px solid #af8f79;
     color: #fff
-  }
-  
-  .btn.btn-primary:hover {
+}
+
+.btn.btn-primary:hover {
     border: 1px solid #af8f79;
     background: transparent;
     color: #af8f79
-  }
-    
-  .section {
+}
+
+.section {
     padding: 7em 0;
     position: relative
-  }
+}
 
-  
+
 /*===== property-details CSS =====*/
 
-
-.property-section .large-image:hover ~ .controls,
+.property-section .large-image:hover~.controls,
 .property-section .controls:hover {
-	opacity: 1;
+    opacity: 1;
 }
 
 .property-section .controls {
-	position: absolute;
-	top: 85%;
-	transition: all .15s ease-in-out;
-	width: 100%;
+    position: absolute;
+    top: 85%;
+    transition: all .15s ease-in-out;
+    width: 100%;
 }
 
 .property-section .controls .prev-button,
 .property-section .controls .next-button {
-	background-color: rgba(0, 0, 0, 0.705);
-	border-radius: 5px;
-	cursor: pointer;
-  height: 40px;
-  width: 40px;
-	outline: none;
-	padding: 15px;
-	position: absolute;
-	transition: all .15s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.705);
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    padding: 15px;
+    position: absolute;
+    transition: all .15s ease-in-out;
 }
+
 .property-section .controls .prev-button:hover,
 .property-section .controls .next-button:hover {
-	background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
 }
+
 .property-section .controls .prev-button {
-	left: 10px;
+    left: 10px;
 }
+
 .property-section .controls .next-button {
-	right: 10px;
+    right: 10px;
 }
+
 .property-section .controls .prev-button.inactive,
 .property-section .controls .next-button.inactive {
-	background-color: rgba(123,123,123,.6);
+    background-color: rgba(123, 123, 123, .6);
 }
+
 .property-section .controls .prev-button.inactive:hover,
 .property-section .controls .next-button.inactive:hover {
-	background-color: rgba(123,123,123,.7);
+    background-color: rgba(123, 123, 123, .7);
 }
+
 .property-section .controls i {
-  color: #fff;
-  position: absolute
+    color: #fff;
+    position: absolute
 }
 
 .property-section .thumbnails {
-	cursor: grab;
-	cursor: -o-grab;
-	cursor: -moz-grab;
-	cursor: -webkit-grab;
-}
-.property-section .thumbnails > div{
-  margin: 10px auto;
-}
-.property-section .thumbnails > div.active {
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px 0 rgb(50 50 50 / 16%);
+    cursor: grab;
+    cursor: -o-grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
 
-.property-section .nav-pills .nav-link{
-  background: #fff;
-  color: #222222;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 15px;
-  padding: 8px 25px
+.property-section .thumbnails>div {
+    margin: 10px auto;
 }
 
-.property-section .nav-pills .nav-link.active, 
+.property-section .thumbnails>div.active {
+    border: 2px solid #fff;
+    box-shadow: 0 0 15px 0 rgb(50 50 50 / 16%);
+}
+
+.property-section .nav-pills .nav-link {
+    background: #fff;
+    color: #222222;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 25px
+}
+
+.property-section .nav-pills .nav-link.active,
 .property-section .nav-pills .show>.nav-link {
-  color: #fff;
-  background-color: #af8f79;
-  border-radius: 0 
+    color: #fff;
+    background-color: #af8f79;
+    border-radius: 0
 }
 
-
-.property-section h2{
-  color: #af8f79;
-  font-size: 22px;
-  text-transform: capitalize;
-  font-weight: 600;
-  margin-bottom: 10px
+.property-section h2 {
+    color: #af8f79;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 10px
 }
 
-.property-section h2 span{
-  text-transform: uppercase;
+.property-section h2 span {
+    text-transform: uppercase;
 }
 
 .property-section .form-control {
-  height: 52px;
-  background: #fff;
-  color: #302f2f;
-  font-size: 15px;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, .1);
-  margin-bottom: 20px;
+    height: 52px;
+    background: #fff;
+    color: #302f2f;
+    font-size: 15px;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
 }
 
 .property-section .form-control:focus,
 .property-section .form-control:active {
-  border-color: #000
+    border-color: #000
 }
 
 .property-section textarea.form-control {
-  height: inherit
+    height: inherit
 }
 
-.property-section .property-info h6{
-  font-size: 15px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
-.property-section .property-info h6 span{
-  font-weight: 700
+.property-section .property-info h6 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
 }
 
-.property-section .property-info .bg-secondary{
-  background: #fff !important;
+.property-section .property-info h6 span {
+    font-weight: 700
+}
+
+.property-section .property-info .bg-secondary {
+    background: #fff !important;
     padding-top: 20px;
     height: 135px;
     text-align: center;
     justify-content: center;
     border: solid 1px #e9e4df;
-
-}
-.image-property{
-  width: 50px;
-  height: 45px;
-
-}
-.box{
-  width: 14.29%;
-}
-.icon-svg{
-  font-size: 40px;
-  color: #c5c1bb;
-}
-.plus{
-  position: absolute;
-  top: 0;
-  right: 10px;
-  color: #c5c1bb;
-  font-size: 30px;
-  font-weight: bold;
-}
-.property-section .property-info .bg-secondary p{
-  margin-bottom: 2px;
-  font-size: 12px;
-  font-weight: 700;
 }
 
-.property-section .property-info .bg-secondary h6{
-  font-size: 15px;
-  font-weight: 700;
-  margin-top: 15px
+.image-property {
+    width: 50px;
+    height: 45px;
 }
 
-.property-section .property-info .bg-secondary hr{
-  margin: 0;
-  border-top: 2px solid #ffff;
-  opacity: .8
+.box {
+    width: 14.29%;
 }
 
-
-.property-section .property-info h5{
-  font-size: 18px;
-  margin-bottom: 25px;
-  font-weight: 600
+.icon-svg {
+    font-size: 40px;
+    color: #c5c1bb;
 }
 
-.property-section .property-info .space-div h6{
-  font-size: 14px
+.plus {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #c5c1bb;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.property-section .property-info .space-div p{
+.property-section .property-info .bg-secondary p {
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.property-section .property-info .bg-secondary h6 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 15px
+}
+
+.property-section .property-info .bg-secondary hr {
+    margin: 0;
+    border-top: 2px solid #ffff;
+    opacity: .8
+}
+
+.property-section .property-info h5 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600
+}
+
+.property-section .property-info .space-div h6 {
+    font-size: 14px
+}
+
+.property-section .property-info .space-div p {
     font-weight: 700;
     font-size: 14px;
     margin-top: 7px
 }
 
-
-  @media screen and (max-width: 768px) {
-
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 127px;
+    }
+    .col-12.d-flex.px-0 {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        .box {
+            width: 50%;
+        }
+    }
     .section {
-      padding: 4em 0;
+        padding: 4em 0;
     }
-
     .property-section .nav-pills .nav-link {
-      font-size: 12px;
-      padding: 8px 10px;
+        font-size: 12px;
+        padding: 8px 10px;
     }
-
     .property-section h2 {
-      font-size: 20px;
+        font-size: 20px;
     }
-
-  }
-
+}

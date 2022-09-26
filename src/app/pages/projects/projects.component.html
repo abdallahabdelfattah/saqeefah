@@ -5,7 +5,7 @@
             <h6 style="font-size: 15px;font-weight:400;" class="mb-0">{{filteredProjects.length}} {{'list founded' | translate}}</h6>
             <div class="row">
                 <div class="col-12 col-md-9 mb-1 bar">
-                    <div class="filter-panel mt-3 w-100">
+                    <div class="filter-panel mt-3 w-100 d-none d-lg-block">
                         <div class="row">
                             <!-- <div class="col-md-6">
                                 <div class="row g-3 align-items-center">
@@ -51,7 +51,7 @@
                 <div [ngSwitch]="view">
 
                     <div class="row" *ngSwitchCase="'grid3'">
-                        <app-project-card class="col-md-6  mb-3" [project]="item"  *ngFor="let item of filteredProjects"></app-project-card>
+                        <app-project-card class="col-md-6  mb-3" [project]="item" *ngFor="let item of filteredProjects"></app-project-card>
                     </div>
                     <div class="row" *ngSwitchCase="'grid6'">
                         <app-project-card class="col-md-3 mb-3" [project]="item" [viewType]="'grid6'" *ngFor="let item of filteredProjects"></app-project-card>
@@ -71,7 +71,7 @@
                 <h6 class="mb-3" style="font-size: 13px;font-weight:400;">{{'FilterDesc' | translate}}</h6>
             </div>
 
-            <app-search-project-form  (obj)="filter($event)" [allProjects]="AllProjects"></app-search-project-form>
+            <app-search-project-form (obj)="filter($event)" [allProjects]="AllProjects"></app-search-project-form>
         </div>
     </div>
 </div>
