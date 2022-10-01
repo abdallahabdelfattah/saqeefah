@@ -1,10 +1,23 @@
 .location-onMap {
     position: absolute;
-    top: 2px;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
     z-index: 4;
-    font-size: 28px;
-    left: 33px;
-    color: #ffa468;
+    left: 48px;
+    i{
+        font-size: 22px;
+        color: #fff;
+    }
+}
+.project-card{
+    border: 1px solid #ddd;
+    overflow: hidden;
 }
 .edit-project{
   box-shadow: 2px 5px 5px #aeaeae;
@@ -16,12 +29,25 @@
 }
 
 .unit-specs {
-    position: absolute;
-    bottom: 5px;
-    z-index: 6;
-    background: #000000bf;
-    color: white;
-    padding: 5px 16px;
+    position: relative;
+    color: #000;
+    padding: 0;
+    border-top: 1px solid #ddd;
+    ul{
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 8px 0 0;
+        >li{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:not(:last-of-type){
+                border-inline-end: 1px solid #ddd;
+            }
+        }
+    }
 }
 
 .unit-location {
@@ -83,9 +109,15 @@
 
 
 .card.grid6 .img-panel .img-container.project {
-    height: 250px;
-   
+    height: 250px;   
     img{
         height: 100%;
+    }
+}
+.img-container{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }

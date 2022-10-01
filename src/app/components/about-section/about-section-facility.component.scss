@@ -1,6 +1,38 @@
+@import '../../../assets/scss/base/varibles';
+
 .about-us-area {
-    font-family: "Poppins", sans-serif;
     padding: 50px 0;
+}
+
+.company-story {
+    padding: 40px 0;
+}
+
+.section-title {
+    position: relative;
+    display: inline-flex;
+    font-size: 35px;
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 15px;
+    // background-color: $mainColor;
+    padding-inline-start: 18px;
+
+    &::before {
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: 0;
+        content: '';
+        display: inline-flex;
+        width: 12px;
+        height: 100%;
+        background-color: #5E5E59;
+    }
+
+    .title {
+        padding: 4px 8px;
+        background-color: $mainColor;
+    }
 }
 
 .about-img-left {
@@ -8,16 +40,19 @@
     position: relative;
 }
 
-.img-container{
+.img-container {
     background-size: cover;
-    width: 90%;
-    height: 250px;
-    border: 5px solid #dddcd4;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
 }
+
 .about-us-img-wrap img {
     margin: 0;
     width: 100%
 }
+
 // .img-fluid {
 //   max-width: 100%;
 //   height: 200px;
@@ -118,13 +153,7 @@
     opacity: 0.1;
 }
 
-.about-us-area .section-title {
-    font-size: 35px;
-    font-weight: normal;
-    line-height: 1.3;
-    color: #071c1f;
-    margin-bottom: 15px;
-}
+
 
 .ltn__list-item-half {
     margin-top: 0;
@@ -212,13 +241,82 @@
 }
 
 
+.about-data {
+    .container {
+        >.row {
+            margin-bottom: 60px;
 
+            &:nth-child(even) {
 
-.about-div-text h2{
-  color: #86815b;
-    text-transform: capitalize;
-    font-weight: 600;
-    margin-bottom: 15px;
+                >div:nth-child(1) {
+                    z-index: 2;
+                }
+
+                >div:nth-child(2) {
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}
+
+.about-div-text {
+    background-color: #fff;
+    padding: 24px;
+    z-index: 2;
+
+    .row>div:nth-child(2) & {
+        margin-inline-start: -60px;
+    }
+
+    .row>div:nth-child(1) & {
+        margin-inline-end: -60px;
+    }
+
+    h2 {
+        position: relative;
+        color: #86815b;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-inline-start: 24px;
+
+        &::before {
+            position: absolute;
+            inset-block: 0;
+            inset-inline-start: 0;
+            content: '';
+            display: inline-flex;
+            width: 12px;
+            height: 100%;
+            background-color: #5E5E59;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-data {
+        .container {
+            >.row {
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .about-div-text {
+        margin: 24px 0;
+    }
+
+    .about-div-text {
+        .row>div:nth-child(2) & {
+            margin-inline-start: 0;
+        }
+
+        .row>div:nth-child(1) & {
+            margin-inline-end: 0;
+        }
+    }
+
 }
 
 .border-geay {
@@ -251,30 +349,37 @@
     .about-us-img-wrap .about-section-img2 {
         width: 157px;
     }
+
     .ltn__video-icon-2 {
         height: 50px;
         width: 50px;
         font-size: 15px;
     }
+
     .section-title-area {
         margin-top: 20px;
         padding: 0 10px
     }
+
     .about-us-area .section-title {
         font-size: 26px;
         margin-top: 5px
     }
+
     .ltn__list-item-half li {
         width: 100%;
         margin-bottom: 20px
     }
+
     .full-row h2 {
         font-size: 26px;
         line-height: 39px;
     }
+
     .tagline-2::before {
         left: -30px
     }
+
     .tagline-2 {
         padding: 0 26px;
     }
@@ -283,8 +388,8 @@
 
 /* --------------------------- */
 p {
-  margin-top: 0;
-  margin-bottom: 0.3rem !important;
+    margin-top: 0;
+    margin-bottom: 0.3rem !important;
 }
 
 
@@ -305,6 +410,7 @@ p.saqeefah-benfits {
     align-items: center;
     transition: all 0.5s;
     font-weight: normal;
+
     &:hover {
         cursor: pointer;
         background-color: white;
@@ -312,10 +418,4 @@ p.saqeefah-benfits {
         color: #86815b;
         transition: all 0.5s;
     }
-}
-
-
-
-.flex-item-center{
-    padding: 35px 0px ;
 }

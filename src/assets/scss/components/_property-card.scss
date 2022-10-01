@@ -1,17 +1,22 @@
 .card {
     border: 0;
+    cursor: pointer;
     .img-panel {
         position: relative;
+
         .img-container {
-            min-height: 150px;
             background: #ededed;
-            max-height: 150px;
-            overflow-y: hidden;
+            height: 150px;
+            overflow: hidden;
+            img{
+                transition: all .3s ease-in-out;
+            }
         }
+
         .img-container.project {
-            min-height: 250px;
-            max-height: 250px;
+            height: 250px;
         }
+
         .moreSpcs {
             position: absolute;
             bottom: 10%;
@@ -44,14 +49,21 @@
         color: white;
     }
     .fav-icon {
-        left: 9px;
-        top: 7px;
-        font-size: 21px;
+        width: 32px;
+        height: 32px;
+        left: 8px;
+        top: 8px;
+        display: flex;
+        align-items: center;
         color: white;
+        font-size: 22px;
+        line-height: 32px;
         z-index: 2;
+        justify-content: center;
+
         &:hover {
             cursor: pointer;
-            color: #fe5e5e;
+            color: red;
         }
     }
     .fav-icon.active {
@@ -76,6 +88,7 @@
         top: 9px;
         left: 36px;
         font-size: 13px;
+
         &:hover {
             color: white;
             background: $mainColor;
@@ -94,6 +107,7 @@
         z-index: 2;
         color: white;
         font-weight: 400;
+
         &:after {
             content: '';
             bottom: -19px;
@@ -104,6 +118,13 @@
             border-top: 19px solid #555;
         }
     }
+    &:hover{
+        .img-container{
+            img{
+                transform: scale(1.12);
+            }
+        }
+    }
 }
 
 .card-body {
@@ -111,11 +132,13 @@
         border-bottom: 2px dashed #afafaf;
         margin-bottom: 8px;
         padding-bottom: 8px;
+
         .tagr-vector {
             color: $secondaryColor;
             font-size: 25px;
             vertical-align: bottom;
         }
+
         .link-togmap {
             background: $secondaryColor;
             padding: 11px 11px;
@@ -126,24 +149,28 @@
             margin: 0 4px;
         }
     }
+
     .unit-specs {
         padding-top: 5px;
         color: #8f8432;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 600;
+
         .specs-ele {
             display: flex;
             flex-direction: row;
             align-content: center;
             align-items: center;
+
             i,
             img {
                 font-size: 20px;
                 line-height: 0;
                 margin: 0 4px;
             }
+
             .specs-count {
-                font-weight: bold;
+                // font-weight: bold;
             }
         }
     }

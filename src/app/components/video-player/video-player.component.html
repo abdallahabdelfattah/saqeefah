@@ -1,20 +1,27 @@
-<section class="pt-5 pb-4 bg-white">
+<section class="vedio-section">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="text-center section-title">
-                    {{siteInformation?.vedioTitle}}
+        <div class="row g-3 flex-item-center">
+            <div class="col-md-6">
+                <h4 class="section-title">
+                    <span class="title">{{siteInformation?.vedioTitle}}</span>
                 </h4>
-                <p class="text-center my-4">
+                <p class="my-4">
                     {{siteInformation?.vedioDescription}}
                 </p>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="videoWrapper">
-                    <!-- <div id="instructions">
+            <div class="col-md-6">
+                <div class="video-cover">
+                    <img src="../../../assets/content/images/home-bg3.jpg" alt="">
+                    <a href="#" class="play-btn" title="تشغيل الفيديو">
+                        <svg width="45" height="45" viewBox="0 0 45 45">
+                            <path id="play"
+                                d="M22.5,45A22.5,22.5,0,0,1,6.59,6.59,22.5,22.5,0,1,1,38.41,38.41,22.353,22.353,0,0,1,22.5,45Zm-5-29.5v14l13-7Z"
+                                fill="#fff" />
+                        </svg>
+                    </a>
+                </div>
+                <!-- <div class="videoWrapper"> -->
+                <!-- <div id="instructions">
         <video
           #videoPlayer
           id="my_video_1"
@@ -30,7 +37,7 @@
         </video>
       </div> -->
 
-                    <vg-player dir="ltr">
+                <!-- <vg-player dir="ltr">
                         <vg-overlay-play></vg-overlay-play>
                         <vg-buffering></vg-buffering>
 
@@ -57,18 +64,14 @@
                             <vg-fullscreen></vg-fullscreen>
                         </vg-controls>
                         <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin width="100%">
-            <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-        </video>
-                    </vg-player>
+                            <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                        </video>
+                    </vg-player> -->
 
 
-                </div>
+                <!-- </div> -->
 
             </div>
         </div>
-
-
     </div>
-
-
 </section>

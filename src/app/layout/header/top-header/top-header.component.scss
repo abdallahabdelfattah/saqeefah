@@ -1,36 +1,40 @@
-.cursor:hover{
+.cursor:hover {
   cursor: pointer;
 }
+
 .top-header {
-  background: #5f5c45;}
-button {
-    background: none!important;
-    border: none;
-    padding: 0!important;
-    /*optional*/
-    font-family: arial, sans-serif;
-    /*input has OS specific font-family*/
-    color: #069;
-    text-decoration: underline;
-    cursor: pointer;
-
-  }
-  i.fab{
-
-    border: 2.3999px solid white;
-
-    border-radius: 50%;
-    position: relative;
-  }
-  .fa-snapchat-ghost:before {
-    content: "\f2ac";
-    font-size: 11px;
-    /* line-height: 1; */
-    position: absolute;
-    left: 2.1px;
-    top: 3.3px;
+  background: #5E5E59;
 }
-.fa-blog:before{
+
+button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+i.fab {
+  border: 2.3999px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+  font-size: 11px;
+  /* line-height: 1; */
+  position: absolute;
+  left: 2.1px;
+  top: 3.3px;
+}
+
+.fa-blog:before {
   font-size: 11px;
   /* line-height: 1; */
   position: absolute;
@@ -38,7 +42,8 @@ button {
   top: 3.3px;
 
 }
-.fa-blogger-b:before{
+
+.fa-blogger-b:before {
 
   font-size: 11px;
   /* line-height: 1; */
@@ -47,8 +52,10 @@ button {
   top: 3.3px;
 }
 
-  @media screen and (max-width: 480px) {
-    .topheader-link li a, .social-links li a{
-      font-size: 13px;
-    }
+@media screen and (max-width: 480px) {
+
+  .topheader-link li a,
+  .social-links li a {
+    font-size: 13px;
   }
+}

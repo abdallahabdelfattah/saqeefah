@@ -1,8 +1,8 @@
 $direction :rtl;
 $left: right;
 $right: left;
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
-$fontFamily: 'Cairo',
+// @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+$fontFamily: 'Hacen-Algeria',
 sans-serif;
 body,
 html,
@@ -29,11 +29,7 @@ li {
 // .short-cut-menu{
 //   right: -80px !important;
 // }
-.short-cut-menu {
-    right: initial !important;
-    left: 0px !important;
-    // rotate: 180deg;
-}
+
 
 .containerRadio,
 .form-group.input-group {

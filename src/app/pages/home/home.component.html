@@ -1,40 +1,54 @@
 <!-- <div class="panorama-container">
     <app-panorama></app-panorama>
 </div> -->
-
+<section class="home">
+  <div class="home__slider">
+    <div class="slider-item">
+      <div class="item-img">
+        <img src="../../../assets/content/images/home-bg3.jpg" alt="">
+      </div>
+      <div class="caption">
+        <div class="container">
+          <h4>أصالة تمتد</h4>
+          <p>
+            مساكن تتسع لأحلام العائلة نبني مساكن بنمط عصري يليق بأصالة العاصمة، ويمنح ساكنيها جودة الحياة ورفاهية العيش
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- <app-about-section></app-about-section> -->
 
-  <!-- About Section in Home  -->
+<!-- About Section in Home  -->
 <app-about-section-facility></app-about-section-facility>
 
-  <!-- End About Section in Home  -->
+<!-- End About Section in Home  -->
+
+<app-our-features></app-our-features>
+<!-- End our Features  in Home  -->
 
 <!-- ----add vedio--------------- -->
 <app-video-player></app-video-player>
-  
-  <app-our-features></app-our-features>
-   <!-- End our Features  in Home  -->
 
 
+<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale"
+  [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
 
+<app-map></app-map>
 
-  
-<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale"  [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
+<app-parallax></app-parallax>
 
 <div class="slider-1 container" *ngFor="let slide of AllSlider">
 
-    <div class="row my-5"  *ngIf="slide.isActive" >
-        <div class="col-md-12">
-            <h4 class="text-center section-title">{{slide?.title | translate}}</h4>
-            <p class="text-center" [innerHtml]="slide?.description">
-            </p>
-        </div>
-        <div class="col-md-12">
-            <app-logo-slider-one [logos]="slide?.sliderAttachment"></app-logo-slider-one>
-        </div>
+  <div class="row my-5" *ngIf="slide.isActive">
+    <div class="col-md-12">
+      <h4 class="section-title"><span class="title">{{slide?.title | translate}}</span></h4>
+      <p class="" [innerHtml]="slide?.description">
+      </p>
     </div>
+    <div class="col-md-12">
+      <app-logo-slider-one [logos]="slide?.sliderAttachment"></app-logo-slider-one>
+    </div>
+  </div>
 </div>
-
-
-<app-map></app-map>
-<app-parallax></app-parallax>

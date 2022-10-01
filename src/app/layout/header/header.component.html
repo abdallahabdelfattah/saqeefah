@@ -1,48 +1,67 @@
-<app-top-header></app-top-header>
-<nav class="navbar navbar-expand-lg fixed-header-mobile " [class]="generalService.checkNavIsTRansparent() ? 'navbar-dark' : 'navbar-light white-nav'">
-    <div class="container">
-        <div class="position-relative">
-            <a class="navbar-brand " [class]="generalService.checkNavIsTRansparent() ? 'home-logo' : 'inner-logo'" href="#">
-                <img width="250px" src="assets/content/images/logo.png" alt="" srcset="">
+<header>
+    <app-top-header></app-top-header>
+    <nav class="navbar navbar-expand-lg fixed-header-mobile "
+        [class]="generalService.checkNavIsTRansparent() ? 'navbar-dark' : 'navbar-light white-nav'">
+        <div class="container">
+            <a class="navbar-brand " [class]="generalService.checkNavIsTRansparent() ? 'home-logo' : 'inner-logo'"
+                href="#">
+                <img src="assets/content/images/logo.png" alt="" srcset="">
             </a>
 
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true">{{'home' |translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/about" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active">{{'about' |translate}} </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/projects" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active">{{'Projects' |translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/property" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active">{{'properties' |translate}}</a>
-                </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true">{{'home' |translate}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/about" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true"
+                            routerLinkActive="active">{{'about' |translate}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/projects" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true"
+                            routerLinkActive="active">{{'Projects' |translate}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/property" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true"
+                            routerLinkActive="active">{{'properties' |translate}}</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/place-order" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active"> {{'placeOrder' |translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="/contact" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active">{{'contact' |translate}}</a>
-                </li>
-                <!-- <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/place-order" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true" routerLinkActive="active">
+                            {{'placeOrder' |translate}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" routerLink="/contact" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true"
+                            routerLinkActive="active">{{'contact' |translate}}</a>
+                    </li>
+                    <!-- <li class="nav-item">
                     <a class="nav-link " aria-current="page" routerLink="/dashboard" routerLinkActive="active">{{'dashboard' | translate}}</a>
                 </li> -->
-                <li class="nav-item d-lg-none">
-                    <a class="nav-link " aria-current="page" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="true" (click)="changeLanguage(language.getCurrentLanguage()=='en'?'ar':'en')">{{'lang' | translate}}</a>
-                </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link " aria-current="page" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-expanded="true"
+                            (click)="changeLanguage(language.getCurrentLanguage()=='en'?'ar':'en')">{{'lang' |
+                            translate}}</a>
+                    </li>
 
 
-            </ul>
+                </ul>
 
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
+</header>
 <!-- <h3>{{'About' | translate}}</h3> -->

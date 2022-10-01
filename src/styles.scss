@@ -2,6 +2,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700%7cSource+Sans+Pro:200,400,600,700,900,400italic,700italic&amp;subset=latin,latin-ext);
 @import "./assets/css/font-awesome.css";
+@import "./assets/fonts/arabic-font/stylesheet.css";
 
 //core
 @import "./assets/scss/base/varibles";
@@ -30,6 +31,7 @@
 @import "./assets/scss/pages/home";
 //toastr
 @import "../node_modules/ngx-toastr/toastr.css";
+
 // @import "../node_modules/swiper/swiper";
 body {
   background: #f6f6f6;
@@ -86,7 +88,7 @@ i:hover {
   background: var(--main-color);
 }
 
-.containerRadio input:checked ~ .checkmark {
+.containerRadio input:checked~.checkmark {
   background-color: var(--main-color);
 }
 
@@ -100,7 +102,7 @@ i:hover {
 /* Track */
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #000;
+  // box-shadow: inset 0 0 5px #000;
   border-radius: 0px;
 }
 
@@ -109,7 +111,7 @@ i:hover {
 ::-webkit-scrollbar-thumb {
   // box-shadow: inset 0 0 5px #dedede;
   background: var(--main-color);
-  border-radius: 20px;
+
 }
 
 /* Handle on hover */
@@ -123,53 +125,182 @@ i:hover {
   display: flex;
   align-items: center;
 }
-.order-1{
-  margin-top:-60px;
+
+.order-1 {
+  margin-top: -60px;
 }
 
 @import "./assets/scss/base/responsive";
+
 html {
   scroll-behavior: smooth;
 }
 
 @media only screen and (max-width: 1200px) {
-  .vs{
+  .vs {
     display: none;
   }
 }
+
 @media only screen and (min-width:768px) and (max-width:992px) {
-  .bar{
-   flex: 0 0 auto;
-   width: 100%;
+  .bar {
+    flex: 0 0 auto;
+    width: 100%;
   }
-  .order-1{
-    margin-top:0px;
+
+  .order-1 {
+    margin-top: 0px;
   }
-  .unit-specs span{
+
+  .unit-specs span {
     font-size: 12px;
   }
-  .unit-specs span.text{
+
+  .unit-specs span.text {
     font-size: 8px !important;
-}
-.card .img-panel .moreSpcs{
-  font-size: 10px;
-}
-.card .unit-price h5{
-  font-size: .6rem;
-}
-.social{
-  display: flex;
-}
-.media .icon{
-  font-size: 20px !important;
-}
-.fa-blogger-b:before ,.fa-snapchat-ghost:before{
-  font-size: 11px !important;
-}
+  }
+
+  .card .img-panel .moreSpcs {
+    font-size: 10px;
+  }
+
+  .card .unit-price h5 {
+    font-size: .6rem;
+  }
+
+  .social {
+    display: flex;
+  }
+
+  .media .icon {
+    font-size: 20px !important;
+  }
+
+  .fa-blogger-b:before,
+  .fa-snapchat-ghost:before {
+    font-size: 11px !important;
+  }
 
 }
-@media only screen and (max-width:768px){
-  .order-1{
-    margin-top:0px;
+
+@media only screen and (max-width:768px) {
+  .order-1 {
+    margin-top: 0px;
+  }
+}
+
+.section-title {
+  position: relative;
+  display: inline-flex;
+  font-size: 35px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 15px;
+  // background-color: $mainColor;
+  padding-inline-start: 18px;
+
+  &::before {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    content: '';
+    display: inline-flex;
+    width: 12px;
+    height: 100%;
+    background-color: #5E5E59;
+  }
+
+  .title {
+    color: #fff;
+    padding: 4px 16px;
+    background-color: $mainColor;
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 300px !important;
+}
+
+.leaflet-popup-close-button {
+  height: 40px !important;
+  width: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  color: #fff !important;
+  line-height: 40px !important;
+  padding: 0 !important;
+  inset-inline-start: 8px !important;
+  inset-block-start: 8px !important;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background-color: #86815b  !important;
+  }
+}
+
+.map-card {
+  width: 300px;
+  overflow: hidden;
+
+  .project-img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      transition: all .3s ease-in-out;
+    }
+
+    .project-status {
+      position: absolute;
+      inset-block-start: 8px;
+      inset-inline-end: 8px;
+      background-color: #86815b;
+      color: #fff;
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+
+  .project-info {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    padding: 4px;
+    transition: all .3s ease-in-out;
+
+    .project-title {
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .project-city {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    .project-img {
+      img {
+        transform: scale(1.12);
+      }
+    }
+
+    .project-info {
+      background-color: #86815b;
+    }
   }
 }

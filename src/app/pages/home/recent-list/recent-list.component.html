@@ -1,11 +1,10 @@
-<div class="section-container back bg-white pt-4">
+<section class="our-projects back bg-white">
     <div class="container">
 
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-center section-title"> {{siteInformation?.projectListTitle}} </h4>
-
-                <p class="text-center">
+                <h4 class="text-center section-title"><span class="title">{{siteInformation?.projectListTitle}}</span></h4>
+                <p>
                     {{siteInformation?.projectListDesc}}
                 </p>
 
@@ -27,7 +26,7 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row" *ngIf="projects">
                             <ng-container *ngFor="let item of projects; let i = index">
-                                <div class="col-md-4 mb-4" *ngIf="i<6">
+                                <div class="col-12 col-md-6 col-lg-4 mb-4" *ngIf="i<6">
                                     <app-project-card [project]="item"></app-project-card>
                                 </div>
                             </ng-container>
@@ -82,4 +81,4 @@
 
         </div>
     </div>
-</div>
+</section>

@@ -1,3 +1,4 @@
+@import '../../../../assets/scss/base/varibles';
 .parallax {
     /* The image used */
     /* Set a specific height */
@@ -9,13 +10,14 @@
     background-size: cover;
     position: relative;
     .mask {
-        background: rgb(0 0 0 / 69%);
+        background: rgba(#1E1E1E, 0.8);
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         z-index: 1;
         position: absolute;
+        // backdrop-filter: blur(2px);
     }
     .indecators-panel {
         position: absolute;
@@ -26,21 +28,25 @@
         transform: translate(-50%, -50%);
     }
     .counter {
-        font-size: 60px;
+        font-size: 40px;
         margin: 0;
         font-weight: 600;
+        text-shadow: none;
     }
     .subject {
-        color: #e0ca50;
+        color: #fff;
         font-size: 16px;
+        text-shadow: none;
     }
 }
 
 .icon {
-    font-size: 35px;
-    color: #9e9e9e !important;
+    font-size: 48px;
+    color: #fff !important;
+    text-shadow: none;
 }
 
 .secondary-color {
-    color: #d2d0c8 !important;
+    color: #fff !important;
+    text-shadow: none;
 }

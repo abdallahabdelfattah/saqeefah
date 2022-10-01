@@ -2,8 +2,8 @@
 <router-outlet>
 </router-outlet>
 <app-svg></app-svg>
-<button  (click)="scrollToTop()" [@fadeInOut] class="scroll-to-top" *ngIf="pageYoffset > 0" >
-  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+<button  (click)="scrollToTop()" [@fadeInOut] class="scroll-to-top" *ngIf="pageYoffset > 0" title="الرجوع لأعلى" >
+  <i class="fas fa-chevron-up"></i>
 </button>
 <app-footer></app-footer>
 <!-- <ngx-spinner type="timer">

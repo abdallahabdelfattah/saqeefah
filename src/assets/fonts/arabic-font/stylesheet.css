@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Hacen-Algeria';
+    src: url('HacenAlgeria.eot');
+    src: local('Hacen Algeria'), local('HacenAlgeria'),
+        url('HacenAlgeria.eot?#iefix') format('embedded-opentype'),
+        url('HacenAlgeria.woff2') format('woff2'),
+        url('HacenAlgeria.woff') format('woff'),
+        url('HacenAlgeria.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
