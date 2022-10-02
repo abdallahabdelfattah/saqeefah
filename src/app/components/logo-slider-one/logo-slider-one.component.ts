@@ -22,7 +22,7 @@ customOptions: OwlOptions = {
   autoplay:true,
   autoplayTimeout:3000 ,
   margin:10,
-  center:true,
+  center:false,
 
   navText: ['', ''],
   rtl:this.language.checkRtl(),
