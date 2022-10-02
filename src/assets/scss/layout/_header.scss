@@ -69,9 +69,11 @@ header {
                     color: #000;
                     border-radius: 50%;
                 }
-                &:hover{
+
+                &:hover {
                     color: $mainColor;
-                    .count{
+
+                    .count {
                         background-color: $mainColor;
                         color: #fff;
                     }
@@ -85,17 +87,20 @@ header {
     z-index: 3;
     position: relative;
     background-color: transparent;
-    .navbar-brand{
-        img{
+
+    .navbar-brand {
+        img {
             height: 50px;
         }
     }
-    .navbar-toggler{
+
+    .navbar-toggler {
         border: 0;
         padding: 0;
         outline: none;
         box-shadow: none;
     }
+
     .navbar-nav {
         .nav-item {
             margin-inline-start: 10px;
@@ -154,9 +159,14 @@ header {
         background-color: $mainColor;
         color: white;
         gap: 8px;
+        direction: rtl;
         padding: 4px 8px;
         transform: translateX(-85px);
         transition: all .3s ease-in-out;
+
+        [dir="ltr"] & {
+            transform: translateX(-120px);
+        }
 
         .icon {
             display: flex;

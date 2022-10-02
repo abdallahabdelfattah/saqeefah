@@ -20,10 +20,10 @@
     <section class="about-text-section about-div pt-0 about-data" *ngIf="OurVision">
       <div class="container">
         <div class="row flex-item-center">
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6">
             <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + OurVisionUrl + ')' }"></div>
           </div>
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6">
             <div class="about-div-text">
               <h2>{{ OurVision.title }}</h2>
 
@@ -32,22 +32,22 @@
           </div>
         </div>
         <div class="row flex-item-center" *ngIf="OurStory">
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6 order-lg-0 order-1">
             <div class="about-div-text">
               <h2>{{ OurStory.title }}</h2>
               <p [innerHTML]="OurStory.description"></p>
             </div>
           </div>
-          <div class="col-md-6 order-md-1">
+          <div class="col-12 col-lg-6">
             <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + OurStoryUrl + ')' }"></div>
           </div>
         </div>
 
         <div class="row flex-item-center" *ngIf="OurGoals">
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6">
             <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + OurGoalsUrl + ')' }"></div>
           </div>
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6">
             <div class="about-div-text">
               <h2>{{ OurGoals.title }}</h2>
               <p [innerHTML]="OurGoals.description"></p>
@@ -56,14 +56,14 @@
         </div>
 
         <div class="row flex-item-center" *ngIf="OurServices">
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6 order-lg-0 order-1">
             <div class="about-div-text">
               <h2>{{ OurServices.title }}</h2>
               <p [innerHTML]="OurServices.description"></p>
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-12 col-lg-6">
             <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + OurServicesUrl + ')' }"></div>
           </div>
         </div>
