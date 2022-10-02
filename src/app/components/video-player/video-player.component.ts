@@ -34,46 +34,10 @@ $: any;
     
   }
 
-  name = 'Angular';
-  @ViewChild('videoPlayer', { static: true }) videoplayer: ElementRef;
-  isPlay: boolean = false;
-
-  playPause() {
-    var myVideo: any = document.getElementById('my_video_1');
-    if (myVideo.paused) myVideo.play();
-    else myVideo.pause();
-  }
   pause() {
-    var myVideo: any = document.getElementById('my_video_1');
+    var myVideo: any = document.getElementById('singleVideo');
     myVideo.pause();
   }
-  playLoop() {
-    var myVideo: any = document.getElementById('my_video_1');
-    if (this.loop == 'true') myVideo.loop = true;
-  }
+  
 
-  makeBig() {
-    var myVideo: any = document.getElementById('my_video_1');
-    myVideo.width = 560;
-  }
-
-  makeSmall() {
-    var myVideo: any = document.getElementById('my_video_1');
-    myVideo.width = 320;
-  }
-
-  makeNormal() {
-    var myVideo: any = document.getElementById('my_video_1');
-    myVideo.width = 420;
-  }
-
-  skip(value) {
-    let video: any = document.getElementById('my_video_1');
-    video.currentTime += value;
-  }
-
-  restart() {
-    let video: any = document.getElementById('my_video_1');
-    video.currentTime = 0;
-  }
 }
