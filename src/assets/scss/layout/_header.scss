@@ -109,7 +109,15 @@ header {
                 // font-weight: 600;
                 position: relative;
                 color: #5E5E59 !important;
-
+                &.btn{
+                    color: #fff !important;
+                    &:focus,&:active,&.active{
+                        color: #fff !important;
+                        &:hover{
+                            background-color: #87805E !important;
+                        }
+                    }
+                }
                 &::after {
                     position: absolute;
                     inset-block-end: 0;
