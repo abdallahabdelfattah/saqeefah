@@ -22,6 +22,7 @@ export class SliderService {
 
 
   getAllSliders(languageId: any): Observable<any> {
+    debugger; 
     return this.callApi.get(`api/Slider?languageId=${languageId}`)
   }
 

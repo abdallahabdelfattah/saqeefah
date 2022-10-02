@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   projectsForSale =[]
   projectsBooked = []
   projectsForSaleSoon = []
+  Panorama
   constructor(private generalService:GenaricService, private projects:ProjectAndListService,
     private language:changeLanguageService,private sieInfo:siteInformationService, private siteSetting:SettingsService,private slider :SliderService) {
 
@@ -60,10 +61,12 @@ getAllProjects(){
     //console.log(this.generalService.checkNavIsTRansparent())
     this.getAllProjects();
     this.getAllSlider();
+    this.getPanoramaSetting(); 
   this.language.changeLanguageStatus.subscribe((data)=>{
     console.log('language updated',data)
     this.getAllProjects();
     this.getAllSlider();
+    this.getPanoramaSetting(); 
  
 
   })
@@ -83,4 +86,16 @@ getAllProjects(){
 
     })
   }
+
+
+  getPanoramaSetting() {
+    return this.siteSetting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
+      if (!response.isError) {
+        let allSetting = response.result.data
+        this.Panorama = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.Panorama)[0];
+      }
+    })
+
+  }
+
 }
