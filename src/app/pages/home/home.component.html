@@ -1,21 +1,13 @@
 <!-- <div class="panorama-container">
     <app-panorama></app-panorama>
 </div> -->
+
 <section class="home">
-  <div class="home__slider">
-    <div class="slider-item">
-      <div class="item-img">
-        <img src="../../../assets/content/images/home-bg3.jpg" alt="">
-      </div>
-      <div class="caption">
-        <div class="container">
-          <h4>  {{Panorama?.title}} </h4>
-          <p [innerHTML]="Panorama?.description">
-          </p>
-        </div>
-      </div>
+    <div class="home__slider">
+
+        <app-home-slider [Panorama]="Panorama"></app-home-slider>
+
     </div>
-  </div>
 </section>
 <!-- <app-about-section></app-about-section> -->
 
@@ -31,8 +23,7 @@
 <app-video-player></app-video-player>
 
 
-<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale"
-  [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
+<app-recent-list [projects]="AllProjects" [projectsForSale]="projectsForSale" [projectsForSaleSoon]="projectsForSaleSoon" [isHome]="true"></app-recent-list>
 
 <app-map></app-map>
 
@@ -40,14 +31,14 @@
 
 <div class="slider-1 container" *ngFor="let slide of AllSlider">
 
-  <div class="row my-5" *ngIf="slide.isActive">
-    <div class="col-md-12">
-      <h4 class="section-title"><span class="title">{{slide?.title | translate}}</span></h4>
-      <p class="" [innerHtml]="slide?.description">
-      </p>
+    <div class="row my-5" *ngIf="slide.isActive">
+        <div class="col-md-12">
+            <h4 class="section-title"><span class="title">{{slide?.title | translate}}</span></h4>
+            <p class="" [innerHtml]="slide?.description">
+            </p>
+        </div>
+        <div class="col-md-12">
+            <app-logo-slider-one [logos]="slide?.sliderAttachment"></app-logo-slider-one>
+        </div>
     </div>
-    <div class="col-md-12">
-      <app-logo-slider-one [logos]="slide?.sliderAttachment"></app-logo-slider-one>
-    </div>
-  </div>
 </div>

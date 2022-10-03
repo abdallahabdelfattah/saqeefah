@@ -35,6 +35,7 @@ import {VgCoreModule} from '@videogular/ngx-videogular/core';
 import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import { HomeSliderComponent } from './home-slider/home-slider.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
     OurFeaturesComponent,
     VideoPlayerComponent,
     InfoTableComponent,
+    HomeSliderComponent,
     
     // VedioComponent
   ],
@@ -101,6 +103,7 @@ VgBufferingModule
     OurFeaturesComponent,
     VideoPlayerComponent,
     InfoTableComponent,
+    HomeSliderComponent
     // VedioComponent
   ],
   providers: [
