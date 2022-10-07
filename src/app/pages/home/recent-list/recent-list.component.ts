@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
+import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
 import { siteInfo } from '../../Models/siteInfo';
@@ -11,48 +12,52 @@ import { siteInfo } from '../../Models/siteInfo';
   styleUrls: ['./recent-list.component.scss']
 })
 export class RecentListComponent implements OnInit {
-@Input() projects:any
-@Input() projectsForSale:any;
-@Input() projectsBooked:any;
-@Input() projectsForSaleSoon:any;
-@Input() isHome:boolean=false;
-@Input() isAbout:boolean=false;
+ projects:any
+ projectsForSale:any;
+ projectsForSaleSoon:any;
 siteInformation:siteInfo;
 
 
 
 
   constructor(private siteInfo:siteInformationService,private shared:SiteInformationSharedService,
-    private language:changeLanguageService, private translate:TranslateService) { }
+    private language:changeLanguageService, private translate:TranslateService, private projectAndListService: ProjectAndListService) { }
 
   ngOnInit(): void {
-// this.getAllSiteInformation();
-//     this.translate.onLangChange.subscribe((event: LangChangeEvent) => 
-//     {
-// this.getAllSiteInformation();
-      
-//     }); 
-    
+
+    this.getAllProjects();
+    this.language.changeLanguageStatus.subscribe((data) => {
+      console.log('language updated', data)
+      this.getAllProjects();
+    })
 
   }
   ngAfterContentChecked() {
     this.siteInformation=this.shared.siteInformation;
-    // console.log("shared data : ",this.shared.siteInformation)
   }
-  // getAllSiteInformation(){
-  //   this.siteInfo.getAllInformation(this.language.getLanguageID()).subscribe(x=>{
-  //     if(!x.isError)
-  //     {
-  //       if(x.result['succeeded'])
-  //       {
-  //         this.siteInformation=x.result['data'];
-  //       }
-        
-  //     }
-      
-  //   })
-  // }
   ngAfterViewInit(): void{
-
   }
+
+  
+
+
+  getAllProjects() {
+    debugger
+    const startTime = new Date().getTime();
+    this.projectAndListService.getFilteredProjects(this.language.getLanguageID(), 0/*both ready for sale and soon for sale*/).subscribe((response: any) => {
+      this.projects = []
+      this.projectsForSale = []
+      this.projectsForSaleSoon = []
+      if (response.succeeded) {
+        debugger
+        const endTime = new Date().getTime();
+        const diff = (endTime - startTime) / 1000 + 'Seconds';
+       // alert(diff);
+        this.projects = response.data
+        this.projectsForSale = response.data?.filter((item: any) => item.statusId == 1)
+        this.projectsForSaleSoon = response.data?.filter((item: any) => item.statusId == 2)
+      }
+    })
+  }
+
 }
