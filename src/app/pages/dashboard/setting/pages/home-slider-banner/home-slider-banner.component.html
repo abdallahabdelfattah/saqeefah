@@ -1,0 +1,168 @@
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item shadow">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapsepartner"
+                aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="secondary-color">{{'Home Slider Bannar' | translate}}</h5>
+            </button>
+        </h2>
+        <div id="collapsepartner" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+                <form action="" class="row g-4" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
+                    enctype="multipart/form-data">
+                   
+                    <div class="col-md-6 mt-2">
+                        <div class="my-1">
+                            <label for="exampleFormControlInput1" class="form-label">{{'Title En' | translate}}
+                                <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['TitleEn'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                            </label>
+                            <div class="formg">
+                                <input type="text"  [(ngModel)]="slider.titleEn" class="form-control" formControlName="TitleEn"
+                                    placeholder="Fill Field">
+
+                            </div>
+                        </div>
+                        <div class="my-1">
+                            <label for="exampleFormControlInput1" class="form-label">{{'Description En' | translate}}
+                                <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['DescriptionEn'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                            </label>
+                            <div class="formg">
+                              <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                              </ngx-editor-menu>
+                              <ngx-editor [editor]="editor"  [placeholder]="'Type here...'"  formControlName="DescriptionEn" [(ngModel)]="slider.descriptionEn">
+                              </ngx-editor>
+                                <!-- <textarea class="form-control"  [(ngModel)]="slider.descriptionEn" formControlName="DescriptionEn" rows="3"></textarea> -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                        <div class="my-1">
+                            <label for="exampleFormControlInput1" class="form-label">{{'Title Ar' | translate}}
+                                <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['TitleAr'].errors?.['required']">
+                                * Required Field
+                            </span> -->
+                            </label>
+                            <div class="formg">
+                                <input type="text" class="form-control"  [(ngModel)]="slider.titleAr"  formControlName="TitleAr"
+                                    placeholder="Fill Field">
+
+                            </div>
+                        </div>
+                        <div class="my-1">
+                            <label for="exampleFormControlInput1" class="form-label">{{'Description Ar' | translate}}
+                                <!-- <span class="text-danger error" *ngIf="showError && myFormGroup.controls['DescriptionAr'].errors?.['required']">
+                                    * Required Field
+                                </span> -->
+                            </label>
+                            <div class="formg">
+                              <ngx-editor-menu [editor]="editor1" [toolbar]="toolbar">
+                              </ngx-editor-menu>
+                              <ngx-editor [editor]="editor1"  [placeholder]="'Type here...'"  formControlName="DescriptionAr" [(ngModel)]="slider.descriptionAr">
+                              </ngx-editor>
+                                <!-- <textarea class="form-control"  [(ngModel)]="slider.descriptionAr"  formControlName="DescriptionAr" rows="3"></textarea> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-12 mt-2">
+                        <div class="my-1">
+                        
+                           
+                                    <label for="exampleFormControlInput1" class="form-label">{{'Select Image' | translate}}
+                                        
+                                    </label>
+                                    <div class="formg w-100">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <input type="file" accept="image/*" class="form-control  mb-3"
+                                                     (change)="onInputChange($event)" id="thumbnail">
+                                            </div>
+                                          <div class="col-md-3">
+                                            <button (click)="uploadImages($event)"
+                                            class="btn btn-small w-100 btn-primary px-4 ">
+                                           {{'Upload' | translate}}
+                                        </button>
+                                          </div>
+    
+                                            <div class="col-md-12 mt-2">
+                                                <div class="current-image" *ngIf="slider.sliderAttachment != null">
+                                                    <div class="imagBox d-inline-block mx-1 mb-2" *ngFor="let img of slider.sliderAttachment" >
+                                                        <i class="far fa-times-circle delete-img"
+                                                            (click)="DeleteImage(img.attachmentId)" *ngIf="img.path != null"></i>
+                                                        <img  [src]="appRootUrl+img.path" class="img-fluid" style="height:150px" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+    
+                                    </div>
+                                </div>
+    
+                          
+                            </div>
+
+                    <div class="col-md-12">
+                        <div class="my-1">
+                            <div class="formg w-100">
+                                <button type="submit" class="btn btn-small btn-primary w-25 float-end  px-4  mt-2"
+                                    [disabled]="myFormGroup.invalid">{{'Update' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+               
+
+               
+
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    
+<div class="container">
+<div class="row">
+    <div class="col-md-12 bg-white shadow ">
+        <h4 class="h3 mb-3 font-weight-normal secondary-color"> {{'Images' | translate}} </h4>
+
+        <div class=" mt-2 table-responsive py-5 px-2">
+          <table class="table table-bordered row-border hover">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">#</th>
+                    <th scope="col">{{'email' | translate}}</th>
+                    <th scope="col">{{'phone' | translate}}</th>
+                    <th scope="col">{{'fullName' | translate}}</th>
+                    <th scope="col">{{'Action' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let item of allAdmin">
+                    <td>{{item.adminId}}</td>
+                    <td>{{item.email | translate}}</td>
+                    <td>{{item.phone | translate}}</td>
+                    <td>{{item.fullName | translate}}</td>
+                    <td><button class="btn btn-danger" (click)="">{{'Delete' | translate}}</button></td>
+                </tr> -->
+
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

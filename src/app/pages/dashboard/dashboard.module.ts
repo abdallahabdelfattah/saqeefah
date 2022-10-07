@@ -37,6 +37,7 @@ import { GenaricService } from 'src/app/services/Genaric.service';
 import { PriceRangeComponent } from './setting/pages/price-range/price-range.component';
 import { PriceRangeService } from './setting/services/priceRange.service';
 import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
+import { HomeSliderBannerComponent } from './setting/pages/home-slider-banner/home-slider-banner.component';
 
 
 
@@ -61,7 +62,8 @@ import { AreaRangeComponent } from './setting/pages/area-range/area-range.compon
             ContactUsListComponent,
             PlaceOrderComponent,
             PriceRangeComponent,
-            AreaRangeComponent
+            AreaRangeComponent,
+            HomeSliderBannerComponent
 
   ],
   imports: [
