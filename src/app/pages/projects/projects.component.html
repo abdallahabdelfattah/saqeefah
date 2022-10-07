@@ -1,10 +1,21 @@
-<div class="container pt-5 pb-5">
+<div class="page-banner">
+    <div class="container">
+        <h3 class="page-title"> {{'Projects' | translate}}</h3>
+    </div>
+</div>
+<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3 class="secondary-color mb-0"> {{'Projects' | translate}}</h3>
-            <h6 style="font-size: 15px;font-weight:400;" class="mb-0">{{filteredProjects.length}} {{'list founded' | translate}}</h6>
             <div class="row">
-                <div class="col-12 col-md-9 mb-1 bar">
+                <div class="col-md-12 mb-3">
+                    <!-- <div class="col-md-12">
+                        <h3 class="secondary-color mb-0">{{'Filter' |translate}}</h3>
+                        <h6 class="mb-3" style="font-size: 13px;font-weight:400;">{{'FilterDesc' | translate}}</h6>
+                    </div> -->
+                    <app-search-project-form (obj)="filter($event)" [allProjects]="AllProjects">
+                    </app-search-project-form>
+                </div>
+                <div class="col-12 col-md-12 mb-1 bar">
                     <div class="filter-panel mt-3 w-100 d-none d-lg-block">
                         <div class="row">
                             <!-- <div class="col-md-6">
@@ -23,14 +34,19 @@
                                 </div>
 
                             </div> -->
-                            <div class=" offset-md-6 col-md-6 text-end vs">
+                            <div class="d-flex align-items-center">
 
-                                <ul class="list-inline">
-                                    <li class="list-inline-item view-icons" (click)="refresh()"><span><i class="fa fa-refresh fa-fw" aria-hidden="true"></i></span></li>
-                                    <li class="list-inline-item"><span style="font-weight: 400;">{{'view' | translate}}</span></li>
-                                    <li class="list-inline-item view-icons grid3" (click)="toggleView('grid3')"><span class="icon tagr-layout"></span></li>
-                                    <li class="list-inline-item view-icons grid6" (click)="toggleView('grid6')"><span class="icon tagr-android-apps"></span></li>
-                                    <li class="list-inline-item view-icons  list" (click)="toggleView('list')"><span class="icon tagr-list-bullet"></span></li>
+                                <h6 class="mb-0">{{filteredProjects.length}} {{'list founded' | translate}}</h6>
+                                <ul class="list-inline ms-auto m-0">
+                                    <li class="list-inline-item view-icons" (click)="refresh()"><span><i
+                                                class="fa fa-refresh fa-fw" aria-hidden="true"></i></span></li>
+                                    <!-- <li class="list-inline-item"><span style="font-weight: 400;">{{'view' | translate}}</span></li> -->
+                                    <li class="list-inline-item view-icons grid3" (click)="toggleView('grid3')"><span
+                                            class="icon tagr-layout"></span></li>
+                                    <li class="list-inline-item view-icons grid6" (click)="toggleView('grid6')"><span
+                                            class="icon tagr-android-apps"></span></li>
+                                    <li class="list-inline-item view-icons  list" (click)="toggleView('list')"><span
+                                            class="icon tagr-list-bullet"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -43,7 +59,7 @@
             </div>
         </div>
 
-        <div class="col-md-9 order-lg-1 order-2">
+        <div class="col-md-12">
 
             <div class="row">
                 <!-- <div class="col-md-3 mb-3" *ngFor="let item of AllProjects"> -->
@@ -51,27 +67,22 @@
                 <div [ngSwitch]="view">
 
                     <div class="row" *ngSwitchCase="'grid3'">
-                        <app-project-card class="col-md-6  mb-3" [project]="item" *ngFor="let item of filteredProjects"></app-project-card>
+                        <app-project-card class="col-md-6 col-lg-4  mb-3" [project]="item" *ngFor="let item of filteredProjects">
+                        </app-project-card>
                     </div>
                     <div class="row" *ngSwitchCase="'grid6'">
-                        <app-project-card class="col-md-3 mb-3" [project]="item" [viewType]="'grid6'" *ngFor="let item of filteredProjects"></app-project-card>
+                        <app-project-card class="col-md-6 col-lg-4 mb-3" [project]="item" [viewType]="'grid6'"
+                            *ngFor="let item of filteredProjects"></app-project-card>
                     </div>
                     <div class="row" *ngSwitchCase="'list'">
-                        <app-project-card class="col-md-12 mb-3" [project]="item" [viewType]="'list'" *ngFor="let item of filteredProjects"></app-project-card>
+                        <app-project-card class="col-md-12 mb-3" [project]="item" [viewType]="'list'"
+                            *ngFor="let item of filteredProjects"></app-project-card>
                     </div>
                 </div>
                 <!-- <div class="col-md-12 text-center">
                     <button class="btn more-btn">Load more</button>
                 </div> -->
             </div>
-        </div>
-        <div class="col-md-3 order-lg-2 order-1 mb-2">
-            <div class="col-md-12">
-                <h3 class="secondary-color mb-0">{{'Filter' |translate}}</h3>
-                <h6 class="mb-3" style="font-size: 13px;font-weight:400;">{{'FilterDesc' | translate}}</h6>
-            </div>
-
-            <app-search-project-form (obj)="filter($event)" [allProjects]="AllProjects"></app-search-project-form>
         </div>
     </div>
 </div>

@@ -6,6 +6,10 @@
 }
 .list-inline-item.view-icons{
     width:30px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 .fa-refresh{
     font-size: 14px;

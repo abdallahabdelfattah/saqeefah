@@ -1,21 +1,19 @@
-
-  <div class="row">
-    <div class="col-12">
-      <div class="info-table table-content">
-        <table
-          class="table  table-hover table-responsive text-center"
-        >
+<div class="row">
+  <div class="col-12">
+    <div class="info-table table-content">
+      <div class="table-responsive">
+        <table class="table table-borderless">
           <thead style="padding-left: 10px">
             <tr>
-              <th class="text-center">#</th>
-              <th class="text-center">{{'projectName'|translate}}</th>
-              <th class="text-center">{{'city'|translate}}  </th>
-              <th class="text-center">{{'district'|translate}}</th>
-              <th class="text-center">{{'Address'|translate}}</th>
-              <th class="text-center">{{'AvailableUnits'|translate}}</th>
-              <th class="text-center">{{'numberOfUnits'|translate}}</th>
-              <th class="text-center">{{'numberOfBuildings'|translate}}</th>
-              <th class="text-center">{{'status'|translate}}</th>
+              <th class="">#</th>
+              <th class="">{{'projectName'|translate}}</th>
+              <th class="">{{'city'|translate}} </th>
+              <th class="">{{'district'|translate}}</th>
+              <th class="">{{'Address'|translate}}</th>
+              <th class="">{{'AvailableUnits'|translate}}</th>
+              <th class="">{{'numberOfUnits'|translate}}</th>
+              <th class="">{{'numberOfBuildings'|translate}}</th>
+              <th class="">{{'status'|translate}}</th>
 
             </tr>
           </thead>
@@ -31,16 +29,12 @@
               <td>{{ row.numberOfUnits }}</td>
               <td>{{ row.numberOfBuildings }}</td>
               <td class="p-2">
-                <span
-                  class="status"
-                  [class]="{
+                <span class="status" [class]="{
                     green: row.statusId == 1,
                     moave: row.statusId == 4,
                     orange: row.statusId == 2,
                     pink: row.statusId == 3
-                  }"
-                  >{{ row.status }}</span
-                >
+                  }">{{ row.status }}</span>
               </td>
             </tr>
           </tbody>
@@ -48,3 +42,4 @@
       </div>
     </div>
   </div>
+</div>
