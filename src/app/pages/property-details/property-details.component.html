@@ -1,23 +1,22 @@
+<div class="page-banner">
+    <div class="container">
+        <h3 class="page-title" *ngIf="propertyDetails && propertyDetails.projectName != null">
+            {{ propertyDetails.projectName | translate }}
+        </h3>
+        <p class="description" *ngIf="propertyDetails && propertyDetails.buildingName != null">
+            {{ "Building:" | translate }}
+            <span class="fw-bold">{{ propertyDetails.buildingName}}</span>
+        </p>
+    </div>
+</div>
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-6 col-md-6 pt-5 pt-md-0">
-            <h5 class="secondary-color mb-0" *ngIf="propertyDetails && propertyDetails.projectName != null">
-                {{ "Project Name :" | translate }} {{ propertyDetails.projectName | translate }}
-            </h5>
-
-        </div>
-        <div class="col-md-6">
-            <h5 class="secondary-color mb-0" *ngIf="propertyDetails && propertyDetails.buildingName != null">
-                {{ "Building:" | translate }}
-                <span class="text-secondary fw-bold">{{
-        propertyDetails.buildingName
-      }}</span>
-            </h5>
-        </div>
         <div class="col-md-9 mt-3">
             <!-- <app-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-gallery> -->
-            <app-swipper-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-swipper-gallery>
-            <img src="assets/images/home-placeHolder.webp" class="img-fluid" *ngIf="propertyDetails && propertyDetails.images.length == 0" alt="" />
+            <app-swipper-gallery [galleryImage]="propertyDetails.images"
+                *ngIf="propertyDetails && propertyDetails.images"></app-swipper-gallery>
+            <img src="assets/images/home-placeHolder.webp" class="img-fluid"
+                *ngIf="propertyDetails && propertyDetails.images.length == 0" alt="" />
             <div class="row">
                 <div class="property-section col-md-12 col-lg-12 my-3">
                     <!-- <div class=" w-100"> -->
@@ -34,7 +33,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.p_Intrance ==0,
-            'icon-checkmark': propertyDetails.p_Intrance ==1 }"><use [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.p_Intrance ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
                             <div class="box bg-secondary">
@@ -58,7 +61,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
-            'icon-checkmark': propertyDetails.balcon ==1 }"><use [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.balcon ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
                             <div class="box bg-secondary">
@@ -73,7 +80,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
-            'icon-checkmark': propertyDetails.servant_Room ==1 }"><use [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.servant_Room ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
                             <div class="box bg-secondary">
@@ -82,7 +93,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
-            'icon-checkmark': propertyDetails.roof ==1 }"><use [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.roof ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
 
@@ -94,7 +109,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.parking ==0,
-            'icon-checkmark': propertyDetails.parking ==1 }"><use [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.parking ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
                             <div class="box bg-secondary">
@@ -103,7 +122,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
-            'icon-checkmark': propertyDetails.trace ==1 }"><use [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+            'icon-checkmark': propertyDetails.trace ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
 
@@ -128,7 +151,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.floor_Num ==0,
-          'icon-checkmark': propertyDetails.floor_Num ==1 }"><use [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+          'icon-checkmark': propertyDetails.floor_Num ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
 
@@ -138,7 +165,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.hall ==0,
-          'icon-checkmark': propertyDetails.hall ==1 }"><use [attr.xlink:href]="propertyDetails.hall==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+          'icon-checkmark': propertyDetails.hall ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.hall==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
 
@@ -148,7 +179,11 @@
                                 <hr />
                                 <h6>
                                     <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.salon ==0,
-          'icon-checkmark': propertyDetails.salon ==1 }"><use [attr.xlink:href]="propertyDetails.salon==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+          'icon-checkmark': propertyDetails.salon ==1 }">
+                                        <use
+                                            [attr.xlink:href]="propertyDetails.salon==0 ? '#icon-cross' :'#icon-checkmark'">
+                                        </use>
+                                    </svg>
                                 </h6>
                             </div>
                         </div>
@@ -157,41 +192,46 @@
             </div>
         </div>
         <div class="col-md-3 mt-2">
-            <div class="row mb-1" *ngIf="propertyDetails">
-                <div class="col-md-12 mb-2 text-left">
-                    <b class="mainColor " style="font-size: 20px">
-            {{ propertyDetails.apartment_Price | number }}
-            {{ "ر.س" | translate }}
-          </b>
+            <div class="card order-card p-3">
+                <div class="d-flex align-items-center gap-2 justify-content-between flex-wrap" *ngIf="propertyDetails">
+                        <b class="price">
+                            {{ propertyDetails.apartment_Price | number }}
+                            {{ "ر.س" | translate }}
+                        </b>
+                        <div class="px-5 py-2" [class]="{
+                        green: propertyDetails.statusId == 1,
+                        orange: propertyDetails.statusId == 2,
+                        pink: propertyDetails.statusId == 3
+                        }" class="status badge">
+                            {{ propertyDetails.status | translate }}
+                        </div>
                 </div>
-                <div class="col-md-12 mb-1 text-center">
-                    <div class="px-5 py-2" [class]="{
-              green: propertyDetails.statusId == 1,
-              orange: propertyDetails.statusId == 2,
-              pink: propertyDetails.statusId == 3
-            }" class="status">
-                        {{ propertyDetails.status | translate }}
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)" enctype="multipart/form-data">
-                <h5 class="secondary-color mb-3">{{ "PLACE ORDER" | translate }}</h5>
-                <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Name' | translate }}" formControlName="client_Name" />
-                <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
+                <hr />
+                <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
+                    enctype="multipart/form-data">
+                    <h5 class="secondary-color mb-3">{{ "PLACE ORDER" | translate }}</h5>
+                    <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Name' | translate }}"
+                        formControlName="client_Name" />
+                    <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
                 * Required Field
                  </span> -->
-                <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Email' | translate }}" formControlName="client_Mail" />
-                <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
+                    <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Email' | translate }}"
+                        formControlName="client_Mail" />
+                    <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
                 * Email form Field
         </span> -->
-                <input type="text" class=" form-control form-control-sm mb-1" placeholder="{{ 'Phone' | translate }}" formControlName="client_Mobile" />
-                <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
+                    <input type="text" class=" form-control form-control-sm mb-1"
+                        placeholder="{{ 'Phone' | translate }}" formControlName="client_Mobile" />
+                    <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
                 * Required Field
         </span> -->
-                <textarea name="" placeholder="{{ 'Subject' | translate }}" class="form-control form-control-sm mb-3" id="" cols="30" rows="3" formControlName="additional_Reqst"></textarea>
-                <input class="btn secondary-btn btn-sm" type="submit" value="{{ 'Submit' | translate }}" [disabled]="myFormGroup.invalid" />
-            </form>
+                    <textarea name="" placeholder="{{ 'Subject' | translate }}"
+                        class="form-control form-control-sm mb-3" id="" cols="30" rows="3"
+                        formControlName="additional_Reqst"></textarea>
+                    <input class="btn btn-primary d-block" type="submit" value="{{ 'Submit' | translate }}"
+                        [disabled]="myFormGroup.invalid" />
+                </form>
+            </div>
         </div>
         <!-- <hr class="my-3"> -->
 

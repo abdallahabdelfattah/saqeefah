@@ -5,15 +5,15 @@
             <a class="nav-link" [class.active]="activeBuilding == item.build" data-bs-toggle="tab" role="tab" [id]="item.build" *ngFor="let item of buildings;let i = index" (click)="getBuildingProperty(item.build)">{{item.build}}</a>
         </div>
     </div>
+    <div class="col-md-3">
+        <app-search-form  (obj)="filter($event)" [allProp]="propertyOfSelectedBuildingForFilter" [searchInallProjects]="false"></app-search-form>
+    
+    </div>
     <div class="col-md-9">
         <div class="row" *ngIf="filteredProperties ">
             <div class="col-md-6 mb-3" *ngFor="let item of filteredProperties">
                 <app-property-card [fromDetails]="true" [property]="item"></app-property-card>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <app-search-form  (obj)="filter($event)" [allProp]="propertyOfSelectedBuildingForFilter" [searchInallProjects]="false"></app-search-form>
-    
     </div>
 </div>
