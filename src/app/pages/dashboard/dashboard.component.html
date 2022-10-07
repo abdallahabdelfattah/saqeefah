@@ -29,6 +29,9 @@
 
 
             <ul class="px-0">
+                <a routerLink="/dashboard/" routerLinkActive="active">
+                    <li class="full-width">{{'home' | translate}}</li>
+                </a>
                 <a routerLink="user" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                     <li class="full-width">{{'Users' | translate}}</li>
                 </a>
@@ -45,9 +48,7 @@
                             <a routerLink="settings" routerLinkActive="active">
                                 <li class="full-width">{{'Settings' | translate}}</li>
                             </a>
-                            <!-- <a routerLink="social">
-                                <li class="full-width">Social</li>
-                            </a> -->
+                           
                             <a routerLink="partner" routerLinkActive="active">
                                 <li class="full-width">{{'Partner' | translate}}</li>
                             </a>

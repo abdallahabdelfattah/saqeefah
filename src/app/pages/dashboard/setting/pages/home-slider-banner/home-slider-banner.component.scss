@@ -1,0 +1,116 @@
+.accordion-button:not(.collapsed) {
+    /* color: #af8f79; */
+    background-color: #eeeded !important;
+  }
+  .btn:disabled{
+    background-color: lightgrey !important;
+    border: none !important;
+  }
+
+
+.imagBox{
+  position: relative;
+  width: 200px;
+}
+.current-image{
+  padding: 5px;
+  border: 2px dashed #dadada;
+}
+.editor {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  .NgxEditor__MenuBar {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .NgxEditor {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+  }
+
+  .CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+    margin-bottom: 0.7rem;
+
+    pre {
+      white-space: pre !important;
+    }
+  }
+}
+/* checkbox style */@at-root
+.containerRadio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin: 12px auto;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.containerRadio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+ .checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+}
+
+.containerRadio:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.containerRadio input:checked~.checkmark {
+  background-color: var(--main-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.containerRadio input:checked~.checkmark:after {
+  display: block;
+}
+
+.containerRadio .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.thead-dark
+{
+  background-color: #000;
+  color:#fff
+}
+.table{
+  background-color: #fff;
+}
+.textshadow{
+  text-shadow: 1px 1px 1px #181515;
+}
+

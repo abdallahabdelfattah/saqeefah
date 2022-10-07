@@ -10,6 +10,7 @@ import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PropertyComponent } from './property/property.component';
 import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
+import { HomeSliderBannerComponent } from './setting/pages/home-slider-banner/home-slider-banner.component';
 import { PartnerComponent } from './setting/pages/partner/partner.component';
 import { PriceRangeComponent } from './setting/pages/price-range/price-range.component';
 import { SettingComponent } from './setting/pages/setting.component';
@@ -20,9 +21,17 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-  path:'',
-  component: DashboardComponent,
+   path:'',
+    component: DashboardComponent,
+ 
+
   children:[
+    { path: '', 
+     redirectTo: '',
+      pathMatch: 'full',
+     //path:'homebannar',
+      component:HomeSliderBannerComponent
+    },
     {
       path:'user',
       component: UsersComponent
@@ -79,7 +88,8 @@ const routes: Routes = [
     {
       path:'placeOrder',
       component:PlaceOrderComponent
-    }
+    },
+   
   ]
   }
 ];
