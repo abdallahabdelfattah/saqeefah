@@ -27,15 +27,5 @@
 
 <app-parallax></app-parallax>
 
-<div class="slider-1 container">
-    <div class="row my-5" *ngIf="OurPartners?.isActive">
-        <div class="col-md-12">
-            <h4 class="section-title"><span class="title">{{OurPartners?.title | translate}}</span></h4>
-            <p class="" [innerHtml]="OurPartners?.description">
-            </p>
-        </div>
-        <div class="col-md-12">
-            <app-logo-slider-one [logos]="OurPartners?.sliderAttachment"></app-logo-slider-one>
-        </div>
-    </div>
-</div>
+
+<app-logo-slider-one></app-logo-slider-one>
