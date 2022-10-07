@@ -89,7 +89,6 @@ initializeFormGroup() {
 showError:boolean=false;
 onClickSubmit($event){
 if(this.myFormGroup.valid){
-  debugger
   this.myFormGroup.patchValue({'project_Ref':this.propertyDetails?.project_Ref});
   this.myFormGroup.patchValue({'apartment_Ref':this.propertyDetails?.apartment_Id});
 

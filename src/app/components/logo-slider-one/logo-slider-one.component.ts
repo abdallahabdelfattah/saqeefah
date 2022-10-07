@@ -47,22 +47,22 @@ bannerimgUrl= []
   constructor(private language:changeLanguageService) { }
 
   ngOnInit(): void {
-
-
     this.logos.forEach(element => {
-      this.bannerimgUrl.push(this.getUrl(this.appRootUrl+element.path));
+      this.bannerimgUrl.push(this.getUrl(this.appRootUrl+element?.path));
     });
-   
   }
 
-
-
-
-
   getUrl(path: string) {
-    path = path.replace(/[\/\\]/g, '/');
-    path = path.replace(/ /g, '%20');
-    return path;
+    if(path)
+    {
+
+      path = path.replace(/[\/\\]/g, '/');
+      path = path.replace(/ /g, '%20');
+      return path;
+    }
+    else{
+      return ""; 
+    }
   }
 
 }

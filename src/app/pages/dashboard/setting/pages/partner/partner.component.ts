@@ -132,7 +132,6 @@ export class PartnerComponent implements OnInit,OnDestroy{
 
   uploadImages(e) {
     e.stopPropagation();
-    debugger
     if (this.images.length > 0) {
       let sliderTypeId= SliderTypes.OurPartners;
       this.formData = new FormData();

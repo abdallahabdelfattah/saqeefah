@@ -1,3 +1,4 @@
+@import '../../../assets/scss/base/varibles';
 a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -20,17 +21,6 @@ a:focus {
     background: #fafafa !important
 }
 
-.btn {
-    cursor: pointer;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1);
-    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, .1)
-}
-
 .btn:hover,
 .btn:active,
 .btn:focus {
@@ -38,17 +28,7 @@ a:focus {
     box-shadow: none;
 }
 
-.btn.btn-primary {
-    background: #af8f79;
-    border: 1px solid #af8f79;
-    color: #fff
-}
 
-.btn.btn-primary:hover {
-    border: 1px solid #af8f79;
-    background: transparent;
-    color: #af8f79
-}
 
 .section {
     padding: 40px 0;
@@ -276,4 +256,22 @@ a:focus {
     .property-section h2 {
         font-size: 20px;
     }
+}
+.order-card{
+    border-radius: 0;
+    cursor: auto;
+}
+.status{
+    border-radius: 0;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.price{
+    font-size: 1.5rem;
+    color: $mainColor;
+    font-weight: normal;
+}
+.d-block{
+    width: 100%;
 }

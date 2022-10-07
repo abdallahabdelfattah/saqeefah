@@ -4,9 +4,7 @@
 
 <section class="home">
     <div class="home__slider">
-
-        <app-home-slider [Panorama]="Panorama"></app-home-slider>
-
+        <app-home-slider></app-home-slider>
     </div>
 </section>
 <!-- <app-about-section></app-about-section> -->
@@ -29,16 +27,15 @@
 
 <app-parallax></app-parallax>
 
-<div class="slider-1 container" *ngFor="let slide of AllSlider">
-
-    <div class="row my-5" *ngIf="slide.isActive">
+<div class="slider-1 container">
+    <div class="row my-5" *ngIf="OurPartners?.isActive">
         <div class="col-md-12">
-            <h4 class="section-title"><span class="title">{{slide?.title | translate}}</span></h4>
-            <p class="" [innerHtml]="slide?.description">
+            <h4 class="section-title"><span class="title">{{OurPartners?.title | translate}}</span></h4>
+            <p class="" [innerHtml]="OurPartners?.description">
             </p>
         </div>
         <div class="col-md-12">
-            <app-logo-slider-one [logos]="slide?.sliderAttachment"></app-logo-slider-one>
+            <app-logo-slider-one [logos]="OurPartners?.sliderAttachment"></app-logo-slider-one>
         </div>
     </div>
 </div>

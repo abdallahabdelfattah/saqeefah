@@ -58,8 +58,6 @@ export class UsersComponent implements OnInit ,OnDestroy {
   }
 
    setAdmin(event){
-   debugger
-
     // if (this.form.invalid) {
     //   return;
     // }
@@ -73,7 +71,7 @@ export class UsersComponent implements OnInit ,OnDestroy {
     console.log("formAdmin",this.formAdmin)
 
     this.admin.setAdmin(this.formAdmin).subscribe(res => {
-      debugger
+      
       if (!res.isError) {
        this.toastr.success("Successfully Added")
        this.getAdminUser();
