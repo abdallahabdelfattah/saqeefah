@@ -15,14 +15,7 @@ export class ProjectsComponent implements OnInit {
   AllProjects:[] = []
   getAllProjects(){
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
-
-      debugger; 
-       
-    
-      
       this.AllProjects = response.result.data
-     
-  
     })
   }
   ngOnInit(): void {

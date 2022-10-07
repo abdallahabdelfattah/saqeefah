@@ -1,15 +1,12 @@
 
 import {  Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { GenaricService } from 'src/app/services/Genaric.service';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { SliderService } from 'src/app/pages/dashboard/setting/services/slider.service';
-import { SettingTypes } from 'src/app/shared/Enums/enums';
-import { ISettingType } from '../dashboard/setting/models/settingType.interface';
+import { SettingTypes, SliderTypes } from 'src/app/shared/Enums/enums';
 import { SettingsService } from '../dashboard/setting/services/settings.service';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
-import { siteInfo } from '../Models/siteInfo';
 
 
 @Component({
@@ -19,8 +16,7 @@ import { siteInfo } from '../Models/siteInfo';
 })
 export class HomeComponent implements OnInit,OnDestroy {
 
-  AllSlider=[];
-
+  OurPartners:any ;
   projectList = []
   AllProjects = []
   projectsForSale =[]
@@ -37,12 +33,8 @@ export class HomeComponent implements OnInit,OnDestroy {
     return SettingTypes
   }
 
-
-
-
 getAllProjects(){
   this.projects.getFilteredProjects(this.language.getLanguageID(),0/*both ready for sale and soon for sale*/ ).subscribe((response:any)=>{
-     
     this.AllProjects = []
     this.projectsForSale =[]
     this.projectsForSaleSoon = []
@@ -51,7 +43,6 @@ getAllProjects(){
     this.projectsForSale = response.data?.filter((item:any)=> item.statusId == 1 )
     this.projectsForSaleSoon = response.data?.filter((item:any)=> item.status == 2)
    }
-
   })
 }
 
@@ -60,15 +51,11 @@ getAllProjects(){
     this.generalService.changeNavBarTheme({transparentNav:false})
     //console.log(this.generalService.checkNavIsTRansparent())
     this.getAllProjects();
-    this.getAllSlider();
-    this.getPanoramaSetting(); 
-  this.language.changeLanguageStatus.subscribe((data)=>{
+    this.getOurPartnersSlider();
+   this.language.changeLanguageStatus.subscribe((data)=>{
     console.log('language updated',data)
     this.getAllProjects();
-    this.getAllSlider();
-    this.getPanoramaSetting(); 
- 
-
+    this.getOurPartnersSlider();
   })
   }
   ngOnDestroy(): void{
@@ -77,25 +64,23 @@ getAllProjects(){
 
   }
 
-  getAllSlider(){
-    this.slider.getAllSliders(this.language.getLanguageID()).subscribe((response:any)=>{
+  getOurPartnersSlider(){
+    this.slider.getAllSliderByidForUser(SliderTypes.OurPartners,this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response.isError){
-    console.log('all sliders',response)
-      this.AllSlider= response.result.data
+    console.log('all sliders',response.result.data)
+      this.OurPartners=response.result.data
   }
-
     })
   }
 
+  // getPanoramaSetting() {
+  //   return this.siteSetting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
+  //     if (!response.isError) {
+  //       let allSetting = response.result.data
+  //       this.Panorama = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.Panorama)[0];
+  //     }
+  //   })
+  // }
 
-  getPanoramaSetting() {
-    return this.siteSetting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
-      if (!response.isError) {
-        let allSetting = response.result.data
-        this.Panorama = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.Panorama)[0];
-      }
-    })
-
-  }
 
 }

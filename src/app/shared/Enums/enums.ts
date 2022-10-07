@@ -36,6 +36,8 @@ export enum SettingTypes{
 
 export enum SliderTypes{
   OurPartners=8,
+  SliderHomeBanar=9,
+
 }
 
 

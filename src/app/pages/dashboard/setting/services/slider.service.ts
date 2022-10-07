@@ -16,19 +16,22 @@ export class SliderService {
   }
 
   getAllSliderByid(sliderId: number): Observable<Result<ISliderResponses>> {
-    debugger
     return this.callApi.get(`api/Slider/GetslidersByIdForAdmin?sliderId=${sliderId}`);
   }
 
 
+
+  getAllSliderByidForUser(sliderId: number, languageId: any): Observable<Result<ISliderResponses>> {
+    return this.callApi.get(`api/Slider/GetslidersById?sliderId=${sliderId}&languageId=${languageId}`);
+  }
+  
   getAllSliders(languageId: any): Observable<any> {
-    debugger; 
+    
     return this.callApi.get(`api/Slider?languageId=${languageId}`)
   }
 
 
   UpdateSlider(body: ISlider): Observable<any> {
-    debugger
     var formdata = new FormData();
     formdata.append("Id", body.id.toString());
     formdata.append("IsActive", body.isActive ? "true" : "false");
