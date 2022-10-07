@@ -1,3 +1,14 @@
 .form-control {
     border-radius: 0;
 }
+.btn-outline-primary{
+    border-color: $mainColor;
+    color: $mainColor;
+    &:hover,&:focus,&:active{
+        background-color: $mainColor;
+        border-color: $mainColor;
+        color: #fff;
+        box-shadow: none;
+        outline: none;
+    }
+}
