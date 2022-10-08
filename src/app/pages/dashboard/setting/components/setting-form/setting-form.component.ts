@@ -7,6 +7,8 @@ import { environment } from 'src/environments/environment';
 import { AttachmentService } from '../../../services/attachment.service';
 import { SettingsService } from '../../services/settings.service';
 import jsonDoc from '../../models/doc';
+import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-setting-form',
@@ -46,7 +48,7 @@ currentFormData:any
     ['align_left', 'align_center', 'align_right', 'align_justify'],
   ];
 
-  constructor(private setting: SettingsService ,  private toastr: ToastrService,private attachment:AttachmentService) {
+  constructor(private setting: SettingsService ,private modalService: NgbModal,  private toastr: ToastrService,private attachment:AttachmentService) {
 
 
   }
@@ -149,6 +151,8 @@ currentFormData:any
     })
   }
   delete(){
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.attachment.deleteSettingImage(this.SettingTypeId).subscribe(res=>{
       if (!res.isError) {
         this.toastr.success("Successfully Deleted")
@@ -158,7 +162,11 @@ currentFormData:any
         this.toastr.error("Failed Deleted")
       }
 
-    })
+    })}
+    else{
+
+    }
+  });
    }
 
 

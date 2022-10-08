@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { environment } from 'src/environments/environment';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { AttachmentService } from '../services/attachment.service';
 @Component({
   selector: 'app-edit-property',
@@ -67,7 +69,7 @@ export class EditPropertyComponent implements OnInit {
 
     })
   }
-  constructor(private attachmentService: AttachmentService, private editproperty: ProjectAndListService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
+  constructor(private attachmentService: AttachmentService, private modalService: NgbModal,private editproperty: ProjectAndListService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
     private toastr: ToastrService) { }
   coverImage: any;
   gallaryImages: any[];
@@ -84,6 +86,8 @@ export class EditPropertyComponent implements OnInit {
     })
   }
   delete(id: any) {
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.attachmentService.deleteAttachment(id, "Apartment").subscribe(res => {
       if (!res.isError) {
         this.toastr.success("Successfully Deleted")
@@ -93,9 +97,13 @@ export class EditPropertyComponent implements OnInit {
         this.toastr.error("Failed Deleted")
       }
 
-    })
+    })}
+    else{}
+  });
   }
   deleteCover() {
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.attachmentService.deleteApartmentCover(this.propertyId).subscribe(res => {
       if (!res.isError) {
         this.toastr.success("Successfully Deleted")
@@ -106,6 +114,8 @@ export class EditPropertyComponent implements OnInit {
       }
 
     })
+  }else{}
+});
   }
 
 }

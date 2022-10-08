@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Editor, Toolbar } from 'ngx-editor';
 import { ToastrService } from 'ngx-toastr';
@@ -7,6 +8,7 @@ import { adminSiteInfo, siteInfo } from 'src/app/pages/Models/siteInfo';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
 import { siteInformationService } from 'src/app/shared/services/siteInformation.service';
+import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
 import jsonDoc from '../../models/doc'
 import { ranges } from '../../models/ranges';
 import { PriceRangeService } from '../../services/priceRange.service';
@@ -27,7 +29,7 @@ export class AreaRangeComponent implements OnInit,OnDestroy  {
     rangeTypeId: new FormControl('', []),
   });
 
-  constructor(private toastr: ToastrService,private siteInformation:PriceRangeService,
+  constructor(private toastr: ToastrService,private siteInformation:PriceRangeService,private modalService: NgbModal,
     private language:changeLanguageService,private translate:TranslateService) { }
 
   ngOnInit(): void {
@@ -89,6 +91,8 @@ export class AreaRangeComponent implements OnInit,OnDestroy  {
 
   }
   deleteRange(id){
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.siteInformation.delete(id,1).subscribe(res=>{
     console.log(res)
       if(!res.isError)
@@ -103,6 +107,11 @@ export class AreaRangeComponent implements OnInit,OnDestroy  {
 
 
     })
+  }
+  else{
+
+  }
+});
   }
 
   // onChange(event) {

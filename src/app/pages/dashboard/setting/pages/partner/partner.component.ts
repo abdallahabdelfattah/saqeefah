@@ -1,9 +1,11 @@
 import { AfterViewChecked, AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor, Toolbar } from 'ngx-editor';
 import { ToastrService } from 'ngx-toastr';
 import { SliderTypes } from 'src/app/shared/Enums/enums';
 import { environment } from 'src/environments/environment';
+import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
 import jsonDoc from '../../models/doc';
 import { ISlider, ISliderAttachment } from '../../models/slider.interface';
 import { SliderService } from '../../services/slider.service';
@@ -50,7 +52,7 @@ export class PartnerComponent implements OnInit,OnDestroy{
 
 
 
-  constructor(private sliderService: SliderService,private toastr: ToastrService) {
+  constructor(private sliderService: SliderService,private toastr: ToastrService,private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -107,6 +109,8 @@ export class PartnerComponent implements OnInit,OnDestroy{
     }
   }
   DeleteImage(attachmentId: number) {
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.sliderService.deleteSliderAttachment(attachmentId).subscribe(r => {
       if (!r.isError) {
         this.toastr.success("Successfully Deleted")
@@ -118,6 +122,10 @@ export class PartnerComponent implements OnInit,OnDestroy{
         this.toastr.error("Failed Deleted")
       }
     });
+  }else{
+
+  }
+})
   }
 
   getAllSliderAttatchments() {

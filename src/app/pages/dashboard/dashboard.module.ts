@@ -38,6 +38,7 @@ import { PriceRangeComponent } from './setting/pages/price-range/price-range.com
 import { PriceRangeService } from './setting/services/priceRange.service';
 import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
 import { HomeSliderBannerComponent } from './setting/pages/home-slider-banner/home-slider-banner.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 
@@ -63,7 +64,8 @@ import { HomeSliderBannerComponent } from './setting/pages/home-slider-banner/ho
             PlaceOrderComponent,
             PriceRangeComponent,
             AreaRangeComponent,
-            HomeSliderBannerComponent
+            HomeSliderBannerComponent,
+            ConfirmationDialogComponent
 
   ],
   imports: [

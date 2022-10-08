@@ -298,3 +298,12 @@ html {
         color: #fff;
     }
 }
+
+
+.modal-content,.modal-header{
+   
+    border-top-right-radius:none !important;
+    border-top-left-radius:none !important;
+    border-radius: 0 !important;
+    border:none !important; 
+}

@@ -1,0 +1,28 @@
+.modal-footer{
+    padding: 0 !important;
+}
+.btn{
+    margin: 0 !important;
+    width: 50%;
+}
+.modal-header {
+    background-color: #dc3545;
+color: #fff;
+    border-radius: none !important;
+    padding: 0.3rem;}
+    
+.btn.btn-primary:hover,.btn-primary{
+background-color: #5E5E59;
+color:#fff;
+}
+.btn.btn-danger:hover{
+    background-color: #dc3545;
+    color:#fff;
+    }
+
+  .close{
+    background-color: transparent;
+    color: #fff;
+    border: 0 !important;
+    font-size: 30px;
+  }  

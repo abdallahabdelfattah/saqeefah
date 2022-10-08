@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
 import { environment } from 'src/environments/environment';
 import { MasterPlan } from '../../Models/masterPlan';
 import { pickList } from '../../Models/picklist';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { AttachmentService } from '../services/attachment.service';
 
 @Component({
@@ -140,7 +142,7 @@ export class EditProjectComponent implements OnInit {
     })
 
   }
-  constructor(private editProject: ProjectAndListService,
+  constructor(private editProject: ProjectAndListService,private modalService: NgbModal,
     private route: ActivatedRoute, private sanitizer: DomSanitizer
     , private attachmentService: AttachmentService,
     private language: changeLanguageService,
@@ -200,6 +202,8 @@ export class EditProjectComponent implements OnInit {
       }
   }
   delete(id: any) {
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.attachmentService.deleteAttachment(id, "Project").subscribe(res => {
       if (!res.isError) {
         this.toastr.success("Successfully Deleted")
@@ -210,7 +214,14 @@ export class EditProjectComponent implements OnInit {
       }
     })
   }
+  else{
+
+  }
+})
+  }
   deleteAttachment(type: number) {
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.attachmentService.deleteProjectAttachments(this.projectId, type).subscribe(res => {
       if (!res.isError) {
         this.toastr.success("Successfully Deleted")
@@ -220,6 +231,8 @@ export class EditProjectComponent implements OnInit {
         this.toastr.error("Failed Deleted")
       }
     })
+  }else{}
+});
   }
   addData(){
     this.masterPlanData.push({id:'',cords:'',shape:''});

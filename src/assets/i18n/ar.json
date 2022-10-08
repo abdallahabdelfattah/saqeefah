@@ -362,5 +362,8 @@
 "Home Slider Bannar":"صور اللافتة الاعلانية للصفحة الرئيسية",
 "image":"الصورة",
 "Add":"اضافة",
+"NO":"لا",
+"YES":"نعم",
+"Are you sure you want to delete?":"هل انت متاكد من عملية الحذف؟",
 "There is no selected Appartments to compare, please choose items.":"لا توجد شقق مختارة للمقارنة ، يرجى اختيار العناصر."
 }

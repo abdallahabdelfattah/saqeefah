@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
 import { IUser } from 'src/app/shared/services/IUser';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { AdminUserService } from '../setting/services/admin-user.service';
 import { User } from './user.interface';
 
@@ -26,7 +28,7 @@ export class UsersComponent implements OnInit ,OnDestroy {
       })
 
 
-  constructor(private admin: AdminUserService, private toastr : ToastrService) { }
+  constructor(private admin: AdminUserService, private toastr : ToastrService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -86,6 +88,8 @@ export class UsersComponent implements OnInit ,OnDestroy {
 
 
    deleteAdmin(adminId){
+    this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
+      if (res) {
     this.admin.deleteAdmin(adminId).subscribe(res=>{
       if(!res.error)
       {
@@ -99,6 +103,10 @@ export class UsersComponent implements OnInit ,OnDestroy {
 
 
     })
+  }else{
+
+  }
+});
    }
 
 
