@@ -16,6 +16,12 @@ appRootUrl=environment.appRoot+'/';
 
   ngOnInit(): void {
     this.getSliderHomeBanar(); 
+
+    
+    this.language.changeLanguageStatus.subscribe((data) => {
+      this.getSliderHomeBanar()
+    })
+
   }
 
   getSliderHomeBanar(){

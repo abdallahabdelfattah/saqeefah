@@ -50,6 +50,11 @@ bannerimgUrl= []
   constructor(private language:changeLanguageService,private sliderServices:SliderService) { }
   ngOnInit(): void {
     this.getSlider();
+
+    this.language.changeLanguageStatus.subscribe((data) => {
+      this.getSlider()
+    })
+
   }
 
   getSlider(){
