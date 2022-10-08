@@ -17,8 +17,8 @@
 <!--===== Start Team =====-->
 <section class="section bg-light comparison-section">
 
-    <div class="container">
-        <h3 *ngIf="!compareAvalable">There is no selected Appartments to compare, please choose items. </h3>
+    <div class="container text-center">
+        <h3 *ngIf="!compareAvalable">{{'There is no selected Appartments to compare, please choose items.' | translate}} </h3>
         <div class="row" *ngIf="compareAvalable">
 
             <div class="table-responsive bg-white">
