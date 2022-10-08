@@ -7,20 +7,12 @@
                 <p>
                     {{siteInformation?.projectListDesc}}
                 </p>
-
             </div>
             <div class="col-md-12">
-
                 <div class="text-center" id="myTab" role="tablist">
                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{{'all' |translate}}</a>
                     <a class="nav-link green" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{{'ForSale' |translate}}</a>
                     <a class="nav-link orange" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">{{'soonForSale' |translate}}</a>
-                    <!-- <a *ngIf="!isHome" class="nav-link pink" id="booked-tab" data-bs-toggle="tab" data-bs-target="#booked" type="button" role="tab" aria-controls="booked" aria-selected="false">{{'BookedUp' |translate}}</a> -->
-                    <!-- <a *ngIf="!isAbout" class="nav-link green" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{{'ForSale' |translate}}</a>
-                    <a *ngIf="!isAbout" class="nav-link orange" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">{{'soonForSale' |translate}}</a> -->
-                    <!-- <a *ngIf="!isHome" class="nav-link pink" id="booked-tab" data-bs-toggle="tab" data-bs-target="#booked" type="button" role="tab" aria-controls="booked" aria-selected="false">{{'BookedUp' |translate}}</a> -->
-                    <a *ngIf="!isHome" class="nav-link moave" id="sold-tab" data-bs-toggle="tab" data-bs-target="#sold" type="button" role="tab" aria-controls="sold" aria-selected="false">{{'SoldUp' |translate}}</a>
-
                 </div>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -30,9 +22,6 @@
                                     <app-project-card [project]="item"></app-project-card>
                                 </div>
                             </ng-container>
-
-
-
                             <div class="col-md-12 text-center">
                                 <button class="btn btn-primary more-btn mt-5" routerLink="/projects">{{'loadMore' | translate}}</button>
                             </div>
@@ -41,8 +30,8 @@
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
-                            <ng-container *ngFor="let item of projects; let i = index">
-                                <div class="col-md-4 mb-4" *ngIf="item.statusId ==1 ">
+                            <ng-container *ngFor="let item of projectsForSale; let i = index">
+                                <div class="col-md-4 mb-4">
                                     <app-project-card [project]="item"></app-project-card>
                                 </div>
                             </ng-container>
@@ -51,31 +40,15 @@
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="row">
-                            <ng-container *ngFor="let item of projects; let i = index">
-                                <div class="col-md-4 mb-4" *ngIf="item.statusId ==2 ">
+                            <ng-container *ngFor="let item of projectsForSaleSoon; let i = index">
+                                <div class="col-md-4 mb-4">
                                     <app-project-card [project]="item"></app-project-card>
                                 </div>
                             </ng-container>
                         </div>
                     </div>
-                    <!-- <div *ngIf="!isHome" class="tab-pane fade" id="booked" role="tabpanel" aria-labelledby="booked-tab">
-                        <div class="row">
-                            <ng-container *ngFor="let item of projects; let i = index">
-                                <div class="col-md-4 mb-4" *ngIf="item.statusId ==3">
-                                    <app-project-card [project]="item"></app-project-card>
-                                </div>
-                            </ng-container>
-                        </div>
-                    </div> -->
-                    <div *ngIf="!isHome" class="tab-pane fade" id="sold" role="tabpanel" aria-labelledby="sold-tab">
-                        <div class="row">
-                            <ng-container *ngFor="let item of projects; let i = index">
-                                <div class="col-md-4 mb-4" *ngIf="item.statusId ==4">
-                                    <app-project-card [project]="item"></app-project-card>
-                                </div>
-                            </ng-container>
-                        </div>
-                    </div>
+                  
+              
                 </div>
             </div>
 

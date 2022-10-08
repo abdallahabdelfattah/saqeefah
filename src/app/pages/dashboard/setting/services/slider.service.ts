@@ -19,8 +19,6 @@ export class SliderService {
     return this.callApi.get(`api/Slider/GetslidersByIdForAdmin?sliderId=${sliderId}`);
   }
 
-
-
   getAllSliderByidForUser(sliderId: number, languageId: any): Observable<Result<ISliderResponses>> {
     return this.callApi.get(`api/Slider/GetslidersById?sliderId=${sliderId}&languageId=${languageId}`);
   }

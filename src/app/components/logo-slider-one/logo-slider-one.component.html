@@ -1,10 +1,23 @@
-<owl-carousel-o [options]="customOptions" *ngIf="logos">
-    <!-- <ng-template carouselSlide *ngFor="let item of logos"> -->
-        <ng-template carouselSlide *ngFor="let item of bannerimgUrl">
-        <div class="img-container"  >
-            <!-- <img [src]="appRootUrl+item.path" alt="" [id]="item.attachmentId"> -->
-            <div class="box" [ngStyle]="{'background-image': 'url(' + item + ')' }" >
-                </div>
+
+
+<div class="slider-1 container">
+    <div class="row my-5" *ngIf="slider?.isActive">
+        <div class="col-md-12">
+            <h4 class="section-title"><span class="title">{{slider?.title | translate}}</span></h4>
+            <p class="" [innerHtml]="slider?.description">
+            </p>
         </div>
-    </ng-template>
-</owl-carousel-o>
+        <div class="col-md-12">
+            <owl-carousel-o [options]="customOptions" *ngIf="slider?.sliderAttachment">
+                <!-- <ng-template carouselSlide *ngFor="let item of logos"> -->
+                    <ng-template carouselSlide *ngFor="let item of bannerimgUrl">
+                    <div class="img-container"  >
+                        <!-- <img [src]="appRootUrl+item.path" alt="" [id]="item.attachmentId"> -->
+                        <div class="box" [ngStyle]="{'background-image': 'url(' + item + ')' }" >
+                            </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
