@@ -20,11 +20,31 @@ export interface ISlider {
     descriptionAr: string;
     descriptionEn: string;
     isActive?:boolean;
-    sliderAttachment?:Array<ISliderAttachment>
+    sliderAttachment?:Array<ISliderHomeAttachment>
 }
+// export interface ISliderHome {
+//     id?: number;
+//     titleEn: string;
+//     titleAr: string;
+//     descriptionAr: string;
+//     descriptionEn: string;
+//     isActive?:boolean;
+//     sliderAttachment?:Array<ISliderHomeAttachment>
+// }
+
 export interface ISliderAttachment {
     attachmentId: number;
     path: string;
+}
+export interface ISliderHomeAttachment {
+    attachmentId: number;
+    path: string;
+    titleAr:string;
+    titleEn:string;
+    descriptionAr:string;
+    descriptionEn:string;
+
+
 }
 
 

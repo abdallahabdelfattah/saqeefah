@@ -22,9 +22,20 @@ appRootUrl=environment.appRoot+'/';
     this.sliderServices.getAllSliderByidForUser(SliderTypes.SliderHomeBanar,this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response?.isError){
       this.slider=response?.result?.data
+      console.log('slider', this.slider)
   }
     })
   }
   
+
+
+  // getAllSliderAttatchments() {
+  //   this.sliderServices.getAllSliderByid(SliderTypes.SliderHomeBanar).subscribe(res => {
+  //     if (!res.isError) {
+  //       this.slider = res.result.data;
+  //       console.log('slider', this.slider)
+  //     }
+  //   })
+  // }
 
 }

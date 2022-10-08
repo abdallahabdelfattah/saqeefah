@@ -12,37 +12,25 @@ import { SliderService } from '../../services/slider.service';
   templateUrl: './home-slider-banner.component.html',
   styleUrls: ['./home-slider-banner.component.scss']
 })
-export class HomeSliderBannerComponent implements OnInit,OnDestroy{
+export class HomeSliderBannerComponent implements OnInit{
   @Output() public click: EventEmitter<MouseEvent> = new EventEmitter();
   showError = false;
   images: Array<File> = [];
   formData: FormData = new FormData();
-  spaceregex = /^(\s+\S+\s*)*(?!\s).*$/;
-  editordoc =jsonDoc;
-
-  editor: Editor;
-  editor1:Editor;
-  toolbar: Toolbar = [
-    ['bold', 'italic'],
-    ['underline', 'strike'],
-    ['code', 'blockquote'],
-    ['ordered_list', 'bullet_list'],
-    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
-    ['link', 'image'],
-    ['text_color', 'background_color'],
-    ['align_left', 'align_center', 'align_right', 'align_justify'],
-  ];
-
+ 
+  
   appRootUrl = environment.appRoot + '/';
   public slider: ISlider = {} as ISlider;
   imageList: ISliderAttachment[] = [];
 
   public myFormGroup: FormGroup = new FormGroup({
+    id:new FormControl(0),
+  
     TitleEn: new FormControl('', [Validators.required]),
     TitleAr: new FormControl('', [Validators.required]),
     DescriptionEn: new FormControl(Validators.required),
     DescriptionAr: new FormControl(Validators.required),
-    IsActive: new FormControl(),
+  
   });
 
 
@@ -53,8 +41,7 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
   }
 
   ngOnInit(): void {
-    this.editor = new Editor();
-    this.editor1 = new Editor();
+   
     this.initializeFormGroup();
     this.getAllSliderAttatchments();
 
@@ -62,21 +49,39 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
 
 
   onClickSubmit(e) {
+    debugger
     e.stopPropagation();
     this.click.emit(e);
     if (this.myFormGroup.invalid) {
       this.showError = true;
       return;
     }
-    this.slider = {
-      titleEn: this.myFormGroup.value.TitleEn,
-      titleAr: this.myFormGroup.value.TitleAr,
-      descriptionEn: this.myFormGroup.value.DescriptionEn,
-      descriptionAr: this.myFormGroup.value.DescriptionAr,
-      isActive: this.myFormGroup.value.IsActive,
-      id: SliderTypes.OurPartners,
-    };
-    this.sliderService.UpdateSlider(this.slider).subscribe(r => {
+    // this.slider = {
+    //   titleEn: this.myFormGroup.value.TitleEn,
+    //   titleAr: this.myFormGroup.value.TitleAr,
+    //   descriptionEn: this.myFormGroup.value.DescriptionEn,
+    //   descriptionAr: this.myFormGroup.value.DescriptionAr,
+    //   //id: SliderTypes.SliderHomeBanar,
+    //   id:this.myFormGroup.value.id
+    // };
+
+
+    if (this.images.length > 0) {
+      let sliderTypeId= SliderTypes.SliderHomeBanar;
+      this.formData = new FormData();
+      //this.formData.append('SliderId',sliderTypeId.toString())
+      this.formData.append('SliderId', sliderTypeId.toString())
+      this.formData.append('TitleEn',this.myFormGroup.value.TitleEn)
+      this.formData.append('TitleAr',this.myFormGroup.value.TitleAr)
+      this.formData.append('DescriptionEn',this.myFormGroup.value.DescriptionEn)
+      this.formData.append('DescriptionAr',this.myFormGroup.value.DescriptionAr)
+     
+      for (var  index = 0; index < this.images.length; index++) {
+        this.formData.append('Image', this.images[index], this.images[index].name);
+      }
+    }
+    console.log('formdata',this.formData)
+    this.sliderService.AddHomeSlider(this.formData).subscribe(r => {
       if (!r.isError) {
        this.toastr.success("Successfully Updated")
         this.getAllSliderAttatchments();
@@ -85,24 +90,28 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
       }
     })
 
+    this.myFormGroup.reset();
+    //this.images=[];
+
   }
 
   initializeFormGroup() {
     this.myFormGroup.setValue({
+      id:0,
       TitleEn: '',
       TitleAr: '',
       DescriptionEn: '',
       DescriptionAr: '',
-      IsActive: true,
     })
   }
 
   onInputChange(event) {
     this.images=[];
     if (event.target.files) {
-      for (var i = 0; i < event.target.files.length; i++) {
-        this.images.push(<File>event.target.files[i])
-      }
+      //for (var i = 0; i < event.target.files.length; i++) {
+        // this.images.push(<File>event.target.files[i])
+        this.images.push(<File>event.target.files[0])
+      //}
     }
   }
   DeleteImage(attachmentId: number) {
@@ -120,7 +129,7 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
   }
 
   getAllSliderAttatchments() {
-    this.sliderService.getAllSliderByid(SliderTypes.OurPartners).subscribe(res => {
+    this.sliderService.getAllSliderByid(SliderTypes.SliderHomeBanar).subscribe(res => {
       if (!res.isError) {
         this.slider = res.result.data;
       }
@@ -133,7 +142,7 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
     e.stopPropagation();
     debugger
     if (this.images.length > 0) {
-      let sliderTypeId= SliderTypes.OurPartners;
+      let sliderTypeId= SliderTypes.SliderHomeBanar;
       this.formData = new FormData();
       this.formData.append('SliderId',sliderTypeId.toString())
       for (var  index = 0; index < this.images.length; index++) {
@@ -156,9 +165,19 @@ export class HomeSliderBannerComponent implements OnInit,OnDestroy{
 
   }
 
-  ngOnDestroy(): void {
-    this.editor.destroy();
-    this.editor1.destroy();
+  DeleteRow(attachmentId:number){
+    this.sliderService.deleteSliderAttachment(attachmentId).subscribe(r => {
+      if (!r.isError) {
+        this.toastr.success("Successfully Deleted")
+        this.getAllSliderAttatchments();
+        this.ngOnInit();
+        
+      }
+      else{
+        this.toastr.error("Failed Deleted")
+      }
+    });
+
   }
 
 }

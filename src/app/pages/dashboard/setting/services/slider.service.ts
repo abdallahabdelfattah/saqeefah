@@ -42,6 +42,15 @@ export class SliderService {
     return this.callApi.postFormData(`api/Slider/Editslider`, formdata)
   }
 
+  AddHomeSlider(formdata : any): Observable<any> {
+    // var formdata = new FormData();
+    // formdata.append("Id", body.id.toString());
+    // formdata.append("TitleAr", body.titleAr);
+    // formdata.append("TitleEn", body.titleEn);
+    // formdata.append("DescriptionAr", body.descriptionAr);
+    // formdata.append("DescriptionEn", body.descriptionEn);
+    return this.callApi.postFormData(`api/Slider/SliderHomeBanarAttachments`, formdata)
+  }
  
   deleteSliderAttachment(id: any): Observable<Result<BaseResponse>> {
    let attachmentsIds=[]; 
