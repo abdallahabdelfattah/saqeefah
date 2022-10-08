@@ -1,19 +1,96 @@
 <div class="row">
     <div class="col-md-12">
-
         <div id="myTab" role="tablist">
-            <a class="nav-link" [class.active]="activeBuilding == item.build" data-bs-toggle="tab" role="tab" [id]="item.build" *ngFor="let item of buildings;let i = index" (click)="getBuildingProperty(item.build)">{{item.build}}</a>
+            <a class="nav-link" [class.active]="activeBuilding == item.build" data-bs-toggle="tab" role="tab"
+                [id]="item.build" *ngFor="let item of buildings;let i = index"
+                (click)="getBuildingProperty(item.build)">{{item.build}}</a>
         </div>
     </div>
     <div class="col-md-3">
-        <app-search-form  (obj)="filter($event)" [allProp]="propertyOfSelectedBuildingForFilter" [searchInallProjects]="false"></app-search-form>
-    
+        <app-search-form (obj)="filter($event)" [allProp]="propertyOfSelectedBuildingForFilter"
+            [searchInallProjects]="false"></app-search-form>
+
     </div>
     <div class="col-md-9">
+
+        <div class="col-12 col-md-12 mb-1 bar">
+            <div class="filter-panel mt-3 w-100 d-none d-lg-block">
+                <div class="row">
+                    <div class="d-flex align-items-center"> 
+                        <ul class="list-inline ms-auto m-0">
+                            <li class="list-inline-item view-icons grid3"><span class="icon tagr-layout"></span></li>
+                            <li class="list-inline-item view-icons  list"><span class="icon tagr-list-bullet"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row" *ngIf="filteredProperties ">
             <div class="col-md-6 mb-3" *ngFor="let item of filteredProperties">
                 <app-property-card [fromDetails]="true" [property]="item"></app-property-card>
             </div>
+        </div>
+        <div class="row">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>رقم	</th>
+                        <th>الدور</th>
+                        <th>المساحة الاجمالية	</th>
+                        <th>السعر</th>
+                        <th>غرف</th>
+                        <th>مواصفات</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>232m</td>
+                        <td>2123223</td>
+                        <td>3</td>
+                        <td>Details here</td>
+                        <td>
+                            <span class="status">مباع</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>232m</td>
+                        <td>2123223</td>
+                        <td>3</td>
+                        <td>Details here</td>
+                        <td>
+                            <span class="status">مباع</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>232m</td>
+                        <td>2123223</td>
+                        <td>3</td>
+                        <td>Details here</td>
+                        <td>
+                            <span class="status">مباع</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>232m</td>
+                        <td>2123223</td>
+                        <td>3</td>
+                        <td>Details here</td>
+                        <td>
+                            <span class="status">مباع</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

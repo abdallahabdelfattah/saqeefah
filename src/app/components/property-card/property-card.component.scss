@@ -119,6 +119,7 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    background-color: $mainColor;
     // border: 5px solid #dddcd4;
 }
 
@@ -163,6 +164,7 @@ h5 {
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
             span[class*='icon-']{
                 color: $mainColor;
             }

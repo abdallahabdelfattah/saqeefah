@@ -79,16 +79,15 @@
     }
     .compare {
         position: absolute;
-        background: white;
-        padding: 1px 9px;
-        border-radius: 12px;
-        color: $mainColor;
+        background: rgba(255,255,255,.5);
+        padding: 4px 12px;
+        color: #fff;
         z-index: 3;
         cursor: pointer;
         top: 9px;
-        left: 36px;
+        left:48px;
         font-size: 13px;
-
+        backdrop-filter: blur(50px);
         &:hover {
             color: white;
             background: $mainColor;

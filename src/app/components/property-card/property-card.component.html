@@ -31,16 +31,19 @@
         <div class="unit-specs">
             <ul class="list-inline m-0">
                 <li class="list-inline-item">
-                    <span class="icon-bedroom"></span> <span class="text mx-1"> {{'Rooms'|
-                        translate}} {{property.bed_Room_Num}}</span>
+                    <span class="text">
+                    {{'Basic Space:'| translate}}<br> {{property.basic_Space}}</span></li>
+                <li class="list-inline-item">
+                    <span class="text mx-1"> {{'Rooms'|
+                        translate}}<br> {{property.bed_Room_Num}}</span>
                 </li>
                 <li class="list-inline-item">
-                    <span class="icon-toilet-PhotoRoom"></span> <span class="text mx-1">
-                        {{'Bathroom' | translate}} {{property.toilet_Num}}</span>
+                     <span class="text mx-1">
+                        {{'Bathroom' | translate}} <br>{{property.toilet_Num}}</span>
                 </li>
                 <li class="list-inline-item">
-                    <span class="icon-images-PhotoRoom"></span> <span class="text mx-1">                        
-                        {{'Floor'| translate}} {{property.floor_Num}}
+                    <span class="text mx-1">                        
+                        {{'Floor'| translate}} <br>{{property.floor_Num}}
                     </span>
                 </li>
                 <!-- <li class="list-inline-item">
@@ -51,9 +54,6 @@
                     <span class="icon-salon-PhotoRoom"></span> <span class="text mx-1"> {{property.salon}} {{'Salon' |
                         translate}}</span>
                 </li> -->
-                <li class="list-inline-item">
-                    <span class="text">
-                    {{'Basic Space:'| translate}} {{property.basic_Space}}</span></li>
                 <!-- <li class="list-inline-item">
                     <span class="icon-hall-PhotoRoom"></span> <span class="text mx-1">{{property.hall}} {{'Hall' |
                         translate}}</span>
