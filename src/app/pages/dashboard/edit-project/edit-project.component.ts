@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
+import { Helper } from 'src/app/shared/helper/helper';
 import { environment } from 'src/environments/environment';
 import { MasterPlan } from '../../Models/masterPlan';
 import { pickList } from '../../Models/picklist';
@@ -53,11 +54,31 @@ export class EditProjectComponent implements OnInit {
     this.formData = new FormData();
     if(this.projectImageThumb)
     {
+      if(!Helper.allowedFileSize(this.projectImageThumb))
+      {
+        this.toastr.error("Max File allowed  2 MB "); 
+        this.uploadWorking = false;
+        this.projectImageGallery=[];
+        this.masterPlanData=[] as MasterPlan[];
+        this.ngOnInit();
+        return; 
+      }
     this.formData.append('CoverImage', this.projectImageThumb, this.projectImageThumb.name)
     }
     this.formData.append('Project_Id', this.projectId)
 
     for (var i = 0; i < this.projectImageGallery.length; i++) {
+      if(!Helper.allowedFileSize(this.projectImageGallery[i]))
+      {
+        this.toastr.error("Max File allowed  2 MB "); 
+        this.uploadWorking = false;
+        this.projectImageGallery=[];
+        this.masterPlanData=[] as MasterPlan[];
+        this.ngOnInit();
+
+        return; 
+      }
+
       this.formData.append("Images", this.projectImageGallery[i], this.projectImageGallery[i].name);
     }
     this.editProject.uploadProjectImage(this.formData).subscribe((resp) => {

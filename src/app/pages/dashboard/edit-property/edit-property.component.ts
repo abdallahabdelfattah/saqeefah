@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { ProjectAndListService } from 'src/app/services/project-lists.service';
+import { Helper } from 'src/app/shared/helper/helper';
 import { environment } from 'src/environments/environment';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { AttachmentService } from '../services/attachment.service';
@@ -36,6 +37,8 @@ export class EditPropertyComponent implements OnInit {
     }
   }
 
+
+
   uploadImage(e) {
     this.uploadWorking = true
     e.preventDefault();
@@ -43,14 +46,24 @@ export class EditPropertyComponent implements OnInit {
 
     if(this.propertyImageThumb)
     {
+      if(!Helper.allowedFileSize(this.propertyImageThumb))
+      {
+        this.toastr.error("Max File allowed  2 MB "); 
+        return; 
+      }
       this.formData.append('CoverImage', this.propertyImageThumb, this.propertyImageThumb.name)
     }
     
     this.formData.append('Apartment_Id', this.propertyId)
     this.formData.append('Project_Id', this.projectId)
 
-
-    for (var i = 0; i < this.propertyImageGallery.length; i++) {
+    for (var i = 0; i < this.propertyImageGallery.length; i++) 
+    {
+      if(!Helper.allowedFileSize(this.propertyImageGallery[i]))
+      {
+        this.toastr.error("Max File allowed  2 MB "); 
+        return; 
+      }
       this.formData.append("Images", this.propertyImageGallery[i], this.propertyImageGallery[i].name);
     }
 
