@@ -9,6 +9,7 @@ $right: right;
 .card.list .card-body {
   position: relative;
   display: flex;
+  flex-direction: column;
   color: var(--main-color);
 }
 span.error{
@@ -41,4 +42,5 @@ a.contact{
 }
 .place-order-form .containerRadio{
   float: left;
+  direction: rtl;
 }

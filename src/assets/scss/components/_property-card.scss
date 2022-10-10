@@ -99,7 +99,7 @@
     }
     .card-label {
         top: 7px;
-        right: -7px;
+        right: 0;
         padding: 7px 25px;
         font-size: 16px;
         font-weight: 400;
@@ -107,15 +107,15 @@
         color: white;
         font-weight: 400;
 
-        &:after {
-            content: '';
-            bottom: -19px;
-            right: 0;
-            position: absolute;
-            border-left: 0px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 19px solid #555;
-        }
+        // &:after {
+        //     content: '';
+        //     bottom: -19px;
+        //     right: 0;
+        //     position: absolute;
+        //     border-left: 0px solid transparent;
+        //     border-right: 7px solid transparent;
+        //     border-top: 19px solid #555;
+        // }
     }
     &:hover{
         .img-container{
