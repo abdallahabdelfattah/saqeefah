@@ -36,6 +36,7 @@ import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { PlaceOrderApartmentComponent } from './place-order-apartment/place-order-apartment.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
     VideoPlayerComponent,
     InfoTableComponent,
     HomeSliderComponent,
+    PlaceOrderApartmentComponent,
     
     // VedioComponent
   ],
@@ -103,7 +105,8 @@ VgBufferingModule
     OurFeaturesComponent,
     VideoPlayerComponent,
     InfoTableComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    PlaceOrderApartmentComponent
     // VedioComponent
   ],
   providers: [

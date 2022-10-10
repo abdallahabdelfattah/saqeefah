@@ -9,7 +9,7 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
   view:string='grid3';
   @Input() buildings:any
   @Input() activeBuilding:any
-  filteredProperties:[] = []
+  filteredProperties:any[] = []
   propertIndex:number = 0
   propertyOfSelectedBuilding!:[]
   propertyOfSelectedBuildingForFilter!:[]

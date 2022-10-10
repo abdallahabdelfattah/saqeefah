@@ -2,7 +2,7 @@
     <div class="img-panel d-flex">
         <div class="imagebox">
             <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + propertyImageUrl + ')' }">
-                <!-- <img [src]="property.coverImage ? appRootUrl+property.coverImage :'assets/images/home-placeHolder.webp'" width="100%" class="card-img-top" alt="..."> -->
+               
             </div>
             <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="property.apartment_Id"
                 [class.active]="property.favorite" (click)="favorites.toggleFavorites(property)"></i>
@@ -47,27 +47,18 @@
                         {{'Floor'| translate}} <br>{{property.floor_Num}}
                     </span>
                 </li>
-                <!-- <li class="list-inline-item">
-                    <span class="icon-kitchen-furniture"></span><span class="text mx-1"> {{property.servant_Room}}
-                        {{'Kitchen' | translate}}</span>
-                </li> -->
-                <!-- <li class="list-inline-item">
-                    <span class="icon-salon-PhotoRoom"></span> <span class="text mx-1"> {{property.salon}} {{'Salon' |
-                        translate}}</span>
-                </li> -->
-                <!-- <li class="list-inline-item">
-                    <span class="icon-hall-PhotoRoom"></span> <span class="text mx-1">{{property.hall}} {{'Hall' |
-                        translate}}</span>
-                </li> -->
+               
             </ul>
         </div>
         <div class="unit-actions">
             <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
                 [attr.data-bs-target]="'#exampleModal'+property.apartment_Id">
-                التفاصيل
+                {{'more specs'| translate}}
+                
             </a>
-            <a href="#" class="btn btn-primary">
-                حجز الوحدة
+            <a href="#" class="btn btn-primary"   data-bs-toggle="modal"
+            [attr.data-bs-target]="'#place-order-apartment-form'+property.apartment_Id">
+                {{'AppartmentReservation'| translate}}
             </a>
         </div>
     </div>
@@ -85,75 +76,57 @@
             <div class="modal-body">
                 <div class="basic-info">
                     <ul class="list-inline other-specs">
-                        <!-- <li class="list-inline-item "><span class="">{{'Project Reference:'| translate}}{{property.project_Ref}}</span></li>
-                        <li class="list-inline-item "><span class="">{{'Build Reference:'| translate}}{{property.build_Ref}}</span></li> -->
-                        <!-- <li class="list-inline-item "><span class=""></span></li> -->
                         <li class="list-inline-item "><span class="">{{'Appartment Space:'|
                                 translate}}{{property.apartment_Space}}</span></li>
                         <li class="list-inline-item "><span class="">{{'Additional Space:'|
                                 translate}}{{property.additional_Space}}</span></li>
-
-
-
-                        <li *ngIf="property.roof>0" class="list-inline-item "><span class="">{{'roof'| translate}}
-                                <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.roof ==0,
-                            
-                                'icon-checkmark':property.roof ==1 }"><use [attr.xlink:href]="property.roof ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                        <li *ngIf="property.roof>0" class="list-inline-item ">
+                               <span class="">
+                                {{'roof'| translate}}
+                                </span>
                         </li>
-
-
                         <li *ngIf="property.p_Intrance>0" class="list-inline-item "><span class="">{{'p_Intrance'|
-                                translate}} <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.p_Intrance ==0,
-                         
-                            'icon-checkmark':property.p_Intrance ==1 }"><use [attr.xlink:href]="property.p_Intrance ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                                translate}} 
+                                   </span>
                         </li>
-
-
                         <li *ngIf="property.dressRoom>0" class="list-inline-item "><span class="">{{'dressRoom'|
-                                translate}} <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.dressRoom ==0,
-                             
-                                'icon-checkmark':property.dressRoom ==1 }"><use [attr.xlink:href]="property.dressRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                                translate}}       
+                                </span>
                         </li>
-
-
                         <li *ngIf="property.serventRoom>0" class="list-inline-item "><span class="">{{'serventRoom'|
-                                translate}} <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.serventRoom ==0,
-                                 
-                                    'icon-checkmark':property.serventRoom ==1 }"><use [attr.xlink:href]="property.serventRoom ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                                translate}} </span>
                         </li>
-
-
                         <li *ngIf="property.store>0" class="list-inline-item "><span class="">{{'store'| translate}}
-                                <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.store ==0,
-                                     
-                                        'icon-checkmark':property.store ==1 }"><use [attr.xlink:href]="property.store ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                                </span>
                         </li>
-
-
                         <li *ngIf="property.salon>0" class="list-inline-item "><span class="">{{'salon'| translate}}
-                                <span>
-                                    <!-- <svg class="icon " [ngClass]="{'icon-cross':property.salon ==0,
-                                         
-                                            'icon-checkmark':property.salon ==1 }"><use [attr.xlink:href]="property.salon ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
-                                </span></span>
+                                </span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'Close' | translate}}</button>
-
             </div>
         </div>
     </div>
 </div>
+
+
+<div *ngIf="property" class="modal fade" [id]="'place-order-apartment-form'+property.apartment_Id" tabindex="-1"
+    aria-labelledby="PlaceOrderApartmentFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title unit-title" id="PlaceOrderApartmentFormLabel">{{'PlaceOrder' | translate}} - {{property.apartment_Num}} </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span>x</span></button>
+            </div>
+            <div class="modal-body">
+                <app-place-order-apartment [apartment_Id]="property?.apartment_Id"  [project_Ref]="property?.project_Ref" ></app-place-order-apartment>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+

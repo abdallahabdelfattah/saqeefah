@@ -18,10 +18,11 @@
                 <div class="row">
                     <div class="d-flex align-items-center">
                         <ul class="list-inline ms-auto m-0">
-                            <li class="list-inline-item view-icons" (click)="refresh()"><span><i
-                                class="fa fa-refresh fa-fw" aria-hidden="true"></i></span></li>
-                            <li class="list-inline-item view-icons grid3"  (click)="toggleView('grid3')"><span class="icon tagr-layout"></span></li>
-                            <li class="list-inline-item view-icons  list"  (click)="toggleView('list')"><span class="icon tagr-list-bullet"></span>
+                           
+                            <li class="list-inline-item view-icons grid3" (click)="toggleView('grid3')"><span
+                                    class="icon tagr-layout"></span></li>
+                            <li class="list-inline-item view-icons  list" (click)="toggleView('list')"><span
+                                    class="icon tagr-list-bullet"></span>
                             </li>
                         </ul>
                     </div>
@@ -29,77 +30,81 @@
             </div>
         </div>
         <div [ngSwitch]="view">
-         
-        <div class="row"  *ngSwitchCase="'grid3'">
-            <div class="col-md-6 mb-3" *ngFor="let item of filteredProperties">
-                <app-property-card [fromDetails]="true" [property]="item"></app-property-card>
-            </div>
-        </div>
-   
-        <div class="row" *ngSwitchCase="'list'">
-            <div class="col-12">
 
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th>رقم </th>
-                            <th>الدور</th>
-                            <th>المساحة الاجمالية </th>
-                            <th>السعر</th>
-                            <th>غرف</th>
-                            <th>مواصفات</th>
-                            <th>الحالة</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>232m</td>
-                            <td>2123223</td>
-                            <td>3</td>
-                            <td>Details here</td>
-                            <td>
-                                <span class="status">مباع</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>232m</td>
-                            <td>2123223</td>
-                            <td>3</td>
-                            <td>Details here</td>
-                            <td>
-                                <span class="status">مباع</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>232m</td>
-                            <td>2123223</td>
-                            <td>3</td>
-                            <td>Details here</td>
-                            <td>
-                                <span class="status">مباع</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>232m</td>
-                            <td>2123223</td>
-                            <td>3</td>
-                            <td>Details here</td>
-                            <td>
-                                <span class="status">مباع</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row" *ngSwitchCase="'grid3'">
+                <div class="col-md-6 mb-3" *ngFor="let item of filteredProperties">
+                    <app-property-card [fromDetails]="true" [property]="item"></app-property-card>
+                </div>
             </div>
-        </div>
+
+            <div class="row" *ngSwitchCase="'list'">
+                <div class="col-12">
+
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th> {{'Apartment'|translate}} </th>
+                                <th> {{'Floor'|translate}}</th>
+                                <th> {{'apartment_Space'|translate}}</th>
+                                <th>{{'Price'|translate}}</th>
+                                <th>{{'Rooms'|translate}}</th>
+                                <th>{{'Bathroom' | translate}}</th>
+                                <th> {{'more specs'| translate}}</th>
+                                <th> {{'status'| translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of filteredProperties">
+                                <td> {{item.apartment_Num}} </td>
+                                <td> {{item.floor_Num}} </td>
+                                <td> {{item.basic_Space}} </td>
+                                <td> {{item.apartment_Price | number}} {{'ر.س' | translate}} </td>
+                                <td> {{item.bed_Room_Num}} </td>
+                                <td>{{item.toilet_Num}}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <ul class="other-specs">
+
+                                            <li *ngIf="item.roof>0" class="list-inline-item">
+                                                <span>
+                                                    {{'roof'| translate}} 
+                                                </span>
+                                            </li>
+                                            <li *ngIf="item.p_Intrance>0" class="list-inline-item "><span class="">{{'p_Intrance'|
+                                                    translate}} 
+                                                </span>
+                                            </li>
+                                            <li *ngIf="item.dressRoom>0" class="list-inline-item "><span class="">{{'dressRoom'|
+                                                    translate}} 
+                                                </span>
+                                            </li>
+                                            <li *ngIf="item.serventRoom>0" class="list-inline-item "><span class="">{{'serventRoom'|
+                                                    translate}}  </span>
+                                            </li>
+                                            <li *ngIf="item.store>0" class="list-inline-item "><span class="">{{'store'| translate}} 
+                                                </span>
+                                            </li>
+                                            <li *ngIf="item.salon>0" class="list-inline-item "><span class="">{{'salon'| translate}} 
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status"
+                                        [class]="{'green': item.statusId == 1, 'orange': item.statusId == 2, 'pink': item.statusId == 3,  'yellow': item.statusId == 4}">
+                                        {{item.status | translate}}
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

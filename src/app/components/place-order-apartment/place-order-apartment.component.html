@@ -1,0 +1,25 @@
+
+
+
+ <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
+ enctype="multipart/form-data">
+ <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Name' | translate }}"
+     formControlName="client_Name" />
+ <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Email' | translate }}"
+     formControlName="client_Mail" />
+
+ <input type="text" class=" form-control form-control-sm mb-1"
+     placeholder="{{ 'Phone' | translate }}" formControlName="client_Mobile" />
+
+ <textarea name="" placeholder="{{ 'Subject' | translate }}"
+     class="form-control form-control-sm mb-3" id="" cols="30" rows="3"
+     formControlName="additional_Reqst"></textarea>
+
+     <div  class="d-flex">
+        <input class="btn btn-primary d-block mx-2" type="submit"   data-bs-dismiss="modal" value="{{ 'Submit' | translate }}"
+        [disabled]="myFormGroup.invalid" />
+        <button type="button" class="btn btn-secondary  mx-2" data-bs-dismiss="modal">{{'Close' | translate}}</button>
+   
+     </div>
+
+</form>

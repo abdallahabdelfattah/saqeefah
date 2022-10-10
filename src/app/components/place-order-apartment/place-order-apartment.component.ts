@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { PlaceOrderService } from 'src/app/services/placeOrder.service';
-import { ProjectAndListService } from 'src/app/services/project-lists.service';
 
 @Component({
-  selector: 'app-property-details',
-  templateUrl: './property-details.component.html',
-  styleUrls: ['./property-details.component.scss']
+  selector: 'app-place-order-apartment',
+  templateUrl: './place-order-apartment.component.html',
+  styleUrls: ['./place-order-apartment.component.scss']
 })
-export class PropertyDetailsComponent implements OnInit {
-propertyId:any
-propertyDetails:any
+export class PlaceOrderApartmentComponent implements OnInit {
+
+@Input() project_Ref
+@Input() apartment_Id
 public myFormGroup: FormGroup = new FormGroup({
   interest_Date:new FormControl(new Date(),[]),
   project_Ref: new FormControl(0, []), //project Id from api
@@ -36,25 +35,15 @@ public myFormGroup: FormGroup = new FormGroup({
   servent_Room: new FormControl(0, []),
   additional_Reqst: new FormControl('', [])
 });
-  constructor(private route:ActivatedRoute, private property:ProjectAndListService,
-    private toastr: ToastrService,
-    private language:changeLanguageService,
-    private service:PlaceOrderService) { }
+
+constructor(private toastr: ToastrService,
+  private language:changeLanguageService,
+  private placeOrderService:PlaceOrderService) { }
 
   ngOnInit(): void {
-    this.propertyId = this.route.snapshot.paramMap.get('id');
-    this.getPropertyDetails()
     this.initializeFormGroup();
+
   }
-getPropertyDetails(){
-this.property.getAppartmentDetails(this.propertyId).subscribe((res:any)=>{
-if(!res.isError){
-  this.propertyDetails = res.result.data
-console.log('property',res)
-this.initializeFormGroup();
-}
-})
-}
 
 initializeFormGroup() {
   this.myFormGroup.setValue({
@@ -80,27 +69,28 @@ initializeFormGroup() {
     additional_Reqst:''
   })
 }
+
 showError:boolean=false;
 onClickSubmit($event){
-if(this.myFormGroup.valid){
-  this.myFormGroup.patchValue({'project_Ref':this.propertyDetails?.project_Ref});
-  this.myFormGroup.patchValue({'apartment_Ref':this.propertyDetails?.apartment_Id});
+  if(this.myFormGroup.valid){
+    this.myFormGroup.patchValue({'project_Ref':this.project_Ref});
+    this.myFormGroup.patchValue({'apartment_Ref':this.apartment_Id});
+  
+  this.placeOrderService.Post(this.myFormGroup.value).subscribe(res=>{
+        if(!res.isError)
+        {
+          this.toastr.success(":: Successfully Updated")
+          this.showError=false
+          this.ngOnInit();
+        }
+        else{
+          this.toastr.error(':: Failed Updated');
+        }
+  })
+  } else {
+   this.showError=true;
+   this.toastr.warning(":: Please Correct your inputs")
+  }
+  }
 
-this.service.Post(this.myFormGroup.value).subscribe(res=>{
-      if(!res.isError)
-      {
-        this.toastr.success(":: Successfully Updated")
-        this.showError=false
-        this.ngOnInit();
-      }
-      else{
-        this.toastr.error(':: Failed Updated');
-      }
-})
-} else {
- this.showError=true;
- this.toastr.warning(":: Please Correct your inputs")
-
-}
-}
 }

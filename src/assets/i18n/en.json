@@ -362,5 +362,7 @@
 "NO":"NO",
 "YES":"YES",
 "Are you sure you want to delete?":"Are you sure you want to delete?",
-"There is no selected Appartments to compare, please choose items.":"There is no selected Appartments to compare, please choose items."
+"There is no selected Appartments to compare, please choose items.":"There is no selected Appartments to compare, please choose items.",
+"AppartmentReservation":"Reserve",
+"Details":"Details"
 }
