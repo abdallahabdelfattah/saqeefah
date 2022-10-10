@@ -6,6 +6,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./buildings.component.scss']
 })
 export class BuildingsComponent implements OnInit, AfterViewInit {
+  view:string='grid3';
   @Input() buildings:any
   @Input() activeBuilding:any
   filteredProperties:[] = []
@@ -43,4 +44,17 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
 ngAfterViewInit(): void {
  
 }
+toggleView(view:string){
+  if(view == 'grid3')
+    this.view='grid3';
+   if (view=='grid6')
+   this.view='grid6';
+   if (view == 'list')
+   this.view='list';
+
+
+ }
+ refresh(){
+  window.location.reload();
+ }
 }
