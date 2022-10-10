@@ -59,14 +59,13 @@
 
 .card.list{
     display: flex !important;
-
-
+    gap: 16px;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 .card.list .img-panel{
-    width: 40% !important;
-}
-.card.list .img-panel {
-    position: static !important;
+    width: 270px!important;
+    flex-shrink: 0;
 }
 .card.list .img-panel .card-mask {
     background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
@@ -93,11 +92,9 @@
 
 }
 .card.list .img-panel .img-container {
-    min-height: 211px !important;
+    min-height: 250px !important;
 }
-.card.list .img-panel .card-label{
-    width: 150px !important;
-}
+
 .card.list .card-img-top {
     border-top-left-radius: 0 !important;
      border-top-right-radius: 0 !important;

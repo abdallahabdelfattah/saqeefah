@@ -3,7 +3,8 @@ $left: right;
 $right: left;
 // @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
 $fontFamily: 'Hacen-Algeria',
-sans-serif;
+    sans-serif;
+
 body,
 html,
 h1,
@@ -49,26 +50,20 @@ span.error {
 }
 
 .card.list .card-body {
-    position: absolute;
-    right: 40%;
-    top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     color: var(--main-color);
 }
 
-.card.list .unit-specs {
-    z-index: 6;
-    background: transparent !important;
-    right: 45% !important;
-    top: 50% !important;
-    bottom: initial !important;
-}
+.card.list .unit-specs {}
 
-app-project-card .card.list .card-body {
-    position: absolute;
-    right: 45%;
-    top: 10px;
-    color: #86815b;
-}
+// app-project-card .card.list .card-body {
+//     position: absolute;
+//     right: 45%;
+//     top: 10px;
+//     color: #86815b;
+// }
 
 .tagline-2::before {
     content: "";

@@ -32,17 +32,18 @@
             <ul class="list-inline m-0">
                 <li class="list-inline-item">
                     <span class="text">
-                    {{'Basic Space:'| translate}}<br> {{property.basic_Space}}</span></li>
+                        {{'Basic Space:'| translate}}<br> {{property.basic_Space}}</span>
+                </li>
                 <li class="list-inline-item">
                     <span class="text mx-1"> {{'Rooms'|
                         translate}}<br> {{property.bed_Room_Num}}</span>
                 </li>
                 <li class="list-inline-item">
-                     <span class="text mx-1">
+                    <span class="text mx-1">
                         {{'Bathroom' | translate}} <br>{{property.toilet_Num}}</span>
                 </li>
                 <li class="list-inline-item">
-                    <span class="text mx-1">                        
+                    <span class="text mx-1">
                         {{'Floor'| translate}} <br>{{property.floor_Num}}
                     </span>
                 </li>
@@ -63,7 +64,7 @@
         <div class="unit-actions">
             <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
                 [attr.data-bs-target]="'#exampleModal'+property.apartment_Id">
-                مزيد من التفاصيل
+                التفاصيل
             </a>
             <a href="#" class="btn btn-primary">
                 حجز الوحدة
@@ -91,7 +92,7 @@
                                 translate}}{{property.apartment_Space}}</span></li>
                         <li class="list-inline-item "><span class="">{{'Additional Space:'|
                                 translate}}{{property.additional_Space}}</span></li>
-                        
+
 
 
                         <li *ngIf="property.roof>0" class="list-inline-item "><span class="">{{'roof'| translate}}
@@ -146,18 +147,7 @@
                                             'icon-checkmark':property.salon ==1 }"><use [attr.xlink:href]="property.salon ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg> -->
                                 </span></span>
                         </li>
-
-
-
-
-
-
                     </ul>
-
-
-
-
-
                 </div>
             </div>
             <div class="modal-footer">

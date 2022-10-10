@@ -36,6 +36,8 @@
 
 .card.list {
     display: flex !important;
+    flex-flow: row;
+    gap: 16px;
 }
 
 .notLinkable {
@@ -43,11 +45,10 @@
 }
 
 .card.list .img-panel {
-    width: 40% !important;
+    width: 270px !important;
 }
 
 .card.list .img-panel {
-    position: static !important;
 }
 
 .card.list .img-panel .card-mask {
@@ -66,10 +67,6 @@
 
 .card.list .unit-specs {
     z-index: 6;
-    background: transparent !important;
-    left: 45% !important;
-    top: 35% !important;
-    bottom: initial !important;
 }
 
 .card.list .list-inline-item {

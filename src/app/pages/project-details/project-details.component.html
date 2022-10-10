@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="row" *ngIf="projectDetails">
+    <div class="row mb-3" *ngIf="projectDetails">
         <div class="col-md-12">
             <div id="myTab" role="tablist">
                 <a class="nav-link" (click)="activeBuildingTab = false" [class.active]="!activeBuildingTab" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" [attr.aria-selected]="!activeBuildingTab">{{'MasterPlan' | translate}}</a>
@@ -42,7 +42,7 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <!-- <h5 class="secondary-color">{{'Specifications' | translate}}</h5> -->
+                                
                                 <div class="specs-panel">
 
                                     <img [src]="appRootUrl+projectDetails.specifications.specificationsImage" *ngIf="projectDetails.specifications != null" class="img-fluid" alt="">

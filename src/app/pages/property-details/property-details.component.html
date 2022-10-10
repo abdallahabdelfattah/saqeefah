@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col-12 col-lg-9">
             <div class="card mb-3 property-details">
-                <h3 class="page-title" *ngIf="propertyDetails && propertyDetails.projectName != null">
-                    {{ propertyDetails.projectName | translate }}
+                <h3 class="section-title" *ngIf="propertyDetails && propertyDetails.projectName != null">
+                    <span class="title"> {{ propertyDetails.projectName | translate }}</span>
                 </h3>
                 <p class="description" *ngIf="propertyDetails && propertyDetails.buildingName != null">
                     {{ "Building:" | translate }}
@@ -30,168 +30,398 @@
                     <div class="col-lg-12"> -->
 
                     <div class="property-info row px-2" *ngIf="propertyDetails">
-                        <!-- <div class="row mb-4"> -->
-                        <div class="col-12 d-flex px-0">
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/floor.svg" alt="" class="image-property" />
-                                <p>{{ "p_Intrance" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.p_Intrance ==0,
-            'icon-checkmark': propertyDetails.p_Intrance ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-area position-relative"> </span>
-                                <p>{{ "basic_Space" | translate }}</p>
-                                <hr />
-                                <h6>{{ propertyDetails.basic_Space }}</h6>
-                            </div>
-                            <div class="box bg-secondary">
+                        <table class="table table-bordered details-table">
+                            <thead>
+                                <tr>
+                                    <th>المسمى</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">{{ "basic_Space" | translate }}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.basic_Space }}
+                                        </span>
+                                    </td>
+                                </tr>
 
-                                <span class="icon-svg icon-area position-relative"> <span class="plus">+</span></span>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "additional_Space" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.additional_Space }}
+                                        </span>
+                                    </td>
+                                </tr>
 
-                                <p>{{ "additional_Space" | translate }}</p>
-                                <hr />
-                                <h6>{{ propertyDetails.additional_Space }}</h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-balcon"></span>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "Area" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.apartment_Space | translate }}
+                                        </span>
+                                    </td>
+                                </tr>
 
-                                <p>{{ "balcon" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
-            'icon-checkmark': propertyDetails.balcon ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/toilet.svg" alt="" class="image-property" />
-                                <p>{{ "Toilet" | translate }}</p>
-                                <hr />
-                                <h6>{{ propertyDetails.toilet_Num }}</h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/servant.svg" alt="" class="image-property" />
-                                <p>{{ "servant_Room" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
-            'icon-checkmark': propertyDetails.servant_Room ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-roof"></span>
-                                <p>{{ "roof" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
-            'icon-checkmark': propertyDetails.roof ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "parking" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
 
-                        </div>
-                        <div class="col-12 d-flex px-0">
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-parking"></span>
-                                <p>{{ "parking" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.parking ==0,
-            'icon-checkmark': propertyDetails.parking ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/trace.svg" alt="" class="image-property" />
-                                <p>{{ "trace" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
-            'icon-checkmark': propertyDetails.trace ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.parking ==0,
+                                    'icon-checkmark': propertyDetails.parking ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.parking==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
 
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-area"></span>
-                                <p>{{ "Area" | translate }}</p>
-                                <hr />
-                                <h6>{{ propertyDetails.apartment_Space | translate }}</h6>
-                            </div>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "Rooms" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.bed_Room_Num }}
+                                        </span>
+                                    </td>
+                                </tr>
 
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/room.svg" alt="" class="image-property" />
-                                <p>{{ "Rooms" | translate }}</p>
-                                <hr />
-                                <h6>{{ propertyDetails.bed_Room_Num }}</h6>
-                            </div>
-
-                            <div class="box bg-secondary">
-                                <span class="icon-svg icon-images-PhotoRoom"></span>
-
-                                <p>{{ "Floor" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.floor_Num ==0,
-          'icon-checkmark': propertyDetails.floor_Num ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-
-                            <div class="box bg-secondary ">
-                                <img src="assets/content/WithoutText/hall.svg" alt="" class="image-property" />
-                                <p>{{ "Hall" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.hall ==0,
-          'icon-checkmark': propertyDetails.hall ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.hall==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-
-                            <div class="box bg-secondary">
-                                <img src="assets/content/WithoutText/salon.svg" alt="" class="image-property" />
-                                <p>{{ "Salon" | translate }}</p>
-                                <hr />
-                                <h6>
-                                    <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.salon ==0,
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "Salon" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.salon ==0,
           'icon-checkmark': propertyDetails.salon ==1 }">
-                                        <use
-                                            [attr.xlink:href]="propertyDetails.salon==0 ? '#icon-cross' :'#icon-checkmark'">
-                                        </use>
-                                    </svg>
-                                </h6>
-                            </div>
-                        </div>
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.salon==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "Hall" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.hall ==0,
+          'icon-checkmark': propertyDetails.hall ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.hall==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                اطلالة داخلية
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
+            'icon-checkmark': propertyDetails.roof ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "servant_Room" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.servant_Room ==0,
+            'icon-checkmark': propertyDetails.servant_Room ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.servant_Room==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                مستودع
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
+            'icon-checkmark': propertyDetails.trace ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                اطلالة خارجية
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.toilet_Num }}
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                حوش
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.floor_Num ==0,
+          'icon-checkmark': propertyDetails.floor_Num ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">{{ "p_Intrance" | translate }}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.p_Intrance ==0,
+                                        'icon-checkmark': propertyDetails.p_Intrance ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.p_Intrance==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "trace" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
+            'icon-checkmark': propertyDetails.trace ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "Floor" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.floor_Num ==0,
+          'icon-checkmark': propertyDetails.floor_Num ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "Toilet" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.toilet_Num }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "roof" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
+            'icon-checkmark': propertyDetails.roof ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" alt="" class="feature-icon">
+                                            <span class="title">
+                                                مطبخ
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
+            'icon-checkmark': propertyDetails.roof ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <!-- <tr>
+                                    
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "balcon" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
+            'icon-checkmark': propertyDetails.balcon ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="" class="feature-icon" alt="">
+                                            <span class="title">
+
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+
+                                        </span>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -199,17 +429,17 @@
         <div class="col-12 col-lg-3">
             <div class="card order-card p-3">
                 <div class="d-flex align-items-center gap-2 justify-content-between flex-wrap" *ngIf="propertyDetails">
-                        <b class="price">
-                            {{ propertyDetails.apartment_Price | number }}
-                            {{ "ر.س" | translate }}
-                        </b>
-                        <div class="px-5 py-2" [class]="{
+                    <b class="price">
+                        {{ propertyDetails.apartment_Price | number }}
+                        {{ "ر.س" | translate }}
+                    </b>
+                    <div class="px-5 py-2" [class]="{
                         green: propertyDetails.statusId == 1,
                         orange: propertyDetails.statusId == 2,
                         pink: propertyDetails.statusId == 3
                         }" class="status badge">
-                            {{ propertyDetails.status | translate }}
-                        </div>
+                        {{ propertyDetails.status | translate }}
+                    </div>
                 </div>
                 <hr />
                 <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"

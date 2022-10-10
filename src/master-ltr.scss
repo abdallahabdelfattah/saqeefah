@@ -7,9 +7,8 @@ $right: right;
 @import'./node_modules/bootstrap/scss/bootstrap';
 @import './styles.scss';
 .card.list .card-body {
-  position: absolute;
-  left: 40%;
-  top: 30px;
+  position: relative;
+  display: flex;
   color: var(--main-color);
 }
 span.error{
@@ -22,18 +21,14 @@ a.contact{
   margin-right: 30px;
 }
 .card.list .unit-specs{
-  z-index: 6;
-  background:transparent !important;
-  left: 45% !important;
-  top: 50% !important;
-  bottom: initial !important;
+ 
 }
-app-project-card .card.list .card-body{
-  position: absolute;
-  left: 45%;
-  top: 30px;
-  color: #86815b;
-}
+// app-project-card .card.list .card-body{
+//   // position: absolute;
+//   // left: 45%;
+//   // top: 30px;
+//   color: #86815b;
+// }
 
 
 .tagline-2::before {
