@@ -67,11 +67,11 @@
                 <div [ngSwitch]="view">
 
                     <div class="row" *ngSwitchCase="'grid3'">
-                        <app-project-card class="col-md-6 col-lg-4  mb-3" [project]="item" *ngFor="let item of filteredProjects">
+                        <app-project-card class="col-md-6 col-lg-6  mb-3" [project]="item" *ngFor="let item of filteredProjects">
                         </app-project-card>
                     </div>
                     <div class="row" *ngSwitchCase="'grid6'">
-                        <app-project-card class="col-md-6 col-lg-4 mb-3" [project]="item" [viewType]="'grid6'"
+                        <app-project-card class="col-md-4 col-lg-4 mb-3" [project]="item" [viewType]="'grid6'"
                             *ngFor="let item of filteredProjects"></app-project-card>
                     </div>
                     <div class="row" *ngSwitchCase="'list'">
