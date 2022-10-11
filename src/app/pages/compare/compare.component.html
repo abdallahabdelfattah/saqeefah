@@ -1,5 +1,5 @@
 <!--===== Start Banner =====-->
-<section class="hero-wrap"
+<!-- <section class="hero-wrap"
 [ngStyle]="{'background-image': 'url(' + bannerCompareUrl+ ')' }">
     <div class="overlay"></div>
     <div class="container">
@@ -9,7 +9,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+<div class="page-banner">
+    <div class="container">
+        <h3 class="page-title">
+            {{'compare' | translate}}
+        </h3>
+    </div>
+</div>
 <!--===== End Banner =====-->
 
 
@@ -18,14 +25,14 @@
 <section class="section bg-light comparison-section">
 
     <div class="container text-center">
-        <h3 *ngIf="!compareAvalable">{{'There is no selected Appartments to compare, please choose items.' | translate}} </h3>
+        <p class="alert alert-warning" *ngIf="!compareAvalable">{{'There is no selected Appartments to compare, please choose items.' | translate}} </p>
         <div class="row" *ngIf="compareAvalable">
 
             <div class="table-responsive bg-white">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col" class="border-0"></th>
+                            <th scope="col"></th>
 
                             <th scope="col" *ngFor="let item of compareList">
                                 <img [src]="appRootUrl+item.coverImage" class="img-fluid imageborders" alt="">
@@ -190,12 +197,12 @@
                             &&key!='project_Ref'&&key!='build_Ref'&&key!='floor_Ref'
                             &&key!='projectName' &&key!='buildingName' &&key!='apartment_Num'
                             &&key!='floor_Num'">
-                                <th scope="row">
+                                <td scope="row">
                                     <span class="" style="margin: 0 5px;">
-                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-dot-circle-o" aria-hidden="true"></i> -->
                                 </span>
-                                    <h6>{{key | translate}}</h6>
-                                </th>
+                                    <span>{{key | translate}}</span>
+                            </td>
 
                                 <td *ngFor="let item of compareList">
                                     <div *ngIf="key==='balcon'||key==='hall'
@@ -228,26 +235,17 @@
 
                         </tr>
                         <tr>
-
-                            <th scope="row">
-
-                            </th>
-
+                            <td></td>
                             <td  class="p-0" *ngFor="let item of compareList">
                                 <!-- <a [routerLink]="['/property',item.apartment_Id]"
                                     class="btn btn-primary px-4 ml-2">Buy</a> -->
                                 <a class="btn btn-danger px-4 w-100 h-100 m-0" (click)="compareServ.deleteListFromCompare(item.apartment_Id)">{{'Delete' | translate}}</a>
                             </td>
-
-
-
                         </tr>
 
 
                     </tbody>
                 </table>
-
-
             </div>
 
         </div>

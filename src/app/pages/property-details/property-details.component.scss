@@ -299,7 +299,9 @@ a:focus {
             width: 50%;
             color: #fff;
             padding: 16px;
+            font-size: 18px;
             font-weight: normal;
+            text-align: start !important;
         }
     }
 
@@ -313,17 +315,27 @@ a:focus {
               background-color: #fff;
             }
             td {
-                text-align: center;
-                padding: 12px;
+                text-align: start;
+                font-size: 18px;
+                padding: 16px;
                 // border: 0;
                 &:nth-child(odd) {
-                  background-color: #87805E;
-                  color: #fff;
+                //   background-color: #87805E;
+                  color: $mainColor;
                 }            
                 &:nth-child(even) {
-                  background-color: #fff;
+                //   background-color: #fff;
                 }
             }
         }
+    }
+}
+.feature{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    img{
+        width: 28px;
+        // filter: brightness(0) invert(1);
     }
 }

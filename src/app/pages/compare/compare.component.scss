@@ -1,3 +1,4 @@
+@import '../../../assets/scss/base/varibles';
 a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -339,7 +340,7 @@ h5,
 }
 
 .section {
-    padding: 7em 0;
+    // padding: 7em 0;
     position: relative
 }
 
@@ -433,5 +434,39 @@ h5,
     }
     .comparison-section tbody td {
         font-size: 14px;
+    }
+}
+table{
+    font-size: 18px;
+    thead {
+        th {
+            color: #fff;
+            padding: 16px;
+            font-weight: normal;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+              background-color: #f7f4e3;
+            }
+        
+            &:nth-child(even) {
+              background-color: #fff;
+            }
+            td {
+                font-size: 18px;
+                padding: 16px;
+                // border: 0;
+                &:nth-child(odd) {
+                //   background-color: #87805E;
+                  color: $mainColor;
+                }            
+                &:nth-child(even) {
+                //   background-color: #fff;
+                }
+            }
+        }
     }
 }
