@@ -3,12 +3,12 @@
 
  <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
  enctype="multipart/form-data">
- <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Name' | translate }}"
+ <input type="text" class="form-control form-control-sm mb-2" placeholder="{{ 'Name' | translate }}"
      formControlName="client_Name" />
- <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Email' | translate }}"
+ <input type="text" class="form-control form-control-sm mb-2" placeholder="{{ 'Email' | translate }}"
      formControlName="client_Mail" />
 
- <input type="text" class=" form-control form-control-sm mb-1"
+ <input type="text" class=" form-control form-control-sm mb-2"
      placeholder="{{ 'Phone' | translate }}" formControlName="client_Mobile" />
 
  <textarea name="" placeholder="{{ 'Subject' | translate }}"

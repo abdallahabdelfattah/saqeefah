@@ -445,17 +445,17 @@
                 <form action="" [formGroup]="myFormGroup" (submit)="onClickSubmit($event)"
                     enctype="multipart/form-data">
                     <h5 class="secondary-color mb-3">{{ "PLACE ORDER" | translate }}</h5>
-                    <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Name' | translate }}"
+                    <input type="text" class="form-control form-control-sm mb-2" placeholder="{{ 'Name' | translate }}"
                         formControlName="client_Name" />
                     <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Name'].errors?.['required']">
                 * Required Field
                  </span> -->
-                    <input type="text" class="form-control form-control-sm mb-1" placeholder="{{ 'Email' | translate }}"
+                    <input type="text" class="form-control form-control-sm mb-2" placeholder="{{ 'Email' | translate }}"
                         formControlName="client_Mail" />
                     <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mail'].errors?.['email']">
                 * Email form Field
         </span> -->
-                    <input type="text" class=" form-control form-control-sm mb-1"
+                    <input type="text" class=" form-control form-control-sm mb-2"
                         placeholder="{{ 'Phone' | translate }}" formControlName="client_Mobile" />
                     <!-- <span class="text-danger error" *ngIf=" showError&&myFormGroup.controls['client_Mobile'].errors?.['required']">
                 * Required Field

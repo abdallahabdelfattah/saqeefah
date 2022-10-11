@@ -118,8 +118,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title unit-title" id="PlaceOrderApartmentFormLabel">{{'PlaceOrder' | translate}} - {{property.apartment_Num}} </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span>x</span></button>
+                <h5 class="modal-title unit-title" id="PlaceOrderApartmentFormLabel">{{'PlaceOrder' | translate}} - {{property.apartment_Num}} </h5>                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <app-place-order-apartment [apartment_Id]="property?.apartment_Id"  [project_Ref]="property?.project_Ref" ></app-place-order-apartment>

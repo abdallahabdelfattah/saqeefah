@@ -1,5 +1,10 @@
 .form-control {
     border-radius: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    &:focus,&:active{
+        border-color: $mainColor;
+    }
 }
 .btn-outline-primary{
     border-color: $mainColor;
