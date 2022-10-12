@@ -22,22 +22,28 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12 mb-4">
-                <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.1802765688426!2d46.599934!3d24.8235078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee5bfa06b7d69%3A0x63d5c5631190460e!2z2LTYsdmD2Kkg2LPZgtmK2YHYqSDZhNmE2KrYt9mI2YrYsSDYp9mE2LnZgtin2LHZig!5e0!3m2!1sar!2seg!4v1662934394535!5m2!1sar!2seg"
-                    width="100%" height="530" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.1802765688426!2d46.599934!3d24.8235078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee5bfa06b7d69%3A0x63d5c5631190460e!2z2LTYsdmD2Kkg2LPZgtmK2YHYqSDZhNmE2KrYt9mI2YrYsSDYp9mE2LnZgtin2LHZig!5e0!3m2!1sar!2seg!4v1662934394535!5m2!1sar!2seg"
+                    width="100%" height="530" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-6 col-12">
-                <h2 class="mb-3 fw-bold">{{'getTouch' | translate}}</h2>
+                <h5 class="section-title">
+                    <span class="title">{{'getTouch' | translate}}</span>
+                </h5>
                 <form [formGroup]="form" (submit)="onSubmit()">
                     <input type="hidden" formControlName="id">
                     <div class="form-group">
-                        <input type="text" class="form-control" formControlName="name" placeholder="{{'Name' | translate}}">
+                        <input type="text" class="form-control" formControlName="name"
+                            placeholder="{{'Name' | translate}}">
                         <span class="text-danger error" *ngIf="showError && form.controls['name'].errors?.['required']">
                             * Required Field
                         </span>
 
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" formControlName="email" placeholder="{{'Email' | translate}}">
+                        <input type="text" class="form-control" formControlName="email"
+                            placeholder="{{'Email' | translate}}">
                         <!-- <span class="text-danger error" *ngIf="showError && form.controls['email'].errors?.['required']">
                             * Required Field
                         </span>
@@ -46,7 +52,8 @@
                       </span> -->
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" formControlName="phone"  placeholder="{{'Phone' | translate}}">
+                        <input type="text" class="form-control" formControlName="phone"
+                            placeholder="{{'Phone' | translate}}">
                         <!-- <span class="text-danger error" *ngIf="showError && form.controls['phone'].errors?.['required']">
                             * Required Field
                         </span>
@@ -55,16 +62,18 @@
                       </span> -->
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control" formControlName="message" placeholder="{{'message' | translate}}"></textarea>
+                        <textarea name="" id="" cols="30" rows="7" class="form-control" formControlName="message"
+                            placeholder="{{'message' | translate}}"></textarea>
                         <!-- <span class="text-danger error" *ngIf="showError && form.controls['message'].errors?.['required']">
                             * Required Field
                         </span> -->
 
                     </div>
                     <div class="form-group">
-                        <button type="submit" value="{{'SendMessage' | translate}}" class="btn btn-primary py-2 px-5" [disabled]="form.invalid">
+                        <button type="submit" value="{{'SendMessage' | translate}}" class="btn btn-primary py-2 px-5"
+                            [disabled]="form.invalid">
                             {{'SendMessage' | translate}}
-                            </button>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -77,21 +86,26 @@
 <!--===== Start Contact Info =====-->
 <section class="section contact-section bg-light">
     <div class="container">
-        <div class="row text-center">
+        <div class="row">
             <div class="col-md-12 mb-5">
-                <h2 class="fw-bold">{{'Contact Information'|translate}}</h2>
+
+                <h5 class="section-title">
+                    <span class="title">{{'Contact Information'|translate}}
+                    </span>
+                </h5>
             </div>
 
             <div class="col-lg-3 col-6 contact-info wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                 <p>
-                   <a [href]="siteInformation?.companyLocation">  <i class="fas fa-map-marker-alt"></i> </a>
+                    <a [href]="siteInformation?.companyLocation"> <i class="fas fa-map-marker-alt"></i> </a>
                 </p>
 
                 <h5>{{'Address' | translate}}</h5>
                 <a href="#" target="_blank">{{siteInformation?.address}}</a>
             </div>
 
-            <div class="col-lg-3 col-6 contact-info wow animate__fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
+            <div class="col-lg-3 col-6 contact-info wow animate__fadeInUp" data-wow-duration="1.1s"
+                data-wow-delay=".4s">
                 <p>
                     <i class="fas fa-phone-alt"></i>
                 </p>
@@ -101,7 +115,8 @@
             </div>
 
 
-            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.2s" data-wow-delay=".6s">
+            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.2s"
+                data-wow-delay=".6s">
                 <p>
                     <i class="fas fa-envelope"></i>
                 </p>
@@ -111,7 +126,8 @@
             </div>
 
 
-            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.3s" data-wow-delay=".8s">
+            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay=".8s">
                 <p>
                     <i class="fas fa-clock"></i>
                 </p>
@@ -121,19 +137,20 @@
                     {{siteInformation?.workinfHours}}
                 </h6>
             </div>
-            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.3s" data-wow-delay=".8s">
+            <div class="col-lg-3 col-6 contact-info  wow animate__fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay=".8s">
                 <p>
                     <i class="fas fa-envelope-open-text "></i>
                 </p>
 
                 <h5>{{'contact' | translate}}</h5>
                 <h6>
-                   {{siteInformation?.Forsuggestionsandcomplaints}}
+                    {{siteInformation?.Forsuggestionsandcomplaints}}
                 </h6>
             </div>
 
 
-          
+
         </div>
     </div>
 </section>

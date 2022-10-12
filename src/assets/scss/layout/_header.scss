@@ -70,12 +70,16 @@ header {
                     border-radius: 50%;
                 }
 
-                &:hover {
-                    color: $mainColor;
-
-                    .count {
-                        background-color: $mainColor;
-                        color: #fff;
+                @media(hover){
+                    &:hover {
+                        color: $mainColor;
+                        &:focus,&:active{
+                            color: #fff;
+                        }
+                        .count {
+                            background-color: $mainColor;
+                            color: #fff;
+                        }
                     }
                 }
             }
