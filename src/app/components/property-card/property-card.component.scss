@@ -269,3 +269,44 @@ h5 {
     }
 
 }
+.table {
+    font-size: 168px;
+    max-width: 60%;
+    margin: auto;
+    thead {
+        background-color: #5E5E59;
+        th {
+            width: 50%;
+            color: #fff;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: start !important;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+              background-color: #f7f4e3;
+            }
+        
+            &:nth-child(even) {
+              background-color: #fff;
+            }
+            td {
+                text-align: start;
+                font-size: 14px;
+                padding: 10px;
+                // border: 0;
+                &:nth-child(odd) {
+                //   background-color: #87805E;
+                  color: $mainColor;
+                }            
+                &:nth-child(even) {
+                //   background-color: #fff;
+                }
+            }
+        }
+    }
+}

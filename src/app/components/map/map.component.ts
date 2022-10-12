@@ -35,7 +35,7 @@ export class MapComponent implements OnInit , AfterViewInit {
     });
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 30,
-      minZoom: 7,
+      minZoom: 11,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
     this.map.scrollWheelZoom.disable()

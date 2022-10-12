@@ -20,7 +20,7 @@
             <div class="card-mask notLinkable" *ngIf="appRootUrl && property.statusId != 1"></div>
 
             <div class="unit-price">
-                <h5 class="mb-0">{{'Price :' | translate}} {{property.apartment_Price | number}} {{'ر.س' | translate}}
+                <h5 class="mb-0">{{property.apartment_Price | number}} {{'ر.س' | translate}}
                 </h5>
             </div>
         </div>
@@ -105,9 +105,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'Close' | translate}}</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

@@ -1,26 +1,37 @@
 <div class="serch-form">
-    <div class="box" >
+    <div class="box">
         <form (ngSubmit)="ApplyFilterProject()" [formGroup]="form" class="row">
-            <div class="mb-1 col-12 col-md-12 col-lg-4">
+
+
+            <div class="mb-1 col-12 col-md-12 col-lg-3">
                 <label class="form-label">{{'CITY' | translate}}</label>
-                <select class="form-select form-select-sm  mb-1" (change)="cityChange($event);" formControlName="city" aria-label=".form-select-lg example">
-                <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let city of cities" value="{{city.value}}">{{city.value | translate}}</option>
-            </select>
+                <select class="form-select form-select-sm  mb-1" (change)="cityChange($event);" formControlName="city"
+                    aria-label=".form-select-lg example">
+                    <option selected value="all">{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let city of cities" value="{{city.value}}">{{city.value | translate}}</option>
+                </select>
             </div>
-            <div class="mb-1 col-12 col-md-12 col-lg-4">
+            <div class="mb-1 col-12 col-md-12 col-lg-3">
                 <label class="form-label">{{'District' | translate}}</label>
-                <select class="form-select form-select-sm mb-1" (change)="ApplyFilterProject()" formControlName="district" aria-label=".form-select-lg example">
-                <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let dist of districts" value="{{dist.value}}">{{dist.value | translate }}</option>
-            </select>
+                <select class="form-select form-select-sm mb-1" (change)="ApplyFilterProject()"
+                    formControlName="district" aria-label=".form-select-lg example">
+                    <option selected value="all">{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let dist of districts" value="{{dist.value}}">{{dist.value | translate }}</option>
+                </select>
             </div>
-            <div class="mb-3 col-12 col-md-12 col-lg-4">
+            <div class="mb-3 col-12 col-md-12 col-lg-3">
                 <label class="form-label">{{'STATUS' | translate}}</label>
-                <select class="form-select form-select-sm mb-1" (change)="ApplyFilterProject()" formControlName="status" aria-label=".form-select-lg example">
-                <option selected value="all">{{'--Please Select--' | translate}}</option>
-                <option *ngFor="let state of status"   value="{{state.id}}">{{state.value | translate}}</option>
-            </select>
+                <select class="form-select form-select-sm mb-1" (change)="ApplyFilterProject()" formControlName="status"
+                    aria-label=".form-select-lg example">
+                    <option selected value="all">{{'--Please Select--' | translate}}</option>
+                    <option *ngFor="let state of status" value="{{state.id}}">{{state.value | translate}}</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label class="form-label d-block" style="visibility: hidden">{{'STATUS' | translate}}</label>
+                <button type="button" (click)="clearFilter()" class="btn btn-sm btn-primary ">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
             </div>
             <!-- <div class="mb-3">
                 <label class="form-label">{{'NUM. OF APPARTMENTS' | translate}}</label>
@@ -34,9 +45,6 @@
                 <label class="form-label">{{'NUM. OF BUILDINGS' | translate}}</label>
                 <input type="number" name="" (input)="ApplyFilterProject()" formControlName="buildingNo" min="0" class="form-control" >
             </div> -->
-            <div class="mb-3">
-                <button type="button" (click)="clearFilter()" class="btn btn-sm btn-primary ">{{'Clear' | translate}}</button>
-            </div>
         </form>
     </div>
 </div>
