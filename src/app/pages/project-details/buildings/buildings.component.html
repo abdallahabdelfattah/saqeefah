@@ -40,7 +40,7 @@
             <div class="row" *ngSwitchCase="'list'">
                 <div class="col-12">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th> {{'Apartment'|translate}} </th>
@@ -63,7 +63,7 @@
                                 <td>{{item.toilet_Num}}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <ul class="other-specs">
+                                        <ul class="other-specs m-0 p-0">
 
                                             <li *ngIf="item.roof>0" class="list-inline-item">
                                                 <span>

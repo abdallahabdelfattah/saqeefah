@@ -1,8 +1,8 @@
 <div class="card property-card {{viewType}}" style="cursor: pointer;">
-    <div class="img-panel d-flex">
+    <div class="img-panel">
         <div class="imagebox">
-            <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + propertyImageUrl + ')' }">
-               
+            <div class="img-container">
+                <img [src]="propertyImageUrl" alt="">
             </div>
             <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="property.apartment_Id"
                 [class.active]="property.favorite" (click)="favorites.toggleFavorites(property)"></i>
@@ -47,17 +47,17 @@
                         {{'Floor'| translate}} <br>{{property.floor_Num}}
                     </span>
                 </li>
-               
+
             </ul>
         </div>
         <div class="unit-actions">
             <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
                 [attr.data-bs-target]="'#exampleModal'+property.apartment_Id">
                 {{'more specs'| translate}}
-                
+
             </a>
-            <a href="#" class="btn btn-primary"   data-bs-toggle="modal"
-            [attr.data-bs-target]="'#place-order-apartment-form'+property.apartment_Id">
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#place-order-apartment-form'+property.apartment_Id">
                 {{'AppartmentReservation'| translate}}
             </a>
         </div>
@@ -74,33 +74,33 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="basic-info">
-                    <ul class="list-inline other-specs">
-                        <li class="list-inline-item "><span class="">{{'Appartment Space:'|
-                                translate}}{{property.apartment_Space}}</span></li>
-                        <li class="list-inline-item "><span class="">{{'Additional Space:'|
-                                translate}}{{property.additional_Space}}</span></li>
+                <div class="unit-specs">
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item "><span class="text">{{'Appartment Space:'|
+                                translate}} <br>{{property.apartment_Space}}</span></li>
+                        <li class="list-inline-item "><span class="text">{{'Additional Space:'|
+                                translate}} <br>{{property.additional_Space}}</span></li>
                         <li *ngIf="property.roof>0" class="list-inline-item ">
-                               <span class="">
+                            <span class="text">
                                 {{'roof'| translate}}
-                                </span>
+                            </span>
                         </li>
-                        <li *ngIf="property.p_Intrance>0" class="list-inline-item "><span class="">{{'p_Intrance'|
-                                translate}} 
-                                   </span>
+                        <li *ngIf="property.p_Intrance>0" class="list-inline-item ">
+                            <span class="text">{{'p_Intrance'| translate}}
+                            </span>
                         </li>
-                        <li *ngIf="property.dressRoom>0" class="list-inline-item "><span class="">{{'dressRoom'|
-                                translate}}       
-                                </span>
+                        <li *ngIf="property.dressRoom>0" class="list-inline-item "><span class="text">{{'dressRoom'|
+                                translate}}
+                            </span>
                         </li>
-                        <li *ngIf="property.serventRoom>0" class="list-inline-item "><span class="">{{'serventRoom'|
+                        <li *ngIf="property.serventRoom>0" class="list-inline-item "><span class="text">{{'serventRoom'|
                                 translate}} </span>
                         </li>
-                        <li *ngIf="property.store>0" class="list-inline-item "><span class="">{{'store'| translate}}
-                                </span>
+                        <li *ngIf="property.store>0" class="list-inline-item "><span class="text">{{'store'| translate}}
+                            </span>
                         </li>
-                        <li *ngIf="property.salon>0" class="list-inline-item "><span class="">{{'salon'| translate}}
-                                </span>
+                        <li *ngIf="property.salon>0" class="list-inline-item "><span class="text">{{'salon'| translate}}
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -118,15 +118,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title unit-title" id="PlaceOrderApartmentFormLabel">{{'PlaceOrder' | translate}} - {{property.apartment_Num}} </h5>                
+                <h5 class="modal-title unit-title" id="PlaceOrderApartmentFormLabel">{{'PlaceOrder' | translate}} -
+                    {{property.apartment_Num}} </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <app-place-order-apartment [apartment_Id]="property?.apartment_Id"  [project_Ref]="property?.project_Ref" ></app-place-order-apartment>
+                <app-place-order-apartment [apartment_Id]="property?.apartment_Id"
+                    [project_Ref]="property?.project_Ref"></app-place-order-apartment>
             </div>
-        
+
         </div>
     </div>
 </div>
-
-
