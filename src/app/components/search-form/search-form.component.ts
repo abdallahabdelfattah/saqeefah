@@ -66,9 +66,9 @@ export class SearchFormComponent implements OnInit {
   constructor(private projectsService: ProjectAndListService, private language: changeLanguageService
     , private service: PlaceOrderService) {
   }
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   this.clearFilter();
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.clearFilter();
+  }
   ngOnInit(): void {
     if (this.searchInallProjects)
       this.loadProjects();
@@ -82,6 +82,7 @@ export class SearchFormComponent implements OnInit {
     // this.maxArea=environment.maxArea;
     // this.areaStep=environment.areaStep;
     this.language.changeLanguageStatus.subscribe((data) => {
+      if (this.searchInallProjects)
       this.loadProjects();
       this.loadStatus();
       this.loadPickList();
@@ -199,18 +200,37 @@ export class SearchFormComponent implements OnInit {
     // let minArea=this.form.value.totalArea-environment.areaRange;
     // let maxArea=this.form.value.totalArea+environment.areaRange;
     this.FilteredProperty = [];
+
+
+    
     this.FilteredProperty = this.allProp.filter(x => {
-      return (this.form.value.projectId == 'all' ? x.project_Ref : this.form.value.projectId == x.project_Ref) &&
-        (this.form.value.price == 'all' ? x : (x.apartment_Price >= this.minPrice && x.apartment_Price <= this.maxPrice)) &&
+
+      // return (this.form.value.projectId == 'all' && this.searchInallProjects ? x.project_Ref : this.form.value.projectId == x.project_Ref) &&
+      //   (this.form.value.price == 'all' ? x : (x.apartment_Price >= this.minPrice && x.apartment_Price <= this.maxPrice)) &&
+      //   (this.form.value.totalArea == 'all' ? x : ((x.apartment_Space + x.additional_Space + x.basic_Space) >= this.minArea && (x.apartment_Space + x.additional_Space + x.basic_Space) <= this.maxArea)) &&
+      //   (this.form.value.bedroom == null ? x.bed_Room_Num : this.form.value.bedroom == x.bed_Room_Num) &&
+      //   (this.form.value.internalStation == null ? x : this.form.value.internalStation == x.parking) &&
+      //   (this.form.value.serventRoom == null ? x : this.form.value.serventRoom == x.servant_Room) &&
+      //   (this.form.value.store == null ? x : this.form.value.store == x.store) &&
+      //   (this.form.value.roof == null ? x : this.form.value.roof == x.roof) &&
+      //   (this.form.value.salon == null ? x : this.form.value.salon == x.salon) &&
+      //   (this.form.value.p_Intrance == null ? x : this.form.value.p_Intrance == x.p_Intrance) 
+      //   && (this.form.value.status == 'all' ? x.statusId : this.form.value.status == x.statusId);
+
+       return (this.form.value.projectId == 'all' && this.searchInallProjects ? x.project_Ref : this.form.value.projectId == x.project_Ref) &&
+         (this.form.value.price == 'all' ? x : (x.apartment_Price >= this.minPrice && x.apartment_Price <= this.maxPrice)) &&
         (this.form.value.totalArea == 'all' ? x : ((x.apartment_Space + x.additional_Space + x.basic_Space) >= this.minArea && (x.apartment_Space + x.additional_Space + x.basic_Space) <= this.maxArea)) &&
-        (this.form.value.bedroom == null ? x.bed_Room_Num : this.form.value.bedroom == x.bed_Room_Num) &&
-        (this.form.value.internalStation == null ? x : this.form.value.internalStation == x.parking) &&
+         (this.form.value.bedroom == null ? x.bed_Room_Num : this.form.value.bedroom == x.bed_Room_Num) &&
+         (this.form.value.internalStation == null ? x : this.form.value.internalStation == x.parking) &&
         (this.form.value.serventRoom == null ? x : this.form.value.serventRoom == x.servant_Room) &&
         (this.form.value.store == null ? x : this.form.value.store == x.store) &&
-        (this.form.value.roof == null ? x : this.form.value.roof == x.roof) &&
-        (this.form.value.salon == null ? x : this.form.value.salon == x.salon) &&
-        (this.form.value.p_Intrance == null ? x : this.form.value.p_Intrance == x.p_Intrance) &&
-        (this.form.value.status == 'all' ? x.statusId : this.form.value.status == x.statusId);
+         (this.form.value.roof == null ? x : this.form.value.roof == x.roof) &&
+         (this.form.value.salon == null ? x : this.form.value.salon == x.salon) &&
+         (this.form.value.p_Intrance == null ? x : this.form.value.p_Intrance == x.p_Intrance) 
+        && (this.form.value.status == 'all' ? x.statusId : this.form.value.status == x.statusId);
+
+
+      return true; 
 
     });
     this.obj.emit(this.FilteredProperty);
@@ -218,7 +238,7 @@ export class SearchFormComponent implements OnInit {
   clearFilter() {
     this.form.patchValue({
       projectId: 'all',
-      status: 1,  //متاح
+      status: 'all',  //متاح
       price: 'all',
       totalArea: 'all',
       internalStation: null,

@@ -21,21 +21,21 @@
                     <div class="row g-4">
                         <div class="col-md-8">
                             <img *ngIf="projectDetails.masterPlane != null" [src]="appRootUrl+projectDetails.masterPlane.masterPlaneImage" usemap="#image-map" class="img-fluid">
-                            <map name="image-map" *ngIf="projectDetails.masterPlane.mapCodeArray.length > 0">
-                                <area *ngFor="let item of projectDetails.masterPlane.mapCodeArray" (click)="goToSpecialBuilding(item.id)"   [attr.coords]="item.cords" [attr.shape]="item.shape">
+                            <map name="image-map" *ngIf="projectDetails?.masterPlane?.mapCodeArray?.length > 0">
+                                <area *ngFor="let item of projectDetails?.masterPlane?.mapCodeArray" (click)="goToSpecialBuilding(item.id)"   [attr.coords]="item.cords" [attr.shape]="item.shape">
                                 
                             </map>
                         </div>
                         <div class="col-md-4">
                             <h4 class="secondary-color">{{'ProjectOverview' | translate}}</h4>
-                            <p *ngIf="projectDetails && projectDetails.masterPlane != null&& projectDetails.masterPlane.projectOverview!='undefined'">
+                            <p *ngIf="projectDetails && projectDetails?.masterPlane != null&& projectDetails?.masterPlane?.projectOverview!='undefined'">
                                 {{projectDetails.masterPlane.projectOverview |translate}}
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" [ngClass]="{'show active':activeBuildingTab}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <app-buildings *ngIf="projectDetails" [activeBuilding]="sendBuildId" [buildings]="projectDetails.buildingApartments"></app-buildings>
+                    <app-buildings *ngIf="projectDetails" [activeBuilding]="sendBuildId" [buildings]="projectDetails?.buildingApartments"></app-buildings>
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <div class="col-md-12 mb-5">
@@ -63,7 +63,7 @@
                                 <!-- <h5 class="secondary-color">{{'Granties' | translate}}</h5> -->
                                 <div class="specs-panel">
 
-                                    <img *ngIf="projectDetails.specifications != null" [src]="appRootUrl+projectDetails.specifications.grantiesImage" class="img-fluid" alt="">
+                                    <img *ngIf="projectDetails?.specifications != null" [src]="appRootUrl+projectDetails?.specifications?.grantiesImage" class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
