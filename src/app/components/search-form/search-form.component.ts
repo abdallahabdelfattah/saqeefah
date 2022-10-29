@@ -66,9 +66,9 @@ export class SearchFormComponent implements OnInit {
   constructor(private projectsService: ProjectAndListService, private language: changeLanguageService
     , private service: PlaceOrderService) {
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.clearFilter();
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.clearFilter();
+  // }
   ngOnInit(): void {
     if (this.searchInallProjects)
       this.loadProjects();
