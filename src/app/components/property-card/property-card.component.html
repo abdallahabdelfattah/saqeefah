@@ -32,7 +32,7 @@
             <ul class="list-inline m-0">
                 <li class="list-inline-item">
                     <span class="text">
-                        {{'Basic Space:'| translate}}<br> {{property.basic_Space}}</span>
+                        {{'apartment_Space'| translate}}<br> {{property.apartment_Space}}</span>
                 </li>
                 <li class="list-inline-item">
                     <span class="text mx-1"> {{'bed_Room'|
@@ -76,8 +76,8 @@
             <div class="modal-body">
                 <div class="unit-specs">
                     <ul class="list-inline m-0">
-                        <li class="list-inline-item "><span class="text">{{'Appartment Space:'|
-                                translate}} <br>{{property.apartment_Space}}</span></li>
+                        <li class="list-inline-item "><span class="text">{{'basic_Space'|
+                                translate}} <br>{{property.basic_Space}}</span></li>
                         <li class="list-inline-item "><span class="text">{{'Additional Space:'|
                                 translate}} <br>{{property.additional_Space}}</span></li>
                                
@@ -105,13 +105,26 @@
                         </li>
                         <li *ngIf="property.store>0" class="list-inline-item ">
                             <span class="text">{{'store'| translate}}
-                                
                             </span>
                         </li>
-                        <!-- <li *ngIf="property.salon>0" class="list-inline-item "><span class="text">{{'salon'| translate}}
-                            <br>{{property.salon}}
+                      
+                        <li *ngIf="property.hall>0" class="list-inline-item ">
+                            <span class="text">{{'hall'| translate}}
                             </span>
-                        </li> -->
+                        </li>
+
+    
+                        <li *ngIf="property.inter_view>0" class="list-inline-item ">
+                            <span class="text">{{'Inter_view'| translate}}
+                            </span>
+                        </li>
+
+                        <li *ngIf="property.fron_view>0" class="list-inline-item ">
+                            <span class="text">{{'Front_view'| translate}}
+                            </span>
+                        </li>
+
+                        
                     </ul>
                 </div>
             </div>
