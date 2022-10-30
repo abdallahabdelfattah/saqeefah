@@ -35,12 +35,12 @@
                         {{'Basic Space:'| translate}}<br> {{property.basic_Space}}</span>
                 </li>
                 <li class="list-inline-item">
-                    <span class="text mx-1"> {{'Rooms'|
+                    <span class="text mx-1"> {{'bed_Room'|
                         translate}}<br> {{property.bed_Room_Num}}</span>
                 </li>
-                <li class="list-inline-item">
+                <li class="list-inline-item" *ngIf="property.salon>0">
                     <span class="text mx-1">
-                        {{'Bathroom' | translate}} <br>{{property.toilet_Num}}</span>
+                        {{'salon' | translate}} <br>{{property.salon}}</span>
                 </li>
                 <li class="list-inline-item">
                     <span class="text mx-1">
@@ -80,6 +80,7 @@
                                 translate}} <br>{{property.apartment_Space}}</span></li>
                         <li class="list-inline-item "><span class="text">{{'Additional Space:'|
                                 translate}} <br>{{property.additional_Space}}</span></li>
+                               
                         <li *ngIf="property.roof>0" class="list-inline-item ">
                             <span class="text">
                                 {{'roof'| translate}}
@@ -97,13 +98,20 @@
                             <span class="text">{{'serventRoom'|
                                 translate}} </span>
                         </li>
+                        <li *ngIf="property.toilet_Num>0" class="list-inline-item ">
+                            <span class="text">{{'Bathroom'| translate}}
+                                <br>{{property.toilet_Num}}
+                            </span>
+                        </li>
                         <li *ngIf="property.store>0" class="list-inline-item ">
                             <span class="text">{{'store'| translate}}
+                                <br>{{property.store}}
                             </span>
                         </li>
-                        <li *ngIf="property.salon>0" class="list-inline-item "><span class="text">{{'salon'| translate}}
+                        <!-- <li *ngIf="property.salon>0" class="list-inline-item "><span class="text">{{'salon'| translate}}
+                            <br>{{property.salon}}
                             </span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

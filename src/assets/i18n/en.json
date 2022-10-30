@@ -190,7 +190,7 @@
     "DescriptionAr":"DescriptionAr",
     "Is Active":"IsActive",
     "Select Icon":"Select Icon",
-    "status":"status",
+    "status":"Status",
     "trace":"terrace",
     "balcon":"balcon",
     "p_Intrance":"p_Intrance",
@@ -364,5 +364,13 @@
 "Are you sure you want to delete?":"Are you sure you want to delete?",
 "There is no selected Appartments to compare, please choose items.":"There is no selected Appartments to compare, please choose items.",
 "AppartmentReservation":"Reserve",
-"Details":"Details"
+"Details":"Details",
+"Backyard":"Backyard",
+"Washing_room":"Laundry Room",
+"Inter_view":"Inner Look",
+"Front_view":"Front View",
+"propertyDetails":"Property Details",
+"Feature":"Feature"
+
+
 }

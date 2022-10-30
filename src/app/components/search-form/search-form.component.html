@@ -87,6 +87,22 @@
                 <div class="row mb-1">
                     
                     <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="front_view" formControlName="front_view">
+                        <label class="form-check-label" for="front_view" >{{'Front_view' | translate}}</label>
+                      </div>
+                </div>
+  
+
+                <div class="row mb-1">
+                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="backyard" formControlName="backyard">
+                        <label class="form-check-label" for="backyard" >{{'Backyard' | translate}}</label>
+                      </div>
+                </div>
+                <div class="row mb-1">
+                    
+                    <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" (change)=" ApplyFilterProperty()"  id="salon" formControlName="salon">
                         <label class="form-check-label" for="salon" >{{'salon' | translate}}</label>
                       </div>

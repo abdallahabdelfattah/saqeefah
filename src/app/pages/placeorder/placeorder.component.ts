@@ -50,7 +50,10 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     price_Avg: new FormControl('all'),
     space_Avg: new FormControl('all'),
     bed_Room: new FormControl(0, []),
-
+    p_Intrance: new FormControl(0,[]),
+    Front_view: new FormControl(0,[]),
+    salon: new FormControl(0,[]),
+    backyard: new FormControl(0,[]),
 
     parking: new FormControl(0,[]),
     terace: new FormControl(0, []),
@@ -222,6 +225,10 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
       space_Avg:0,
       bed_Room:0,
       parking:0,
+      p_Intrance: 0,
+      Front_view: 0,
+      salon: 0,
+      backyard:0,
       terace:0,
       balcony:0,
       roof:0,

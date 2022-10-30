@@ -60,6 +60,8 @@ export class SearchFormComponent implements OnInit {
     serventRoom: new FormControl(null),
     store: new FormControl(null),
     roof: new FormControl(null),
+    backyard:new FormControl(null),
+    front_view:new FormControl(null),
     salon: new FormControl(null),
     p_Intrance: new FormControl(null)
   });
@@ -222,6 +224,8 @@ export class SearchFormComponent implements OnInit {
          (this.form.value.bedroom == null ? true: this.form.value.bedroom == x.bed_Room_Num) &&
          (this.form.value.internalStation == null ? x : this.form.value.internalStation == x.parking) &&
         (this.form.value.serventRoom == null ? x : this.form.value.serventRoom == x.servant_Room) &&
+        (this.form.value.Front_view == null ? x : this.form.value.Front_view == x.Front_view) &&
+        (this.form.value.backyard == null ? x : this.form.value.backyard == x.backyard) &&
         (this.form.value.store == null ? x : this.form.value.store == x.store) &&
          (this.form.value.roof == null ? x : this.form.value.roof == x.roof) &&
          (this.form.value.salon == null ? x : this.form.value.salon == x.salon) &&
@@ -244,6 +248,8 @@ export class SearchFormComponent implements OnInit {
       store: null,
       roof: null,
       salon: null,
+      front_view:null,
+      backyard:null,
       p_Intrance: null
     })
     this.ApplyFilterProperty();
