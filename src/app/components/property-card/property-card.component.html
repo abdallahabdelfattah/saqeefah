@@ -123,6 +123,30 @@
                             <span class="text">{{'Front_view'| translate}}
                             </span>
                         </li>
+                        <li *ngIf="property.parking>0" class="list-inline-item ">
+                            <span class="text">{{'parking'| translate}}
+                            </span>
+                        </li>
+                        <li *ngIf="property.kitchen>0" class="list-inline-item ">
+                            <span class="text">{{'Kitchen'| translate}}
+                            </span>
+                        </li>
+                        <li *ngIf="property.backyard>0" class="list-inline-item ">
+                            <span class="text">{{'Backyard'| translate}}
+                            </span>
+                        </li>
+                        <li *ngIf="property.trace>0" class="list-inline-item ">
+                            <span class="text">{{'trace'| translate}}
+                            </span>
+                        </li>
+                        <li *ngIf="property.washing_room>0" class="list-inline-item ">
+                            <span class="text">{{'Washing_room'| translate}}
+                            </span>
+                        </li>
+                        <li *ngIf="property.two_view>0" class="list-inline-item ">
+                            <span class="text">{{'two_view'| translate}}
+                            </span>
+                        </li>
 
                         
                     </ul>
