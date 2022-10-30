@@ -18,10 +18,23 @@
                 </p>
             </div>
             <!-- <app-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-gallery> -->
-            <app-swipper-gallery [galleryImage]="propertyDetails.images"
+
+            <div *ngIf="propertyDetails && propertyDetails.images.length==0;then imagePlacHolder else swipper"></div>
+
+            <ng-template  #swipper>
+                <app-swipper-gallery   [galleryImage]="propertyDetails.images"
                 *ngIf="propertyDetails && propertyDetails.images"></app-swipper-gallery>
-            <img src="assets/images/home-placeHolder.webp" class="img-fluid"
-                *ngIf="propertyDetails && propertyDetails.images.length == 0" alt="" />
+            </ng-template>
+      
+            <ng-template #imagePlacHolder >
+                <img style="width: 100% !important;height:380!important " src="assets/images/home-placeHolder.webp" class=""/>
+            </ng-template>
+
+          
+
+           
+
+
             <div class="row">
                 <div class="property-section col-md-12 col-lg-12 my-3">
                     <!-- <div class=" w-100"> -->
