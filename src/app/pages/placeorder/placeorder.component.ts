@@ -225,9 +225,9 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
       space_Avg:0,
       bed_Room:0,
       parking:0,
-      p_Intrance: 0,
-      Front_view: 0,
-      salon: 0,
+      p_Intrance:0,
+      Front_view:0,
+      salon:0,
       backyard:0,
       terace:0,
       balcony:0,
@@ -240,10 +240,11 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   }
   showError:boolean=false;
   onClickSubmit($event){
-    debugger;
+   
  if(this.myFormGroup.valid){
   console.log('test',this.myFormGroup.value)
   this.service.Post(this.myFormGroup.value).subscribe(res=>{
+    debugger;
         if(!res.isError)
         {
           this.toastr.success("Successfully Updated")
