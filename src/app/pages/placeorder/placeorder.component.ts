@@ -240,7 +240,9 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   }
   showError:boolean=false;
   onClickSubmit($event){
+    debugger;
  if(this.myFormGroup.valid){
+  console.log('test',this.myFormGroup.value)
   this.service.Post(this.myFormGroup.value).subscribe(res=>{
         if(!res.isError)
         {

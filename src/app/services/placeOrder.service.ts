@@ -71,6 +71,10 @@ let Mod={
     roof:Model.roof,
     store:Model.store,
     servent_Room:Model.servent_Room,
+    salon:Model.salon,
+    backyard:Model.backyard,
+    fron_view:Model.Front_view,
+    p_intrance:Model.p_Intrance,
 
     additional_Reqst:Model.additional_Reqst
 };
