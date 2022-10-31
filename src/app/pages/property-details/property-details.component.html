@@ -250,10 +250,10 @@
                                     </td>
                                     <td>
                                         <span class="td-data">
-                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
-            'icon-checkmark': propertyDetails.trace ==1 }">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.store ==0,
+            'icon-checkmark': propertyDetails.store ==1 }">
                                                 <use
-                                                    [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                    [attr.xlink:href]="propertyDetails.store==0 ? '#icon-cross' :'#icon-checkmark'">
                                                 </use>
                                             </svg>
                                         </span>
@@ -391,6 +391,26 @@
                                     <td>
                                         <span class="td-data">
                                             {{ propertyDetails.toilet_Num }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="../../../assets/images/property/windows.svg" alt="" class="feature-icon">
+                                            <span class="title">
+                                               {{'two_view' | translate}}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.two_view==0,
+            'icon-checkmark': propertyDetails.two_view ==1 }">
+                                                <use
+                                                    [attr.xlink:href]="propertyDetails.two_view==0 ? '#icon-cross' :'#icon-checkmark'">
+                                                </use>
+                                            </svg>
                                         </span>
                                     </td>
                                 </tr>

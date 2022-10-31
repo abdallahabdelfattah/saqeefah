@@ -154,6 +154,8 @@ h5 {
         align-items: center;
         margin: 0;
         padding: 8px;
+        flex-wrap: wrap;
+    gap: 16px;
 
         >li {
             flex: 1;
