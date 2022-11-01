@@ -193,7 +193,7 @@
     "status":"Status",
     "trace":"terrace",
     "balcon":"balcon",
-    "p_Intrance":"p_Intrance",
+    "p_Intrance":"Private Intrance",
     "basic_Space":"basic space",
     "additional_Space":"additional space",
     "apartment_Space":"Total Area",
@@ -369,9 +369,14 @@
 "Washing_room":"Laundry Room",
 "Inter_view":"Inner Look",
 "Front_view":"Front View",
-"two_view":"two_view",
+"two_view":"two view",
 "propertyDetails":"Property Details",
-"Feature":"Feature"
+"Feature":"Feature",
+"inter_view":"Inner Look", 
+"fron_view":"Front View",
+"washing_room":"Laundry Room",
+"kitchen":"kitchen",
+"backyard":"Backyard"
 
 
 }

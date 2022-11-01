@@ -195,7 +195,7 @@
                             <ng-container *ngIf="key != 'apartment_Id' && key != 'coverImage'
                             && key != 'images'&& key != 'videos' &&key!='statusId'
                             &&key!='project_Ref'&&key!='build_Ref'&&key!='floor_Ref'
-                            &&key!='projectName' &&key!='buildingName' &&key!='apartment_Num'
+                            &&key!='buildingName' &&key!='apartment_Num'
                             &&key!='floor_Num'">
                                 <td scope="row">
                                     <span class="" style="margin: 0 5px;">
@@ -208,7 +208,7 @@
                                     <div *ngIf="key==='balcon'||key==='hall'
                                     ||key==='p_Intrance'||key==='roof'||key==='salon'
                                     ||key==='servant_Room'||key==='store'||key==='toilet_Num'
-                                    ||key==='trace'||key==='dress_Room'; else elseBlock">
+                                    ||key==='trace'||key==='inter_view' ||key==='fron_view' ||key==='two_view' ||key==='kitchen' ||key==='washing_room'  ||key==='backyard'; else elseBlock">
                                      <svg class="icon " [ngClass]="{'icon-cross':item[key] ==0,
                                     'icon-checkmark':item[key] ==1 }"><use [attr.xlink:href]="item[key] ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
                                     </div>

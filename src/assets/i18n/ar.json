@@ -374,6 +374,10 @@
 "Inter_view":"مطلة على الفناء",
 "Front_view":"واجهة",
 "propertyDetails":" تفاصيل الوحدة",
-"Feature":"المسمى"
-
+"Feature":"المسمى", 
+"inter_view":"مطلة على الفناء", 
+"fron_view":"واجهة",
+"washing_room":"غرفة الغسيل",
+"kitchen":"مطبخ",
+"backyard":"حوش خاص"
 }
