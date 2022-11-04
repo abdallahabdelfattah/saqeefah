@@ -36,7 +36,7 @@
 
                             <th scope="col" *ngFor="let item of compareList">
                                 <img [src]="appRootUrl+item.coverImage" class="img-fluid imageborders" alt="">
-                                <h5>{{'Floor'| translate}} ({{item.floor_Num}}) {{'Apartment' | translate}} ({{item.apartment_Num}})</h5>
+                                <h5>{{'Floor'| translate}} ({{item.floor_Name}}) {{'Apartment' | translate}} ({{item.apartment_Num}})</h5>
                             </th>
 
 
@@ -196,7 +196,7 @@
                             && key != 'images'&& key != 'videos' &&key!='statusId'
                             &&key!='project_Ref'&&key!='build_Ref'&&key!='floor_Ref'
                             &&key!='buildingName' &&key!='apartment_Num'
-                            &&key!='floor_Num'">
+                             ">
                                 <td scope="row">
                                     <span class="" style="margin: 0 5px;">
                                 <!-- <i class="fa fa-dot-circle-o" aria-hidden="true"></i> -->

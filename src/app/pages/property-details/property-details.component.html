@@ -100,6 +100,44 @@
                                 <tr>
                                     <td>
                                         <div class="feature">
+                                            <img src="../../../assets/images/property/bed.svg" alt="" class="feature-icon">
+                                            <span class="title">
+                                                {{ "Rooms" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.bed_Room_Num }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+
+                                <tr>
+
+                                    <td>
+                                        <div class="feature">
+                                            <img src="../../../assets/images/property/floor.svg" class="feature-icon" alt="">
+                                            <span class="title">
+                                                {{ "Floor" | translate }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        
+                                        <span class="td-data">
+                                            {{ propertyDetails.floor_Name }}
+                                        </span>
+
+                                    </td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>
+                                        <div class="feature">
                                             <img src="../../../assets/images/property/garage.svg" class="feature-icon" alt="">
                                             <span class="title">
                                                 {{ "parking" | translate }}
@@ -119,21 +157,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td>
-                                        <div class="feature">
-                                            <img src="../../../assets/images/property/bed.svg" alt="" class="feature-icon">
-                                            <span class="title">
-                                                {{ "Rooms" | translate }}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-                                            {{ propertyDetails.bed_Room_Num }}
-                                        </span>
-                                    </td>
-                                </tr>
+                              
 
                                 <tr>
                                     <td>
@@ -357,28 +381,7 @@
                                 </tr>
 
 
-                                <tr>
-
-                                    <td>
-                                        <div class="feature">
-                                            <img src="../../../assets/images/property/floor.svg" class="feature-icon" alt="">
-                                            <span class="title">
-                                                {{ "Floor" | translate }}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.floor_Num ==0,
-          'icon-checkmark': propertyDetails.floor_Num ==1 }">
-                                                <use
-                                                    [attr.xlink:href]="propertyDetails.floor_Num==0 ? '#icon-cross' :'#icon-checkmark'">
-                                                </use>
-                                            </svg>
-                                        </span>
-                                    </td>
-                                </tr>
-
+                       
                                 <tr>
                                     <td>
                                         <div class="feature">

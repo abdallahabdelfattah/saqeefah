@@ -197,7 +197,7 @@
     "basic_Space":"basic space",
     "additional_Space":"additional space",
     "apartment_Space":"Total Area",
-    "floor_Num":"floor number ",
+    "floor_Name":"floor",
     "hall":"hall",
     "Floor":"Floor",
     "Logout":"Logout",
@@ -376,7 +376,8 @@
 "fron_view":"Front View",
 "washing_room":"Laundry Room",
 "kitchen":"kitchen",
-"backyard":"Backyard"
+"backyard":"Backyard",
+"Space":"Apartment Space"
 
 
 }

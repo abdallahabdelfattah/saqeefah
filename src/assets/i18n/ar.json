@@ -179,7 +179,7 @@
     "basic_Space":"مساحة الوحدة",
     "additional_Space":"مساحة الجزء الخاص",
     "apartment_Space":"المساحة الإجمالية ",
-    "floor_Num":"عدد الطوابق",
+    "floor_Name":"الطابق",
     "hall":"صالة",
     "toilet_Num":"دورة المياه",
     "apartment_Price":"سعر الشقة",
@@ -379,5 +379,6 @@
 "fron_view":"واجهة",
 "washing_room":"غرفة الغسيل",
 "kitchen":"مطبخ",
-"backyard":"حوش خاص"
+"backyard":"حوش خاص",
+"Space":"المساحة"
 }

@@ -14,7 +14,7 @@ export interface ITestItem {
   build_Id: number;
   build_Code: string;
   project_Ref: number;
-  floor_Num: number;
+  floor_Name: string;
   apartment_Num: number;
   build_Descrip: string;
 }
