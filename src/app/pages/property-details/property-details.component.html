@@ -412,12 +412,13 @@
                                     </td>
                                     <td>
                                         <span class="td-data">
-                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
+                                            <!-- <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
             'icon-checkmark': propertyDetails.roof ==1 }">
                                                 <use
                                                     [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
                                                 </use>
-                                            </svg>
+                                            </svg> -->
+                                            {{propertyDetails.roof}}
                                         </span>
                                     </td>
                                 </tr>
