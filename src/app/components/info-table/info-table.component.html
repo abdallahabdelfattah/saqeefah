@@ -29,12 +29,7 @@
               <td>{{ row.numberOfUnits }}</td>
               <td>{{ row.numberOfBuildings }}</td>
               <td class="p-2">
-                <span class="status" [class]="{
-                    green: row.statusId == 1,
-                    moave: row.statusId == 4,
-                    orange: row.statusId == 2,
-                    pink: row.statusId == 3
-                  }">{{ row.status }}</span>
+                <span class="status pink" >{{  row.status }}</span>
               </td>
             </tr>
           </tbody>

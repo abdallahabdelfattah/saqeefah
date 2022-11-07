@@ -202,7 +202,7 @@
  }
 
  .img-container{
-    background-size: cover;
+    background-size: contain;
     height: 400px;
     width: 90%;
     border: 5px solid #dddcd4;
@@ -281,7 +281,7 @@
 }
 
 .img-container {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;

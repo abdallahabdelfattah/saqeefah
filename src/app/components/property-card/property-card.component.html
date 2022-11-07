@@ -10,7 +10,7 @@
                 (click)="compare.toggleCompare(property)">{{'Compare' | translate}}</div>
 
             <div class="card-label"
-                [class]="{'green': property.statusId == 1, 'orange': property.statusId == 2, 'pink': property.statusId == 3,  'yellow': property.statusId == 4}">
+                [class]="{'green': property.statusId == 1, 'orange': property.statusId == 2, 'yellow': property.statusId == 3,  'pink': property.statusId == 4}">
                 {{property.status | translate}}</div>
             <span class="edit-project" *ngIf="EditMode"
                 [routerLink]="'../edit-property/'+property.project_Ref+'/'+property.apartment_Id">{{'Edit' |
@@ -92,14 +92,12 @@
                             <span class="text">{{'p_Intrance'| translate}}
                             </span>
                         </li>
-                        <li *ngIf="property.dressRoom>0" class="list-inline-item "><span class="text">{{'dressRoom'|
-                                translate}}
-                            </span>
-                        </li>
-                        <li *ngIf="property.serventRoom>0" class="list-inline-item ">
+                     
+                        <li *ngIf="property.servant_Room>0" class="list-inline-item ">
                             <span class="text">{{'serventRoom'|
                                 translate}} </span>
                         </li>
+                        
                         <li *ngIf="property.toilet_Num>0" class="list-inline-item ">
                             <span class="text">{{'Bathroom'| translate}}
                                 <br>{{property.toilet_Num}}
@@ -134,11 +132,12 @@
                             </span>
                         </li>
                         <li *ngIf="property.backyard>0" class="list-inline-item ">
-                            <span class="text">{{'Backyard'| translate}}
+                            <span class="text">  {{'Backyard'| translate}}
                             </span>
                         </li>
                         <li *ngIf="property.trace>0" class="list-inline-item ">
                             <span class="text">{{'trace'| translate}}
+                                {{property.trace}}
                             </span>
                         </li>
                         <li *ngIf="property.washing_room>0" class="list-inline-item ">
@@ -150,6 +149,12 @@
                             </span>
                         </li>
 
+                        <li *ngIf="property.balcon>0" class="list-inline-item ">
+                            <span class="text">{{'balcon'| translate}}
+                                <br>
+                                {{property.balcon}}
+                            </span>
+                        </li>
                         
                     </ul>
                 </div>

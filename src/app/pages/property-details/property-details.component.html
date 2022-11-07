@@ -133,7 +133,21 @@
                                     </td>
                                 </tr>
 
-
+                                <tr>
+                                    <td>
+                                        <div class="feature">
+                                            <img src="../../../assets/images/property/balcony.svg" alt="" class="feature-icon">
+                                            <span class="title">
+                                               {{'balcon' | translate}}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="td-data">
+                                            {{ propertyDetails.balcon}}
+                                        </span>
+                                    </td>
+                                </tr>
 
                                 <tr>
                                     <td>
@@ -201,27 +215,7 @@
                                     </td>
                                 </tr>
 
-                                <!-- <tr>
-                                    <td>
-                                        <div class="feature">
-                                            <img src="../../../assets/images/property/windows.svg" alt="" class="feature-icon">
-                                            <span class="title">
-                                                اطلالة داخلية
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.roof ==0,
-            'icon-checkmark': propertyDetails.roof ==1 }">
-                                                <use
-                                                    [attr.xlink:href]="propertyDetails.roof==0 ? '#icon-cross' :'#icon-checkmark'">
-                                                </use>
-                                            </svg>
-                                        </span>
-                                    </td>
-                                </tr>
-                             -->
+                           
                                 <tr>
                                     <td>
                                         <div class="feature">
@@ -234,7 +228,7 @@
                                     <td>
                                         <span class="td-data">
                                             <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.inter_view ==0,
-            'icon-checkmark': propertyDetails.inter_view ==1 }">
+                                        'icon-checkmark': propertyDetails.inter_view ==1 }">
                                                 <use
                                                     [attr.xlink:href]="propertyDetails.inter_view==0 ? '#icon-cross' :'#icon-checkmark'">
                                                 </use>
@@ -242,6 +236,10 @@
                                         </span>
                                     </td>
                                 </tr>
+
+
+
+
                                 <tr>
                                     <td>
                                         <div class="feature">
@@ -285,21 +283,7 @@
                                 </tr>
 
 
-                                <!-- <tr>
-                                    <td>
-                                        <div class="feature">
-                                            <img src="../../../assets/images/property/balcony.svg" alt="" class="feature-icon">
-                                            <span class="title">
-                                                اطلالة خارجية
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-                                            {{ propertyDetails.toilet_Num }}
-                                        </span>
-                                    </td>
-                                </tr> -->
+                              
                                 <tr>
                                     <td>
                                         <div class="feature">
@@ -370,13 +354,10 @@
                                     </td>
                                     <td>
                                         <span class="td-data">
-                                            <svg class="icon " [ngClass]="{'icon-cross': propertyDetails.trace ==0,
-            'icon-checkmark': propertyDetails.trace ==1 }">
-                                                <use
-                                                    [attr.xlink:href]="propertyDetails.trace==0 ? '#icon-cross' :'#icon-checkmark'">
-                                                </use>
-                                            </svg>
+                                            {{ propertyDetails.trace}}
                                         </span>
+
+                                    
                                     </td>
                                 </tr>
 
@@ -481,40 +462,7 @@
                                         </span>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    
-                                    <td>
-                                        <div class="feature">
-                                            <img src="" class="feature-icon" alt="">
-                                            <span class="title">
-                                                {{ "balcon" | translate }}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-                                            <svg class="icon" [ngClass]="{'icon-cross': propertyDetails.balcon ==0,
-            'icon-checkmark': propertyDetails.balcon ==1 }">
-                                                <use
-                                                    [attr.xlink:href]="propertyDetails.balcon==0 ? '#icon-cross' :'#icon-checkmark'">
-                                                </use>
-                                            </svg>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="feature">
-                                            <img src="" class="feature-icon" alt="">
-                                            <span class="title">
-
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="td-data">
-
-                                        </span>
-                                    </td>
-                                </tr> -->
+                              
                             </tbody>
                         </table>
                     </div>
