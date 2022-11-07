@@ -1,15 +1,4 @@
-<!--===== Start Banner =====-->
-<!-- <section class="hero-wrap"
-[ngStyle]="{'background-image': 'url(' + bannerCompareUrl+ ')' }">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row slider-text align-items-end justify-content-center">
-            <div class="col-md-9  text-center mb-4">
-                <h1 class="mb-2 bread">{{'compare' | translate}}</h1>
-            </div>
-        </div>
-    </div>
-</section> -->
+
 <div class="page-banner">
     <div class="container">
         <h3 class="page-title">
@@ -18,7 +7,6 @@
     </div>
 </div>
 <!--===== End Banner =====-->
-
 
 
 <!--===== Start Team =====-->
@@ -35,7 +23,18 @@
                             <th scope="col"></th>
 
                             <th scope="col" *ngFor="let item of compareList">
-                                <img [src]="appRootUrl+item.coverImage" class="img-fluid imageborders" alt="">
+                              
+                                <div *ngIf="item && item?.coverImage;then coverImage else imagePlacHolder"></div>
+                                <ng-template #coverImage >
+                                    <img [src]="appRootUrl+item.coverImage" class="img-fluid imageborders" alt="">
+                                </ng-template>
+                                
+                                <ng-template #imagePlacHolder >
+                                    <img  src="assets/images/home-placeHolder.webp" class="img-fluid imageborders"/>
+                                </ng-template>
+                    
+          
+                                
                                 <h5>{{'Floor'| translate}} ({{item.floor_Name}}) {{'Apartment' | translate}} ({{item.apartment_Num}})</h5>
                             </th>
 
@@ -44,153 +43,7 @@
                     </thead>
                     <tbody>
 
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/location.png">
-                                <h6>Location</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">Location1, Saudia Arabia</td>
-
-
-
-                        </tr> -->
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/area.png">
-                                <h6>Area</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">
-                                {{item.apartment_Space}} m
-                                <sup>2</sup>
-                            </td>
-                        </tr> -->
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/room.png">
-                                <h6>Rooms</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">{{item.bed_Room_Num}} Rooms</td>
-
-
-
-                        </tr> -->
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/air-conditioner.png">
-                                <h6>Air Conditioning</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">2 Air Conditioning</td>
-
-
-
-                        </tr> -->
-
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/bathroom.png">
-                                <h6>Bathrooms</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">1 Bathroom</td>
-
-
-
-                        </tr> -->
-
-
-
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/kitchen.png">
-                                <h6>Kitchen</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">
-                                <i class="fa fa-check"></i>
-                            </td> -->
-
-                        <!-- <td>
-                                <i class="fa fa-check"></i>
-                            </td>
-
-                            <td>
-                                <i class="fa fa-times"></i>
-                            </td> -->
-
-                        <!-- </tr> -->
-
-
-                        <!-- <tr>
-
-                            <th scope="row">
-                                <img src="assets/images/compare-icons/furnished.png">
-                                <h6>Furnished</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">
-                                <i class="fa fa-check"></i>
-                            </td> -->
-                        <!--
-                            <td>
-                                <i class="fa fa-times"></i>
-                            </td>
-
-                            <td>
-                                <i class="fa fa-times"></i>
-                            </td> -->
-
-                        <!-- </tr> -->
-
-                        <!-- <tr>
-
-                            <th scope="row" class="mt-md-4">
-                                <img src="assets/images/compare-icons/price.png">
-                                <h6>Price</h6>
-                            </th>
-
-                            <td *ngFor="let item of compareList">
-
-                                <b>cash:</b> {{item.apartment_Price}} SAR
-                            </td>
-
-
-
-
-
-                        </tr> -->
-
-
-                        <!-- <tr>
-
-                            <th scope="row">
-
-                            </th>
-
-                            <td *ngFor="let item of compareList">
-                                <a [routerLink]="['/property',item.apartment_Id]"
-                                    class="btn btn-primary px-4 ml-2">Buy</a>
-                                <a class="btn btn-danger px-4"
-                                    (click)="compareServ.deleteListFromCompare(item.apartment_Id)">Delete</a>
-                            </td>
-
-
-
-                        </tr> -->
+                    
                         <tr *ngFor="let key of getKeys()">
                             <ng-container *ngIf="key != 'apartment_Id' && key != 'coverImage'
                             && key != 'images'&& key != 'videos' &&key!='statusId'
@@ -199,22 +52,26 @@
                              ">
                                 <td scope="row">
                                     <span class="" style="margin: 0 5px;">
-                                <!-- <i class="fa fa-dot-circle-o" aria-hidden="true"></i> -->
-                                </span>
+                                    </span>
                                     <span>{{key | translate}}</span>
                             </td>
 
                                 <td *ngFor="let item of compareList">
-                                    <div *ngIf="key==='balcon'||key==='hall'
-                                    ||key==='p_Intrance'||key==='roof'||key==='salon'
-                                    ||key==='servant_Room'||key==='store'||key==='toilet_Num'
-                                    ||key==='trace'||key==='inter_view' ||key==='fron_view' ||key==='two_view' ||key==='kitchen' ||key==='washing_room'  ||key==='backyard' ||key==='parking'  ; else elseBlock">
+                                    <div *ngIf=" key==='hall'
+                                    ||key==='salon'
+                                     ||key==='store'
+                                     ||key==='inter_view' ||key==='fron_view' ||key==='two_view' ||key==='kitchen' ||key==='washing_room'  ||key==='backyard' ||key==='parking'  ; else elseBlock">
                                      <svg class="icon " [ngClass]="{'icon-cross':item[key] ==0,
-                                    'icon-checkmark':item[key] ==1 }"><use [attr.xlink:href]="item[key] ==0 ? '#icon-cross' :'#icon-checkmark'"></use></svg>
+                                    'icon-checkmark':item[key] ==1 }">
+                                    <use [attr.xlink:href]="item[key] ==0 ? '#icon-cross' :'#icon-checkmark'"></use>
+                                     </svg>
                                     </div>
+
                                     <ng-template #elseBlock> 
                                         <div  *ngIf="key==='status'; else elseBl">
-                                            <div class="card-label py-1" [class]="{'green': item['statusId'] == '1','moave':item['statusId'] == '4', 'orange': item['statusId'] == '2', 'pink': item['statusId'] == '3'}">
+                                            <div class="card-label py-1" 
+                                            [class]="{'green': item['statusId'] == '1', 'orange': item['statusId'] == '2', 'yellow': item['statusId'] == '3',  'pink': item['statusId'] == '4'}"
+                                          >
                                                 {{item[key]}}
                                             </div>
                                         </div>

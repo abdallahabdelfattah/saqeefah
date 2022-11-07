@@ -377,7 +377,9 @@
 "washing_room":"Laundry Room",
 "kitchen":"kitchen",
 "backyard":"Backyard",
-"Space":"Apartment Space"
+"Space":"Apartment Space",
+"PrivacyPolicy":"Privacy Policy"
+
 
 
 }

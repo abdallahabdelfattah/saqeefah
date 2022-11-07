@@ -477,12 +477,13 @@
                         {{ propertyDetails.apartment_Price | number }}
                         {{ "ر.س" | translate }}
                     </b>
-                    <div class="px-5 py-2" [class]="{
-                        green: propertyDetails.statusId == 1,
-                        orange: propertyDetails.statusId == 2,
-                        pink: propertyDetails.statusId == 3
-                        }" class="status badge">
+                    <div class="px-5 py-2 status badge"
+                    
+                    [class]="{'green': propertyDetails.statusId == 1, 'orange': propertyDetails.statusId == 2, 'yellow': propertyDetails.statusId == 3,  'pink': propertyDetails.statusId == 4}"
+                    >
                         {{ propertyDetails.status | translate }}
+
+
                     </div>
                 </div>
                 <hr />

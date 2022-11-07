@@ -183,7 +183,7 @@
     "hall":"صالة",
     "toilet_Num":"دورة المياه",
     "apartment_Price":"سعر الشقة",
-    "servant_Room":"غرفة خادمة",
+  "servant_Room":"غرفة خادمة",
    "Upload Images":"تحميل صور",
    "Website Settings":"اعدادات الموقع",
   "WebsiteInformation":"معلومات عن الموقع",
@@ -380,5 +380,6 @@
 "washing_room":"غرفة الغسيل",
 "kitchen":"مطبخ",
 "backyard":"حوش خاص",
-"Space":"المساحة"
+"Space":"المساحة",
+"PrivacyPolicy":"سياسة الاستخدام"
 }
