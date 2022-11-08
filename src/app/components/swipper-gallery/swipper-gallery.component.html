@@ -1,9 +1,16 @@
+
+
 <swiper dir="ltr" *ngIf="galleryImage" style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [spaceBetween]="10" [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
-    <ng-template swiperSlide *ngFor="let item of galleryImage"><img [src]="appRootUrl+item.path" /></ng-template>
+    <ng-template swiperSlide *ngFor="let item of galleryImage">
 
-
+        <div class="image-container"  style="height: 100%; width: 100%;">
+            <img [src]="item.path" />
+        </div>
+      
+    </ng-template>
 </swiper>
-<swiper *ngIf="galleryImage" (swiper)="thumbsSwiper = $event" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true" [watchSlidesProgress]="true" class="mySwiper">
-    <ng-template swiperSlide *ngFor="let item of galleryImage"><img [src]="appRootUrl+item.path" /></ng-template>
 
-</swiper>
+<!-- 
+<swiper *ngIf="galleryImage" (swiper)="thumbsSwiper = $event" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true" [watchSlidesProgress]="true" class="mySwiper2">
+    <ng-template swiperSlide *ngFor="let item of galleryImage"><img [src]="appRootUrl+item.path" /></ng-template>
+</swiper> -->
