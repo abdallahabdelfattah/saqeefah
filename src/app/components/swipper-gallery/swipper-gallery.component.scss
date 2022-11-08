@@ -71,8 +71,8 @@
 
 .swiper-slide img {
     display: block;
-    width: auto;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     @media only screen and (max-width: 600px) {
         min-width: 100%;
