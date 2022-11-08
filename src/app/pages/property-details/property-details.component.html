@@ -16,6 +16,10 @@
                     {{ "Building:" | translate }}
                     <span class="fw-bold">{{ propertyDetails.buildingName}}</span>
                 </p>
+                <p class="description" *ngIf="propertyDetails && propertyDetails.apartment_Num != null">
+                    {{ "apartment_Num" | translate }}:
+                    <span class="fw-bold">{{ propertyDetails.apartment_Num}}</span>
+                </p>
             </div>
             <!-- <app-gallery [galleryImage]="propertyDetails.images" *ngIf="propertyDetails && propertyDetails.images"></app-gallery> -->
 
