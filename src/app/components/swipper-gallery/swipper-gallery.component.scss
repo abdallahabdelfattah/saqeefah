@@ -30,24 +30,36 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .swiper {
     width: 100%;
-    height: 300px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .swiper-slide {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
+.swiper-slide:hover    img{
+    transform: scale(1.1,1.2);
+    transition: all 1s;
+}
+.swiper-slide    img {
+    transition: all 0.3s ease-in-out;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
 .mySwiper2 {
-    height: 380px !important;
-    width: auto !important;
+    height: 450px !important;
+    width: 100% !important;
 }
 
 .mySwiper {
@@ -73,7 +85,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:  contain;
     @media only screen and (max-width: 600px) {
         min-width: 100%;
     }

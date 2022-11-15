@@ -21,6 +21,16 @@ export class SwipperGalleryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   this.galleryImage.forEach(element => {
+    element.path =this.getUrl(this.appRootUrl+element.path);
+    });
+  
   }
+  getUrl(path:string){
+    path= path.replace(/[\/\\]/g,'/');
+    path= path.replace(/ /g,'%20');
+    return path;
+  }
+
 
 }
