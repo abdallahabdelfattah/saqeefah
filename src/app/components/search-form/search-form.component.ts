@@ -224,15 +224,15 @@ export class SearchFormComponent implements OnInit {
        return (this.form.value.projectId == 'all' && this.searchInallProjects ? x.project_Ref : this.form.value.projectId == x.project_Ref) &&
          (this.form.value.price == 'all' ? x : (x.apartment_Price >= this.minPrice && x.apartment_Price <= this.maxPrice)) &&
         (this.form.value.totalArea == 'all' ? x : ((x.apartment_Space) >= this.minArea && (x.apartment_Space ) <= this.maxArea)) &&
-         (this.form.value.bedroom == null ? x: this.form.value.bedroom == x.bed_Room_Num) &&
-         (this.form.value.internalStation == null ? true : this.form.value.internalStation == x.parking) &&
-        (this.form.value.serventRoom == null ? true : this.form.value.serventRoom == x.servant_Room) &&
-        (this.form.value.Front_view == null ? true : this.form.value.Front_view == x.Front_view || this.form.value.Front_view == x.two_view ) &&
-        (this.form.value.backyard == null ? true : this.form.value.backyard == x.backyard) &&
-        (this.form.value.store == null ? true : this.form.value.store == x.store) &&
-         (this.form.value.roof == null ? true : this.form.value.roof == x.roof) &&
-         (this.form.value.salon == null ? true : this.form.value.salon == x.salon) &&
-         (this.form.value.p_Intrance == null ? true : this.form.value.p_Intrance == x.p_Intrance) 
+         (this.form.value.bedroom == null || this.form.value.bedroom == false ? x : this.form.value.bedroom == x.bed_Room_Num) &&
+         (this.form.value.internalStation == null || this.form.value.internalStation == false ? x : this.form.value.internalStation == x.parking) &&
+        (this.form.value.serventRoom == null || this.form.value.serventRoom == false ? x : this.form.value.serventRoom == x.servant_Room) &&
+        (this.form.value.Front_view == null || this.form.value.Front_view ==false? x : this.form.value.Front_view == x.Front_view || this.form.value.Front_view == x.two_view ) &&
+        (this.form.value.backyard == null || this.form.value.backyard==false ? x : this.form.value.backyard == x.backyard) &&
+        (this.form.value.store == null || this.form.value.store ==false? x : this.form.value.store == x.store) &&
+         (this.form.value.roof == null || this.form.value.roof == false ? x : this.form.value.roof == x.roof) &&
+         (this.form.value.salon == null  || this.form.value.salon == false ? x : this.form.value.salon == x.salon) &&
+         (this.form.value.p_Intrance == null || this.form.value.p_Intrance == false ? x : this.form.value.p_Intrance == x.p_Intrance) 
         && (this.form.value.status == 'all' ? x.statusId : this.form.value.status == x.statusId);
 
     });
