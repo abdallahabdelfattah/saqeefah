@@ -81,7 +81,7 @@
 
                                     </label>
                                     <select class="form-select form-select-sm" formControlName="project_Ref">
-                                        <option value=0></option>
+                                        <option selected value='0'>{{'--Please Select--' | translate}}</option>
                                         <option *ngFor="let i of projects" [value]="i.id">{{i.value | translate}}
                                         </option>
                                     </select>
@@ -93,7 +93,7 @@
 
                                     </label>
                                     <select class="form-select form-select-sm" formControlName="payment_Method">
-                                        <option value=0></option>
+                                        <option selected value='0'>{{'--Please Select--' | translate}}</option>
                                         <option *ngFor="let i of paymentMethods" [value]="i.id">{{i.value | translate}}
                                         </option>
                                     </select>
@@ -118,7 +118,7 @@
 
                                     </label>
                                     <select class="form-select form-select-sm" formControlName="city">
-                                        <option> {{'--Please Select--' | translate}} </option>
+                                        <option value="0"> {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of cities" [value]="i.id">{{i.value}}</option>
                                     </select>
                                 </div>
@@ -129,7 +129,7 @@
 
                                     </label>
                                     <select class="form-select form-select-sm" formControlName="district">
-                                        <option> {{'--Please Select--' | translate}} </option>
+                                        <option value="0"> {{'--Please Select--' | translate}} </option>
                                         <option *ngFor="let i of districts" [value]="i.id">{{i.value}}</option>
                                     </select>
                                 </div>
@@ -151,7 +151,7 @@
                                     <label class="form-label">{{'Price' | translate}}</label>
                                     <select class="form-select form-select-sm mb-1" formControlName="price_Avg"
                                         aria-label=".form-select-lg example">
-                                        <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                                        <option selected value='0'>{{'--Please Select--' | translate}}</option>
                                         <option *ngFor="let item of priceCategory" value="{{item.id}}">{{item.value}}
                                         </option>
                                     </select>
@@ -172,7 +172,7 @@
                                     <label class="form-label">{{'The area of the apartment' | translate}}</label>
                                     <select class="form-select form-select-sm mb-1" formControlName="space_Avg"
                                         aria-label=".form-select-lg example">
-                                        <option selected value='all'>{{'--Please Select--' | translate}}</option>
+                                        <option selected value='0'>{{'--Please Select--' | translate}}</option>
                                         <option *ngFor="let item of areaCategory" value="{{item.id}}">{{item.value |
                                             translate}}</option>
                                     </select>
@@ -237,6 +237,49 @@
                                     </label>
                                 </div>
                             </div>
+
+
+                            <!-- more spec -->
+
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <label for="checksalon" class="containerRadio form-check-label">{{"salon" |translate}}
+                                        <input class="form-check-input" id="checksalon" type="checkbox" [value]="1"
+                                            [checked]="myFormGroup.controls['salon'].value" formControlName="salon">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <label for="checkfront" class="containerRadio form-check-label">{{"Front_view" |translate}}
+                                        <input class="form-check-input" id="checkfront" type="checkbox" [value]="1"
+                                            [checked]="myFormGroup.controls['Front_view'].value" formControlName="Front_view">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <label for="Backyard" class="containerRadio form-check-label">{{"Backyard" |translate}}
+                                        <input class="form-check-input" id="Backyard" type="checkbox" [value]="1"
+                                            [checked]="myFormGroup.controls['backyard'].value" formControlName="backyard">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex">
+                                    <label for="p_Intrance" class="containerRadio form-check-label">{{"p_Intrance" |translate}}
+                                        <input class="form-check-input" id="p_Intrance" type="checkbox" [value]="1"
+                                            [checked]="myFormGroup.controls['p_Intrance'].value" formControlName="p_Intrance">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- / more spec -->
                         </div>
 
                         <div class="row">

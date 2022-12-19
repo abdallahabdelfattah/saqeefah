@@ -1,7 +1,8 @@
 
 
+
 <div class="slider-1 container">
-    <div class="row my-5" *ngIf="slider?.isActive">
+    <div class="row my-5" *ngIf="slider?.isActive && slider?.sliderAttachment.length>0 ">
         <div class="col-md-12">
             <h4 class="section-title"><span class="title">{{slider?.title | translate}}</span></h4>
             <p class="" [innerHtml]="slider?.description">

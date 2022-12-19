@@ -42,14 +42,13 @@ siteInformation:siteInfo;
 
 
   getAllProjects() {
-    debugger
+
     const startTime = new Date().getTime();
     this.projectAndListService.getFilteredProjects(this.language.getLanguageID(), 0/*both ready for sale and soon for sale*/).subscribe((response: any) => {
       this.projects = []
       this.projectsForSale = []
       this.projectsForSaleSoon = []
       if (response.succeeded) {
-        debugger
         const endTime = new Date().getTime();
         const diff = (endTime - startTime) / 1000 + 'Seconds';
        // alert(diff);

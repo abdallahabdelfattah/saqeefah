@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   appRoot:"https://api-stage.saqeefah.com",
+  //appRoot:"https://dev.api.saqeefah.com",
   lang:"ar",
   minPrice:500000,
   maxprice:4000000,
@@ -13,7 +14,7 @@ export const environment = {
   maxArea:1000,
   areaStep:50,
   priceRange:100000,
-  areaRange:30
+  areaRange:30, 
   // appRoot:"https://localhost:7252"
 };
 

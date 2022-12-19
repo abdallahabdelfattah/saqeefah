@@ -20,10 +20,15 @@
 <section class="section bg-light about-text-section" *ngIf="ceoWord">
   <div class="container">
     <div class="row flex-item-center">
-      <div class="col-md-6">
-        <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + ceoWordUrl + ')' }"></div>
+      <div class="col-md-7">
+
+        <div class="img-container" >
+          <img [src]="ceoWordUrl" alt="">
+        </div>
+       
+
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="about-div-text">
           <h2>{{ ceoWord.title }}</h2>
 

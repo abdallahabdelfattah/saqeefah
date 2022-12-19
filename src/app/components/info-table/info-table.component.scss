@@ -57,3 +57,8 @@ tbody {
     }
   }
 }
+
+.table-responsive{
+  max-height: 2000px !important;
+  overflow: auto;
+}

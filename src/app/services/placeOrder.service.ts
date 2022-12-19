@@ -51,6 +51,7 @@ export class PlaceOrderService  {
         return result; 
     }
     Post(Model:any){
+        debugger;
 let Mod={
     interest_Date:Model.interest_Date,
     project_Ref: 0,
@@ -65,12 +66,16 @@ let Mod={
     price_Avg:Model.price_Avg,//
     space_Avg:Model.space_Avg,
     bed_Room:Model.bed_Room,
-    parking:Model.parking,
-    terace:Model.terace,
-    balcony:Model.balcony,
-    roof:Model.roof,
-    store:Model.store,
-    servent_Room:Model.servent_Room,
+    parking:Model.parking?1:0,
+    terace:Model.terace?1:0,
+    balcony:Model.balcony?1:0,
+    roof:Model.roof?1:0,
+    store:Model.store?1:0,
+    servent_Room:Model.servent_Room?1:0,
+    salon:Model.salon?1:0,
+    backyard:Model.backyard?1:0,
+    fron_view:Model.Front_view?1:0,
+    p_intrance:Model.p_Intrance?1:0,
 
     additional_Reqst:Model.additional_Reqst
 };

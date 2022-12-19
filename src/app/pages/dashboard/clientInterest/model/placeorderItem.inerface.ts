@@ -19,6 +19,10 @@ export interface  placeorderItem{
   roof: string,
   servent_Room: string,
   store: string,
+  salon: string,
+  p_intrance: string,
+  fron_view: string,
+  backyard: string,
   additional_Reqst:string
 }
 

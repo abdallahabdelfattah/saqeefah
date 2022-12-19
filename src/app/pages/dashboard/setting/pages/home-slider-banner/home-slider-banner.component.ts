@@ -51,7 +51,6 @@ export class HomeSliderBannerComponent implements OnInit{
 
 
   onClickSubmit(e) {
-    debugger
     e.stopPropagation();
     this.click.emit(e);
     if (this.myFormGroup.invalid) {
@@ -142,7 +141,6 @@ export class HomeSliderBannerComponent implements OnInit{
 
   uploadImages(e) {
     e.stopPropagation();
-    debugger
     if (this.images.length > 0) {
       let sliderTypeId= SliderTypes.SliderHomeBanar;
       this.formData = new FormData();

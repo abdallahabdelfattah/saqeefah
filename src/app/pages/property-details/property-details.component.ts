@@ -49,7 +49,11 @@ public myFormGroup: FormGroup = new FormGroup({
 getPropertyDetails(){
 this.property.getAppartmentDetails(this.propertyId).subscribe((res:any)=>{
 if(!res.isError){
-  this.propertyDetails = res.result.data
+  this.propertyDetails = res.result.data; 
+  if(this.propertyDetails.coverImage)
+  {
+   this.propertyDetails.images.push( {attachmentId:0, path:this.propertyDetails.coverImage});
+  }
 console.log('property',res)
 this.initializeFormGroup();
 }

@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-3">
         <app-search-form (obj)="filter($event)" [allProp]="propertyOfSelectedBuildingForFilter"
-            [searchInallProjects]="false"></app-search-form>
+            [searchInallProjects]="true"></app-search-form>
 
     </div>
     <div class="col-md-9">
@@ -40,7 +40,7 @@
             <div class="row" *ngSwitchCase="'list'">
                 <div class="col-12">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th> {{'Apartment'|translate}} </th>
@@ -56,14 +56,14 @@
                         <tbody>
                             <tr *ngFor="let item of filteredProperties">
                                 <td> {{item.apartment_Num}} </td>
-                                <td> {{item.floor_Num}} </td>
+                                <td> {{item.floor_Name}} </td>
                                 <td> {{item.basic_Space}} </td>
                                 <td> {{item.apartment_Price | number}} {{'ر.س' | translate}} </td>
                                 <td> {{item.bed_Room_Num}} </td>
                                 <td>{{item.toilet_Num}}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <ul class="other-specs">
+                                        <ul class="other-specs m-0 p-0">
 
                                             <li *ngIf="item.roof>0" class="list-inline-item">
                                                 <span>
@@ -74,13 +74,7 @@
                                                     translate}} 
                                                 </span>
                                             </li>
-                                            <li *ngIf="item.dressRoom>0" class="list-inline-item "><span class="">{{'dressRoom'|
-                                                    translate}} 
-                                                </span>
-                                            </li>
-                                            <li *ngIf="item.serventRoom>0" class="list-inline-item "><span class="">{{'serventRoom'|
-                                                    translate}}  </span>
-                                            </li>
+                                          
                                             <li *ngIf="item.store>0" class="list-inline-item "><span class="">{{'store'| translate}} 
                                                 </span>
                                             </li>
