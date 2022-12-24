@@ -17,7 +17,7 @@ export class ProjectDetailsComponent implements OnInit, AfterViewChecked {
   sendBuildId!:string
 projectDetails:any
 imageMap = []
-  constructor(@Inject(DOCUMENT) private document: Document, private elementRef: ElementRef,private sanitized: DomSanitizer,private route: ActivatedRoute,private generalService:GenaricService, private projects:ProjectAndListService,private language:changeLanguageService) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private elementRef: ElementRef,private sanitized: DomSanitizer,private route: ActivatedRoute,private generalService:GenaricService, private projects:ProjectAndListService,private language:changeLanguageService) {}
   appRootUrl = environment.appRoot+'/';
   ngOnInit(): void {
     this.getProjectDetails()
@@ -29,20 +29,30 @@ imageMap = []
   }
 
 getProjectDetails(){
+  debugger
   let projectId = this.route.snapshot.paramMap.get('id')
   console.log('project id',projectId)
   this.projects.getProjectDetails(this.language.getLanguageID(),projectId).subscribe((response:any)=>{
-    console.log('projectDetails',response)
-
-    if(!response.isError){
-      this.projectDetails = response.data
-    this.sendBuildId = response.data.buildingApartments[0].build
+   
+      console.log('res', response)
+      
+    if(!response.errors){
+      
+      this.projectDetails = response?.data
+    
+     
+      this.sendBuildId = response.data.buildingApartments[0].build
+         
     if(response.data.masterPlane != null){
       this.getMapImageHardCode = this.sanitized.bypassSecurityTrustHtml(response.data.masterPlane.hardCode)
 
     }
+   
 
     }
+    
+   
+    
   })
 }
 ngAfterViewChecked() {

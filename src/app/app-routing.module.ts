@@ -12,6 +12,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 import { SearchComponent } from './pages/search/search.component';
+import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { UserlayoutComponent } from './pages/userSite/userlayout/userlayout.component';
 import { AuthGuard } from './shared/services/auth.guards';
 
@@ -70,6 +71,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'policy',
+    component:UsagePolicyComponent
+
   },
   {
   

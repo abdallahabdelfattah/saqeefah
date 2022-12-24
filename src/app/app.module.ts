@@ -52,6 +52,7 @@ import { siteInformationService } from './shared/services/siteInformation.servic
 import { PlaceOrderService } from './services/placeOrder.service';
 import { SiteInformationSharedService } from './services/site-information-shared.service';
 import { AllSettingSharedService } from './services/all-setting-shared.service';
+import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 
 
 
@@ -64,6 +65,7 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
     FooterComponent,
     TopHeaderComponent,
     PropertiesComponent,
+    UsagePolicyComponent,
  
   
   ],
