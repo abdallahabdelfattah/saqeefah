@@ -1,4 +1,25 @@
-.box-chat{
+
+
+
+#whatsapp-chat {
+  box-sizing: border-box !important;
+
+  outline: none !important;
+  position: fixed;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
+  bottom: 90px;
+  right: 30px;
+  overflow: hidden;
+  z-index: 999999;
+  animation-name: showchat;
+  animation-duration: 1s;
+  transform: scale(1);
+}
+
+
+
   a:link,
   a:visited {
     color: #444;
@@ -17,11 +38,13 @@
   
   /* CSS Multiple Whatsapp Chat */
   .whatsapp-name {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 0;
-    line-height: 0.5;
+    line-height: 0.7;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   
   #whatsapp-chat {
@@ -117,18 +140,18 @@
   span.my-number {
     display: none;
   }
-  /* .blanter-msg {
-    color: #444;
-    padding: 20px;
+ .blanter-msg {
+    // color: #444;
+    // padding: 20px;
     font-size: 12.5px;
     text-align: center;
     border-top: 1px solid #ddd;
-  } */
+  } 
   textarea#chat-input {
       border: none;
       font-family: "Arial", sans-serif;
       width: 100%;
-      height: 20px;
+      height: 40px;
       outline: none;
       resize: none;
       padding: 10px;
@@ -136,14 +159,14 @@
   }
   
   a#send-it {
-    width: 30px;
+    width: 40px;
     font-weight: 700;
-    padding: 10px 10px 0;
-    background:#eee;
-    border-radius: 10px;
+    padding: 10px 10px 0; 
+    background: #eee;
+    /* border-radius: 10px; */
     
     svg {
-      fill:#a6a6a6;
+      fill: #a6a6a6;
       height: 24px;
       width: 24px;
     }
@@ -408,4 +431,6 @@
   }
   
   
+.chat-us-button{
+  padding: 0px 5px ;
 }
