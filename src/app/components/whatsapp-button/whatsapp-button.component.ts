@@ -9,8 +9,7 @@ export class WhatsappButtonComponent implements OnInit {
 
   whatsapp_url = 'https://api.whatsapp.com/send' ;
   message:string="";
-  whatsapp_phone:string=""; 
-  whatsapp_text:string="Hello"; 
+  whatsapp_phone:string="966505203091"; 
   constructor() { }
 
   ngOnInit(): void {
@@ -46,10 +45,8 @@ export class WhatsappButtonComponent implements OnInit {
       .removeClass("hide");
   });
   }
-
-
   send(){
-    this.whatsapp_url = `${this.whatsapp_url}?phone=${this.whatsapp_phone}&text=${this.whatsapp_text}`;
-    
+    this.whatsapp_url = `${this.whatsapp_url}?phone=${this.whatsapp_phone}&text=${this.message}`;
+    window.open(this.whatsapp_url, "_blank");
   }
 }
