@@ -3,7 +3,6 @@
 
 #whatsapp-chat {
   box-sizing: border-box !important;
-
   outline: none !important;
   position: fixed;
   width: 350px;
@@ -12,7 +11,7 @@
   bottom: 90px;
   right: 30px;
   overflow: hidden;
-  z-index: 999999;
+  z-index: 10000;
   animation-name: showchat;
   animation-duration: 1s;
   transform: scale(1);
@@ -58,7 +57,7 @@
     bottom: 90px;
     right: 30px;
     overflow: hidden;
-    z-index: 99;
+    z-index: 10000;
     animation-name: showchat;
     animation-duration: 1s;
     transform: scale(1);
@@ -107,6 +106,11 @@
     float: left;
     margin: 0 10px 0 0;
   }
+
+  .info-avatar img:lang(ar){
+    float: right;
+    margin: 0 0 0 10px;
+  }
   
   a.informasi {
     padding: 20px;
@@ -147,6 +151,10 @@
     text-align: center;
     border-top: 1px solid #ddd;
   } 
+
+ .start-chat .blanter-msg:lang(ar){
+    direction: ltr;
+  }
   textarea#chat-input {
       border: none;
       font-family: "Arial", sans-serif;
@@ -156,6 +164,10 @@
       resize: none;
       padding: 10px;
       font-size: 14px;
+      text-align: left;
+      &:lang(ar){
+        text-align: right;
+      }
   }
   
   a#send-it {
@@ -169,6 +181,10 @@
       fill: #a6a6a6;
       height: 24px;
       width: 24px;
+
+      &:lang(ar){
+        transform: rotateY(180deg);
+      }
     }
   }
   
@@ -189,6 +205,7 @@
   
   .start-chat .blanter-msg {
     display: flex;
+    direction: rtl;
   }
   #get-number {
     display: none;
@@ -200,6 +217,11 @@
     color: #fff;
     font-size: 30px;
   
+  }
+
+  a.close-chat:lang(ar){
+    left: 15px;
+    right: auto;
   }
   
   @keyframes ZpjSY{
@@ -395,7 +417,20 @@
       left: -12px;
       width: 12px;
       height: 19px;
+
   }
+  }
+
+  .kAZgZq:lang(ar){
+    margin-right: -54px;
+    margin-left: 0;
+    border-radius: 8px 0px 8px 8px;
+  }
+
+  .kAZgZq:lang(ar)::before{
+    left: auto;
+    right: -12px;
+    transform: rotateY(180deg)
   }
   
   .bMIBDo {
