@@ -37,6 +37,7 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { PlaceOrderApartmentComponent } from './place-order-apartment/place-order-apartment.component';
+import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { PlaceOrderApartmentComponent } from './place-order-apartment/place-orde
     InfoTableComponent,
     HomeSliderComponent,
     PlaceOrderApartmentComponent,
+    WhatsappButtonComponent,
     
     // VedioComponent
   ],
@@ -106,7 +108,8 @@ VgBufferingModule
     VideoPlayerComponent,
     InfoTableComponent,
     HomeSliderComponent,
-    PlaceOrderApartmentComponent
+    PlaceOrderApartmentComponent,
+    WhatsappButtonComponent
     // VedioComponent
   ],
   providers: [

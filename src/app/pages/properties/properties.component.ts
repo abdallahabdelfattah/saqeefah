@@ -13,32 +13,12 @@ export class PropertiesComponent implements OnInit {
   AllProperties:never[] = []
   filteredProperties:never[] = []
 
-  // listResult = [
-  //   {
-  //     img:'assets/images/list/l2.jpg'
-  //   },
-  //   {
-  //     img:'assets/images/list/l4.jpg'
-  //   },
-  //   {
-  //     img:'assets/images/list/l4.jpg'
-  //   },
-  //   {
-  //     img:'assets/images/list/l2.jpg'
-  //   },
-  //   {
-  //     img:'assets/images/list/l2.jpg'
-  //   },
-  //   {
-  //     img:'assets/images/list/l4.jpg'
-  //   },
-  // ]
   constructor(private properties:ProjectAndListService,private language:changeLanguageService) { }
 
   getAllProperties(){
     this.properties.getAllProperties().subscribe((response:any)=>{
       // console.log('response',response)
-      
+      debugger
   if(!response.isError){
     this.AllProperties = response.result.data
     this.filteredProperties =  this.AllProperties
@@ -73,13 +53,7 @@ export class PropertiesComponent implements OnInit {
     this.filteredProperties = e;
    
  }
-//  sortAssending(){
-//   this.AllProperties.sort((a:any, b:any) => b.projectName.localeCompare(a.projectName))
-//   console.log(this.AllProperties)
-//  }
-//  sortDessending(){
-//   this.AllProperties.sort((a:any, b:any) => a.projectName - b.projectName);
-//  }
+
  refresh(){
   window.location.reload();
  }
