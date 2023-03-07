@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhatsappButtonComponent implements OnInit {
 
-  public ngx_whatsapp_url = 'https://api.whatsapp.com/send' ;
-
+  whatsapp_url = 'https://api.whatsapp.com/send' ;
+  message:string="";
+  whatsapp_phone:string=""; 
+  whatsapp_text:string="Hello"; 
   constructor() { }
 
   ngOnInit(): void {
@@ -43,9 +45,11 @@ export class WhatsappButtonComponent implements OnInit {
       .addClass("show")
       .removeClass("hide");
   });
-
-  
-
   }
 
+
+  send(){
+    this.whatsapp_url = `${this.whatsapp_url}?phone=${this.whatsapp_phone}&text=${this.whatsapp_text}`;
+    
+  }
 }

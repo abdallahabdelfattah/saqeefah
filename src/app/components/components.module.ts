@@ -20,7 +20,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LogoSliderOneComponent } from './logo-slider-one/logo-slider-one.component';
 import { LogoSlidertowComponent } from './logo-slidertow/logo-slidertow.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchProjectFormComponent } from './search-project-form/search-project-form.component';
 import { SearchClientOrdersComponent } from './search-client-orders/search-client-orders.component';
 
@@ -73,7 +73,7 @@ import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.compo
     CarouselModule,
     SwiperModule,
     GalleryModule,
-    
+    FormsModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {
@@ -109,7 +109,8 @@ VgBufferingModule
     InfoTableComponent,
     HomeSliderComponent,
     PlaceOrderApartmentComponent,
-    WhatsappButtonComponent
+    WhatsappButtonComponent,
+     
     // VedioComponent
   ],
   providers: [
