@@ -107,7 +107,9 @@
 
  .section {
     //  padding: 7em 0;
-     position: relative
+     position: relative;
+     padding: 70px 0;
+
  }
  /*===== About CSS =====*/
 
@@ -201,13 +203,12 @@
      }
  }
 
- .img-container{
-    height: 600px;
-}
+//  .img-container{
+//     height: 600px;
+// }
 .img-container img{
     width: 100%; 
     object-fit: contain;
-    height: 100%;
 }
 
 
@@ -502,6 +503,7 @@
     background-color: #fff;
     padding: 24px;
     z-index: 2;
+    margin-top: 22px;
 
     // .row>div:nth-child(2) & {
     //     margin-inline-start: -60px;

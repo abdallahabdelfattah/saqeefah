@@ -19,38 +19,59 @@ button {
 
 }
 
-i.fab {
-  border: 2.3999px solid white;
+
+
+
+.icon_link{
+  border: 2.4px solid #fff;
   border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-inline-end: 6px;
+  display: inline-block;
+  text-align: center;
   position: relative;
+  top: 6px;
 }
 
-.fa-snapchat-ghost:before {
-  content: "\f2ac";
-  font-size: 11px;
-  /* line-height: 1; */
-  position: absolute;
-  left: 2.2px;
-  top: 2.1px;
+a.icon_link i{
+  font-size: 15px;
+  position: relative;
+  top: -11px;
 }
 
-.fa-blog:before {
-  font-size: 11px;
-  /* line-height: 1; */
-  position: absolute;
-  left: 2.4px;
-  top: 2.1px;
+// i.fab {
+//   border: 2.3999px solid white;
+//   border-radius: 50%;
+//   position: relative;
+// }
 
-}
+// .fa-snapchat-ghost:before {
+//   content: "\f2ac";
+//   font-size: 11px;
+//   /* line-height: 1; */
+//   position: absolute;
+//   left: 2.2px;
+//   top: 2.1px;
+// }
 
-.fa-blogger-b:before {
+// .fa-blog:before {
+//   font-size: 11px;
+//   /* line-height: 1; */
+//   position: absolute;
+//   left: 2.4px;
+//   top: 2.1px;
 
-  font-size: 10px;
-  /* line-height: 1; */
-  position: absolute;
-  left: 3.5px;
-  top: 2.2px;
-}
+// }
+
+// .fa-blogger-b:before {
+
+//   font-size: 10px;
+//   /* line-height: 1; */
+//   position: absolute;
+//   left: 3.5px;
+//   top: 2.2px;
+// }
 
 @media screen and (max-width: 480px) {
 

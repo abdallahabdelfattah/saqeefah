@@ -1,6 +1,6 @@
 .map-container {
     position: relative;
-    top: 0;
+    top: 30px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -10,6 +10,8 @@
     height: 80vh;
     overflow: visible;
 }
+
+
 
 #map {
     height: 100%;
@@ -21,3 +23,33 @@
     color: #071c1f;
 }
 
+
+.status_div{
+
+    background: #fff;
+    position: absolute;
+    top: 50px;
+    z-index: 1000;
+    width: 100px;
+    padding: 10px 10px 0px;
+    right: 0;
+    
+    img{
+        width: 25px;
+    }
+
+    span{
+        padding-inline-start: 10px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .map-frame{
+        height: 60vh;
+    }
+
+    .status_div{
+    top: 15px;
+    }
+}

@@ -12,14 +12,27 @@ export class MarkerService {
   // capitals: string = 'assets/data/usa-capitals.json';
 
   constructor(private http: HttpClient,private popupService: PopupService , private aPICallerService:APICallerService, private language:changeLanguageService) { }
-  makeCapitalMarkers(map: L.Map): void { 
+  makeCapitalMarkers(map: L.Map): void {
+     
  
      let ApiUrl=  APIs.projects.GetProjects+"?languageId="+this.language.getLanguageID(); 
     this.aPICallerService.get(ApiUrl).subscribe((res: any) => {
         for (const c of res.result.data) {
+
+          debugger;
+
+          var greenIcon = new L.Icon({
+            iconUrl: c.statusId== 1? 'assets/images/icons/map_for_sale.png': c.statusId== 2?'assets/images/icons/map_soon.png': 'assets/images/icons/map_sold.png',
+            shadowUrl: 'assets/images/icons/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          });
+
           const lon = c.longitude;
           const lat = c.latitude;
-          const marker = L.marker([lat, lon]);
+          const marker = L.marker([lat, lon], {icon: greenIcon});
           marker.bindPopup(this.popupService.makeCapitalPopup(c));
           marker.addTo(map);
         }
