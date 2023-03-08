@@ -19,8 +19,7 @@ export class MarkerService {
     this.aPICallerService.get(ApiUrl).subscribe((res: any) => {
         for (const c of res.result.data) {
 
-          debugger;
-
+        
           var greenIcon = new L.Icon({
             iconUrl: c.statusId== 1? 'assets/images/icons/map_for_sale.png': c.statusId== 2?'assets/images/icons/map_soon.png': 'assets/images/icons/map_sold.png',
             shadowUrl: 'assets/images/icons/marker-shadow.png',
