@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor, Toolbar } from 'ngx-editor';
 import { ToastrService } from 'ngx-toastr';
 import { SliderTypes } from 'src/app/shared/Enums/enums';
+import { Helper } from 'src/app/shared/helper/helper';
 import { environment } from 'src/environments/environment';
 import { ConfirmationDialogComponent } from '../../../confirmation-dialog/confirmation-dialog.component';
 import jsonDoc from '../../models/doc';
@@ -57,15 +58,15 @@ export class HomeSliderBannerComponent implements OnInit{
       this.showError = true;
       return;
     }
-    // this.slider = {
-    //   titleEn: this.myFormGroup.value.TitleEn,
-    //   titleAr: this.myFormGroup.value.TitleAr,
-    //   descriptionEn: this.myFormGroup.value.DescriptionEn,
-    //   descriptionAr: this.myFormGroup.value.DescriptionAr,
-    //   //id: SliderTypes.SliderHomeBanar,
-    //   id:this.myFormGroup.value.id
-    // };
-
+    
+    if(this.images.length>0)
+    {
+      if(!Helper.allowedFileSize(this.images[0]))
+      {
+        this.toastr.error("Max File allowed  500 kb"); 
+        return; 
+      }
+    }
 
     if (this.images.length > 0) {
       let sliderTypeId= SliderTypes.SliderHomeBanar;
@@ -109,10 +110,7 @@ export class HomeSliderBannerComponent implements OnInit{
   onInputChange(event) {
     this.images=[];
     if (event.target.files) {
-      //for (var i = 0; i < event.target.files.length; i++) {
-        // this.images.push(<File>event.target.files[i])
         this.images.push(<File>event.target.files[0])
-      //}
     }
   }
   DeleteImage(attachmentId: number) {

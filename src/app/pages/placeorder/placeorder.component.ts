@@ -244,7 +244,6 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
  if(this.myFormGroup.valid){
   console.log('test',this.myFormGroup.value)
   this.service.Post(this.myFormGroup.value).subscribe(res=>{
-    debugger;
         if(!res.isError)
         {
           this.toastr.success("Successfully Updated")
