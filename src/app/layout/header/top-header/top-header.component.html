@@ -48,9 +48,10 @@
     </div>
 </div>
 
-<div class="short-cut-menu d-none d-lg-block">
+<div class="short-cut-menu d-lg-block">
     <ul class=" list-inline mb-0">
         <li class="list-inline-item1 mb-2"><a routerLink="/favorites"><span class="icon"><i class="fas fa-heart"></i></span> {{'favorites' | translate}} <span class="count">{{favorite.checkFavoritesCounter()}}</span></a></li>
         <li class="list-inline-item1 mb-1"><a routerLink="/compare"><span class="icon"><i class="fas fa-swatchbook"></i></span> {{'compare' | translate}} <span class="count">{{compare.checkCompareCounter()}}</span> </a></li>
+        <li class="list-inline-item1 mb-1"><a href="https://api.whatsapp.com/send?phone={{ siteInformation?.whatsAppNumber }}" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fab fa-whatsapp"></i></span> {{'whatsapp' | translate}} </a></li>
     </ul>
 </div>
