@@ -18,7 +18,7 @@
         height: 100%;
         width: calc(100% + 100px);
         left: -100px;
-        animation: zoom-move 20s linear infinite;
+        animation: zoom-move 5s linear infinite;
       }
       @keyframes zoom-move {
         0% {
