@@ -21,7 +21,7 @@ export class MarkerService {
 
         
           var greenIcon = new L.Icon({
-            iconUrl: c.statusId== 1? 'assets/images/icons/map_for_sale.png': c.statusId== 2?'assets/images/icons/map_soon.png': 'assets/images/icons/map_sold.png',
+            iconUrl: c.statusId== 1? 'assets/images/icons/for_sale_icon.png': c.statusId== 2?'assets/images/icons/soon_icon.png': 'assets/images/icons/sold_icon.png',
             shadowUrl: 'assets/images/icons/marker-shadow.png',
             iconSize: [25, 41],
             iconAnchor: [12, 41],

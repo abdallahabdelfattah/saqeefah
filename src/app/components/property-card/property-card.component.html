@@ -1,5 +1,5 @@
-<div class="card property-card {{viewType}}" style="cursor: pointer;">
-    <div class="img-panel">
+<div class="card property-card {{viewType}}" [ngStyle]="{'cursor': property.statusId!=4?'pointer':'not-allowed'}"  >
+    <div class="img-panel" (click)="navigateToDetails(property.apartment_Id, property.statusId)">
         <div class="imagebox">
             <div class="img-container">
                 <img [src]="propertyImageUrl" alt="">
@@ -24,11 +24,10 @@
                 </h5>
             </div>
         </div>
-
     </div>
     <div class="card-body">
-        <h5 class="unit-title">{{property.apartment_Num}}</h5>
-        <div class="unit-specs">
+        <h5 class="unit-title" (click)="navigateToDetails(property.apartment_Id, property.statusId)">{{property.apartment_Num}}</h5>
+        <div class="unit-specs" >
             <ul class="list-inline m-0">
                 <li class="list-inline-item">
                     <span class="text">

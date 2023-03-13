@@ -28,7 +28,7 @@ appRootUrl=environment.appRoot+'/';
     this.sliderServices.getAllSliderByidForUser(SliderTypes.SliderHomeBanar,this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response?.isError){
       this.slider=response?.result?.data
-      console.log('slider', this.slider)
+      // console.log('slider', this.slider)
   }
     })
   }

@@ -114,16 +114,12 @@ export class SearchFormComponent implements OnInit {
         if (res.result.data.length > 0) {
 
           res.result.data.forEach(element => {
-            // if (element.id != 2 && element.id != 3) {
-            //   let item: pickList = {} as pickList;
-            //   item.id = element.id
-            //   item.value = element.name
-            //   this.apartmentsStatus.push(item);
-            // }
-            let item: pickList = {} as pickList;
-            item.id = element.id
-            item.value = element.name
-            this.apartmentsStatus.push(item);
+            if (element.id != 4) {
+              let item: pickList = {} as pickList;
+              item.id = element.id
+              item.value = element.name
+              this.apartmentsStatus.push(item);
+            }
 
           });
           //this.form.patchValue({ status: 1 });//متاح
