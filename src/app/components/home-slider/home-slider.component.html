@@ -17,7 +17,7 @@
                         <h4>
                             {{item?.title}} 
                         </h4>
-                        <p>
+                        <p *ngIf="item.description!='null'">
                             {{item?.description}}
                         </p>
                     </div>

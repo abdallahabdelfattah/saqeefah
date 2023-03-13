@@ -48,7 +48,7 @@ export class EditPropertyComponent implements OnInit {
     {
       if(!Helper.allowedFileSize(this.propertyImageThumb))
       {
-        this.toastr.error("Max File allowed  2 MB "); 
+        this.toastr.error("Max File allowed  500 kb "); 
         return; 
       }
       this.formData.append('CoverImage', this.propertyImageThumb, this.propertyImageThumb.name)
@@ -61,7 +61,7 @@ export class EditPropertyComponent implements OnInit {
     {
       if(!Helper.allowedFileSize(this.propertyImageGallery[i]))
       {
-        this.toastr.error("Max File allowed  2 MB "); 
+        this.toastr.error("Max File allowed  500 kb "); 
         return; 
       }
       this.formData.append("Images", this.propertyImageGallery[i], this.propertyImageGallery[i].name);

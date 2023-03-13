@@ -93,7 +93,7 @@ const routes: Routes = [
 ];
 const routerOptions: ExtraOptions = {
   useHash: true,
-  // scrollPositionRestoration: 'enabled',
+   scrollPositionRestoration: 'enabled',
   // anchorScrolling: 'enabled',
   // scrollOffset: [0, 64],
   // ...any other options you'd like to use
