@@ -51,7 +51,6 @@ export class PlaceOrderService  {
         return result; 
     }
     Post(Model:any){
-        debugger;
 let Mod={
     interest_Date:Model.interest_Date,
     project_Ref: 0,

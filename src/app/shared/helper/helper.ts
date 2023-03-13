@@ -11,7 +11,7 @@ export class Helper {
 
     public static allowedFileSize(file: any) {
         const fileSize = file.size / 1024 / 1024; // in MiB
-        return !(fileSize > 2)
+        return !(fileSize > 0.5)
       }
 
       

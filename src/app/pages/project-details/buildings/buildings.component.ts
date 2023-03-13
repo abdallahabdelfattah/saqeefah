@@ -14,8 +14,6 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
   propertyOfSelectedBuilding:any[]; 
   propertyOfSelectedBuildingForFilter:any[] = []
   getBuildingProperty(building){
-
-    debugger
     if(this.buildings != undefined){
       if(building != undefined){
         let selectedBuild  = this.buildings.filter((item)=> item.build == building)

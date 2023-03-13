@@ -161,7 +161,7 @@ header {
     position: fixed;
     z-index: 1000;
     left: 0px;
-    top: 50%;
+    top: 40%;
     font-size: 14px;
 
     a {
@@ -212,4 +212,10 @@ header {
 
 .scrolled {
     background-color: #fff;
+}
+
+@media screen and (max-width: 768px){
+    .short-cut-menu{
+        top: 30%
+    }
 }

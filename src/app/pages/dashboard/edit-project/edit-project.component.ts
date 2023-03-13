@@ -56,7 +56,7 @@ export class EditProjectComponent implements OnInit {
     {
       if(!Helper.allowedFileSize(this.projectImageThumb))
       {
-        this.toastr.error("Max File allowed  2 MB "); 
+        this.toastr.error("Max File allowed  500 kb "); 
         this.uploadWorking = false;
         this.projectImageGallery=[];
         this.masterPlanData=[] as MasterPlan[];
@@ -70,7 +70,7 @@ export class EditProjectComponent implements OnInit {
     for (var i = 0; i < this.projectImageGallery.length; i++) {
       if(!Helper.allowedFileSize(this.projectImageGallery[i]))
       {
-        this.toastr.error("Max File allowed  2 MB "); 
+        this.toastr.error("Max File allowed  500 kb "); 
         this.uploadWorking = false;
         this.projectImageGallery=[];
         this.masterPlanData=[] as MasterPlan[];

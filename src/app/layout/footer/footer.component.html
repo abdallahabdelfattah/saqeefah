@@ -41,8 +41,8 @@
                     </a>
                 </p>
                 <p class="">
-                    <a class="contact" href="fax:{{ siteInformation?.fax }}"><i class="icon tagr-icon-mobile-phone"></i>
-                        <span  class="text d-flex justify-content-end" dir="auto">{{ siteInformation?.fax }}</span></a>
+                    <a class="contact" href="tel:{{ siteInformation?.WorkPhone }}"><i class="icon tagr-icon-mobile-phone"></i>
+                        <span  class="text d-flex justify-content-end" dir="auto">{{ siteInformation?.WorkPhone }}</span></a>
                 </p>
                 <p class="mb-2">
                     <a class="contact" href="mail:{{ siteInformation?.mail }}"><i class="icon tagr-icon-mail"></i><span
@@ -53,16 +53,26 @@
                     <p class="social d-flex">
                         <!-- <a [href]="siteInformation?.blogger" target="_blank"><i
                                                 class="icon fab fa fa-blog"></i></a> -->
-                        <a [href]="siteInformation?.blogger" target="_blank"><i class="icon fab fa-blogger-b"></i></a>
+                        <a [href]="siteInformation?.blogger" target="_blank" class="icon_link">
+                            <i class="icon fab fa-blogger-b"></i>
+                        </a>
 
-                        <a [href]="siteInformation?.snap" target="_blank"><i class="icon fab fa-snapchat-ghost"></i></a>
+                        <a [href]="siteInformation?.snap" target="_blank" class="icon_link">
+                            <i class="icon fab fa-snapchat-ghost"></i>
+                        </a>
 
-                        <a [href]="siteInformation?.linkedinURL" target="_blank"><i
-                                class="icon tagr-social-linkedin"></i></a>
-                        <a [href]="siteInformation?.twitterURL" target="_blank"><i
-                                class="icon tagr-social-twitter"></i></a>
-                        <a [href]="siteInformation?.googleURL" target="_blank"><i
-                                class="icon tagr-social-google-plus"></i></a>
+                        <a [href]="siteInformation?.linkedinURL" target="_blank" class="icon_link">
+                            <i class="icon fab fa-linkedin"></i>
+                        </a>
+                        
+                        <a [href]="siteInformation?.twitterURL" target="_blank" class="icon_link">
+                            <i class="icon fab fa-twitter"></i>
+                        </a>
+                        
+                        <a [href]="siteInformation?.googleURL" target="_blank" class="icon_link">
+                            <i class="icon fab fa-instagram"></i>
+                        </a>
+                    
                     </p>
 
                     <div class="justify-content-center w-100 mt-5">

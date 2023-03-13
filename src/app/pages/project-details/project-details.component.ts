@@ -29,7 +29,6 @@ imageMap = []
   }
 
 getProjectDetails(){
-  debugger
   let projectId = this.route.snapshot.paramMap.get('id')
   console.log('project id',projectId)
   this.projects.getProjectDetails(this.language.getLanguageID(),projectId).subscribe((response:any)=>{

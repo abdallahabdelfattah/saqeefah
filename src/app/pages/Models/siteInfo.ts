@@ -31,7 +31,8 @@ export interface siteInfo{
     vedioDescription:string,
     vedioURL:string,
     blogger:string,
-    buildingCount:string
+    buildingCount:string,
+    WorkPhone: string
 
 }
 export interface adminSiteInfo{

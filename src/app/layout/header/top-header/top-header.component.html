@@ -3,19 +3,45 @@
         <div class="row">
             <div class="col-lg-6 d-none d-lg-block">
                 <ul class="list-inline social-links">
-                    <li class="list-inline-item"><a [href]="siteInformation?.blogger" target="_blank"><i class="icon fab fa-blogger-b"></i></a></li>
-                    <!-- <li class="list-inline-item"><a [href]="siteInformation?.blogger" target="_blank"><i class="icon fab fa fa-blog"></i></a></li> -->
-                    <li class="list-inline-item"><a [href]="siteInformation?.snap" target="_blank"><i class="icon fab fa-snapchat-ghost"></i></a></li>
-                    <li class="list-inline-item"><a [href]="siteInformation?.linkedinURL" target="_blank"><i class="icon tagr-social-linkedin"></i></a></li>
-                    <li class="list-inline-item"><a [href]="siteInformation?.twitterURL" target="_blank"><i class="icon tagr-social-twitter"></i></a></li>
-                    <li class="list-inline-item"><a [href]="siteInformation?.googleURL" target="_blank"><i class="icon tagr-social-google-plus"></i></a></li>
+
+                    <li class="list-inline-item">
+                    <a [href]="siteInformation?.blogger" target="_blank" class="icon_link">
+                        <i class="icon fab fa-blogger-b"></i>
+                    </a>
+                </li>
+
+                    <li class="list-inline-item">
+                    <a [href]="siteInformation?.snap" target="_blank" class="icon_link">
+                        <i class="icon fab fa-snapchat-ghost"></i>
+                    </a>
+                </li>
+
+                    <li class="list-inline-item">
+                    <a [href]="siteInformation?.linkedinURL" target="_blank" class="icon_link">
+                        <i class="icon fab fa-linkedin"></i>
+                    </a>
+                </li>
+                    
+                    <li class="list-inline-item">
+                    <a [href]="siteInformation?.twitterURL" target="_blank" class="icon_link">
+                        <i class="icon fab fa-twitter"></i>
+                    </a>
+                </li>
+                    
+                    <li class="list-inline-item">
+                    <a [href]="siteInformation?.googleURL" target="_blank" class="icon_link">
+                        <i class="icon fab fa-instagram"></i>
+                    </a>
+                </li>
 
                 </ul>
             </div>
             <div class="col-md-12 col-lg-6">
                 <ul class="list-inline topheader-links">
-                    <li class="list-inline-item"><a routerLink="/favorites">{{'favorites' | translate}} <span class="count">{{favorite.checkFavoritesCounter()}}</span></a></li>
-                    <li class="list-inline-item"><a routerLink="/compare">{{'compare' | translate}} <span class="count">{{compare.checkCompareCounter()}}</span></a></li>
+                    
+                    <!-- <li class="list-inline-item"><a routerLink="/favorites">{{'favorites' | translate}} <span class="count">{{favorite.checkFavoritesCounter()}}</span></a></li>
+                    <li class="list-inline-item"><a routerLink="/compare">{{'compare' | translate}} <span class="count">{{compare.checkCompareCounter()}}</span></a></li> -->
+
                     <li class="list-inline-item"><a class="cursor" (click)="changeLanguage(language.getCurrentLanguage()=='en'?'ar':'en')">{{'lang' | translate}}</a></li>
 
                 </ul>
@@ -24,9 +50,10 @@
     </div>
 </div>
 
-<div class="short-cut-menu d-none d-lg-block">
+<div class="short-cut-menu d-lg-block">
     <ul class=" list-inline mb-0">
         <li class="list-inline-item1 mb-2"><a routerLink="/favorites"><span class="icon"><i class="fas fa-heart"></i></span> {{'favorites' | translate}} <span class="count">{{favorite.checkFavoritesCounter()}}</span></a></li>
         <li class="list-inline-item1 mb-1"><a routerLink="/compare"><span class="icon"><i class="fas fa-swatchbook"></i></span> {{'compare' | translate}} <span class="count">{{compare.checkCompareCounter()}}</span> </a></li>
+        <li class="list-inline-item1 mb-1"><a href="https://api.whatsapp.com/send?phone={{ siteInformation?.whatsAppNumber }}" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fab fa-whatsapp"></i></span> {{'whatsapp' | translate}} </a></li>
     </ul>
 </div>

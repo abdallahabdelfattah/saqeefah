@@ -7,7 +7,7 @@
     </div>
     <div class="carousel-inner">
 
-        <div class="carousel-item" *ngFor="let item of slider?.sliderAttachment index as i;first as isFirst"  [ngClass]="{active:isFirst}">
+        <div class="carousel-item" data-bs-interval="5000" *ngFor="let item of slider?.sliderAttachment index as i;first as isFirst"  [ngClass]="{active:isFirst}">
             <div class="slider-item">
                 <div class="item-img">
                     <img src="{{appRootUrl+item?.path}}" alt="">
@@ -17,7 +17,7 @@
                         <h4>
                             {{item?.title}} 
                         </h4>
-                        <p>
+                        <p *ngIf="item.description!='null'">
                             {{item?.description}}
                         </p>
                     </div>
