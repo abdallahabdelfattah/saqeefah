@@ -379,7 +379,12 @@
 "backyard":"Backyard",
 "Space":"Apartment Space",
 "PrivacyPolicy":"Privacy Policy",
-"whatsapp": "Whatsapp"
-
+"whatsapp": "Whatsapp",
+"chat":"Chat with Us",
+"Hi_there":"Hi there",
+"chat_message":"How can I help you?",
+"saqeefah_title":"Saqeefah",
+"chat_response":"Write a response",
+"chat_hours":"Typically replies within an hour"
 
 }

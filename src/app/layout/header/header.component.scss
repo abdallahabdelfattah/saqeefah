@@ -12,5 +12,10 @@
     position: relative;
     top: 1px;
     margin-block-start: 5px;
+
+    &:lang(ar){
+    transform: rotateY(180deg);
   }
+
+}
 }

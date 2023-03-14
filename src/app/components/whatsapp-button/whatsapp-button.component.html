@@ -4,7 +4,7 @@
             <div class='head-home'>
                 <div class='info-avatar'><img src='assets/content/images//w.png' />
                 </div>
-                <p><span class="whatsapp-name">سقيفة</span><br><small>Typically replies within an hour</small></p>
+                <p><span class="whatsapp-name">{{ "saqeefah_title" | translate }}</span><br><small>{{ "chat_hours" | translate }}</small></p>
 
             </div>
             <div class='get-new show'>
@@ -27,8 +27,8 @@
                         </div>
                     </div>
                     <div style="opacity: 1;" class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq">
-                        <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">Tedbree</div>
-                        <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">Hi there 👋<br><br>How can I help you?</div>
+                        <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">{{ "saqeefah_title" | translate }}</div>
+                        <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">{{ "Hi_there" | translate }} 👋<br><br>{{ "chat_message" | translate }}</div>
                         <div class="WhatsappChat__Time-sc-1wqac52-5 cqCDVm">1:40</div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <a href='javascript:void;' (click)="send()" id='send-it'><svg viewBox="0 0 448 448">
                         <path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z" />
                     </svg></a>
-                <textarea [(ngModel)]="message" id='chat-input' placeholder='Write a response' maxlength='120' row='1' ></textarea>
+                <textarea [(ngModel)]="message" id='chat-input' placeholder='{{ "chat_response" | translate }}' maxlength='120' row='1' ></textarea>
               
        
 
@@ -55,7 +55,7 @@
                 d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z" />
             <path fill="#fafafa"
                 d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z" />
-        </svg> <span class="chat-us-button"> Chat with Us </span></a>
+        </svg> <span class="chat-us-button"> {{ "chat" | translate }} </span></a>
 
 </div>
 

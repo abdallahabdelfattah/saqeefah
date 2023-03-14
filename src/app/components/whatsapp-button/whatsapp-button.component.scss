@@ -5,10 +5,10 @@
   box-sizing: border-box !important;
   outline: none !important;
   position: fixed;
-  width: 350px;
+  width: 300px;
   border-radius: 10px;
   box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
-  bottom: 90px;
+  bottom: 65px;
   right: 30px;
   overflow: hidden;
   z-index: 10000;
@@ -37,13 +37,11 @@
   
   /* CSS Multiple Whatsapp Chat */
   .whatsapp-name {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 0;
     line-height: 0.7;
-    margin-left: 15px;
-    margin-right: 15px;
   }
   
   #whatsapp-chat {
@@ -51,7 +49,7 @@
   
     outline: none !important;
     position: fixed;
-    width: 350px;
+    width: 300px;
     border-radius: 10px;
     box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
     bottom: 90px;
@@ -71,8 +69,8 @@
     font-weight: 400;
     justify-content: space-between;
     z-index: 98;
-    bottom: 25px;
-    right: 30px;
+    bottom: 13px;
+    right: 65px;
     font-size: 15px;
     padding: 10px 20px;
     border-radius: 30px;
@@ -88,7 +86,7 @@
     background: #009688;
     background: #095e54;
     color: #fff;
-    padding: 20px;
+    padding: 10px 15px 5px;
   }
   .header-chat h3 {
     margin: 0 0 10px;
@@ -103,7 +101,7 @@
   }
   .info-avatar img {
     border-radius: 100%;
-    width: 50px;
+    width: 35px;
     float: left;
     margin: 0 10px 0 0;
   }
