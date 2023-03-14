@@ -14,16 +14,16 @@
 }
 
 .item-img img{
-        position: absolute;
-        height: 100%;
-        width: calc(100% + 100px);
-        left: -100px;
-        animation: zoom-move 5s linear infinite;
+        // position: absolute;
+        // height: 100%;
+        // width: calc(100% + 100px);
+        // left: -100px;
+        animation: zoom-move 6s linear;
       }
       @keyframes zoom-move {
         0% {
           transform: scale(1);
-          transform-origin: -100px 50%;
+          // transform-origin: -100px 50%;
           opacity: 0.25;
         }
         13.33% {
@@ -31,7 +31,7 @@
         }
         100% {
           transform: scale(1.2);
-          transform-origin: -100px 50%;
+          // transform-origin: -100px 50%;
           opacity: 1;
         }
       }
