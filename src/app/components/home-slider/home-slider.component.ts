@@ -23,13 +23,24 @@ customOptions: OwlOptions = {
   pullDrag: false,
   dots: true,
   autoplay:true,
-  autoplayTimeout:1000 ,
+  autoplayTimeout:4000 ,
   margin:0,
   center:true,
   items:1,
   navText: ['', ''],
   rtl:this.language.checkRtl(),
-  nav: true
+  nav: false,
+  responsive:{
+    0:{
+        items:1,
+    },
+    600:{
+        items:1,
+    },
+    1000:{
+        items:1,
+    }
+}
 }
 
 appRootUrl=environment.appRoot+'/';
