@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-whatsapp-button',
@@ -9,7 +9,8 @@ export class WhatsappButtonComponent implements OnInit {
 
   whatsapp_url = 'https://api.whatsapp.com/send' ;
   message:string="";
-  whatsapp_phone:string="966505203091"; 
+  @Input() whatsapp_phone:string; 
+
   constructor() { }
 
   ngOnInit(): void {

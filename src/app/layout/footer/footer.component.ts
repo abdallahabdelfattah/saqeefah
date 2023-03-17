@@ -33,35 +33,12 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    // this.getSiteInformation();
-    // this.translate.onLangChange.subscribe((event: LangChangeEvent) => 
-    // {
-    //     this.getSiteInformation();
-    // });
-    
-
- 
   }
   ngAfterContentChecked() {
     this.siteInformation=this.shared.siteInformation;
-    // console.log("shared data : ",this.shared.siteInformation)
   }
 
-// getSiteInformation(){
-//   this.siteInfo.getAllInformation(this.language.getLanguageID()).subscribe(x=>{
-//     if(!x.isError)
-//     {
-//       if(x.result['succeeded'])
-//       {
-//         this.siteInformation=x.result['data'];
-//       }
-//       else{
 
-//       }
-//     }
-    
-//   })
-// }
   onSubmit(){
     if (this.form.invalid) {
 
