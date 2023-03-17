@@ -10,10 +10,8 @@
         </div>
         <div class="col-md-12">
             <owl-carousel-o [options]="customOptions" *ngIf="slider?.sliderAttachment">
-                <!-- <ng-template carouselSlide *ngFor="let item of logos"> -->
                     <ng-template carouselSlide *ngFor="let item of bannerimgUrl">
                     <div class="img-container"  >
-                        <!-- <img [src]="appRootUrl+item.path" alt="" [id]="item.attachmentId"> -->
                         <div class="box" [ngStyle]="{'background-image': 'url(' + item + ')' }" >
                             </div>
                     </div>

@@ -1,13 +1,13 @@
-<div id="carouselExampleIndicators" #carousel class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
 
-        <button *ngFor="let item of slider?.sliderAttachment index as i" type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" 
-         [ngClass]="{'active' : i == 0}"  aria-current="true" [attr.aria-label]="'Slide'+i"></button>
+        <button *ngFor="let item of slider?.sliderAttachment; index as i" type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" 
+         [ngClass]="{'active' : i == 0}"  aria-current="true" [attr.aria-label]="'Slide'+i">  {{i}}</button>
         
     </div>
     <div class="carousel-inner">
 
-        <div class="carousel-item"   *ngFor="let item of slider?.sliderAttachment index as i;first as isFirst"  [ngClass]="{active:isFirst}">
+        <div class="carousel-item"   *ngFor="let item of slider?.sliderAttachment;index as i;"  [ngClass]="{active:i==0}">
             <div class="slider-item">
                 <div class="item-img">
                     <img src="{{appRootUrl+item?.path}}" alt="">
@@ -15,7 +15,7 @@
                 <div class="caption ">
                     <div class="container">
                         <h4>
-                            {{item?.title}} 
+                            {{item?.title}}   {{i}}
                         </h4>
                         <p *ngIf="item?.description!='null' &&   item?.description!=null">
                             {{item?.description}}
@@ -37,43 +37,33 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+ 
+
+ -->
 
 
 
 
 
 
+<owl-carousel-o [options]="customOptions" *ngIf="slider?.sliderAttachment">
+  <ng-template carouselSlide *ngFor="let item of slider?.sliderAttachment">
+    <div class="img-container">
 
-
-<!-- <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/92c952" alt="img 1">
+      <div class="caption ">
+        <div class="container">
+          <h4>
+            {{item?.title}}
+          </h4>
+          <p *ngIf="item?.description!='null' &&   item?.description!=null">
+            {{item?.description}}
+          </p>
+        </div>
       </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/771796" alt="img 2">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/24f355" alt="img 3">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/d32776" alt="img 4">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/f66b97" alt="img 5">
-      </div>
-    </ng-template>
-    <ng-template carouselSlide>
-      <div class="slide">
-        <img src="https://via.placeholder.com/600/56a8c2" alt="img 6">
-      </div>
-    </ng-template>
-  </owl-carousel-o> -->
+      
+      <img src="{{appRootUrl+item?.path}}">
+   
+
+    </div>
+  </ng-template>
+</owl-carousel-o>

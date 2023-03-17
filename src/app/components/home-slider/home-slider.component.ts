@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { SliderService } from 'src/app/pages/dashboard/setting/services/slider.service';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { SliderTypes } from 'src/app/shared/Enums/enums';
 import { environment } from 'src/environments/environment';
-declare var $: any; // used to access jQuery
 
 
 
@@ -12,20 +12,28 @@ declare var $: any; // used to access jQuery
   templateUrl: './home-slider.component.html',
   styleUrls: ['./home-slider.component.scss']
 })
-export class HomeSliderComponent implements OnInit,AfterViewInit {
+export class HomeSliderComponent implements OnInit {
 slider:any;
-@ViewChild('carousel') _carousel!: ElementRef;
 
+customOptions: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  autoWidth:true,
+  pullDrag: false,
+  dots: true,
+  autoplay:true,
+  autoplayTimeout:1000 ,
+  margin:0,
+  center:true,
+  items:1,
+  navText: ['', ''],
+  rtl:this.language.checkRtl(),
+  nav: true
+}
 
 appRootUrl=environment.appRoot+'/';
   constructor(private sliderServices :SliderService, private language:changeLanguageService) { }
-
-
-
-  ngAfterViewInit() {
-    const carouselElem = this._carousel?.nativeElement;
-    const carousel = $(carouselElem).carousel();
-  }
 
   async ngOnInit(): Promise<void> {
    await this.getSliderHomeBanar(); 
@@ -35,24 +43,27 @@ appRootUrl=environment.appRoot+'/';
 
   }
 
-  async getSliderHomeBanar(){
+  getSliderHomeBanar(){
     this.sliderServices.getAllSliderByidForUser(SliderTypes.SliderHomeBanar,this.language.getLanguageID()).subscribe((response:any)=>{
-  if(!response?.isError){
+  if(! response.isError){
       this.slider=response?.result?.data
-      // console.log('slider', this.slider)
   }
     })
   }
   
 
+  getUrl(path: string) {
+    if(path)
+    {
+      path = path.replace(/[\/\\]/g, '/');
+      path = path.replace(/ /g, '%20');
+      return path;
+    }
+    else{
+      return ""; 
+    }
+  }
 
-  // getAllSliderAttatchments() {
-  //   this.sliderServices.getAllSliderByid(SliderTypes.SliderHomeBanar).subscribe(res => {
-  //     if (!res.isError) {
-  //       this.slider = res.result.data;
-  //       console.log('slider', this.slider)
-  //     }
-  //   })
-  // }
+
 
 }
