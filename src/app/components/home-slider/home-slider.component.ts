@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SliderService } from 'src/app/pages/dashboard/setting/services/slider.service';
 import { changeLanguageService } from 'src/app/services/changeLanguage.service';
 import { SliderTypes } from 'src/app/shared/Enums/enums';
 import { environment } from 'src/environments/environment';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+declare var $: any; // used to access jQuery
 
 
 
@@ -12,48 +12,30 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './home-slider.component.html',
   styleUrls: ['./home-slider.component.scss']
 })
-export class HomeSliderComponent implements OnInit {
+export class HomeSliderComponent implements OnInit,AfterViewInit {
 slider:any;
+@ViewChild('carousel') _carousel!: ElementRef;
+
+
 appRootUrl=environment.appRoot+'/';
   constructor(private sliderServices :SliderService, private language:changeLanguageService) { }
 
 
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
-    responsive: {
-      0: {
-        items: 1 
-      },
-      400: {
-        items: 2
-      },
-      760: {
-        items: 3
-      },
-      1000: {
-        items: 4
-      }
-    },
-    nav: true
+
+  ngAfterViewInit() {
+    const carouselElem = this._carousel?.nativeElement;
+    const carousel = $(carouselElem).carousel();
   }
 
-  ngOnInit(): void {
-    this.getSliderHomeBanar(); 
-
-    
+  async ngOnInit(): Promise<void> {
+   await this.getSliderHomeBanar(); 
     this.language.changeLanguageStatus.subscribe((data) => {
       this.getSliderHomeBanar()
-    })
+    }); 
 
   }
 
-  getSliderHomeBanar(){
+  async getSliderHomeBanar(){
     this.sliderServices.getAllSliderByidForUser(SliderTypes.SliderHomeBanar,this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response?.isError){
       this.slider=response?.result?.data
