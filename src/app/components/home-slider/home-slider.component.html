@@ -47,23 +47,23 @@
 
 
 <owl-carousel-o [options]="customOptions" *ngIf="slider?.sliderAttachment">
-  <ng-template carouselSlide *ngFor="let item of slider?.sliderAttachment">
+  <ng-template carouselSlide *ngFor="let item of slider?.sliderAttachment" class="position-relative">
     <div class="img-container">
-
-      <div class="caption ">
-        <div class="container">
-          <h4>
-            {{item?.title}}
-          </h4>
-          <p *ngIf="item?.description!='null' &&   item?.description!=null">
-            {{item.description}}
-          </p>
-        </div>
-      </div>
       
       <img src="{{appRootUrl+item?.path}}">
    
 
+    </div>
+    
+    <div class="caption ">
+      <div class="container">
+        <h4>
+          {{item?.title}}
+        </h4>
+        <p *ngIf="item?.description!='null' &&   item?.description!=null">
+          {{item.description}}
+        </p>
+      </div>
     </div>
   </ng-template>
 </owl-carousel-o>
