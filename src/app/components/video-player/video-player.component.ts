@@ -14,25 +14,13 @@ import { SiteInformationSharedService } from 'src/app/services/site-information-
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss'],
 })
-export class VideoPlayerComponent implements OnInit, AfterViewInit {
-$: any;
+export class VideoPlayerComponent implements OnInit {
   constructor(private shared:SiteInformationSharedService) {}
   @Input() src: string = 'https://vjs.zencdn.net/v/oceans.mp4';
   @Input() type: string = 'video/mp4';
   @Input() loop: string;
   siteInformation:siteInfo
   ngOnInit(): void {}
-
-  ngAfterViewInit() {
-    // console.log('myVideo.paused');
-    // setTimeout(() => {
-    //   this.playPause();
-    // }, 100);
-  }
-  ngAfterContentChecked() {
-  this.siteInformation=this.shared.siteInformation;
-    
-  }
 
   pause() {
     var myVideo: any = document.getElementById('singleVideo');
