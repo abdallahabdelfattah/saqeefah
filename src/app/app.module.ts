@@ -53,6 +53,7 @@ import { PlaceOrderService } from './services/placeOrder.service';
 import { SiteInformationSharedService } from './services/site-information-shared.service';
 import { AllSettingSharedService } from './services/all-setting-shared.service';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
+import { ProjectVillasComponent } from './project-villas/project-villas.component';
 
 
 
@@ -66,6 +67,7 @@ import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.componen
     TopHeaderComponent,
     PropertiesComponent,
     UsagePolicyComponent,
+    ProjectVillasComponent,
  
   
   ],

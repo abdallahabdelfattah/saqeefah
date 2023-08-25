@@ -15,6 +15,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { UserlayoutComponent } from './pages/userSite/userlayout/userlayout.component';
 import { AuthGuard } from './shared/services/auth.guards';
+import { ProjectVillasComponent } from './project-villas/project-villas.component';
 
 
 
@@ -78,7 +79,12 @@ const routes: Routes = [
 
   },
   {
-  
+    path: 'project-villas',
+    component:ProjectVillasComponent
+
+  },
+  {
+
     path: 'dashboard',
     canActivate:[AuthGuard],
     loadChildren: () =>
