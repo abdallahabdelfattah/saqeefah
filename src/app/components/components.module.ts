@@ -112,7 +112,8 @@ VgBufferingModule
     HomeSliderComponent,
     PlaceOrderApartmentComponent,
     WhatsappButtonComponent,
-    VillaCardComponent
+    VillaCardComponent,
+    CarouselModule
 
     // VedioComponent
   ],

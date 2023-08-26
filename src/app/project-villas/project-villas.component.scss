@@ -210,41 +210,37 @@
 
     .accordion-body{
       padding: 0;
+      background: #fff;
     }
     .accordion-item {
       border: 0;
+
+
       .accordion-button {
         position: relative;
         display: flex;
         align-items: center;
         gap: 24px;
-        background: var(--main-color);
-        border: 1px solid var(--main-color);
         color: #fff;
         outline: none;
           box-shadow: none;
           border: 0;
+          background: var(--main-color);
+
         &:focus,
         &:active {
           outline: none;
           box-shadow: none;
         }
-        &.accordion_bg{
-          background-image: url('../../assets/images/villas/icons/collapse_bg.png');
-          background-repeat: no-repeat;
-          background-size: contain;
-          width: 100%;
-          &.paid{
-            background-image: url('../../assets/images/villas/icons/collapse_bg_sold.png');
-          }
-        }
+
+
         &.paid {
           background-color: #5e5e59;
           &::before {
             position: absolute;
             inset-block: 0;
             inset-inline-end: 16px;
-            content: "مباعة";
+            content: "Paid";
             height: 40px;
             margin: auto 0;
             line-height: 40px;
@@ -252,8 +248,8 @@
             font-size: 1.5rem;
             color: #fff;
             z-index: 3;
-            [dir="ltr"] & {
-              content: "Paid";
+            :lang(ar) & {
+              content: "مباعة";
             }
           }
         }
@@ -462,6 +458,13 @@
 }
 
 
+.accordion-button.paid ~ .accordion-collapses .accordion-body .villa_info .info_bg{
+    background: #6d6d68;
+  }
+
+
+
+
 .villa_desc{
   padding: 20px;
 
@@ -488,6 +491,25 @@
   }
 
 }
+
+.villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button{
+  background-image: url('../../assets/images/villas/icons/collapse_bg_en.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  &:lang(ar){
+    background-image: url('../../assets/images/villas/icons/collapse_bg.png');
+  }
+}
+
+
+.villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button.paid{
+    background-image: url('../../assets/images/villas/icons/collapse_bg_sold_en.png');
+    &:lang(ar){
+      background-image: url('../../assets/images/villas/icons/collapse_bg_sold.png');
+    }
+  }
+
 
 
 .area_div{
@@ -567,5 +589,10 @@
 
   .villa_info .info_bg h4{
     text-align: start;
+  }
+
+  .villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button,
+  .villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button.paid{
+    background-size: contain;
   }
 }

@@ -216,7 +216,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
-                  class="accordion-button accordion_bg"
+                  class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
@@ -624,6 +624,8 @@
                 </div>
               </div>
             </div>
+
+
 
 
             <div class="accordion-item">
@@ -1126,7 +1128,9 @@
       </div> -->
 
       <div class="row">
-        <img src="assets/images/villas/Project_guarantee.png" class="img-fluid">
+        <div class="col-md-7">
+          <img src="assets/images/villas/guarantee_test.png" class="img-fluid w-100">
+        </div>
       </div>
     </div>
   </section>
@@ -1147,14 +1151,29 @@
       <!-- Project card slider here -->
 
 
-      <div class="row">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let item of [1,2,3,4,6,8,7,9]" class="position-relative">
+          <div class="img-container">
+            <img src="/assets/images/home-placeHolder.webp">
 
-      </div>
+          </div>
+
+          <div class="caption ">
+            <div class="container">
+              <h4>
+                {{item}}
+              </h4>
+              <p >
+                {{item}}
+              </p>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
 
     </div>
   </section>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

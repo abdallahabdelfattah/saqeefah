@@ -304,11 +304,11 @@ html {
 
 
 .modal-content,.modal-header{
-   
+
     border-top-right-radius:none !important;
     border-top-left-radius:none !important;
     border-radius: 0 !important;
-    border:none !important; 
+    border:none !important;
 }
 
 .home{
@@ -336,7 +336,24 @@ html {
     background: #fffefe;
 }
 
-.home .owl-theme .owl-dots .owl-dot.active span, 
+.home .owl-theme .owl-dots .owl-dot.active span,
 .home .owl-theme .owl-dots .owl-dot:hover span {
     background: #d7dad8;
+}
+
+
+
+.available_status{
+  background: #56c14b;
+  color: #fff;
+}
+
+.soon_status{
+  background: #f5840b;
+  color: #fff;
+}
+
+.sold_status{
+  background: #bf1e2e;
+  color: #fff;
 }

@@ -1,9 +1,9 @@
 <!-- <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
 
-        <button *ngFor="let item of slider?.sliderAttachment; index as i" type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" 
+        <button *ngFor="let item of slider?.sliderAttachment; index as i" type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i"
          [ngClass]="{'active' : i == 0}"  aria-current="true" [attr.aria-label]="'Slide'+i">  {{i}}</button>
-        
+
     </div>
     <div class="carousel-inner">
 
@@ -37,7 +37,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
- 
+
 
  -->
 
@@ -49,12 +49,12 @@
 <owl-carousel-o [options]="customOptions" *ngIf="slider?.sliderAttachment">
   <ng-template carouselSlide *ngFor="let item of slider?.sliderAttachment" class="position-relative">
     <div class="img-container">
-      
+
       <img src="{{appRootUrl+item?.path}}">
-   
+
 
     </div>
-    
+
     <div class="caption ">
       <div class="container">
         <h4>
