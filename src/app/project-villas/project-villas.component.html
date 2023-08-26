@@ -1139,8 +1139,10 @@
       <h4 class="section_heading mb-5">
         <span class="title">موقع المشروع</span>
       </h4>
-
       <!-- Location Here  -->
+
+      <app-map-single></app-map-single>
+
     </div>
   </section>
   <section class="other-projects">
@@ -1152,10 +1154,13 @@
 
 
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide *ngFor="let item of [1,2,3,4,6,8,7,9]" class="position-relative">
+        <ng-template carouselSlide *ngFor="let item of [1,2,3]" class="position-relative">
           <div class="img-container">
-            <img src="/assets/images/home-placeHolder.webp">
-
+            <img class="image"
+            src="assets/images/villas/slider2.png"
+            class="d-block w-100"
+            alt="..."
+          />
           </div>
 
           <div class="caption ">

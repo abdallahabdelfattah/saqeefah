@@ -28,10 +28,10 @@ export class ProjectCardComponent implements OnInit {
     }
   ]
 
-  appRootUrl=environment.appRoot+'/'; 
-  
+  appRootUrl=environment.appRoot+'/';
+
   constructor(public favorites:FavoritesService) { }
-  
+
   ngOnInit(): void {
     this.favorites.checkFavorites(this.project)
    // console.log('project from project-page',this.project)
