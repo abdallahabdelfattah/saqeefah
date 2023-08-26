@@ -39,6 +39,8 @@ import { PriceRangeService } from './setting/services/priceRange.service';
 import { AreaRangeComponent } from './setting/pages/area-range/area-range.component';
 import { HomeSliderBannerComponent } from './setting/pages/home-slider-banner/home-slider-banner.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { VillasComponent } from './villas/villas.component';
+import { EditVillaComponent } from './edit-villa/edit-villa.component';
 
 
 
@@ -65,7 +67,9 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
             PriceRangeComponent,
             AreaRangeComponent,
             HomeSliderBannerComponent,
-            ConfirmationDialogComponent
+            ConfirmationDialogComponent,
+            VillasComponent,
+            EditVillaComponent
 
   ],
   imports: [

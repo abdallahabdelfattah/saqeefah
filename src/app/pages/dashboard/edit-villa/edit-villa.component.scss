@@ -1,0 +1,18 @@
+.btn:disabled{
+  background-color: lightgrey !important;
+  border: none !important;
+}
+.imageborders{
+  height: 100px;
+  width: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+.imagBox{
+  position: relative;
+  // width: 200px;
+}
+.current-image{
+  padding: 5px;
+  border: 2px dashed #dadada;
+}

@@ -1,0 +1,30 @@
+.edit-villa{
+  box-shadow: 2px 5px 5px #aeaeae;
+    border-bottom: 3px solid #afafaf;
+    position: absolute;
+    z-index: 5;
+    top: 50px;
+    padding: 10px 20px;
+    background: #0a3077;
+    color: white;
+}
+.edit-villa:hover{
+  cursor: pointer !important;
+  transform: translateY(2px);
+}
+
+
+
+.card.list{
+  display: flex !important;
+  gap: 16px;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+.card.list .img-panel{
+  width: 270px!important;
+  flex-shrink: 0;
+}
+.card.list .img-panel .card-mask {
+  background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
+}

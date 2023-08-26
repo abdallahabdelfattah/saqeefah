@@ -18,15 +18,17 @@ import { SettingComponent } from './setting/pages/setting.component';
 import { WebsiteInfoComponent } from './setting/pages/website-info/website-info.component';
 import { TestComponent } from './test/test.component';
 import { UsersComponent } from './users/users.component';
+import { VillasComponent } from './villas/villas.component';
+import { EditVillaComponent } from './edit-villa/edit-villa.component';
 
 const routes: Routes = [
   {
    path:'',
     component: DashboardComponent,
- 
+
 
   children:[
-    { path: '', 
+    { path: '',
      redirectTo: '',
       pathMatch: 'full',
      //path:'homebannar',
@@ -52,6 +54,15 @@ const routes: Routes = [
       path:'edit-project/:id',
       component: EditProjectComponent
     },
+    {
+      path:'villas',
+      component: VillasComponent
+    },
+    {
+      path:'edit-villa/:projectId/:villaId',
+      component: EditVillaComponent
+    },
+
     {
       path:'edit-property/:projectId/:propertyId',
       component: EditPropertyComponent
@@ -89,7 +100,7 @@ const routes: Routes = [
       path:'placeOrder',
       component:PlaceOrderComponent
     },
-   
+
   ]
   }
 ];

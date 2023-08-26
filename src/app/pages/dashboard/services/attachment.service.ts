@@ -32,6 +32,11 @@ export class AttachmentService {
 
     return this.apiCaller.post("api/Setting/DeleteSettingImage/?settingTypeId="+_settingTypeId,{},true);
   }
+
+  public deleteVillaCoverImage(_villaId){
+    return this.apiCaller.post("api/Villa/DeleteCoverImage/?villaId="+_villaId,{},true);
+  }
+
   constructor(
     private apiCaller: APICallerService
   ) {}
@@ -41,7 +46,7 @@ export class AttachmentService {
 
 
 
-  
+
 }
 
  enum ProjectDeleteType

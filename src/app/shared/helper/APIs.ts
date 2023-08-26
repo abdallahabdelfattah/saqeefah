@@ -33,7 +33,12 @@ export class APIs {
 
 };
 
-
+ // Villa
+ public static Villa = {
+  List:"api/Villa/GetVillasWithImagesAndVideos",
+  AddAttachments: 'api/Villa/Attachments',
+  VillaDetails:'api/Villa/VillaById'
+};
 
 
 }

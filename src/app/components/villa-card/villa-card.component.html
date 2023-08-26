@@ -1,0 +1,24 @@
+
+<div class="card villa-card">
+  <div class="img-panel">
+      <div class="img-container villa">
+          <img [src]="villa.coverImage ? appRootUrl+villa.coverImage : 'assets/images/home-placeHolder.webp'"
+              class="card-img-top" alt="..."
+              style="cursor: pointer;">
+      </div>
+      <div class="card-label "
+          [class]="{'green': villa.statusId == 1,'moave':villa.statusId == 4, 'orange': villa.statusId == 2, 'pink': villa.statusId == 3}">
+          {{ villa.status | translate}}
+        </div>
+      <span class="edit-villa"   [routerLink]="'../edit-villa/'+villa.project_ref+'/'+villa.villa_id">{{'Edit' |
+          translate}}</span>
+      <div class="card-mask"></div>
+  </div>
+  <div class="card-body h-100">
+     <div class="unit-location">
+           <h5 class="secondary-color">{{villa.villa_code | translate}}</h5>
+          <h6>{{villa.villa_descrip | translate}}</h6>
+          <h6>{{villa.pro_nam | translate}}</h6>
+      </div>
+  </div>
+</div>
