@@ -167,11 +167,10 @@
   }
 }
 .villas-page {
-  background: #fff;
 }
 .about-villas-project {
   padding: 40px 0;
-  margin-bottom: 32px;
+  background: #fff;
 }
 .villas-project-images {
   &__item {
@@ -245,98 +244,189 @@
     }
   }
 }
-.villas-accordion {
-  .accordion-item {
-    .accordion-button {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      background: var(--main-color);
-      border: 1px solid var(--main-color);
-      color: #fff;
-      &:focus,
-      &:active {
-        outline: none;
-        box-shadow: none;
-      }
-      &.paid {
-        background-color: #5f5e59;
-      }
-      &::after {
-        margin: 0 !important;
-        filter: brightness(0) invert(1);
-      }
-      .villa-code {
-        margin: 0;
-        font-size: 2rem;
-      }
-      .main-info {
+.villas-project-specification {
+  padding: 40px 0;
+
+  .villas-accordion {
+    .accordion-item {
+      .accordion-button {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 24px;
-        margin-inline-start: auto;
-        &__item {
-          position: relative;
-          display: flex;
-          align-items: center;
-          &:not(:first-child) {
-            padding-inline-start: 24px;
-            &::before {
-              position: absolute;
-              inset-inline-start: 0;
-              inset-block: 0;
-              content: "";
-              height: 24px;
-              width: 1px;
-              background-color: #fff;
-              margin: auto 0;
-            }
-          }
-          .info-title {
-            display: inline-block;
-            width: 50px;
-          }
-          .info-value {
+        background: var(--main-color);
+        border: 1px solid var(--main-color);
+        color: #fff;
+        &:focus,
+        &:active {
+          outline: none;
+          box-shadow: none;
+        }
+        &.paid {
+          background-color: #5e5e59;
+          &::before {
+            position: absolute;
+            inset-block: 0;
+            inset-inline-end: 16px;
+            content: "مباعة";
+            height: 40px;
+            margin: auto 0;
+            line-height: 40px;
+            text-align: center;
             font-size: 1.5rem;
-            var {
-              font-size: 1rem;
+            color: #fff;
+            z-index: 3;
+            [dir="ltr"] & {
+              content: "Paid";
             }
+          }
+        }
+        &::after {
+          margin: 0 !important;
+          filter: brightness(0) invert(1);
+        }
+        .villa-code {
+          margin: 0;
+          font-size: 2rem;
+        }
+      }
+    }
+    .accordion-footer {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .main-info {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:not(:first-child) {
+          padding-inline-start: 24px;
+          &::before {
+            position: absolute;
+            inset-inline-start: 0;
+            inset-block: 0;
+            content: "";
+            height: 24px;
+            width: 1px;
+            background-color: #fff;
+            margin: auto 0;
+          }
+        }
+        .info-title {
+          display: inline-block;
+          width: 50px;
+        }
+        .info-value {
+          font-size: 2rem;
+          color: var(--main-color);
+          var {
+            font-size: 1rem;
           }
         }
       }
     }
   }
-}
-.puzzle-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(33.333%, 1fr));
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
-  .villa-specification {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 24px;
-    border: 1px solid #f3e7dd;
-    &:nth-child(2n + 2) {
-      background-color: #f3e7dd;
+  .puzzle-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33.333%, 1fr));
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
-    .specification-title {
-    }
-    .specification-value {
-      svg,
-      img {
-        display: block;
-        width: 24px;
-        height: 24px;
+    .villa-specification {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 24px;
+      border: 1px solid #f7f4e3;
+      &:nth-child(2n + 2) {
+        background-color: #f7f4e3;
+      }
+      .specification-title {
+      }
+      .specification-value {
+        svg,
+        img {
+          display: block;
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .badge {
+        background-color: #56c14b;
+        font-weight: normal;
+        font-size: 1rem;
       }
     }
-    .badge {
-      background-color: #56c14b;
-      font-weight: normal;
-      font-size: 1rem;
+  }
+}
+.project-collateral {
+  padding: 40px 0;
+  background-color: #fff;
+
+  .collateral-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    height: 100%;
+    &__count {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 16px;
+      background-color: var(--main-color);
+      height: 100%;
+      .years {
+        font-size: 2.5rem;
+        color: #fff;
+        text-align: center;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    &__data {
+      display: flex;
+      flex-direction: column;
+      padding-inline-start: 8px;
+      .sub-title {
+        color: var(--main-color);
+        font-size: 1.125rem;
+        line-height: 1;
+      }
+      .title {
+        display: block;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-weight: normal;
+        max-width: 150px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.project-location{
+  padding: 40px 0;
+}
+.other-projects{
+  padding: 40px 0;
+  background-color: #fff;
+}
+.villas-project-filter{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+  &__item{
+    &.selected{
+      background-color: var(--main-color);
+      color: #fff;
     }
   }
 }
