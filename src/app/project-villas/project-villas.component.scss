@@ -17,18 +17,18 @@
     background: linear-gradient(
       to left,
       #fff0 0%,
-      #947e68fa 50%,
-      #947e68fa 50%,
-      #947e68 100%
+      #86815bfa 50%,
+      #86815bfa 50%,
+      var(--main-color) 100%
     );
   }
   .overlay:lang(ar) {
     background: linear-gradient(
       to right,
       #fff0 0%,
-      #947e68fa 50%,
-      #947e68fa 50%,
-      #947e68 100%
+      #86815bfa 50%,
+      #86815bfa 50%,
+      var(--main-color) 100%
     );
   }
 
@@ -115,61 +115,20 @@
     width: 15px;
     height: 15px;
     border-radius: 50px;
-    background-color: #947e68;
+    background-color: var(--main-color);
     border: 0;
     margin-left: 8px;
     margin-right: 8px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 990px) {
-  .villas-project-details__statistics {
-    gap: 70px;
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .villas_banner {
-    .overlay_border {
-      width: 35px;
-    }
-
-    .villas_banner_icon {
-      h2 {
-        font-size: 50px;
-      }
-
-      img {
-        width: 35px;
-        height: 35px;
-      }
-
-      span {
-        font-size: 25px;
-      }
-    }
-  }
-
-  .villas-page {
-    overflow-x: hidden;
-  }
-
-  .carousel {
-    .carousel-arrows {
-      .carousel-control-prev {
-        right: 0;
-      }
-
-      .carousel-control-next {
-        left: 0;
-      }
-    }
-  }
-}
 .villas-page {
+  background: #fff;
+
 }
 .about-villas-project {
-  padding: 40px 0;
+  padding: 70px 0;
   background: #fff;
 }
 .villas-project-images {
@@ -189,7 +148,7 @@
 .villas-project-details {
   &__title {
     margin-bottom: 15px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #5f5e59;
     font-weight: 600;
   }
@@ -248,7 +207,12 @@
   padding: 40px 0;
 
   .villas-accordion {
+
+    .accordion-body{
+      padding: 0;
+    }
     .accordion-item {
+      border: 0;
       .accordion-button {
         position: relative;
         display: flex;
@@ -257,10 +221,22 @@
         background: var(--main-color);
         border: 1px solid var(--main-color);
         color: #fff;
+        outline: none;
+          box-shadow: none;
+          border: 0;
         &:focus,
         &:active {
           outline: none;
           box-shadow: none;
+        }
+        &.accordion_bg{
+          background-image: url('../../assets/images/villas/icons/collapse_bg.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 100%;
+          &.paid{
+            background-image: url('../../assets/images/villas/icons/collapse_bg_sold.png');
+          }
         }
         &.paid {
           background-color: #5e5e59;
@@ -423,10 +399,173 @@
   align-items: center;
   gap: 8px;
   margin-inline-start: auto;
+  justify-content: end;
   &__item{
     &.selected{
       background-color: var(--main-color);
       color: #fff;
     }
+  }
+}
+
+
+
+.section_heading{
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #5f5e59;
+  font-weight: 600;
+  position: relative;
+
+  span{
+    margin-inline-start: 80px;
+  }
+
+  &::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  content: "";
+  display: inline-flex;
+  width: 50px;
+  height: 60px;
+  background-color: #5E5E59;
+}
+}
+
+
+
+.villa_info{
+
+  .info_bg{
+    background: #8b8666;
+    padding: 20px;
+
+    h3{
+      color: #fff;
+      margin: 0;
+      span{
+        font-weight: 600;
+      }
+    }
+
+    h4{
+      color: #fff;
+      text-align: end;
+      margin: 0;
+      cursor: pointer;
+      font-size: 25px;
+
+    }
+  }
+
+}
+
+
+.villa_desc{
+  padding: 20px;
+
+  .col-lg-3{
+    padding: 20px;
+    border: solid 1px #edececb5;
+  }
+
+  img{
+    width: 40px;
+    height: 40px;
+    margin-inline-end: 10px;
+    margin-top: -3px;
+  }
+
+  span{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  h6{
+    text-align: end;
+    font-size: 16px;
+  }
+
+}
+
+
+.area_div{
+
+  h5{
+    display: inline-block;
+    width: 50px;
+  }
+
+  span{
+      color: var(--main-color);
+      margin-inline-start: 15px;
+      font-size: 30px;
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .villas-project-details__statistics {
+    gap: 70px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .villas_banner {
+    .overlay_border {
+      width: 35px;
+    }
+
+    .villas_banner_icon {
+      h2 {
+        font-size: 50px;
+      }
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+
+      span {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .villas-page {
+    overflow-x: hidden;
+  }
+
+  .carousel {
+    .carousel-arrows {
+      .carousel-control-prev {
+        right: 0;
+      }
+
+      .carousel-control-next {
+        left: 0;
+      }
+    }
+  }
+
+  .section_heading{
+    font-size: 1.7rem;
+  }
+
+  .villas-project-filter{
+    justify-content: start;
+    margin-bottom: 25px;
+  }
+
+  .villa_info .info_bg h3{
+    margin-bottom: 10px;
+  }
+
+  .villa_info .info_bg h4{
+    text-align: start;
   }
 }
