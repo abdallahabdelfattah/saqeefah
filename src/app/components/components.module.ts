@@ -38,6 +38,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { PlaceOrderApartmentComponent } from './place-order-apartment/place-order-apartment.component';
 import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
+import { VillaCardComponent } from './villa-card/villa-card.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.compo
     HomeSliderComponent,
     PlaceOrderApartmentComponent,
     WhatsappButtonComponent,
-    
+    VillaCardComponent,
+
     // VedioComponent
   ],
   imports: [
@@ -87,7 +89,7 @@ VgBufferingModule
 
 
 
-        
+
       ],
   exports:[
     MapComponent,
@@ -110,14 +112,15 @@ VgBufferingModule
     HomeSliderComponent,
     PlaceOrderApartmentComponent,
     WhatsappButtonComponent,
-     
+    VillaCardComponent
+
     // VedioComponent
   ],
   providers: [
     MarkerService,
     PopupService,
     // EmbedVideoService
-   
+
   ]
 })
 export class ComponentsModule { }

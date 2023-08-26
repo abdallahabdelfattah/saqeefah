@@ -1,0 +1,11 @@
+<p>villas works!</p>
+<div class="row">
+  <div class="col-md-12">
+      <div class="row">
+          <div class="col-md-4 mb-3" *ngFor="let item of AllVillas">
+              <app-villa-card [villa]="item"></app-villa-card>
+          </div>
+      </div>
+  </div>
+
+</div>

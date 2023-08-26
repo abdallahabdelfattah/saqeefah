@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="unit-location">
+      <h5 class="secondary-color">{{villa.villa_code | translate}}</h5>
+     <h6>{{villa.villa_descrip | translate}}</h6>
+     <h6>{{villa.pro_nam | translate}}</h6>
+ </div>
+
+  </div>
+    <div class="col-md-8">
+
+        <form enctype="multipart/form-data" #myForm="ngForm">
+            <h4 class="secondary-color mb-3">{{'Villa Gallery' | translate}}</h4>
+            <label for="thumbnail">{{'Add Villa Cover Photo' | translate}}</label>
+            <input type="file" class="form-control mb-3" (change)="onInputChange($event)" id="thumbnail">
+
+            <div class="col-md-3" *ngIf="coverImage">
+                <div class="current-image w-100">
+                  <div class="imagBox position-relative w-100">
+                    <i class="fa fa-times-circle delete-img"  (click)="deleteCover()"></i>
+                    <img [src]="appRootUrl+coverImage"  class="img-fluid  w-100 " alt="">
+                  </div>
+                </div>
+            </div>
+            <p>
+
+            </p>
+            <label for="gallery">{{'Add Villa Gallery' | translate}}</label>
+            <input type="file" class="form-control mb-3" (change)="onGalleryInputChange($event)" id="gallery" multiple>
+            <div class="row">
+              <div class="col-md-12 mt-2">
+                    <div class="current-image"  *ngIf="gallaryImages != null">
+                      <div class="imagBox d-inline-block mx-1 mb-2"  *ngFor="let image of gallaryImages" >
+                        <i class="fa fa-times-circle delete-img" *ngIf="image.path !=null" (click)="delete(image.attachmentId)"></i>
+                        <img [src]="appRootUrl+image.path"  class="img-fluid imageborders" alt=""  style="height:150px">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <p>
+
+            </p>
+            <button  type="submit" class="btn btn-primary" (click)="uploadImage($event)">{{'Update' | translate}}</button>
+        </form>
+    </div>
+</div>
