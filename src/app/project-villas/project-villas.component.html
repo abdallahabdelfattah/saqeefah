@@ -1152,15 +1152,13 @@
       </h4>
       <!-- Project card slider here -->
 
-
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide *ngFor="let item of [1,2,3]" class="position-relative">
+        <ng-template carouselSlide *ngFor="let item of [1,2]" class="">
           <div class="img-container">
-            <img class="image"
-            src="assets/images/villas/slider2.png"
-            class="d-block w-100"
-            alt="..."
-          />
+
+            <img src="assets/images/villas/guarantee_test.png">
+
+
           </div>
 
           <div class="caption ">
@@ -1168,13 +1166,14 @@
               <h4>
                 {{item}}
               </h4>
-              <p >
+              <p>
                 {{item}}
               </p>
             </div>
           </div>
         </ng-template>
       </owl-carousel-o>
+
 
     </div>
   </section>

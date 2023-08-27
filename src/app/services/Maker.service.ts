@@ -17,7 +17,7 @@ export class MarkerService {
      let ApiUrl=  APIs.projects.GetProjects+"?languageId="+this.language.getLanguageID();
 
     this.aPICallerService.get(ApiUrl).subscribe((res: any) => {
-        for (const c of res.result.data) {
+        for (const c of res?.result?.data) {
           var greenIcon = new L.Icon({
             iconUrl: c.statusId== 1? 'assets/images/icons/for_sale_icon.png': c.statusId== 2?'assets/images/icons/soon_icon.png': 'assets/images/icons/sold_icon.png',
             shadowUrl: 'assets/images/icons/marker-shadow.png',
