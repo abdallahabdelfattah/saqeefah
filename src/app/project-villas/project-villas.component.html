@@ -213,6 +213,7 @@
         <div class="col-12">
           <div class="accordion villas-accordion" id="villasAccordion">
 
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
@@ -245,7 +246,7 @@
                           <h3 class="text-md-center">الحالة: <span>متاحة</span></h3>
                       </div>
                         <div class="col-md-4">
-                          <h4 data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <h4 data-bs-toggle="modal" data-bs-target="#modal1">
                             <img src="assets/images/villas/icons/plan.png">
                             مخـطط الفـلـة</h4>
                         </div>
@@ -625,9 +626,6 @@
               </div>
             </div>
 
-
-
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="heading2">
                 <button
@@ -662,7 +660,7 @@
                           <h3 class="text-md-center">الحالة: <span>متاحة</span></h3>
                       </div>
                         <div class="col-md-4">
-                          <h4 data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <h4 data-bs-toggle="modal" data-bs-target="#modal1">
                             <img src="assets/images/villas/icons/plan.png">
                             مخـطط الفـلـة</h4>
                         </div>
@@ -1179,21 +1177,7 @@
   </section>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+<app-villa-modal [modalId]="'1'" [Gallery]="[]" Details="{}"></app-villa-modal>

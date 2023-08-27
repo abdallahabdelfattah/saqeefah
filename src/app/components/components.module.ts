@@ -40,6 +40,7 @@ import { PlaceOrderApartmentComponent } from './place-order-apartment/place-orde
 import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 import { VillaCardComponent } from './villa-card/villa-card.component';
 import { MapSingleComponent } from './map-single/map-single.component';
+import { VillaModalComponent } from './villa-modal/villa-modal.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { MapSingleComponent } from './map-single/map-single.component';
     WhatsappButtonComponent,
     VillaCardComponent,
     MapSingleComponent,
+    VillaModalComponent,
 
     // VedioComponent
   ],
@@ -116,7 +118,8 @@ VgBufferingModule
     WhatsappButtonComponent,
     VillaCardComponent,
     CarouselModule,
-    MapSingleComponent
+    MapSingleComponent,
+    VillaModalComponent
 
     // VedioComponent
   ],

@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div class="project-modal">
+  <div class="modal fade" [id]="'modal'+modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel" *ngIf="Details">{{Details.projectName  | translate}}</h5>
+                  <h6 class="modal-title">{{Details.adress | translate}}, {{Details.city | translate}}</h6>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                  <div *ngIf="Gallery.length > 0;else defaultImage" [id]="'carouselExampleIndicators'+modalId" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                          <div class="carousel-item" [class.active]="i == 0" *ngFor="let item of Gallery;let i = index">
+                              <img [src]="appRootUrl+'/'+item.path" class="d-block w-100" alt="...">
+                          </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'+modalId" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'+modalId" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                  </div>
+                  <ng-template #defaultImage>
+                      <img class="img-fluid" [src]="Details.coverImage ? appRootUrl+Details.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
+                  </ng-template>
+              </div>
+              <div class="modal-footer">
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
