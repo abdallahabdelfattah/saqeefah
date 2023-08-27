@@ -316,8 +316,9 @@
             </div>
 
             <div class="col-md-3 text-end">
-              <a href="#" class="btn btn-primary w-100"> تسجيل اهتمام </a>
-
+              <a href="#" class="btn btn-primary w-100"
+              data-bs-toggle="modal"
+               [attr.data-bs-target]="'#place-order-villa-form'+villaDetails?.villa_id"> تسجيل اهتمام </a>
             </div>
 
           </div>
@@ -338,3 +339,23 @@
 
 
 <app-villa-modal [modalId]="'v-'+index" [Gallery]="[]" Details="{}"></app-villa-modal>
+
+
+ <!-- Modal  register place-order-Villa-form -->
+<div *ngIf="villaDetails" class="modal fade" [id]="'place-order-villa-form'+villaDetails.villa_id" tabindex="-1"
+    aria-labelledby="PlaceOrderVillaFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title unit-title" id="PlaceOrderVillaFormLabel">{{'PlaceOrder' | translate}} -
+                    {{villaDetails.villa_code}} </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-place-order-apartment [villa_Ref]="villaDetails?.villa_id" [isVilla]="true"
+                    [project_Ref]="villaDetails?.project_Ref"></app-place-order-apartment>
+            </div>
+
+        </div>
+    </div>
+</div>

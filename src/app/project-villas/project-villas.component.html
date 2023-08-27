@@ -341,20 +341,16 @@
       <!-- Project card slider here -->
 
       <owl-carousel-o [options]="customOptions" class="villas_carousel">
-        <ng-template carouselSlide *ngFor="let item of [1,2]" class="">
-          <div class="img-container">
-            <img src="assets/images/villas/slider{{item}}.png">
-          </div>
-          <div class="caption ">
-            <div class="container">
-              <h4>
-                {{item}}
-              </h4>
-              <p>
-                {{item}}
-              </p>
-            </div>
-          </div>
+        <ng-template carouselSlide  *ngFor="let slide  of
+         [
+         {coverImage:'',projectId:205,statusId:1,projectName:'projectName',images:[]},
+          {coverImage:'',projectId:20,statusId:1,projectName:'projectName',images:[]},
+          {coverImage:'',projectId:250,statusId:1,projectName:'projectName',images:[]}
+          ]">
+          <div class="col-12" >
+            <app-project-card [isProjectTypeVilla]="true" [project]="slide"></app-project-card>
+        </div>
+
         </ng-template>
       </owl-carousel-o>
 

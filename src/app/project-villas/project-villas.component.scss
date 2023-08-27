@@ -66,61 +66,7 @@
 
 // END BANNER
 
-.carousel {
-  .carousel-item {
-    img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      max-height: 350px;
-    }
-  }
 
-  .carousel-arrows {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-
-    .carousel-control-next,
-    .carousel-control-prev {
-      opacity: 1;
-      top: auto;
-    }
-
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      background-image: none;
-      color: #947f68;
-      font-size: 30px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .carousel-control-prev {
-      right: 150px;
-      left: auto;
-    }
-
-    .carousel-control-next {
-      left: 150px;
-    }
-  }
-
-  .carousel-indicators {
-    position: unset;
-    margin-top: 32px;
-  }
-
-  .carousel-indicators [data-bs-target] {
-    width: 15px;
-    height: 15px;
-    border-radius: 50px;
-    background-color: var(--main-color);
-    border: 0;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-}
 
 
 .villas-page {
@@ -549,17 +495,7 @@
     overflow-x: hidden;
   }
 
-  .carousel {
-    .carousel-arrows {
-      .carousel-control-prev {
-        right: 0;
-      }
 
-      .carousel-control-next {
-        left: 0;
-      }
-    }
-  }
 
   .section_heading{
     font-size: 1.7rem;
@@ -584,11 +520,4 @@
   }
 }
 
-
-.carousel{
-  height: 100%;
-  .carousel-item{
-      height: 100%;
-  }
-}
 

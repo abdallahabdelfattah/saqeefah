@@ -1,10 +1,18 @@
 <div class="card project-card {{viewType}}">
     <div class="img-panel">
         <div class="img-container project">
-            <img [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'"
+            <img  *ngIf="!isProjectTypeVilla" [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'"
                 class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
                 style="cursor: pointer;">
-            <!-- <img [src]="'assets/images/list/p1.jpg'" class="card-img-top" alt="..." [routerLink]="['/project',project.projectId]" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"> -->
+
+
+                <!-- villa types  -->
+               <a  [routerLink]="['/project-villas', project.projectId]" >
+                <img *ngIf="isProjectTypeVilla" [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'"
+                class="card-img-top" alt="..."
+                style="cursor: pointer;"  >
+               </a>
+
         </div>
         <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="project.projectId"
             [class.active]="project.favorite" (click)="favorites.toggleFavorites(project)"></i>

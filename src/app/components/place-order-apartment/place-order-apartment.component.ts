@@ -13,11 +13,13 @@ export class PlaceOrderApartmentComponent implements OnInit {
 
 @Input() project_Ref
 @Input() apartment_Id
+@Input() villa_Ref
+@Input() isVilla:boolean= false;
 public myFormGroup: FormGroup = new FormGroup({
   interest_Date:new FormControl(new Date(),[]),
   project_Ref: new FormControl(0, []), //project Id from api
-   building_Ref: new FormControl(0, []),   
-   apartment_Ref: new FormControl(0, []),    
+   building_Ref: new FormControl(0, []),
+   apartment_Ref: new FormControl(0, []),
   client_Name: new FormControl('', [Validators.required]), //user input
   client_Mail: new FormControl('', [Validators.email]),  //user input
   client_Mobile: new FormControl('', [Validators.required]), //user input
@@ -33,7 +35,9 @@ public myFormGroup: FormGroup = new FormGroup({
   roof: new FormControl(0, []),
   store: new FormControl(0, []),
   servent_Room: new FormControl(0, []),
-  additional_Reqst: new FormControl('', [])
+  additional_Reqst: new FormControl('', []),
+  villa_Ref: new FormControl(null, []),
+  placeOrderType: new FormControl(1, []),
 });
 
 constructor(private toastr: ToastrService,
@@ -66,16 +70,26 @@ initializeFormGroup() {
     roof:0,
     store:0,
     servent_Room:0,
-    additional_Reqst:''
+    additional_Reqst:'',
+    placeOrderType:1,
+    villa_Ref:null,
   })
 }
 
 showError:boolean=false;
 onClickSubmit($event){
   if(this.myFormGroup.valid){
+
     this.myFormGroup.patchValue({'project_Ref':this.project_Ref});
     this.myFormGroup.patchValue({'apartment_Ref':this.apartment_Id});
-  
+
+    if(this.isVilla==true)
+    {
+      this.myFormGroup.patchValue({'apartment_Ref':null});
+      this.myFormGroup.patchValue({'placeOrderType':2});
+      this.myFormGroup.patchValue({'villa_Ref':this.villa_Ref});
+    }
+
   this.placeOrderService.Post(this.myFormGroup.value).subscribe(res=>{
         if(!res.isError)
         {

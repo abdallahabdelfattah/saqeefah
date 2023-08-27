@@ -20,7 +20,7 @@ export class ProjectVillasComponent implements OnInit {
     dots: true,
     autoplay:true,
     autoplayTimeout:4000 ,
-    margin:0,
+    margin:10,
     center:true,
     items:1,
     navText: ['', ''],
@@ -30,10 +30,10 @@ export class ProjectVillasComponent implements OnInit {
           items:1,
       },
       600:{
-          items:1,
+          items:3,
       },
       1000:{
-          items:1,
+          items:4,
       }
   }
   }

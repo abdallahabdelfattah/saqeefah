@@ -7,7 +7,7 @@ import { APIs } from '../shared/helper/APIs';
 export class PlaceOrderService  {
      appRootUrl = environment.appRoot;
 
-    
+
     constructor(private callApi:APICallerService) {
 
 
@@ -16,46 +16,48 @@ export class PlaceOrderService  {
 
     getAllProjects(languageId:string){
         var result = this.callApi.get(`api/Project/GetProjects?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getAllCities(languageId:string){
         var result = this.callApi.get(`api/Client/Cities?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getCitiesForFilter(languageId:string){
         var result = this.callApi.get(`api/Client/CitiesForFilter?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getDistrictForFilter(languageId:string){
         var result = this.callApi.get(`api/Client/DistrictsForFilter?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getCategory(rangeType:any,languageId:string){
         var result = this.callApi.get(`api/Setting/GetRanges?rangeTypeId=${rangeType}&languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getAllApartmentStatus(languageId:string){
         var result = this.callApi.get(`api/Client/ApartmentStatus?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getAllProjectStatus(languageId:string){
         var result = this.callApi.get(`api/Client/ProjectStatus?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
     getAllDistricts(languageId:string,cityId:any){
         var result = this.callApi.get(`api/Client/Districts?languageId=${languageId}&cityId=${cityId}`,false)
-        return result; 
+        return result;
     }
     getAllPaymentMethods(languageId:string){
         var result = this.callApi.get(`api/Client/PaymentMethods?languageId=${languageId}`,false)
-        return result; 
+        return result;
     }
-    Post(Model:any){
+Post(Model:any){
 let Mod={
     interest_Date:Model.interest_Date,
-    project_Ref: 0,
+    project_Ref: Model?.project_Ref??0,
     building_Ref:0,
     apartment_Ref:Model.apartment_Ref,
+    villa_Ref:Model.villa_Ref,
+    placeOrderType:Model.placeOrderType??1,
     client_Name: Model.client_Name,//
     client_Mobile: Model.client_Mobile,//
     client_Mail: Model.client_Mail,//
@@ -79,18 +81,13 @@ let Mod={
     additional_Reqst:Model.additional_Reqst
 };
         var result = this.callApi.post(`api/Client/ClientInterest`,Mod,false)
-        return result; 
+        return result;
     }
 
 
 
-    // uploadProjectImage(formData){
-        
-    //    return this.callApi.postWithAttachment(APIs.projects.AddAttachments,formData); 
-    // }
-
 
 
 }
-   
+
 

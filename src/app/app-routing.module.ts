@@ -79,10 +79,16 @@ const routes: Routes = [
 
   },
   {
+    path: 'project-villas/:id',
+    component:ProjectVillasComponent
+
+  },
+  {
     path: 'project-villas',
     component:ProjectVillasComponent
 
   },
+
   {
 
     path: 'dashboard',
