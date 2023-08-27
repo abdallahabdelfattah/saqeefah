@@ -492,23 +492,10 @@
 
 }
 
-.villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button{
-  background-image: url('../../assets/images/villas/icons/collapse_bg_en.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  &:lang(ar){
-    background-image: url('../../assets/images/villas/icons/collapse_bg.png');
-  }
-}
 
 
-.villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button.paid{
-    background-image: url('../../assets/images/villas/icons/collapse_bg_sold_en.png');
-    &:lang(ar){
-      background-image: url('../../assets/images/villas/icons/collapse_bg_sold.png');
-    }
-  }
+
+
 
 
 

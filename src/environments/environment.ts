@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  appRoot:"https://api-stage.saqeefah.com",
+  //appRoot:"https://api-stage.saqeefah.com",
  //  appRoot:"https://api.saqeefah.com",
-// appRoot:"https://localhost:44301",
+ appRoot:"https://localhost:44301",
   lang:"ar",
   minPrice:500000,
   maxprice:4000000,

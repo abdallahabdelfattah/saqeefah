@@ -54,6 +54,7 @@ import { SiteInformationSharedService } from './services/site-information-shared
 import { AllSettingSharedService } from './services/all-setting-shared.service';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { ProjectVillasComponent } from './project-villas/project-villas.component';
+import { VillaAccordionItemComponent } from './pages/components/villa-accordion-item/villa-accordion-item.component';
 
 
 
@@ -68,6 +69,7 @@ import { ProjectVillasComponent } from './project-villas/project-villas.componen
     PropertiesComponent,
     UsagePolicyComponent,
     ProjectVillasComponent,
+    VillaAccordionItemComponent,
  
   
   ],
