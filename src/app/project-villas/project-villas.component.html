@@ -1152,15 +1152,11 @@
       </h4>
       <!-- Project card slider here -->
 
-      <owl-carousel-o [options]="customOptions">
+      <owl-carousel-o [options]="customOptions" class="villas_carousel">
         <ng-template carouselSlide *ngFor="let item of [1,2]" class="">
           <div class="img-container">
-
-            <img src="assets/images/villas/guarantee_test.png">
-
-
+            <img src="assets/images/villas/slider{{item}}.png">
           </div>
-
           <div class="caption ">
             <div class="container">
               <h4>
