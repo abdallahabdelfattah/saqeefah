@@ -18,6 +18,7 @@
       box-shadow: none;
       border: 0;
       background: var(--main-color);
+      border-radius: 0;
 
     &:focus,
     &:active {
@@ -40,10 +41,13 @@
         font-size: 1.5rem;
         color: #fff;
         z-index: 3;
-        :lang(ar) & {
+      }
+        &:lang(ar) {
+          &::before{
           content: "مباعة";
         }
       }
+
     }
     &::after {
       margin: 0 !important;
@@ -53,6 +57,8 @@
       margin: 0;
       font-size: 2rem;
     }
+
+
   }
 }
 .accordion-footer {
@@ -99,8 +105,8 @@
 
 .villa_info{
   .info_bg{
-    background: #8b8666;
     padding: 20px;
+    background: #858560;
 
     h3{
       color: #fff;
@@ -122,18 +128,15 @@
 }
 
 
-.accordion-button.paid ~ .accordion-collapses .accordion-body .villa_info .info_bg{
-    background: #6d6d68;
-  }
-
 
 .villa_desc{
-  padding: 20px;
-
+  margin: 30px 0 50px 0;
   .col-lg-3{
+    .row{
     padding: 20px;
     border: solid 1px #edececb5;
   }
+}
 
   img{
     width: 40px;
@@ -166,29 +169,38 @@
       background-image: url('../../../../assets/images/villas/icons/collapse_bg_sold.png');
     }
  }
- .accordion-button.paid ~ .accordion-collapses .accordion-body .villa_info .info_bg{
-  background: #6d6d68;
-  }
+
 
 }
 
 
 
-//  .accordion-item .accordion-button.paid
-//  {
-//     background-image: url('../../../../assets/images/villas/icons/collapse_bg_sold_en.png');
-//     &:lang(ar){
-//       background-image: url('../../../../assets/images/villas/icons/collapse_bg_sold.png');
-//     }
-//  }
-//  .accordion-button.paid ~ .accordion-collapses .accordion-body .villa_info .info_bg{
-//   background: #6d6d68;
-// }
 
+
+
+
+
+.area_div{
+
+  h5{
+    display: inline-block;
+    width: 50px;
+  }
+
+  span{
+      color: var(--main-color);
+      margin-inline-start: 15px;
+      font-size: 30px;
+  }
+}
 
 @media screen and (min-width: 768px) and (max-width: 990px) {
   .villas-project-details__statistics {
     gap: 70px;
+  }
+
+  .accordion-item .accordion-button.firstChild{
+    background-size: contain;
   }
 
 }
@@ -203,8 +215,7 @@
     text-align: start;
   }
 
-  .accordion-button,
- .accordion-button.paid{
+  .accordion-item .accordion-button.firstChild{
     background-size: contain;
   }
 }
