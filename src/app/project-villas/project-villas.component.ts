@@ -20,13 +20,13 @@ export class ProjectVillasComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     autoWidth:true,
-    pullDrag: false,
-    dots: true,
+    pullDrag: true,
+    dots: false,
     autoplay:true,
-    autoplayTimeout:4000 ,
+    autoplayTimeout:1000 ,
     margin:10,
     center:true,
-    items:1,
+    items:3,
     navText: ['', ''],
     nav: false,
     responsive:{
@@ -34,7 +34,7 @@ export class ProjectVillasComponent implements OnInit {
           items:1,
       },
       600:{
-          items:3,
+          items:2,
       },
       1000:{
           items:3,
@@ -50,7 +50,8 @@ export class ProjectVillasComponent implements OnInit {
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response.isError){
     this.AllProjects = response.result.data
-    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4);
+    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4 && x.projectType!=null && x.projectType==2);
+    console.log(this.AllProjects);
   }
 
     })

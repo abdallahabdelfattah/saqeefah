@@ -12,7 +12,6 @@ export class ProjectCardComponent implements OnInit {
   @Input() EditMode!:boolean ;
   @Input() viewType:string;
   projectLink!:string;
-  @Input() isProjectTypeVilla:boolean=false;
 
   homespecs = [1,1]
   itemSpecsIcon = [

@@ -1,19 +1,26 @@
 <div class="card project-card {{viewType}}">
     <div class="img-panel">
-        <div class="img-container project">
-            <img  *ngIf="!isProjectTypeVilla" [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'"
-                class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
-                style="cursor: pointer;">
 
 
-                <!-- villa types  -->
-               <a  [routerLink]="['/project-villas', project.projectId]" >
-                <img *ngIf="isProjectTypeVilla" [src]="project.coverImage ? appRootUrl+project.coverImage : 'assets/images/home-placeHolder.webp'"
-                class="card-img-top" alt="..."
-                style="cursor: pointer;"  >
-               </a>
+         <a   *ngIf="project?.projectType==2; else apartmentProject"   [routerLink]="['/project-villas', project.projectId]" >
+          <div class="img-container project" >
+            <img   [src]="project?.coverImage ? appRootUrl+project?.coverImage : 'assets/images/home-placeHolder.webp'"
+                     class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
+                     style="cursor: pointer;">
+             </div>
+         </a>
 
-        </div>
+
+      <ng-template #apartmentProject>
+        <div  class="img-container project" data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId">
+          <img   [src]="project?.coverImage ? appRootUrl+project?.coverImage : 'assets/images/home-placeHolder.webp'"
+                   class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
+                   style="cursor: pointer;">
+           </div>
+          </ng-template>
+
+
+
         <i class="icon tagr-icon-heart fav-icon" [attr.data-cardIco-id]="project.projectId"
             [class.active]="project.favorite" (click)="favorites.toggleFavorites(project)"></i>
         <div class="card-label "
