@@ -2,10 +2,11 @@
     <div class="img-panel">
 
 
+      <!-- Villa Project -->
          <a   *ngIf="project?.projectType==2; else apartmentProject"   [routerLink]="['/project-villas', project.projectId]" >
           <div class="img-container project" >
             <img   [src]="project?.coverImage ? appRootUrl+project?.coverImage : 'assets/images/home-placeHolder.webp'"
-                     class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
+                     class="card-img-top" alt="..."
                      style="cursor: pointer;">
              </div>
          </a>
@@ -38,7 +39,6 @@
         <div class="unit-location">
             <h5 class="secondary-color">{{project.projectName | translate}}</h5>
             <h6>{{project.adress | translate}}</h6>
-
         </div>
         <div class="unit-specs mt-auto">
             <ul class="list-inline m-0">
