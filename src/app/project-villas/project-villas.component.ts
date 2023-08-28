@@ -50,7 +50,7 @@ export class ProjectVillasComponent implements OnInit {
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response.isError){
     this.AllProjects = response.result.data
-    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4 && x.projectType!=null && x.projectType==2);
+    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4 );
     console.log(this.AllProjects);
   }
 

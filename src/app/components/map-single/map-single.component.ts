@@ -27,7 +27,7 @@ export class MapSingleComponent implements OnInit {
 
       // Define a custom marker icon
       const markerIcon = L.icon({
-        iconUrl: 'assets/images/villas/icons/villas_location.png',
+        iconUrl: 'assets/images/icons/map_icon_gold.png',
         shadowUrl: 'assets/images/icons/marker-shadow.png',
         iconSize: [60, 80],
         iconAnchor: [25, 41],
