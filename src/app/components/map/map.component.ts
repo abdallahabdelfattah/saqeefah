@@ -5,7 +5,8 @@ import { siteInfo } from 'src/app/pages/Models/siteInfo';
 import { MarkerService } from 'src/app/services/Maker.service';
 import { SiteInformationSharedService } from 'src/app/services/site-information-shared.service';
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
-const iconUrl = 'assets/marker-icon.png';
+// const iconUrl = 'assets/marker-icon.png';
+const iconUrl = 'assets/images/icons/map_icon_gold.png';
 const shadowUrl = 'assets/marker-shadow.png';
 const iconDefault = L.icon({
   iconRetinaUrl,

@@ -344,9 +344,17 @@
 
       <owl-carousel-o [options]="customOptions" class="villas_carousel">
         <ng-template carouselSlide  *ngFor="let slide  of  AllProjects ">
-          <div class="col-12" >
-            <app-project-card [isProjectTypeVilla]="true" [project]="slide"></app-project-card>
-        </div>
+
+          <div class="container">
+            <div class="row">
+
+              <div class="col-12" >
+                <app-project-card [isProjectTypeVilla]="true" [project]="slide"></app-project-card>
+            </div>
+
+            </div>
+          </div>
+
 
         </ng-template>
       </owl-carousel-o>

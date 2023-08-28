@@ -342,8 +342,9 @@ html {
 }
 
 
-.villas_carousel .owl-carousel .owl-stage{
-  transform: none !important;
+.villas_carousel .owl-carousel:lang(ar){
+  direction: ltr;
+  text-align: right;
 }
 
 
