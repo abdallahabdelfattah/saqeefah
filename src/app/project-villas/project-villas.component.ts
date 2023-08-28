@@ -12,7 +12,7 @@ import { changeLanguageService } from '../services/changeLanguage.service';
 })
 export class ProjectVillasComponent implements OnInit {
 
-  AllProjects:any ; 
+  AllProjects:any ;
   constructor( private generalService:GenaricService, private projects:ProjectAndListService,private language:changeLanguageService) { }
 
   customOptions: OwlOptions = {
@@ -20,13 +20,13 @@ export class ProjectVillasComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     autoWidth:true,
-    pullDrag: false,
-    dots: true,
+    pullDrag: true,
+    dots: false,
     autoplay:true,
-    autoplayTimeout:4000 ,
+    autoplayTimeout:1000 ,
     margin:10,
     center:true,
-    items:1,
+    items:3,
     navText: ['', ''],
     nav: true,
     responsive:{
@@ -34,25 +34,26 @@ export class ProjectVillasComponent implements OnInit {
           items:1,
       },
       600:{
-          items:3,
+          items:2,
       },
       1000:{
-          items:4,
+          items:3,
       }
   }
   }
 
   ngOnInit(): void {
-    this.getAllProjects(); 
+    this.getAllProjects();
   }
 
   getAllProjects(){
     this.projects.getAllProjects(this.language.getLanguageID()).subscribe((response:any)=>{
   if(!response.isError){
     this.AllProjects = response.result.data
-    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4);
+    this.AllProjects=this.AllProjects.filter(x=>x['statusId']!=4 && x.projectType!=null && x.projectType==2);
+    console.log(this.AllProjects);
   }
-  
+
     })
   }
 

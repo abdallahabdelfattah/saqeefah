@@ -345,7 +345,7 @@
       <owl-carousel-o [options]="customOptions" class="villas_carousel">
         <ng-template carouselSlide  *ngFor="let slide  of  AllProjects ">
           <div class="col-12" >
-            <app-project-card [isProjectTypeVilla]="true" [project]="slide"></app-project-card>
+            <app-project-card  [project]="slide"></app-project-card>
         </div>
 
         </ng-template>
@@ -355,6 +355,7 @@
 
     </div>
   </section>
+
 
 
 </div>

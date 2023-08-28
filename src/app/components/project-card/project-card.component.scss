@@ -99,6 +99,7 @@
 .card.list .card-img-top {
     border-top-left-radius: 0 !important;
      border-top-right-radius: 0 !important;
+     height: 100%;
 
 }
 .card.list .card-img-top:hover{
@@ -108,7 +109,7 @@
 
 
 .card.grid6 .img-panel .img-container.project {
-    height: 250px;   
+    height: 250px;
     img{
         height: 100%;
     }
