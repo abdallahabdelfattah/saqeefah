@@ -347,6 +347,30 @@ html {
   text-align: right;
 }
 
+.map-card.villa_map_card .project-info{
+  background-color: transparent;
+  top: 19px;
+    width: 100%;
+    margin-inline-start: 165px;
+
+    &:lang(ar){
+      margin-inline-start: 185px;
+    }
+
+    .project-title{
+        color: #fff;
+        padding: 5px;
+        font-size: 20px;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+}
+
+.villa_map .leaflet-popup-tip-container{
+  display: none;
+}
+
 
 .available_status{
   background: #56c14b;

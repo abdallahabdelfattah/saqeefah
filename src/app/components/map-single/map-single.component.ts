@@ -29,30 +29,27 @@ export class MapSingleComponent implements OnInit {
       const markerIcon = L.icon({
         iconUrl: 'assets/images/icons/map_icon_gold.png',
         shadowUrl: 'assets/images/icons/marker-shadow.png',
-        iconSize: [60, 80],
+        iconSize: [40, 55],
         iconAnchor: [25, 41],
         popupAnchor: [5, -41]
       });
 
       // Add a marker to the map with the custom icon
-      const marker = L.marker([24.68163,46.785942]).addTo(map);
+      const marker = L.marker([24.68163,46.785942],{icon:markerIcon}).addTo(map);
 
       // Customize the popup content
       const popupContent = `
-      <div class="map-card" >
-      <div class="project-img">
-          <img src="'assets/images/home-placeHolder.webp'}" class="card-img-top" alt="...">
-      </div>
+      <div class="map-card villa_map_card" >
+
       <div class="project-info">
-          <h6 class="project-title">project Name</h6>
-          <h6 class="project-city">city</h6>
+          <h6 class="project-title"> مشروع سقيفة </h6>
       </div>
   </div>
 
       `;
 
       // Add a popup to the marker with the custom content
-      marker.bindPopup(popupContent);
+      marker.bindPopup(popupContent).openPopup();
 
   }
 
