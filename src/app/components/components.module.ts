@@ -41,6 +41,7 @@ import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.compo
 import { VillaCardComponent } from './villa-card/villa-card.component';
 import { MapSingleComponent } from './map-single/map-single.component';
 import { VillaModalComponent } from './villa-modal/villa-modal.component';
+import { LeafletMapsComponent } from './leaflet-maps/leaflet-maps.component';
 
 
 @NgModule({
@@ -68,7 +69,7 @@ import { VillaModalComponent } from './villa-modal/villa-modal.component';
     VillaCardComponent,
     MapSingleComponent,
     VillaModalComponent,
-
+    LeafletMapsComponent
     // VedioComponent
   ],
   imports: [
@@ -119,7 +120,8 @@ VgBufferingModule
     VillaCardComponent,
     CarouselModule,
     MapSingleComponent,
-    VillaModalComponent
+    VillaModalComponent,
+    LeafletMapsComponent
 
     // VedioComponent
   ],
