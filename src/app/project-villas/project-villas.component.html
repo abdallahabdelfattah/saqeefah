@@ -20,8 +20,6 @@
 <!--===== END BANNER =====-->
 
 <div class="villas-page">
-
-
   <section class="about-villas-project">
     <div class="container">
       <div class="row g-5">
@@ -193,12 +191,13 @@
         <div class="col-md-9">
           <h4 class="section_heading d-flex mb-4">
             <span class="title">المواصفات والأسعار</span>
-
           </h4>
         </div>
         <div class="col-md-3">
           <div class="villas-project-filter">
-            <button class="btn btn-outline-primary villas-project-filter__item selected">
+            <button
+              class="btn btn-outline-primary villas-project-filter__item selected"
+            >
               الكل
             </button>
             <button class="btn btn-outline-primary villas-project-filter__item">
@@ -214,21 +213,16 @@
       <div class="row g-5">
         <div class="col-12">
           <div class="accordion villas-accordion" id="villasAccordion">
-
-
-
-            <app-villa-accordion-item *ngFor="let item of [1,2,3,4];let first = first;" [index]="item" [firstChild]="first"></app-villa-accordion-item>
-
-
-
-
-
+            <app-villa-accordion-item
+              *ngFor="let item of [1, 2, 3, 4]; let first = first"
+              [index]="item"
+              [firstChild]="first"
+            ></app-villa-accordion-item>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="project-collateral">
     <div class="container">
@@ -312,13 +306,15 @@
       </div> -->
 
       <div class="row">
-        <div class="col-lg-7">
-          <img src="assets/images/villas/guarantee_test.png" class="img-fluid w-100">
+        <div class="col-lg-6">
+          <img
+            src="assets/images/villas/guarantee_test.png"
+            class="img-fluid w-100"
+          />
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="project-location">
     <div class="container">
@@ -328,10 +324,8 @@
       <!-- Location Here  -->
 
       <app-map-single></app-map-single>
-
     </div>
   </section>
-
 
   <section class="other-projects">
     <div class="container">
@@ -340,32 +334,17 @@
       </h4>
       <!-- Project card slider here -->
 
-
-
       <owl-carousel-o [options]="customOptions" class="villas_carousel">
-        <ng-template carouselSlide  *ngFor="let project  of  AllProjects ">
-
+        <ng-template carouselSlide *ngFor="let project of AllProjects">
           <div class="container">
             <div class="row">
-          <div class="col-12" >
-            <app-project-card  [project]="project"></app-project-card>
-        </div>
-
+              <div class="col-12">
+                <app-project-card [project]="project"></app-project-card>
+              </div>
             </div>
           </div>
-
-
         </ng-template>
       </owl-carousel-o>
-
-
-
     </div>
   </section>
-
-
-
 </div>
-
-
-

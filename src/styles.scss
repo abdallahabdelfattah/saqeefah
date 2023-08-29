@@ -367,8 +367,11 @@ html {
 
 }
 
-.villa_map .leaflet-popup-tip-container{
+.villa_map{
+  .leaflet-popup-tip-container,
+  .leaflet-popup-close-button{
   display: none;
+}
 }
 
 

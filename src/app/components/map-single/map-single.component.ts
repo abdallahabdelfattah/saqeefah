@@ -22,7 +22,8 @@ export class MapSingleComponent implements OnInit {
       // Add the tile layer (you can use any tile provider)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 18,
+        maxZoom: 20,
+      minZoom: 16,
       }).addTo(map);
 
       // Define a custom marker icon

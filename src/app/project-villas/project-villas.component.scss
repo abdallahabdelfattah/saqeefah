@@ -66,12 +66,8 @@
 
 // END BANNER
 
-
-
-
 .villas-page {
   background: #fff;
-
 }
 .about-villas-project {
   padding: 70px 0;
@@ -90,7 +86,37 @@
     }
   }
 }
-
+.carousel {
+  .carousel-item {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      height: 300px;
+    }
+  }
+  .carousel-arrows{
+    position: relative;
+    padding: 12px;
+  }
+  .carousel-indicators{
+    position: relative;
+    button{
+      background-color: #dbdbdb;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 1;
+      &[aria-current="true"]{
+        background-color: var(--main-color);
+      }
+    }
+  }
+  .carousel-control-next, .carousel-control-prev{
+    color: var(--main-color);
+  }
+}
 .villas-project-details {
   &__title {
     margin-bottom: 15px;
@@ -105,7 +131,7 @@
   }
   &__statistics {
     display: flex;
-    gap: 28px;
+    gap: 40px;
     flex-wrap: wrap;
     margin-top: 32px;
     &__item {
@@ -114,6 +140,7 @@
         display: flex;
         align-items: flex-start;
         height: 100%;
+        gap: 12px;
         &__icon {
           display: flex;
           flex-direction: column;
@@ -121,8 +148,8 @@
           background-color: #5f5e59;
           height: 100%;
           img {
-            height: 32px;
-            width: 32px;
+            height: 40px;
+            width: 40px;
           }
         }
         &__data {
@@ -153,14 +180,12 @@
   padding: 40px 0;
 
   .villas-accordion {
-
-    .accordion-body{
+    .accordion-body {
       padding: 0;
       background: #fff;
     }
     .accordion-item {
       border: 0;
-
 
       .accordion-button {
         position: relative;
@@ -169,16 +194,15 @@
         gap: 24px;
         color: #fff;
         outline: none;
-          box-shadow: none;
-          border: 0;
-          background: var(--main-color);
+        box-shadow: none;
+        border: 0;
+        background: var(--main-color);
 
         &:focus,
         &:active {
           outline: none;
           box-shadow: none;
         }
-
 
         &.paid {
           background-color: #5e5e59;
@@ -329,144 +353,124 @@
     }
   }
 }
-.project-location{
+.project-location {
   padding: 40px 0;
 }
-.other-projects{
+.other-projects {
   padding: 40px 0;
   background-color: #fff;
 }
-.villas-project-filter{
+.villas-project-filter {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-inline-start: auto;
   justify-content: end;
-  &__item{
-    &.selected{
+  &__item {
+    &.selected {
       background-color: var(--main-color);
       color: #fff;
     }
   }
 }
 
-
-
-.section_heading{
+.section_heading {
   margin-bottom: 20px;
   font-size: 2rem;
   color: #5f5e59;
   font-weight: 600;
   position: relative;
 
-  span{
+  span {
     margin-inline-start: 80px;
   }
 
   &::before {
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  content: "";
-  display: inline-flex;
-  width: 50px;
-  height: 60px;
-  background-color: #5E5E59;
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    content: "";
+    display: inline-flex;
+    width: 50px;
+    height: 60px;
+    background-color: #5e5e59;
+  }
 }
-}
 
-
-
-.villa_info{
-
-  .info_bg{
+.villa_info {
+  .info_bg {
     background: #8b8666;
     padding: 20px;
 
-    h3{
+    h3 {
       color: #fff;
       margin: 0;
-      span{
+      span {
         font-weight: 600;
       }
     }
 
-    h4{
+    h4 {
       color: #fff;
       text-align: end;
       margin: 0;
       cursor: pointer;
       font-size: 25px;
-
     }
   }
-
 }
 
+.accordion-button.paid
+  ~ .accordion-collapses
+  .accordion-body
+  .villa_info
+  .info_bg {
+  background: #6d6d68;
+}
 
-.accordion-button.paid ~ .accordion-collapses .accordion-body .villa_info .info_bg{
-    background: #6d6d68;
-  }
-
-
-
-
-.villa_desc{
+.villa_desc {
   padding: 20px;
 
-  .col-lg-3{
+  .col-lg-3 {
     padding: 20px;
     border: solid 1px #edececb5;
   }
 
-  img{
-    width: 40px;
-    height: 40px;
+  img {
+    width: 32px;
+    height: 32px;
     margin-inline-end: 10px;
     margin-top: -3px;
   }
 
-  span{
+  span {
     font-size: 18px;
     font-weight: 500;
   }
 
-  h6{
+  h6 {
     text-align: end;
     font-size: 16px;
   }
-
 }
 
-
-
-
-
-
-
-
-.area_div{
-
-  h5{
+.area_div {
+  h5 {
     display: inline-block;
     width: 50px;
   }
 
-  span{
-      color: var(--main-color);
-      margin-inline-start: 15px;
-      font-size: 30px;
+  span {
+    color: var(--main-color);
+    margin-inline-start: 15px;
+    font-size: 30px;
   }
 }
-
-
-
 
 @media screen and (min-width: 768px) and (max-width: 990px) {
   .villas-project-details__statistics {
     gap: 70px;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -495,29 +499,31 @@
     overflow-x: hidden;
   }
 
-
-
-  .section_heading{
+  .section_heading {
     font-size: 1.7rem;
   }
 
-  .villas-project-filter{
+  .villas-project-filter {
     justify-content: start;
     margin-bottom: 25px;
   }
 
-  .villa_info .info_bg h3{
+  .villa_info .info_bg h3 {
     margin-bottom: 10px;
   }
 
-  .villa_info .info_bg h4{
+  .villa_info .info_bg h4 {
     text-align: start;
   }
 
-  .villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button,
-  .villas-project-specification .villas-accordion .accordion-item:first-child .accordion-button.paid{
+  .villas-project-specification
+    .villas-accordion
+    .accordion-item:first-child
+    .accordion-button,
+  .villas-project-specification
+    .villas-accordion
+    .accordion-item:first-child
+    .accordion-button.paid {
     background-size: contain;
   }
 }
-
-
