@@ -31,7 +31,7 @@ export class ProjectVillasComponent implements OnInit {
     autoplay: true,
     autoplayTimeout: 1000,
     margin: 10,
-    center: true,
+    center: false,
     items: 3,
     navText: ['', ''],
     nav: false,
