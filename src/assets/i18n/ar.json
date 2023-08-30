@@ -374,8 +374,8 @@
 "Inter_view":"مطلة على الفناء",
 "Front_view":"واجهة",
 "propertyDetails":" تفاصيل الوحدة",
-"Feature":"المسمى", 
-"inter_view":"مطلة على الفناء", 
+"Feature":"المسمى",
+"inter_view":"مطلة على الفناء",
 "fron_view":"واجهة",
 "washing_room":"غرفة الغسيل",
 "kitchen":"مطبخ",
@@ -388,7 +388,10 @@
 "chat_message":"كيف يمكنني مساعدتك؟",
 "saqeefah_title":"سقيفة",
 "chat_response":"اكتب رد",
-"chat_hours":"عادة ما يتم الرد خلال ساعة"
+"chat_hours":"عادة ما يتم الرد خلال ساعة",
+"NumVills":"عدد الفلل ",
+"VillaSoled":"الوحدات المباعة",
+"NumberOFAvailableUnits":"ِالوحدات المتبقية"
 
 
 

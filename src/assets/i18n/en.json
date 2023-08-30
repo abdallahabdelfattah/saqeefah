@@ -372,7 +372,7 @@
 "two_view":"two view",
 "propertyDetails":"Property Details",
 "Feature":"Feature",
-"inter_view":"Inner Look", 
+"inter_view":"Inner Look",
 "fron_view":"Front View",
 "washing_room":"Laundry Room",
 "kitchen":"kitchen",
@@ -385,6 +385,9 @@
 "chat_message":"How can I help you?",
 "saqeefah_title":"Saqeefah",
 "chat_response":"Write a response",
-"chat_hours":"Typically replies within an hour"
+"chat_hours":"Typically replies within an hour",
+"NumVills":"number of villas",
+"VillaSoled":"Units sold",
+"NumberOFAvailableUnits":"ِvailable units"
 
 }
