@@ -83,11 +83,11 @@ const routes: Routes = [
     component:ProjectVillasComponent
 
   },
-  {
-    path: 'project-villas',
-    component:ProjectVillasComponent
+  // {
+  //   path: 'project-villas',
+  //   component:ProjectVillasComponent
 
-  },
+  // },
 
   {
 
