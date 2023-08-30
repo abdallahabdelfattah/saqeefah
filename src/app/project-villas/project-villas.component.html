@@ -155,17 +155,17 @@
         </div>
         <div class="col-md-3">
           <div class="villas-project-filter">
-            <button
+            <button  (click)="filter(0)"
               class="btn btn-outline-primary villas-project-filter__item selected"
             >
 
               {{"All" | translate}}
 
             </button>
-            <button class="btn btn-outline-primary villas-project-filter__item">
+            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(1)">
               {{"Available" | translate}}
             </button>
-            <button class="btn btn-outline-primary villas-project-filter__item">
+            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(2)">
               {{"Soled" | translate}}
             </button>
           </div>
@@ -178,11 +178,18 @@
         <div class="col-12">
           <div class="accordion villas-accordion" id="villasAccordion">
             <app-villa-accordion-item
-              *ngFor="let item of  projectDetails?.villas; let first = first ;let index=index"
+              *ngFor="let item of  filterVillas; let first = first ;let index=index"
               [index]="index"
               [firstChild]="first"
               [villaDetails]="item"
             ></app-villa-accordion-item>
+
+            <div  *ngIf="filterVillas.length==0" >
+              <h4>
+                <p class="title text-center h4" >       No Data  </p>
+              </h4>
+
+            </div>
           </div>
         </div>
       </div>

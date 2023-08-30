@@ -18,6 +18,7 @@ export class ProjectVillasComponent implements OnInit {
   projectDetails: any;
   appRootUrl=environment.appRoot;
   Gallery:[];
+  filterVillas;
   constructor(private route: ActivatedRoute, private projectsServe: ProjectAndListService, private language: changeLanguageService) { }
 
   customOptions: OwlOptions = {
@@ -69,9 +70,20 @@ export class ProjectVillasComponent implements OnInit {
       console.log('res', response)
       if (!response.errors) {
         this.projectDetails = response?.data;
+        this.filterVillas=this.projectDetails.villas;
         console.log(this.projectDetails);
       }
     })
   }
 
+  filter(statusId){
+    if(statusId)
+    {
+     this.filterVillas= this.projectDetails.villas.filter(a=>a.statusId==statusId);
+    }else{
+      this.filterVillas= this.projectDetails;
+    }
+
+
+  }
 }
