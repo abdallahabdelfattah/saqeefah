@@ -42,6 +42,7 @@ import { VillaCardComponent } from './villa-card/villa-card.component';
 import { MapSingleComponent } from './map-single/map-single.component';
 import { VillaModalComponent } from './villa-modal/villa-modal.component';
 import { LeafletMapsComponent } from './leaflet-maps/leaflet-maps.component';
+import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-formatter.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { LeafletMapsComponent } from './leaflet-maps/leaflet-maps.component';
     VillaCardComponent,
     MapSingleComponent,
     VillaModalComponent,
-    LeafletMapsComponent
+    LeafletMapsComponent,
+    CheckmarkFormatterComponent
     // VedioComponent
   ],
   imports: [
@@ -121,7 +123,8 @@ VgBufferingModule
     CarouselModule,
     MapSingleComponent,
     VillaModalComponent,
-    LeafletMapsComponent
+    LeafletMapsComponent,
+    CheckmarkFormatterComponent
 
     // VedioComponent
   ],

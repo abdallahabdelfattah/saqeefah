@@ -10,7 +10,7 @@ export class VillaModalComponent implements OnInit {
 
   @Input() Gallery: any[]
   @Input() modalId: string
-  @Input() Details: any
+  @Input() villa: any
   constructor() { }
 
   appRootUrl = environment.appRoot;

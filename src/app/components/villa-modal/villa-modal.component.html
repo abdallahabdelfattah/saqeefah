@@ -4,12 +4,9 @@
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel" *ngIf="Details">{{Details.projectName  | translate}}</h5>
-                  <h6 class="modal-title">{{Details.adress | translate}}, {{Details.city | translate}}</h6>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-
                   <div *ngIf="Gallery.length > 0;else defaultImage" [id]="'carouselExampleIndicators'+modalId" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner">
                           <div class="carousel-item" [class.active]="i == 0" *ngFor="let item of Gallery;let i = index">
@@ -26,12 +23,10 @@
                         </button>
                   </div>
                   <ng-template #defaultImage>
-                      <img class="img-fluid" [src]="Details.coverImage ? appRootUrl+Details.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
+                      <img class="img-fluid w-100" [src]="villa?.coverImage ? appRootUrl+villa.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
                   </ng-template>
               </div>
               <div class="modal-footer">
-
-
               </div>
           </div>
       </div>
