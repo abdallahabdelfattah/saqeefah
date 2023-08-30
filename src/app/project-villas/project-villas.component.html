@@ -178,9 +178,10 @@
         <div class="col-12">
           <div class="accordion villas-accordion" id="villasAccordion">
             <app-villa-accordion-item
-              *ngFor="let item of  projectDetails.villas; let first = first ;let index=index"
+              *ngFor="let item of  projectDetails?.villas; let first = first ;let index=index"
               [index]="index"
               [firstChild]="first"
+              [villaDetails]="item"
             ></app-villa-accordion-item>
           </div>
         </div>

@@ -1,23 +1,28 @@
 <div class="accordion-item">
   <h2 class="accordion-header" id="heading-{{index}}">
-    <button class="accordion-button collapsed "  [ngClass]="{'firstChild': firstChild, 'paid' : index=== 1 || index==3}"   type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+index"
+    <button class="accordion-button collapsed "  [ngClass]="{'firstChild': firstChild, 'paid' : villaDetails.statusId == 2}"   type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+index"
       aria-expanded="true" [attr.aria-controls]="'collapse-'+index">
-      <h4 class="villa-code">100{{index}}</h4>
+      <h4 class="villa-code">{{villaDetails.villa_code}}</h4>
     </button>
   </h2>
   <div id="collapse-{{index}}" class="accordion-collapse collapse " [ngClass]="{'show':firstChild}"  [attr.aria-labelledby]="'heading-'+index"
     data-bs-parent="#villasAccordion">
     <div class="accordion-body">
-
       <div class="villa_info">
         <div class="info_bg">
 
           <div class="row">
             <div class="col-md-4">
-              <h3>المشروع: <span>سقيفة 1</span></h3>
+              <h3>  المواصفات</h3>
             </div>
+
+
             <div class="col-md-4">
-              <h3 class="text-md-center">الحالة: <span>متاحة</span></h3>
+              <h3 class="text-md-center">الحالة:
+                 <span class=""
+                 [class]="{'available_status': villaDetails.statusId == 1, 'sold_status': villaDetails.statusId == 2}">
+                 {{villaDetails.status | translate}}</span>
+                </h3>
             </div>
             <div class="col-md-4">
               <h4 data-bs-toggle="modal" [attr.data-bs-target]="'#modalv-'+index">

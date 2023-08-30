@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./villa-card.component.scss']
 })
 export class VillaCardComponent implements OnInit {
-
   @Input() villa:any
   appRootUrl=environment.appRoot+'/';
   constructor() { }
