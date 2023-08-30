@@ -7,19 +7,9 @@ import { RequestMethod } from '../shared/Enums/enums';
 import { APIs } from '../shared/helper/APIs';
 @Injectable()
 export class ProjectAndListService  {
-    
-
-
-
      appRootUrl = environment.appRoot;
-
-    
     constructor(private http:HttpClient, private getAuth:AuthService, private callApi:APICallerService) {
-
-
     }
-
-     
      requestOptions = {
       headers: new HttpHeaders({
         // 'Content-Type': 'multipart/form-data',
@@ -27,51 +17,50 @@ export class ProjectAndListService  {
         'Accept': 'text/plain',
       }),
     };
-   
     getAllProjects(languageId:string){
 var result = this.callApi.get(`api/Project/ProjectsWithImagesAndVideos?languageId=${languageId}`)
-return result; 
+return result;
     }
-
     getAllProperties(){
         var result = this.callApi.get(APIs.properties.List)
-        return result; 
+        return result;
             }
             getAppartmentDetails(appartmentId){
                 var result = this.callApi.get(APIs.properties.apartmentDetails+'?apartmentId='+appartmentId)
-                return result; 
+                return result;
             }
     uploadProjectImage(formData){
-        
-       return this.callApi.postWithAttachment(APIs.projects.AddAttachments,formData); 
+
+       return this.callApi.postWithAttachment(APIs.projects.AddAttachments,formData);
     }
     uploadProjectMasterPlane(formData){
-        return this.callApi.postWithAttachment(APIs.projects.AddMasterPlane,formData); 
+        return this.callApi.postWithAttachment(APIs.projects.AddMasterPlane,formData);
 
     }
     uploadProjectSpecifications(formData){
-        return this.callApi.postWithAttachment(APIs.projects.addSpecifications,formData); 
+        return this.callApi.postWithAttachment(APIs.projects.addSpecifications,formData);
 
     }
     uploadpropertyImage(formData){
-        return this.callApi.postWithAttachment(APIs.properties.AddAttachments,formData); 
+        return this.callApi.postWithAttachment(APIs.properties.AddAttachments,formData);
 
     }
-
-            
     getProjectDetails(languageId:string,projectId:any){
         return this.http.get(`${this.appRootUrl}/api/Project/ProjectDetails?languageId=${languageId}&projectId=${projectId}`)
-
     }
+
+    getProjectVillaTypeDetails(languageId:string,projectId:any){
+      return this.http.get(`${this.appRootUrl}/api/Project/ProjectVillaDetails?languageId=${languageId}&projectId=${projectId}`)
+  }
+
+
     getCompareAppartmens(compareArray:[]){
         return this.http.post(`${this.appRootUrl}/api/Apartment/CompareApartments`,{apartmentIds:compareArray})
     }
     getFilteredProjects(lang:any,filter:any){
-        
+
         return this.http.get(`${this.appRootUrl}/api/Project/ProjectsWithImagesAndVideosWithFilteration?languageId=`+lang+"&filterId="+filter)
     }
 }
-    function POST(POST: any, arg1: string, fd: FormData, arg3: string) {
-        throw new Error('Function not implemented.');
-    }
+
 

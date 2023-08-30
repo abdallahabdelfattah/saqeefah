@@ -391,7 +391,14 @@
 "chat_hours":"عادة ما يتم الرد خلال ساعة",
 "NumVills":"عدد الفلل ",
 "VillaSoled":"الوحدات المباعة",
-"NumberOFAvailableUnits":"ِالوحدات المتبقية"
+"NumberOFAvailableUnits":"ِالوحدات المتبقية",
+"Previous":"السابق",
+"Next":"التالى",
+"VillsRemain":"الوحدات المتبقية",
+"Specifications_and_prices":"المواصفات والاسعار  ",
+"All":"الكل",
+"Available":"المتاحة",
+"Soled":"المباعة"
 
 
 

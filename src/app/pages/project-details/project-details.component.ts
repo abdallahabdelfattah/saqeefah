@@ -12,62 +12,51 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit, AfterViewChecked {
-  getMapImageHardCode:any
-  activeBuildingTab:boolean = false
-  sendBuildId!:string
-projectDetails:any
-imageMap = []
-  constructor(@Inject(DOCUMENT) private document: Document, private elementRef: ElementRef,private sanitized: DomSanitizer,private route: ActivatedRoute,private generalService:GenaricService, private projects:ProjectAndListService,private language:changeLanguageService) {}
-  appRootUrl = environment.appRoot+'/';
+  getMapImageHardCode: any
+  activeBuildingTab: boolean = false
+  sendBuildId!: string
+  projectDetails: any
+  imageMap = []
+  constructor(@Inject(DOCUMENT) private document: Document, private elementRef: ElementRef, private sanitized: DomSanitizer, private route: ActivatedRoute, private generalService: GenaricService, private projects: ProjectAndListService, private language: changeLanguageService) { }
+  appRootUrl = environment.appRoot + '/';
   ngOnInit(): void {
     this.getProjectDetails()
 
   }
-  goToSpecialBuilding(build:string){
+  goToSpecialBuilding(build: string) {
     this.sendBuildId = build;
     this.activeBuildingTab = true
   }
 
-getProjectDetails(){
-  let projectId = this.route.snapshot.paramMap.get('id')
-  console.log('project id',projectId)
-  this.projects.getProjectDetails(this.language.getLanguageID(),projectId).subscribe((response:any)=>{
-   
+  getProjectDetails() {
+    let projectId = this.route.snapshot.paramMap.get('id')
+    console.log('project id', projectId)
+    this.projects.getProjectDetails(this.language.getLanguageID(), projectId).subscribe((response: any) => {
+
       console.log('res', response)
-      
-    if(!response.errors){
-      
-      this.projectDetails = response?.data
-    
-     
-      this.sendBuildId = response.data.buildingApartments[0].build
-         
-    if(response.data.masterPlane != null){
-      this.getMapImageHardCode = this.sanitized.bypassSecurityTrustHtml(response.data.masterPlane.hardCode)
 
-    }
-   
+      if (!response.errors) {
 
-    }
-    
-   
-    
-  })
-}
-ngAfterViewChecked() {
-  
-//   this.document.addEventListener('click',(e)=>{
-    
-//     let x  = (e.target as HTMLInputElement).dataset['href'];
-//     if(x != undefined) {
-//       this.goToSpecialBuilding(x)
-      
-//     } else {
-//       e.stopPropagation()
-//     }
-    
-  
-//  });
+        this.projectDetails = response?.data
 
-}
+
+        this.sendBuildId = response.data.buildingApartments[0].build
+
+        if (response.data.masterPlane != null) {
+          this.getMapImageHardCode = this.sanitized.bypassSecurityTrustHtml(response.data.masterPlane.hardCode)
+
+        }
+
+
+      }
+
+
+
+    })
+  }
+  ngAfterViewChecked() {
+
+
+
+  }
 }

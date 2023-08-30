@@ -388,6 +388,15 @@
 "chat_hours":"Typically replies within an hour",
 "NumVills":"number of villas",
 "VillaSoled":"Units sold",
-"NumberOFAvailableUnits":"ِvailable units"
+"NumberOFAvailableUnits":"ِvailable units",
+"Previous":"Previous",
+"Next":"Next",
+"VillsRemain":"Vills Remain",
+"Specifications_and_prices":"Specifications and prices",
+"All":"All",
+"Available":"Available",
+"Soled":"Soled"
+
+
 
 }
