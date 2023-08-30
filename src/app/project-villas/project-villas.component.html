@@ -49,7 +49,7 @@
                   </div>
                 </div>
                 <div class="carousel-arrows">
-                  <div class="carousel-indicators" *ngIf="projectDetails?.images.length > 0">
+                  <div class="carousel-indicators" *ngIf="projectDetails?.images?.length > 0">
                     <button  [class.active]="i == 0"  *ngFor="let item of projectDetails?.images; let i=index"
                       type="button"
                       data-bs-target="#carouselExampleIndicators"
@@ -184,7 +184,7 @@
               [villaDetails]="item"
             ></app-villa-accordion-item>
 
-            <div  *ngIf="filterVillas.length==0" >
+            <div  *ngIf="filterVillas?.length==0" >
               <h4>
                 <p class="title text-center h4" >       No Data  </p>
               </h4>
@@ -222,13 +222,12 @@
       <h4 class="section_heading mb-5">
         <span class="title">موقع المشروع</span>
       </h4>
+      <app-map  [isSingleLocation]="true"></app-map>
       <!-- Location Here  -->
-
-      <app-map-single></app-map-single>
     </div>
   </section>
 
-  <section class="other-projects" *ngIf="OtherProjectsVillaType.length>0">
+  <section class="other-projects" *ngIf="OtherProjectsVillaType?.length>0">
     <div class="container">
       <h4 class="section_heading mb-5">
         <span class="title">مشاريع آخرى</span>

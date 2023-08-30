@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Input, OnDestroy } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as L from 'leaflet';
 import { siteInfo } from 'src/app/pages/Models/siteInfo';
@@ -24,34 +24,51 @@ L.Marker.prototype.options.icon = iconDefault;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit , AfterViewInit {
-   map:any;
+export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
+  map: any;
+  @Input() isSingleLocation
 
   private initMap(): void {
-    this.map = L.map('map', {
-      center: [ 24.68163,46.785942],
-      zoom: 1
-    });
-    const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 20,
-      minZoom: 12,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    });
-    this.map.scrollWheelZoom.disable()
-    tiles.addTo(this.map);
+
+      this.map = L.map('map', {
+        center: [24.68163, 46.785942],
+        zoom: 1
+      });
+      const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+        minZoom: 12,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      });
+      this.map.scrollWheelZoom.disable()
+      tiles.addTo(this.map);
   }
-  siteInformation:siteInfo;
-  constructor(private markerService: MarkerService,private shared:SiteInformationSharedService) { }
+  siteInformation: siteInfo;
+  constructor(private markerService: MarkerService, private shared: SiteInformationSharedService) { }
   ngAfterViewInit(): void {
-    this.initMap();
-    this.markerService.makeCapitalMarkers(this.map);
+    if(!this.map)
+    {
+      this.initMap();
+    }
+    if (this.isSingleLocation) {
+      this.markerService.makeCapitalMarkerSingle(this.map);
+    }
+    else {
+      this.markerService.makeCapitalMarkers(this.map);
+    }
+
   }
 
   ngOnInit(): void {
   }
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+    this.siteInformation = this.shared.siteInformation;
   }
 
+  ngOnDestroy() {
+    // Destroy the map instance and clean up resources
+    if (this.map) {
+      this.map.remove();
+    }
+  }
 
 }

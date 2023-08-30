@@ -39,9 +39,7 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { PlaceOrderApartmentComponent } from './place-order-apartment/place-order-apartment.component';
 import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 import { VillaCardComponent } from './villa-card/villa-card.component';
-import { MapSingleComponent } from './map-single/map-single.component';
 import { VillaModalComponent } from './villa-modal/villa-modal.component';
-import { LeafletMapsComponent } from './leaflet-maps/leaflet-maps.component';
 import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-formatter.component';
 
 
@@ -68,9 +66,7 @@ import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-for
     PlaceOrderApartmentComponent,
     WhatsappButtonComponent,
     VillaCardComponent,
-    MapSingleComponent,
     VillaModalComponent,
-    LeafletMapsComponent,
     CheckmarkFormatterComponent
     // VedioComponent
   ],
@@ -121,9 +117,7 @@ VgBufferingModule
     WhatsappButtonComponent,
     VillaCardComponent,
     CarouselModule,
-    MapSingleComponent,
     VillaModalComponent,
-    LeafletMapsComponent,
     CheckmarkFormatterComponent
 
     // VedioComponent
