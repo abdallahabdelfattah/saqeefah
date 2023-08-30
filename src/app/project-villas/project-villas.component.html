@@ -199,10 +199,12 @@
       </h4>
       <div class="row">
         <div class="col-lg-6">
-          <img
-            src="assets/images/villas/guarantee_test.png"
+          <img *ngIf="projectDetails?.specifications != null"
+          [src]="appRootUrl+'/'+projectDetails?.specifications?.grantiesImage"
             class="img-fluid w-100"
           />
+
+
         </div>
       </div>
     </div>
@@ -219,13 +221,11 @@
     </div>
   </section>
 
-  <section class="other-projects">
+  <section class="other-projects" *ngIf="OtherProjectsVillaType.length>0">
     <div class="container">
       <h4 class="section_heading mb-5">
         <span class="title">مشاريع آخرى</span>
       </h4>
-      <!-- Project card slider here -->
-
       <owl-carousel-o [options]="customOptions" class="villas_carousel">
         <ng-template carouselSlide *ngFor="let project of OtherProjectsVillaType">
           <div class="container">
