@@ -1,13 +1,13 @@
 
 
 .accordion-body{
-  padding: 0;
+  padding: 0 ;
   background: #fff;
+
 }
 .accordion-item {
   border: 0;
-
-
+  box-shadow: 1px 1px 5px  gray;
   .accordion-button {
     position: relative;
     display: flex;
@@ -66,6 +66,8 @@
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
+  padding-right:15px ;
+  padding-left: 15px;
 }
 .main-info {
   display: flex;
@@ -181,7 +183,7 @@
 
 
 .area_div{
-
+padding: 0px 20px;
   h5{
     display: inline-block;
     width: 50px;
@@ -221,4 +223,12 @@
 }
 
 
-
+.status-label {
+  padding: 7px 35px;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  color: white;
+  font-weight: 400;
+  margin: 0px 10px;
+}
