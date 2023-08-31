@@ -29,7 +29,7 @@ export class ProjectVillasComponent implements OnInit {
     pullDrag: true,
     dots: false,
     autoplay: true,
-    autoplayTimeout: 1000,
+    autoplayTimeout: 3000,
     margin: 10,
     center: false,
     items: 3,

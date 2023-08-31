@@ -316,7 +316,7 @@
 </div>
 <app-villa-modal [modalId]="'v-'+index" [Gallery]="villaDetails.images" Details="villaDetails"></app-villa-modal>
  <!-- Modal  register place-order-Villa-form -->
-<div *ngIf="villaDetails" class="modal fade" [id]="'place-order-villa-form'+villaDetails.villa_id" tabindex="-1"
+<div *ngIf="villaDetails" class="modal fade project-modal" [id]="'place-order-villa-form'+villaDetails.villa_id" tabindex="-1"
     aria-labelledby="PlaceOrderVillaFormLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -325,7 +325,7 @@
                     {{villaDetails.villa_code}} </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-3">
                 <app-place-order-apartment [villa_Ref]="villaDetails?.villa_id" [isVilla]="true"
                     [project_Ref]="villaDetails?.project_Ref"></app-place-order-apartment>
             </div>
