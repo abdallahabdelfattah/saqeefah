@@ -19,7 +19,7 @@ export class ProjectVillasComponent implements OnInit {
   appRootUrl=environment.appRoot;
   Gallery:[];
   filterVillas;
-  id;
+  DataForMap:any;
   constructor(private route: ActivatedRoute, private projectsServe: ProjectAndListService, private language: changeLanguageService) { }
 
   customOptions: OwlOptions = {
@@ -50,6 +50,7 @@ export class ProjectVillasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getProjectVillaTypeDetailsForMap();
     this.getProjectVillaTypeDetails();
     this.getProjectsVillaType();
   }
@@ -66,7 +67,6 @@ export class ProjectVillasComponent implements OnInit {
 
   getProjectVillaTypeDetails() {
     let projectId = this.route.snapshot.paramMap.get('id');
-    this.id=projectId;
     console.log('project id', projectId)
     this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId).subscribe((response: any) => {
       console.log('res', response)
@@ -76,6 +76,14 @@ export class ProjectVillasComponent implements OnInit {
         console.log(this.projectDetails);
       }
     })
+  }
+
+
+  getProjectVillaTypeDetailsForMap() {
+    let projectId = this.route.snapshot.paramMap.get('id');
+let subscribeData=this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId);
+this.DataForMap=subscribeData;
+
   }
 
   filter(statusId){

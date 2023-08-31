@@ -1,11 +1,16 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import {  OnInit } from '@angular/core';
+import {  Component, Input } from '@angular/core';
 import * as Leaflet from 'leaflet';
+
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  selector: 'app-map-project-single',
+  templateUrl: './map-project-single.component.html',
+  styleUrls: ['./map-project-single.component.scss']
 })
-export class TestComponent implements AfterViewInit{
+export class MapProjectSingleComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   @Input() DataForMap ;
   map!: Leaflet.Map;
@@ -76,6 +81,5 @@ export class TestComponent implements AfterViewInit{
   ngAfterViewInit(): void{
 
   }
-
 
 }

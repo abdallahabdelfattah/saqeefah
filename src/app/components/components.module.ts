@@ -42,6 +42,7 @@ import { VillaCardComponent } from './villa-card/villa-card.component';
 import { VillaModalComponent } from './villa-modal/villa-modal.component';
 import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-formatter.component';
 import { TestComponent } from './test/test.component';
+import { MapProjectSingleComponent } from './map-project-single/map-project-single.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { TestComponent } from './test/test.component';
     VillaCardComponent,
     VillaModalComponent,
     CheckmarkFormatterComponent,
+    //MapProjectSingleComponent,
     // VedioComponent
   ],
   imports: [
