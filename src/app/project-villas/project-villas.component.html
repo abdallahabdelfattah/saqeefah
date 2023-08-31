@@ -157,17 +157,17 @@
         </div>
         <div class="col-md-3">
           <div class="villas-project-filter">
-            <button  (click)="filter(0)"
-              class="btn btn-outline-primary villas-project-filter__item selected"
+            <button  (click)="filter(0)" [ngClass]="{'selected':SelectedFilter==0}"
+              class="btn btn-outline-primary villas-project-filter__item "
             >
 
               {{"All" | translate}}
 
             </button>
-            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(1)">
+            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(1)" [ngClass]="{'selected':SelectedFilter==1}">
               {{"Available" | translate}}
             </button>
-            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(2)">
+            <button class="btn btn-outline-primary villas-project-filter__item" (click)="filter(2)"  [ngClass]="{'selected':SelectedFilter==2}">
               {{"Soled" | translate}}
             </button>
           </div>

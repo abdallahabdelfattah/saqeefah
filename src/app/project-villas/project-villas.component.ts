@@ -20,6 +20,7 @@ export class ProjectVillasComponent implements OnInit {
   Gallery:[];
   filterVillas;
   DataForMap:any;
+  SelectedFilter=0;
   constructor(private route: ActivatedRoute, private projectsServe: ProjectAndListService, private language: changeLanguageService) { }
 
   customOptions: OwlOptions = {
@@ -87,14 +88,14 @@ this.DataForMap=subscribeData;
   }
 
   filter(statusId){
-    debugger
     if(statusId && statusId!=0)
     {
      this.filterVillas= this.projectDetails.villas.filter(a=>a.statusId==statusId);
+
     }else{
       this.filterVillas= this.projectDetails.villas;
     }
-
+    this.SelectedFilter=statusId;
 
   }
 }
