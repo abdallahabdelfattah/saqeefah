@@ -7,10 +7,7 @@ import * as Leaflet from 'leaflet';
   templateUrl: './map-project-single.component.html',
   styleUrls: ['./map-project-single.component.scss']
 })
-export class MapProjectSingleComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class MapProjectSingleComponent  {
 
   @Input() DataForMap ;
   map!: Leaflet.Map;
