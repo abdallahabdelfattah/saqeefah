@@ -10,9 +10,14 @@ export class PopupService {
     appRootUrl = environment.appRoot + '/';
     makeCapitalPopup(data: any): string {
         let status_icon= data.statusId== 1?`<span class="project-status green">${data.status}</span>`:data.statusId== 2?`<span class="project-status orange">${data.status}</span>`:`<span class="project-status pink">${data.status}</span>`
+        let url =`/project/${data.projectId}`;
+        if(data.projectType==2)
+        {
+          url=`/project-villas/${data.projectId}`;
+        }
         return `` +
             `
-      <a href="/project/${data.projectId}" title="اعرض التفاصيل">
+      <a href=${url}  title="اعرض التفاصيل">
         <div class="map-card" routerLink="/about" >
             <div class="project-img">
                 <img src="${data.coverImage ? this.appRootUrl + data.coverImage : 'assets/images/home-placeHolder.webp'}" class="card-img-top" alt="...">

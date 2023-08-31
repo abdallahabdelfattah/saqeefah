@@ -26,8 +26,6 @@ L.Marker.prototype.options.icon = iconDefault;
 })
 export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
   map: any;
-  @Input() isSingleLocation
-
   private initMap(): void {
 
       this.map = L.map('map', {
@@ -49,13 +47,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       this.initMap();
     }
-    if (this.isSingleLocation) {
-      this.markerService.makeCapitalMarkerSingle(this.map);
-    }
-    else {
-      this.markerService.makeCapitalMarkers(this.map);
-    }
-
+    this.markerService.makeCapitalMarkers(this.map);
   }
 
   ngOnInit(): void {

@@ -56,7 +56,6 @@ import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.componen
 import { ProjectVillasComponent } from './project-villas/project-villas.component';
 import { VillaAccordionItemComponent } from './pages/components/villa-accordion-item/villa-accordion-item.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { TestComponent } from './components/test/test.component';
 import { MapProjectSingleComponent } from './components/map-project-single/map-project-single.component';
 
 
@@ -73,7 +72,6 @@ import { MapProjectSingleComponent } from './components/map-project-single/map-p
     UsagePolicyComponent,
     ProjectVillasComponent,
     VillaAccordionItemComponent,
-    TestComponent,
     MapProjectSingleComponent
 
 
