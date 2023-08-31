@@ -33,7 +33,7 @@
     width: 100px;
     padding: 10px 10px 0px;
     right: 0;
-    
+
     img{
         width: 25px;
     }
@@ -43,6 +43,12 @@
     }
 }
 
+
+@media screen and (max-width: 990px) and (min-width: 768px){
+  .map-frame{
+    height: 60vh;
+}
+}
 
 @media screen and (max-width: 768px) {
     .map-frame{

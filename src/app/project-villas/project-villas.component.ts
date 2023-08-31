@@ -30,7 +30,7 @@ export class ProjectVillasComponent implements OnInit {
     pullDrag: true,
     dots: false,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 6000,
     margin: 10,
     center: false,
     items: 3,
@@ -87,11 +87,12 @@ this.DataForMap=subscribeData;
   }
 
   filter(statusId){
-    if(statusId)
+    debugger
+    if(statusId && statusId!=0)
     {
      this.filterVillas= this.projectDetails.villas.filter(a=>a.statusId==statusId);
     }else{
-      this.filterVillas= this.projectDetails;
+      this.filterVillas= this.projectDetails.villas;
     }
 
 

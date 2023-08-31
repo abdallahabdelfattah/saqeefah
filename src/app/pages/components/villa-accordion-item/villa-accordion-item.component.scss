@@ -27,7 +27,7 @@
 
 
     &.paid {
-      background-color: linear-gradient(rgb(94 94 89), rgb(94 94 89 / 80%));
+      background: linear-gradient(rgb(94 94 89), rgb(94 94 89 / 80%));
       &::before {
         position: absolute;
         inset-block: 0;
@@ -107,7 +107,7 @@
 .villa_info{
   .info_bg{
     padding: 20px;
-    background: #858560;
+    background: #797960;
 
     h3{
       color: #fff;
@@ -178,6 +178,17 @@
 
 
 
+.status-label {
+  padding: 7px 35px;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  color: white;
+  font-weight: 400;
+  margin: 0px 10px;
+}
+
+
 
 
 
@@ -200,34 +211,80 @@ padding: 0px 20px;
     gap: 70px;
   }
 
-  .accordion-item .accordion-button.firstChild{
-    background-size: contain;
+  .accordion-item .accordion-button.firstChild,
+  .accordion-item .accordion-button.firstChild:lang(ar){
+    background-image: none;
+    background: linear-gradient(rgb(134, 129, 91), rgba(134, 129, 91, 0.8));
   }
+
+  .accordion-item .accordion-button.firstChild.paid,
+  .accordion-item .accordion-button.firstChild.paid:lang(ar){
+    background: linear-gradient(rgb(94, 94, 89), rgba(94, 94, 89, 0.8));
+}
 
 }
 
 @media screen and (max-width: 768px) {
 
+  .villa_info{
   .info_bg h3{
     margin-bottom: 10px;
+    font-size: 18px;
   }
 
 .info_bg h4{
     text-align: start;
+    font-size: 18px;
+    margin-top: 14px;
+    img{
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
   }
 
-  .accordion-item .accordion-button.firstChild{
-    background-size: contain;
+}
+  .status-label {
+    padding: 7px 15px
+  }
+
+  .accordion-item .accordion-button.firstChild,
+  .accordion-item .accordion-button.firstChild:lang(ar){
+    background-image: none;
+    background: linear-gradient(rgb(134, 129, 91), rgba(134, 129, 91, 0.8));
+  }
+
+  .accordion-item .accordion-button.firstChild.paid,
+  .accordion-item .accordion-button.firstChild.paid:lang(ar){
+    background: linear-gradient(rgb(94, 94, 89), rgba(94, 94, 89, 0.8));
+}
+
+.villa_desc{
+
+.col-lg-3{
+  .row {
+    padding: 15px 8px;
   }
 }
 
+img{
+  width: 25px;
+    height: 25px;
+    margin-inline-end: 5px;
 
-.status-label {
-  padding: 7px 35px;
-  font-size: 16px;
-  font-weight: 400;
-  z-index: 2;
-  color: white;
-  font-weight: 400;
-  margin: 0px 10px;
+}
+    span{
+    font-size: 15px;
+  }
+}
+
+.area_div{
+  h5{
+    width: auto;
+  }
+  span{
+    font-size: 25px;
+  }
+}
+
 }
