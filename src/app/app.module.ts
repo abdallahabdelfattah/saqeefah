@@ -55,6 +55,8 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { ProjectVillasComponent } from './project-villas/project-villas.component';
 import { VillaAccordionItemComponent } from './pages/components/villa-accordion-item/villa-accordion-item.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { TestComponent } from './components/test/test.component';
 
 
 
@@ -70,8 +72,9 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
     UsagePolicyComponent,
     ProjectVillasComponent,
     VillaAccordionItemComponent,
- 
-  
+    TestComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -97,8 +100,9 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
       positionClass: 'toast-top-right',
       preventDuplicates: true
     }),
-    
+
     BrowserAnimationsModule,
+    LeafletModule
   ],
   providers: [changeLanguageService, GenaricService,ProjectAndListService,
     FavoritesService,CompareService,AuthService,TestService,AuthGuard,AttachmentService,
@@ -109,8 +113,8 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');

@@ -41,6 +41,7 @@ import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.compo
 import { VillaCardComponent } from './villa-card/villa-card.component';
 import { VillaModalComponent } from './villa-modal/villa-modal.component';
 import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-formatter.component';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -67,7 +68,7 @@ import { CheckmarkFormatterComponent } from './checkmark-formatter/checkmark-for
     WhatsappButtonComponent,
     VillaCardComponent,
     VillaModalComponent,
-    CheckmarkFormatterComponent
+    CheckmarkFormatterComponent,
     // VedioComponent
   ],
   imports: [

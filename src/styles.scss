@@ -31,6 +31,12 @@
 @import "./assets/scss/pages/home";
 //toastr
 @import "../node_modules/ngx-toastr/toastr.css";
+
+@import "~leaflet/dist/leaflet.css";
+.map-container {
+  height: 400px;
+}
+
 // @import "../node_modules/swiper/swiper";
 body {
     background: #f6f6f6;

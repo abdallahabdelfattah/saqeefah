@@ -28,10 +28,10 @@
                             "src/assets",
                             "src/web.config",
                             {
-                                "glob": "**/*",
-                                "input": "node_modules/leaflet/dist/images/",
-                                "output": "./assets"
-                            }
+                              "glob": "**/*",
+                              "input": "./node_modules/leaflet/dist/images",
+                              "output": "assets/"
+                          }
                         ],
                         "styles": [
                             "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
