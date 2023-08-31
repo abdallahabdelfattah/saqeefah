@@ -12,12 +12,12 @@
         <div class="info_bg">
 
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
               <h3> {{"Specifications" | translate}}  </h3>
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
               <h3 class="text-md-center">  {{"status" | translate}}:
                  <span class="status-label"
                  [class]="{'available_status': villaDetails.statusId == 1, 'sold_status': villaDetails.statusId == 2}">
@@ -39,11 +39,11 @@
             <div class="col-lg-3 col-md-4 col-6">
 
               <div class="row align-items-center">
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/lounge.png">
                   <span>صالة    </span>
                 </div>
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>{{villaDetails.v_hall}} </h6>
                 </div>
               </div>
@@ -55,12 +55,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/sink.png">
                   <span>دورة مياه </span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6> {{villaDetails.v_toilet}} </h6>
                 </div>
 
@@ -73,12 +73,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/table.png">
                   <span>جلسة خارجية</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6> {{villaDetails.v_front_terrace}} </h6>
                 </div>
 
@@ -91,12 +91,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/bedroom.png">
                   <span>غرف نوم</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6> {{villaDetails.v_bed_room}}</h6>
                 </div>
 
@@ -110,12 +110,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/closed_lounge.png">
-                  <span>صالة مغلقة</span>
+                  <span>صالة معلقة</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
                     <app-checkmark-formatter [Value]="villaDetails?.v_inter_hall"> </app-checkmark-formatter>
                   </h6>
@@ -130,12 +130,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/kitchen.png">
                   <span>مطبخ</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
                     <app-checkmark-formatter [Value]="villaDetails?.v_kitchen"> </app-checkmark-formatter>
                   </h6>
@@ -150,12 +150,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/swimming-pool.png">
-                  <span>حمام سباحة</span>
+                  <span>مسبح</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
 
                     <app-checkmark-formatter [Value]="villaDetails?.v_swimming_pool"> </app-checkmark-formatter>
@@ -172,12 +172,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/car-parking.png">
                   <span>مدخل سيارة</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
                     <app-checkmark-formatter [Value]="villaDetails?.v_car_intrance"> </app-checkmark-formatter>
 
@@ -193,12 +193,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/room.png">
                   <span>غرفة سائق</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
 
                     <app-checkmark-formatter [Value]="villaDetails?.v_driver_room"> </app-checkmark-formatter>
@@ -214,12 +214,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/bed.png">
-                  <span>غرفة خدم</span>
+                  <span>غرفة خادمة</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
                     <app-checkmark-formatter [Value]="villaDetails?.v_maeed_room"> </app-checkmark-formatter>
                   </h6>
@@ -234,12 +234,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/washing-machine.png">
                   <span>غرفة غسيل</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
                     <app-checkmark-formatter [Value]="villaDetails?.v_washing_room"> </app-checkmark-formatter>
 
@@ -255,12 +255,12 @@
 
               <div class="row align-items-center">
 
-                <div class="col-md-9 col-9">
+                <div class="col-md-9 col-10">
                   <img src="assets/images/villas/icons/antique-balcony.png">
                   <span>بلكونة خارجية</span>
                 </div>
 
-                <div class="col-md-3 col-3">
+                <div class="col-md-3 col-2">
                   <h6>
 
                     <app-checkmark-formatter [Value]="villaDetails?.v_front_balcony"> </app-checkmark-formatter>

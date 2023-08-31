@@ -81,7 +81,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        min-height: 300px;
+        min-height: 293px;
       }
     }
   }
@@ -93,12 +93,19 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      height: 300px;
+      height: 293px;
     }
   }
   .carousel-arrows{
     position: relative;
     padding: 12px;
+    i{
+      font-size: 20px;
+
+   &:lang(ar){
+      transform: rotate(180deg);
+    }
+  }
   }
   .carousel-indicators{
     position: relative;
@@ -119,7 +126,7 @@
 }
 .villas-project-details {
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 2.5rem;
     color: #5f5e59;
     font-weight: 600;
@@ -475,22 +482,27 @@
 
 @media screen and (max-width: 768px) {
   .villas_banner {
+    height: 220px;
+
     .overlay_border {
       width: 35px;
+      height: 125px;
+    margin-top: 38px;
     }
 
     .villas_banner_icon {
       h2 {
-        font-size: 50px;
+        font-size: 35px;
       }
 
       img {
-        width: 35px;
-        height: 35px;
+        width: 28px;
+        height: 28px;
       }
 
       span {
-        font-size: 25px;
+        font-size: 20px;
+        margin-inline-start: 0;
       }
     }
   }
@@ -505,7 +517,7 @@
 
   .villas-project-filter {
     justify-content: start;
-    margin-bottom: 25px;
+    margin: 25px 0;
   }
 
   .villa_info .info_bg h3 {
@@ -526,6 +538,41 @@
     .accordion-button.paid {
     background-size: contain;
   }
+
+
+  .villas-project-details__statistics{
+    gap: 0;
+  }
+
+  .villas-project-details__statistics__item{
+     .statistics-info{
+    gap: 10px;
+  }
+  .statistics-info__icon{
+    padding: 8px;
+    img{
+      height: 27px;
+      width: 27px;
+    }
+  }
+
+  .statistics-info__data{
+    padding-inline-start: 0px;
+
+     .count {
+    font-size: 2.5rem;
+}
+  }
+}
+
+
+.villas-project-details__title{
+  font-size: 2rem;
+}
+
+
+
+
 }
 
 

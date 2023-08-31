@@ -44,9 +44,7 @@
       <!-- Villa Footer card  -->
       <ul class="list-inline m-0" *ngIf="project?.projectType==2; else apartmentProjectUnitSpecs">
         <li class="list-inline-item">
-          <span class="specs-ele">
-             <i class="icon tagr-icon-home"></i>
-            <span class="specs-count"><span
+          <span class="specs-ele"><i class="icon tagr-icon-home"></i><span class="specs-count"><span
                 class="counter me-1">{{'NumVills' |
                 translate}}</span>{{project.numVills??'  - '}}
               </span>
@@ -59,8 +57,8 @@
         </li>
 
         <li class="list-inline-item">
-          <span class="specs-ele"> <i class="icon tagr-icon-home"></i> <span class="specs-count">
-              <span class="counter me-1">{{'NumberOFAvailableUnits'|translate}}</span> {{project.numberOFAvailableUnits??0}}</span>
+          <span class="specs-ele"><i class="icon tagr-icon-home"></i><span class="specs-count">
+              <span class="counter me-1">{{'VillsRemain'|translate}}</span> {{project.numberOFAvailableUnits??0}}</span>
           </span>
         </li>
       </ul>
