@@ -77,11 +77,12 @@ export class ProjectVillasComponent implements OnInit {
   }
 
   filter(statusId){
-    if(statusId)
+    debugger
+    if(statusId && statusId!=0)
     {
      this.filterVillas= this.projectDetails.villas.filter(a=>a.statusId==statusId);
     }else{
-      this.filterVillas= this.projectDetails;
+      this.filterVillas= this.projectDetails.villas;
     }
 
 
