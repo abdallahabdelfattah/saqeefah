@@ -55,6 +55,7 @@ import { AllSettingSharedService } from './services/all-setting-shared.service';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { ProjectVillasComponent } from './project-villas/project-villas.component';
 import { VillaAccordionItemComponent } from './pages/components/villa-accordion-item/villa-accordion-item.component';
+import { MapSingleComponent } from './pages/components/map-single/map-single.component';
 
 
 
@@ -70,8 +71,9 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
     UsagePolicyComponent,
     ProjectVillasComponent,
     VillaAccordionItemComponent,
- 
-  
+    MapSingleComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -97,7 +99,7 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
       positionClass: 'toast-top-right',
       preventDuplicates: true
     }),
-    
+
     BrowserAnimationsModule,
   ],
   providers: [changeLanguageService, GenaricService,ProjectAndListService,
@@ -107,10 +109,11 @@ import { VillaAccordionItemComponent } from './pages/components/villa-accordion-
     {provide:HTTP_INTERCEPTORS , useClass:ErrorInterceptor , multi:true},
     {provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
+  exports:[MapSingleComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');

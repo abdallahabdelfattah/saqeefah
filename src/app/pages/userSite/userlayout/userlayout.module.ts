@@ -56,12 +56,12 @@ import { CountUpModule } from 'ngx-countup';
     SpecsComponent,
     ProjectsComponent,
     BuildingComponent,
-  
+
   ],
   imports: [
     CommonModule,
     RouterModule,
- 
+
     CountUpModule,
     HttpClientModule,
     ReactiveFormsModule,

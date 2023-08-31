@@ -222,10 +222,16 @@
       <h4 class="section_heading mb-5">
         <span class="title">موقع المشروع</span>
       </h4>
-      <app-map  [isSingleLocation]="true"></app-map>
+      <!-- <app-map  [isSingleLocation]="true"></app-map> -->
+      <app-map-single></app-map-single>
+
+
+
+
       <!-- Location Here  -->
     </div>
   </section>
+
 
   <section class="other-projects" *ngIf="OtherProjectsVillaType?.length>0">
     <div class="container">
