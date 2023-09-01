@@ -5,7 +5,9 @@
       <h4 class="villa-code">{{villaDetails.villa_code}}</h4>
     </button>
   </h2>
-  <div id="collapse-{{index}}" class="accordion-collapse collapse " [ngClass]="{'show':firstChild}"  [attr.aria-labelledby]="'heading-'+index"
+
+
+  <div id="collapse-{{index}}" class="accordion-collapse collapse "   [attr.aria-labelledby]="'heading-'+index"
     data-bs-parent="#villasAccordion">
     <div class="accordion-body">
       <div class="villa_info">
