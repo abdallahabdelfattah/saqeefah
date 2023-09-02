@@ -1,120 +1,132 @@
 .location-onMap {
-    position: absolute;
-    top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    z-index: 4;
-    left: 48px;
-    i{
-        font-size: 22px;
-        color: #fff;
-    }
+  position: absolute;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  z-index: 4;
+  left: 48px;
+  i {
+    font-size: 22px;
+    color: #fff;
+  }
 }
-.project-card{
-    border: 1px solid #ddd;
-    border-radius: 0;
-    overflow: hidden;
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 0;
+  overflow: hidden;
 }
-.edit-project{
+.edit-project {
   box-shadow: 2px 5px 5px #aeaeae;
-    border-bottom: 3px solid #afafaf;
+  border-bottom: 3px solid #afafaf;
 }
-.edit-project:hover{
+.edit-project:hover {
   cursor: pointer !important;
   transform: translateY(2px);
 }
 
 .unit-specs {
-    position: relative;
-    color: #000;
-    padding: 0;
-    border-top: 1px solid #ddd;
-    ul{
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 8px 0 0;
-        direction: rtl;
-        >li{
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            &:not(:last-of-type){
-                border-inline-end: 1px solid #ddd;
-            }
-        }
+  position: relative;
+  color: #000;
+  padding: 0;
+  border-top: 1px solid #ddd;
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 8px 0 0;
+    direction: rtl;
+    > li {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-height: 32px;
+        width: 32px;
+        flex-shrink: 0;
+      }
+      &:not(:last-of-type) {
+        border-inline-end: 1px solid #ddd;
+      }
     }
+  }
 }
+// .specs-ele {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   @media (max-width: 991px) {
+//     flex-direction: column;
+//   }
+// }
 
 .unit-location {
-    border-bottom: 0 !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+  border-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-.card.list{
-    display: flex !important;
-    gap: 16px;
-    flex-flow: row;
-    flex-wrap: wrap;
+.card.list {
+  display: flex !important;
+  gap: 16px;
+  flex-flow: row;
+  flex-wrap: wrap;
 }
-.card.list .img-panel{
-    width: 270px!important;
-    flex-shrink: 0;
+.card.list .img-panel {
+  width: 270px !important;
+  flex-shrink: 0;
 }
 .card.list .img-panel .card-mask {
-    background-image: linear-gradient(rgb(0 0 0 / 9%), rgba(0, 0, 0, 0)) !important;
+  background-image: linear-gradient(
+    rgb(0 0 0 / 9%),
+    rgba(0, 0, 0, 0)
+  ) !important;
 }
 
-
-.card .unit-location h6{
-    color: #000;
-    // font-size: 20px !important;
+.card .unit-location h6 {
+  color: #000;
+  // font-size: 20px !important;
 }
 
-.card.list .list-inline-item{
-    display: block !important;
-    margin-bottom: 5px !important;
-    color: rgba(0, 0, 0, 0.7490196078) !important;
-    font-weight: bold !important;
+.card.list .list-inline-item {
+  display: block !important;
+  margin-bottom: 5px !important;
+  color: rgba(0, 0, 0, 0.7490196078) !important;
+  font-weight: bold !important;
 }
-.card.list .icon{
-    margin-right: 5px !important;
-    font-weight: bold !important;
+.card.list .icon {
+  margin-right: 5px !important;
+  font-weight: bold !important;
 }
 
 .card.list .img-panel .img-container {
-    min-height: 250px !important;
+  min-height: 250px !important;
 }
 
 .card.list .card-img-top {
-    border-top-left-radius: 0 !important;
-     border-top-right-radius: 0 !important;
-     height: 100%;
-
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  height: 100%;
 }
-.card.list .card-img-top:hover{
-    cursor: pointer !important;
+.card.list .card-img-top:hover {
+  cursor: pointer !important;
 }
-
-
 
 .card.grid6 .img-panel .img-container.project {
-    height: 250px;
-    img{
-        height: 100%;
-    }
+  height: 250px;
+  img {
+    height: 100%;
+  }
 }
-.img-container{
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.img-container {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

@@ -160,7 +160,9 @@
             flex-direction: row;
             align-content: center;
             align-items: center;
-
+            @media (max-width: 991px) {
+              flex-direction: column;
+            }
             i,
             img {
                 font-size: 20px;
