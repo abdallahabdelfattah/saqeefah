@@ -11,27 +11,27 @@ import { GenaricService } from 'src/app/services/Genaric.service';
 export class HeaderComponent implements OnInit {
   nav = {
     navtransparentMode:false
-  } 
+  }
     home = [1,1,1,1,1,1,1,1]
     constructor(private language:changeLanguageService,private translate: TranslateService,
       public generalService:GenaricService
       ) {
       translate.setDefaultLang('ar');
-  
+
       // the lang to use, if the lang isn't available, it will use the current loader to get them
      translate.use('ar');
      }
-  
+
     ngOnInit(): void {
       this.nav.navtransparentMode = this.generalService.checkNavIsTRansparent();
-    console.log( 'navbar mode',this.nav.navtransparentMode)
+
     }
-   
+
   changeLanguage(lang:string){
     this.language.changeLanguge(lang)
     this.translate.use(lang);
-  
+
   }
 
- 
+
 }

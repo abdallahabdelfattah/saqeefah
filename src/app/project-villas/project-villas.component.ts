@@ -61,20 +61,17 @@ export class ProjectVillasComponent implements OnInit {
       if (!response.isError) {
         this.OtherProjectsVillaType = response.result.data
         this.OtherProjectsVillaType = this.OtherProjectsVillaType.filter(x => x['statusId'] != 4 && x.projectType==2);
-       // console.log(this.OtherProjectsVillaType);
+
       }
     })
   }
 
   getProjectVillaTypeDetails() {
     let projectId = this.route.snapshot.paramMap.get('id');
-    console.log('project id', projectId)
     this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId).subscribe((response: any) => {
-      console.log('res', response)
       if (!response.errors) {
         this.projectDetails = response?.data;
         this.filterVillas=this.projectDetails.villas;
-        console.log(this.projectDetails);
       }
     })
   }

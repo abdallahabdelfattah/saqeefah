@@ -38,7 +38,7 @@ getCompareList(){
     this.compareAvalable = true
     this.appartments.getCompareAppartmens(parsingCompare).subscribe((item:any)=>{
       this.compareList = item.data
-      console.log(item.data)
+
     })
   } else {
     this.compareAvalable = false
@@ -62,12 +62,11 @@ getSetting() {
   return this.setting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
     if (!response.isError) {
       let allSetting = response.result.data
-     
+
       this.bannerCompare=allSetting.filter((a:any)=>a.settingTypeId ==SettingTypes.CompareBanar)[0];
       this.bannerCompareUrl=this.getUrl(this.setting.appRootUrl+this.bannerCompare?.imagePath);
-     
-      
-      console.log('website setting from about us page', allSetting)
+
+
 
     }
   })

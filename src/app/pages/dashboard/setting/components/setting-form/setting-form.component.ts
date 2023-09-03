@@ -65,7 +65,6 @@ export class SettingFormComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    // console.log('img',this.ImageThumb);
     this.editor = new Editor();
     this.editor1 = new Editor();
 
@@ -73,7 +72,6 @@ export class SettingFormComponent implements OnInit, OnDestroy {
     this.setting.getsettingsById(this.SettingTypeId).subscribe(res => {
       if (!res.isError) {
         this.currentFormData = res.result.data
-        console.log('current form data', this.currentFormData);
       }
 
     })
@@ -84,7 +82,6 @@ export class SettingFormComponent implements OnInit, OnDestroy {
 
     if (event.target.files) {
       this.ImageThumb = <File>event.target.files[0]
-      console.log('file data', this.ImageThumb)
     }
   }
 

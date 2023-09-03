@@ -20,22 +20,21 @@ export class TestComponent implements OnInit {
   public appRoot = environment.appRoot;
 
   constructor( private testService:TestService) {
-   
+
     this.testService.getList().subscribe(res=>{
       if(!res.isError){
         this.items=res.result.data;
-        console.log(this.items); 
       }
-    }); 
+    });
 
    }
 
   ngOnInit(): void {
   }
 
-  
-     
-   
+
+
+
 
 
 }

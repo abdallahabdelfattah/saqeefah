@@ -32,7 +32,6 @@ export class EditVillaComponent implements OnInit {
   onInputChange(event) {
     if (event.target.files) {
       this.imageThumb = <File>event.target.files[0]
-      console.log('file data', this.imageThumb)
     }
   }
   onGalleryInputChange(event) {
@@ -90,7 +89,6 @@ if(!this.imageThumb &&  this.imageGallery.length==0)
     this.projectId = this.route.snapshot.paramMap.get('projectId');
     this.villaService.getVillaDetails(this.villaId).subscribe(res => {
       if (!res.isError) {
-        console.log(res)
         this.coverImage = res.result['data']['coverImage'];
         this.gallaryImages = res.result['data']['images'];
         this.villa=res.result.data;

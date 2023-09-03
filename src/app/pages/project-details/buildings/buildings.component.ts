@@ -11,13 +11,13 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
   @Input() activeBuilding:any
   filteredProperties:any[] = []
   propertIndex:number = 0
-  propertyOfSelectedBuilding:any[]; 
+  propertyOfSelectedBuilding:any[];
   propertyOfSelectedBuildingForFilter:any[] = []
   getBuildingProperty(building){
     if(this.buildings != undefined){
       if(building != undefined){
         let selectedBuild  = this.buildings.filter((item)=> item.build == building)
-        
+
         this.propertyOfSelectedBuilding = selectedBuild[0].apartments
         this.propertyOfSelectedBuildingForFilter =  this.propertyOfSelectedBuilding;
         this.filteredProperties=this.propertyOfSelectedBuilding;
@@ -30,9 +30,9 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
           this.propertyOfSelectedBuildingForFilter =  this.propertyOfSelectedBuilding;
           this.filteredProperties=this.propertyOfSelectedBuilding;
         }
-        
-      
-      
+
+
+
       }
     }
 
@@ -43,11 +43,10 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log('buildings', this.buildings)
   this.getBuildingProperty(this.activeBuilding)
   }
 ngAfterViewInit(): void {
- 
+
 }
 toggleView(view:string){
   if(view == 'grid3')

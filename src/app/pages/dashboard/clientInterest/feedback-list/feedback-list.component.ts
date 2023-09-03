@@ -31,7 +31,6 @@ export class FeedbackListComponent implements OnInit ,OnDestroy{
   {
     this.feedbackList.getFeedback().subscribe(res =>{
 
-       console.log("feedback obj:", res)
        if(!res.result.isError)
        {
         this.Allfeedback= res.result.data;

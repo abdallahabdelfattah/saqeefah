@@ -53,7 +53,6 @@ export class FooterComponent implements OnInit {
     };
 
 
-    console.log(feedback)
 
     this.FB.setFeedback(feedback).subscribe(
       res => {

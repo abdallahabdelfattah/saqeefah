@@ -17,17 +17,15 @@ export class PropertiesComponent implements OnInit {
 
   getAllProperties(){
     this.properties.getAllProperties().subscribe((response:any)=>{
-      // console.log('response',response)
-      debugger
+
+
   if(!response.isError){
     this.AllProperties = response.result.data
     this.filteredProperties =  this.AllProperties
-    console.log('all properities', this.AllProperties)
     this.Total=response.result.data.length;
-    // console.log('total',this.Total)
   }
   this.sortByPrice('l2h');
-  
+
     })
   }
   ngOnInit(): void {
@@ -45,13 +43,13 @@ export class PropertiesComponent implements OnInit {
      this.view='grid6';
      if (view == 'list')
      this.view='list';
- 
- 
+
+
    }
 
    filter(e){
     this.filteredProperties = e;
-   
+
  }
 
  refresh(){

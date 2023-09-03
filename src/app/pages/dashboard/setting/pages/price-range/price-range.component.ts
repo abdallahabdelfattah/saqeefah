@@ -38,7 +38,6 @@ export class PriceRangeComponent implements OnInit,OnDestroy  {
   }
   getAllRanges(){
     this.siteInformation.getAllPriceRanges(2).subscribe(x=>{
-      console.log(x)
       if(!x.isError)
       {
         if(x.result['succeeded'])

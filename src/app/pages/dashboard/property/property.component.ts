@@ -18,7 +18,6 @@ export class PropertyComponent implements OnInit {
     this.properties.getAllProperties().subscribe((response:any)=>{
       this.Allproperties = response.result.data;
       this.filteredProperties=response.result.data;
-      // console.log('all properties',this.Allproperties)
     })
   }
   ngOnInit(): void {

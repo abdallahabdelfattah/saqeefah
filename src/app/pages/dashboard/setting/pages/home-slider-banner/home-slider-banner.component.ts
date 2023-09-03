@@ -20,20 +20,20 @@ export class HomeSliderBannerComponent implements OnInit{
   showError = false;
   images: Array<File> = [];
   formData: FormData = new FormData();
- 
-  
+
+
   appRootUrl = environment.appRoot + '/';
   public slider: ISlider = {} as ISlider;
   imageList: ISliderAttachment[] = [];
 
   public myFormGroup: FormGroup = new FormGroup({
     id:new FormControl(0),
-  
+
     TitleEn: new FormControl('', [Validators.required]),
     TitleAr: new FormControl('', [Validators.required]),
     DescriptionEn: new FormControl(Validators.required),
     DescriptionAr: new FormControl(Validators.required),
-  
+
   });
 
 
@@ -44,7 +44,7 @@ export class HomeSliderBannerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-   
+
     this.initializeFormGroup();
     this.getAllSliderAttatchments();
 
@@ -58,13 +58,13 @@ export class HomeSliderBannerComponent implements OnInit{
       this.showError = true;
       return;
     }
-    
+
     if(this.images.length>0)
     {
       if(!Helper.allowedFileSize(this.images[0]))
       {
-        this.toastr.error("Max File allowed  500 kb"); 
-        return; 
+        this.toastr.error("Max File allowed  500 kb");
+        return;
       }
     }
 
@@ -77,12 +77,11 @@ export class HomeSliderBannerComponent implements OnInit{
       this.formData.append('TitleAr',this.myFormGroup.value.TitleAr)
       this.formData.append('DescriptionEn',this.myFormGroup.value.DescriptionEn)
       this.formData.append('DescriptionAr',this.myFormGroup.value.DescriptionAr)
-     
+
       for (var  index = 0; index < this.images.length; index++) {
         this.formData.append('Image', this.images[index], this.images[index].name);
       }
     }
-    console.log('formdata',this.formData)
     this.sliderService.AddHomeSlider(this.formData).subscribe(r => {
       if (!r.isError) {
        this.toastr.success("Successfully Updated")
@@ -119,7 +118,7 @@ export class HomeSliderBannerComponent implements OnInit{
         this.toastr.success("Successfully Deleted")
         this.getAllSliderAttatchments();
         this.ngOnInit();
-        
+
       }
       else{
         this.toastr.error("Failed Deleted")
@@ -151,7 +150,7 @@ export class HomeSliderBannerComponent implements OnInit{
          {
           this.toastr.success("Successfully Uploaded");
           this.getAllSliderAttatchments();
-          this.images=[]; 
+          this.images=[];
          }
          else{
           this.toastr.error(r['message'])
@@ -172,7 +171,7 @@ export class HomeSliderBannerComponent implements OnInit{
             this.toastr.success("Successfully Deleted")
             this.getAllSliderAttatchments();
             this.ngOnInit();
-            
+
           }
           else{
             this.toastr.error("Failed Deleted")
@@ -193,7 +192,7 @@ export class HomeSliderBannerComponent implements OnInit{
     //     this.toastr.success("Successfully Deleted")
     //     this.getAllSliderAttatchments();
     //     this.ngOnInit();
-        
+
     //   }
     //   else{
     //     this.toastr.error("Failed Deleted")

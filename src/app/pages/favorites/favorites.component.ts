@@ -24,13 +24,13 @@ export class FavoritesComponent implements OnInit {
     )}
     ngAfterContentChecked() {
       this.siteInformation=this.shared.siteInformation;
-    
+
     }
    getFavorites(){
     this.propertyFavorites = []
   this.projectFavorites = []
     let allFavorites = this.favorite.getAllFavorites()
-    
+
    if(allFavorites != undefined){
     allFavorites.map((item:any) => {
       if(item.projectId != undefined){
@@ -40,7 +40,7 @@ export class FavoritesComponent implements OnInit {
       }
     } )
    }
-console.log( 'property favorites',this.propertyFavorites)
+
    }
 
 }

@@ -23,7 +23,7 @@ export class AboutUsComponent implements OnInit {
  bannerAboutUS
  bannerAboutUsUrl
  siteInformation:siteInfo;
-  
+
   get settingTypes() {
     return SettingTypes
   }
@@ -41,7 +41,6 @@ export class AboutUsComponent implements OnInit {
         this.ourMeeting = allSetting.filter((setting) => setting.settingTypeId == SettingTypes.ourMeeting)[0];
         this.ourMeetingBg = this.getUrl(this.setting.appRootUrl + this.ourMeeting?.imagePath);
         this.ceoWordUrl= this.getUrl(this.setting.appRootUrl + this.ceoWord?.imagePath);
-        console.log('website setting from about us page', allSetting)
 
       }
     })
@@ -56,7 +55,6 @@ export class AboutUsComponent implements OnInit {
 
   getAllProjects() {
     this.projects.getFilteredProjects(this.language.getLanguageID(), 6).subscribe((response: any) => {
-      console.log('all projects', response)
       this.AllProjects = []
       if (response.succeeded) {
         this.AllProjects = response.data
@@ -74,7 +72,7 @@ export class AboutUsComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.siteInformation=this.shared.siteInformation;
-    
+
   }
 
 

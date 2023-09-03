@@ -38,18 +38,17 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.getContactSetting();
     this.initializeForm();
-    
-  
+
+
     // this.getAllSiteInformation();
-    // this.translate.onLangChange.subscribe((event: LangChangeEvent) => 
+    // this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
     // {
     //  this.getAllSiteInformation();
-      
-    // }); 
+
+    // });
   }
   ngAfterContentChecked() {
     this.siteInformation=this.shared.siteInformation;
-    // console.log("shared data : ",this.shared.siteInformation)
   }
   // getAllSiteInformation(){
   //   this.siteInfo.getAllInformation(this.language.getLanguageID()).subscribe(x=>{
@@ -60,7 +59,7 @@ export class ContactComponent implements OnInit {
   //         this.siteInformation=x.result['data'];
   //       }
   //     }
-      
+
   //   })
   // }
   onSubmit(){
@@ -111,10 +110,10 @@ export class ContactComponent implements OnInit {
     return this.setting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
       if (!response.isError) {
         let allSetting = response.result.data
-        
+
         this.bannerContact=allSetting.filter((a)=>a.settingTypeId==this.settingTypes.ContactBanar)[0]
         this.bannerContactUrl=this.getUrl(this.setting.appRootUrl+this.bannerContact?.imagePath);
-      
+
 
       }
     })

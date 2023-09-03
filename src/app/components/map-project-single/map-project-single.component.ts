@@ -67,11 +67,11 @@ export class MapProjectSingleComponent  {
     this.initMarkers();
   }
   mapClicked($event: any) {
-    console.log($event.latlng.lat, $event.latlng.lng);
+    //console.log($event.latlng.lat, $event.latlng.lng);
   }
 
   markerClicked($event: any, index: number) {
-    console.log($event.latlng.lat, $event.latlng.lng);
+   // console.log($event.latlng.lat, $event.latlng.lng);
   }
 
 

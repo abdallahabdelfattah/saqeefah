@@ -25,7 +25,7 @@ export class EditPropertyComponent implements OnInit {
 
     if (event.target.files) {
       this.propertyImageThumb = <File>event.target.files[0]
-      console.log('file data', this.propertyImageThumb)
+
     }
   }
   onGalleryInputChange(event) {
@@ -48,21 +48,21 @@ export class EditPropertyComponent implements OnInit {
     {
       if(!Helper.allowedFileSize(this.propertyImageThumb))
       {
-        this.toastr.error("Max File allowed  500 kb "); 
-        return; 
+        this.toastr.error("Max File allowed  500 kb ");
+        return;
       }
       this.formData.append('CoverImage', this.propertyImageThumb, this.propertyImageThumb.name)
     }
-    
+
     this.formData.append('Apartment_Id', this.propertyId)
     this.formData.append('Project_Id', this.projectId)
 
-    for (var i = 0; i < this.propertyImageGallery.length; i++) 
+    for (var i = 0; i < this.propertyImageGallery.length; i++)
     {
       if(!Helper.allowedFileSize(this.propertyImageGallery[i]))
       {
-        this.toastr.error("Max File allowed  500 kb "); 
-        return; 
+        this.toastr.error("Max File allowed  500 kb ");
+        return;
       }
       this.formData.append("Images", this.propertyImageGallery[i], this.propertyImageGallery[i].name);
     }
@@ -92,7 +92,6 @@ export class EditPropertyComponent implements OnInit {
     this.projectId = this.route.snapshot.paramMap.get('projectId');
     this.editproperty.getAppartmentDetails(this.propertyId).subscribe(res => {
       if (!res.isError) {
-        console.log(res)
         this.coverImage = res.result['data']['coverImage'];
         this.gallaryImages = res.result['data']['images'];
       }

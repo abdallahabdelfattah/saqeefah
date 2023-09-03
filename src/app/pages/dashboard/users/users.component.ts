@@ -63,17 +63,15 @@ export class UsersComponent implements OnInit ,OnDestroy {
     // if (this.form.invalid) {
     //   return;
     // }
-    console.log(this.form.value); 
     this.formAdmin={
       email:this.form.value.email,
       phone:this.form.value.phone,
       password:this.form.value.password,
       fullName:this.form.value.fullName
     }
-    console.log("formAdmin",this.formAdmin)
 
     this.admin.setAdmin(this.formAdmin).subscribe(res => {
-      
+
       if (!res.isError) {
        this.toastr.success("Successfully Added")
        this.getAdminUser();

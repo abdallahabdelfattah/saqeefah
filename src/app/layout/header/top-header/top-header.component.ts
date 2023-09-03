@@ -37,17 +37,17 @@ export class TopHeaderComponent implements OnInit, AfterViewInit {
   //  this.getAllSiteInformation();
   //  this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
   //   this.getAllSiteInformation();
-   
+
   // });
 
   }
   ngAfterContentChecked() {
     this.siteInformation=this.shared.siteInformation;
-    // console.log("shared data : ",this.shared.siteInformation)
+
   }
   // getAllSiteInformation(){
   //   this.siteInfo.getAllInformation(this.language.getLanguageID()).subscribe(x=>{
-  
+
   //     if(!x.isError)
   //     {
   //       if(x.result['succeeded'])
@@ -55,16 +55,16 @@ export class TopHeaderComponent implements OnInit, AfterViewInit {
   //         this.siteInformation=x.result['data'];
   //       }
   //       else{
-  
+
   //       }
   //     }
-      
+
   //   })
   // }
   ngAfterViewInit(): void {
-   
+
   }
- 
+
 changeLanguage(lang:string){
   this.language.changeLanguge(lang)
   this.translate.use(lang);

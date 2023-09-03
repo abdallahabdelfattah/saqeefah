@@ -38,7 +38,6 @@ export class AreaRangeComponent implements OnInit,OnDestroy  {
   }
   getAllRanges(){
     this.siteInformation.getAllPriceRanges(1).subscribe(x=>{
-      console.log("xxxxxx",x)
       if(!x.isError)
       {
         if(x.result['succeeded'])
@@ -94,7 +93,6 @@ export class AreaRangeComponent implements OnInit,OnDestroy  {
     this.modalService.open(ConfirmationDialogComponent, { size: 'sm' }).closed.subscribe(res => {
       if (res) {
     this.siteInformation.delete(id,1).subscribe(res=>{
-    console.log(res)
       if(!res.isError)
       {
 

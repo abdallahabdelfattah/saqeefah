@@ -36,8 +36,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   public myFormGroup: FormGroup = new FormGroup({
     interest_Date:new FormControl(new Date(),[]),
     project_Ref: new FormControl(0,[]), //project Id from api
-     building_Ref: new FormControl(0, []),   
-     apartment_Ref: new FormControl(0, []),    
+     building_Ref: new FormControl(0, []),
+     apartment_Ref: new FormControl(0, []),
     client_Name: new FormControl('', [Validators.required]), //user input
     client_Mail: new FormControl('', [Validators.email]),  //user input
     client_Mobile: new FormControl('', [Validators.required]), //user input
@@ -94,7 +94,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
             item.id=element.id
             item.value=element.name
             this.cities.push(item);
-    
+
           });
         }
       }
@@ -109,13 +109,13 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
       {
         if(res.result?.data.length>0)
         {
-          
+
           res.result.data.forEach(element => {
             let item:pickList={} as pickList;
             item.id=element.id
             item.value=element.name
             this.districts.push(item);
-    
+
           });
         }
       }
@@ -135,7 +135,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
             item.id=element.id
             item.value=element.name
             this.paymentMethods.push(item);
-    
+
           });
         }
       }
@@ -161,8 +161,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
         this.toastr.error(res.result.message);
       }
     })
-   
- 
+
+
   }
 
 
@@ -240,9 +240,8 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
   }
   showError:boolean=false;
   onClickSubmit($event){
-   
+
  if(this.myFormGroup.valid){
-  console.log('test',this.myFormGroup.value)
   this.service.Post(this.myFormGroup.value).subscribe(res=>{
         if(!res.isError)
         {
@@ -266,7 +265,7 @@ export class PlaceorderComponent implements OnInit,OnDestroy  {
     // this.editor.destroy();
 
   }
-  
+
 
 
 
@@ -281,10 +280,10 @@ getPLaceSetting() {
   return this.setting.getAllsettings(this.language.getLanguageID()).subscribe((response) => {
     if (!response.isError) {
       let allSetting = response.result.data
-      
+
       this.bannerPlaceOrder=allSetting.filter((a)=>a.settingTypeId==this.settingTypes.PlaceOrderBanar)[0]
       this.bannerPlaceOrderUrl=this.getUrl(this.setting.appRootUrl+this.bannerPlaceOrder?.imagePath);
-    
+
 
     }
   })

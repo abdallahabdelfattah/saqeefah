@@ -17,8 +17,8 @@ propertyDetails:any
 public myFormGroup: FormGroup = new FormGroup({
   interest_Date:new FormControl(new Date(),[]),
   project_Ref: new FormControl(0, []), //project Id from api
-   building_Ref: new FormControl(0, []),   
-   apartment_Ref: new FormControl(0, []),    
+   building_Ref: new FormControl(0, []),
+   apartment_Ref: new FormControl(0, []),
   client_Name: new FormControl('', [Validators.required]), //user input
   client_Mail: new FormControl('', [Validators.email]),  //user input
   client_Mobile: new FormControl('', [Validators.required]), //user input
@@ -49,12 +49,11 @@ public myFormGroup: FormGroup = new FormGroup({
 getPropertyDetails(){
 this.property.getAppartmentDetails(this.propertyId).subscribe((res:any)=>{
 if(!res.isError){
-  this.propertyDetails = res.result.data; 
+  this.propertyDetails = res.result.data;
   if(this.propertyDetails.coverImage)
   {
    this.propertyDetails.images.push( {attachmentId:0, path:this.propertyDetails.coverImage});
   }
-console.log('property',res)
 this.initializeFormGroup();
 }
 })

@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
 nav = {
   navtransparentMode:false
-} 
+}
   home = [1,1,1,1,1,1,1,1]
   constructor(public language:changeLanguageService,private translate: TranslateService,
     public generalService:GenaricService
@@ -26,10 +26,9 @@ nav = {
 
   ngOnInit(): void {
     this.nav.navtransparentMode = this.generalService.checkNavIsTRansparent();
-  console.log( 'navbar mode',this.nav.navtransparentMode)
 this.changeLanguage(this.language.getCurrentLanguage())
   }
- 
+
 changeLanguage(lang:string){
   this.language.changeLanguge(lang)
   this.translate.use(lang);

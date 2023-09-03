@@ -27,7 +27,6 @@ siteInformation:siteInfo;
 
     this.getAllProjects();
     this.language.changeLanguageStatus.subscribe((data) => {
-      console.log('language updated', data)
       this.getAllProjects();
     })
 
@@ -38,7 +37,7 @@ siteInformation:siteInfo;
   ngAfterViewInit(): void{
   }
 
-  
+
 
 
   getAllProjects() {

@@ -56,12 +56,12 @@ export class EditProjectComponent implements OnInit {
     {
       if(!Helper.allowedFileSize(this.projectImageThumb))
       {
-        this.toastr.error("Max File allowed  500 kb "); 
+        this.toastr.error("Max File allowed  500 kb ");
         this.uploadWorking = false;
         this.projectImageGallery=[];
         this.masterPlanData=[] as MasterPlan[];
         this.ngOnInit();
-        return; 
+        return;
       }
     this.formData.append('CoverImage', this.projectImageThumb, this.projectImageThumb.name)
     }
@@ -70,13 +70,13 @@ export class EditProjectComponent implements OnInit {
     for (var i = 0; i < this.projectImageGallery.length; i++) {
       if(!Helper.allowedFileSize(this.projectImageGallery[i]))
       {
-        this.toastr.error("Max File allowed  500 kb "); 
+        this.toastr.error("Max File allowed  500 kb ");
         this.uploadWorking = false;
         this.projectImageGallery=[];
         this.masterPlanData=[] as MasterPlan[];
         this.ngOnInit();
 
-        return; 
+        return;
       }
 
       this.formData.append("Images", this.projectImageGallery[i], this.projectImageGallery[i].name);
@@ -88,7 +88,7 @@ export class EditProjectComponent implements OnInit {
         this.projectImageGallery=[];
         this.masterPlanData=[] as MasterPlan[];
         this.ngOnInit();
-  
+
 
       }
       else{
@@ -119,7 +119,7 @@ export class EditProjectComponent implements OnInit {
         this.masterPlaneUploadMessage = resp.message
         this.masterPlanData=[] as MasterPlan[];
         this.toastr.success("Successfully Updated")
-      
+
         this.ngOnInit();
         // this.uploadWorking = false
         // this.masterPlaneUploadMessage = resp.message
@@ -186,7 +186,7 @@ export class EditProjectComponent implements OnInit {
           this.initData(x['data'].masterPlane?.mapCodeArray);
           this.mastePlanImage = x['data'].masterPlane?.masterPlaneImage;
         }
-       
+
         this.coverImage = x['data']['coverImage'];
         this.gallaryImages = x['data']['images'];
         if (x['data']['specifications'] != null)
@@ -197,7 +197,6 @@ export class EditProjectComponent implements OnInit {
           this.PspecificationsImage = x['data']['specifications']['specificationsImage'];
         else
           this.PspecificationsImage = null;
-          // console.log(x['data'])
            this.projectImageThumb= null;
            this.projectImageGallery= [];
 

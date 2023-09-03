@@ -20,14 +20,14 @@ export class changeLanguageService  {
     }
     getLanguageID(){
         let htmlTag = document.getElementsByTagName("html")[0] as HTMLHtmlElement;
-       
+
         let LanguageID = htmlTag.lang === "ar" ? "1" : "2";
         return LanguageID
-       
+
     }
     checkRtl(){
         let htmlTag = document.getElementsByTagName("html")[0] as HTMLHtmlElement;
-       
+
         let LanguageRtl= htmlTag.lang === "ar" ? true : false;
         return LanguageRtl
     }
@@ -45,13 +45,12 @@ export class changeLanguageService  {
         let bundleName = lang === "ar" ? "arStyle.css" : "enStyle.css";
         if (existingLink) {
             existingLink.href = bundleName;
-            console.log(counter)
             counter++
             if(counter > 0){
                 setTimeout(() => {
                     standerdCssFile.href = bundleName;
                 }, 20);
-                
+
 
             }
 

@@ -13,23 +13,22 @@ import { SettingsService } from '../services/settings.service';
 export class SettingComponent implements OnInit {
 
 
-  public stingTypes:Array<ISettingType>; 
+  public stingTypes:Array<ISettingType>;
 
   constructor(private settingsService: SettingsService,private setting:AllSettingSharedService) {
 
   }
   ngOnInit(): void {
-    this.getSettingTypes(); 
+    this.getSettingTypes();
   }
 
   public getSettingTypes() {
     // this.stingTypes=this.setting.setting;
     this.settingsService.getAllsettingsType().subscribe(r => {
-      
-     
+
+
       if(!r.isError){
        this.stingTypes= r.result["data"];
-       console.log( this.stingTypes);
       }
 
     });

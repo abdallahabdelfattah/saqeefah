@@ -35,7 +35,6 @@ export class ProjectCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.favorites.checkFavorites(this.project)
-   // console.log('project from project-page',this.project)
    this.projectLink = this.EditMode  ? '../../project/' :"/project/";
   }
 

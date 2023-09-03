@@ -31,7 +31,6 @@ export class PlaceOrderComponent implements OnInit ,OnDestroy{
   {
     this.placeorderList.getplaceOrder().subscribe(res =>{
 
-       console.log("Allplaceorder obj:", res)
        if(!res.result.isError)
        {
         this.Allplaceorder= res.result.data;
