@@ -1,15 +1,15 @@
 <div class="section-container p-0 bg-white">
     <div class="map-container">
         <div class="status_div">
-            <p>
+            <p (click)="filterMarkers(1)">
                 <img src="/assets/images/icons/for_sale_icon.png" alt="">
                 <span>للبيع</span>
             </p>
-            <p>
+            <p (click)="filterMarkers(4)">
                 <img src="/assets/images/icons/sold_icon.png" alt="">
                 <span>مباع</span>
             </p>
-            <p>
+            <p (click)="filterMarkers(2)">
                 <img src="/assets/images/icons/soon_icon.png" alt="">
                 <span>قريبًا</span>
             </p>
