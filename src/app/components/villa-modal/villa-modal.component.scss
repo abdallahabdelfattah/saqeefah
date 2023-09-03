@@ -1,0 +1,35 @@
+.img-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 450px;
+}
+
+.project-modal .carousel img{
+  transition: all 0.9s;
+  &:hover{
+    transform: scale(1.1,1.1);
+  }
+
+}
+
+@media screen and  (max-width:1000px) {
+
+  .project-modal .carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover
+  }
+
+}
+
+@media screen and (min-width:1001px)  {
+
+  .project-modal .carousel img {
+    width: 100%;
+    height: 600px;
+    object-fit: fill
+  }
+
+}

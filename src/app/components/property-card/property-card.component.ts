@@ -81,12 +81,11 @@ export class PropertyCardComponent implements OnInit {
   }
 
   navigateToDetails(id, statusId){
-    debugger
     if(statusId!=4)
     {
       this.router.navigate(['/property',id])
     }
-   
+
 
   }
 

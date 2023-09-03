@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="project-modal">
   <div class="modal fade" [id]="'modal'+modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -10,7 +11,8 @@
                   <div *ngIf="Gallery.length > 0;else defaultImage" [id]="'carouselExampleIndicators'+modalId" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner">
                           <div class="carousel-item" [class.active]="i == 0" *ngFor="let item of Gallery;let i = index">
-                              <img [src]="appRootUrl+'/'+item.path" class="d-block w-100" alt="...">
+                            <!-- <div class="img-container" [ngStyle]="{ 'background-image': 'url(' + item.path + ')' }"></div> -->
+                              <img [src]="item.path" class="d-block w-100" alt="...">
                           </div>
                       </div>
                       <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'+modalId" data-bs-slide="prev">
@@ -23,7 +25,7 @@
                         </button>
                   </div>
                   <ng-template #defaultImage>
-                      <img class="img-fluid w-100" [src]="villa?.coverImage ? appRootUrl+villa.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
+                      <img class="img-fluid w-100" [src]="villa?.coverImage ? setting.appRootUrl+villa.coverImage : 'assets/images/home-placeHolder.webp'" alt="">
                   </ng-template>
               </div>
               <div class="modal-footer">
