@@ -146,9 +146,17 @@ export class EditProjectComponent implements OnInit {
   }
   UploadSpecifications(e) {
     this.uploadWorking = true
+
     this.specificationsFormData.append('Project_Id', this.projectId)
-    this.specificationsFormData.append('Specifications', this.specificationsImage, this.specificationsImage.name)
-    this.specificationsFormData.append('Granties', this.grantiesImage, this.grantiesImage.name)
+    if(this.specificationsImage){
+
+
+    this.specificationsFormData.append('Specifications', this.specificationsImage, this.specificationsImage?.name)
+  }
+  if(this.grantiesImage){
+    this.specificationsFormData.append('Granties', this.grantiesImage, this.grantiesImage?.name)
+  }
+
     this.editProject.uploadProjectSpecifications(this.specificationsFormData).subscribe((resp) => {
 
       if (!resp.isError) {
