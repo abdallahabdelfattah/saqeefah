@@ -179,12 +179,16 @@
       <div class="row g-md-5">
         <div class="col-12">
           <div class="accordion villas-accordion" id="villasAccordion">
+
+
             <app-villa-accordion-item
               *ngFor="let item of  filterVillas; let first = first ;let index=index"
               [index]="index"
               [firstChild]="first"
               [villaDetails]="item"
             ></app-villa-accordion-item>
+
+
 
             <div  *ngIf="filterVillas?.length==0" >
               <h4>
