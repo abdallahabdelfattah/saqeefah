@@ -4,6 +4,7 @@
     "lang": "عربي",
     "home": "Home",
     "about": "About Us",
+    "aboutProject": "About Project",
     "properties": "Properties",
     "placeOrder": "Send request",
     "contact": "Contact Us",
@@ -396,9 +397,14 @@
 "All":"All",
 "Available":"Available",
 "Soled":"Soled",
-"VillaPlan":"Villa plan"
-
-
+"VillaPlan":"Villa plan",
+"villas":"villas",
+"Project Granties": "Project Granties",
+"Project Location": "Project Location ",
+"Other Project": "Other Projects",
+"Villa Gallery":"Villa Gallery",
+"Add Villa Cover Photo":"Add Villa Cover Photo",
+"Add Villa Gallery":"Add Villa Gallery"
 
 
 }
