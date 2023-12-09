@@ -3,7 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ProjectAndListService } from '../services/project-lists.service';
 import { GenaricService } from '../services/Genaric.service';
 import { changeLanguageService } from '../services/changeLanguage.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 
@@ -16,12 +16,18 @@ export class ProjectVillasComponent implements OnInit {
 
   OtherProjectsVillaType: any;
   projectDetails: any;
-  appRootUrl=environment.appRoot;
-  Gallery:[];
+  appRootUrl = environment.appRoot;
+  Gallery: [];
   filterVillas;
-  DataForMap:any;
-  SelectedFilter=0;
-  constructor(private route: ActivatedRoute, private projectsServe: ProjectAndListService, private language: changeLanguageService) { }
+  DataForMap: any;
+  SelectedFilter = 0;
+  projectId = "0";
+  constructor(private activatedRoute: ActivatedRoute,
+    private projectsServe: ProjectAndListService,
+    private language: changeLanguageService,
+    private router: Router
+
+  ) { }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -53,46 +59,59 @@ export class ProjectVillasComponent implements OnInit {
   ngOnInit(): void {
     this.getProjectVillaTypeDetailsForMap();
     this.getProjectVillaTypeDetails();
-    this.getProjectsVillaType();
+    this.getProjectsOther();
   }
 
-  getProjectsVillaType() {
+  getProjectsOther() {
     this.projectsServe.getAllProjects(this.language.getLanguageID()).subscribe((response: any) => {
       if (!response.isError) {
         this.OtherProjectsVillaType = response.result.data
-        this.OtherProjectsVillaType = this.OtherProjectsVillaType.filter(x => x['statusId'] != 4 && x.projectType==2);
+        this.OtherProjectsVillaType = this.OtherProjectsVillaType.filter(x => x['statusId'] != 4 && x["projectId"] != this.projectId);
 
       }
     })
   }
 
   getProjectVillaTypeDetails() {
-    let projectId = this.route.snapshot.paramMap.get('id');
+    let projectId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.projectId = projectId;
     this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId).subscribe((response: any) => {
       if (!response.errors) {
         this.projectDetails = response?.data;
-        this.filterVillas=this.projectDetails.villas;
+        this.filterVillas = this.projectDetails.villas;
       }
     })
   }
 
 
   getProjectVillaTypeDetailsForMap() {
-    let projectId = this.route.snapshot.paramMap.get('id');
-let subscribeData=this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId);
-this.DataForMap=subscribeData;
+    let projectId = this.activatedRoute.snapshot.paramMap.get('id');
+    let subscribeData = this.projectsServe.getProjectVillaTypeDetails(this.language.getLanguageID(), projectId);
+    this.DataForMap = subscribeData;
 
   }
 
-  filter(statusId){
-    if(statusId && statusId!=0)
-    {
-     this.filterVillas= this.projectDetails.villas.filter(a=>a.statusId==statusId);
+  filter(statusId) {
+    if (statusId && statusId != 0) {
+      this.filterVillas = this.projectDetails.villas.filter(a => a.statusId == statusId);
 
-    }else{
-      this.filterVillas= this.projectDetails.villas;
+    } else {
+      this.filterVillas = this.projectDetails.villas;
     }
-    this.SelectedFilter=statusId;
+    this.SelectedFilter = statusId;
 
   }
+
+  handleClickEvent(_project): void {
+    // Handle the click event from the child component
+    //alert('Click event received in parent component!');
+    // Additional logic can be added here
+    // if (_project["type"] == "2") {
+    //   this.router.navigate(['/project-villas', _project.projectId]);
+    // } else {
+    //   this.router.navigate(['/project', _project.projectId]);
+    // }
+
+  }
+
 }

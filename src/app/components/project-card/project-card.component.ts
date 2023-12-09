@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { environment } from 'src/environments/environment';
 
@@ -8,10 +8,15 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./project-card.component.scss']
 })
 export class ProjectCardComponent implements OnInit {
+  @Output() onClickNavigation: EventEmitter<any> = new EventEmitter();
+  
+  @Input() IsgoDetails!:boolean ;
+
   @Input() project:any
   @Input() EditMode!:boolean ;
   @Input() viewType:string;
   projectLink!:string;
+
 
   homespecs = [1,1]
   itemSpecsIcon = [
@@ -36,6 +41,11 @@ export class ProjectCardComponent implements OnInit {
   ngOnInit(): void {
     this.favorites.checkFavorites(this.project)
    this.projectLink = this.EditMode  ? '../../project/' :"/project/";
+  }
+
+  emitClickEvent(): void {
+    // Emitting the click event
+    this.onClickNavigation.emit();
   }
 
 }

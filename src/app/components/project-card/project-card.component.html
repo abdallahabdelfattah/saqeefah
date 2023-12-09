@@ -11,8 +11,10 @@
     </a>
 
 
-    <ng-template #apartmentProject>
-      <div class="img-container project" data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId">
+    <ng-template #apartmentProject >
+
+      
+      <div class="img-container project" (click)="emitClickEvent()"  data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId">
         <img [src]="project?.coverImage ? appRootUrl+project?.coverImage : 'assets/images/home-placeHolder.webp'"
           class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
           style="cursor: pointer;">
