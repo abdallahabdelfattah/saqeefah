@@ -12,11 +12,9 @@
 
 
     <ng-template #apartmentProject >
-
-      
-      <div class="img-container project" (click)="emitClickEvent()"  data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId">
+      <div class="img-container project" (click)="emitClickEvent()"  [attr.data-bs-toggle]="shouldToggleModal ? 'modal' : null"   [attr.data-bs-target]="shouldToggleModal ? '#modal' + project.projectId : null" >
         <img [src]="project?.coverImage ? appRootUrl+project?.coverImage : 'assets/images/home-placeHolder.webp'"
-          class="card-img-top" alt="..." data-bs-toggle="modal" [attr.data-bs-target]="'#modal'+project.projectId"
+          class="card-img-top" alt="..."  [attr.data-bs-toggle]="shouldToggleModal ? 'modal' : null"   [attr.data-bs-target]="shouldToggleModal ? '#modal' + project.projectId : null"
           style="cursor: pointer;">
       </div>
     </ng-template>

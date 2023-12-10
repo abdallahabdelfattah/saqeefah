@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class ProjectCardComponent implements OnInit {
   @Output() onClickNavigation: EventEmitter<any> = new EventEmitter();
   
-  @Input() IsgoDetails!:boolean ;
+  @Input() shouldToggleModal:boolean=true ;
 
   @Input() project:any
   @Input() EditMode!:boolean ;

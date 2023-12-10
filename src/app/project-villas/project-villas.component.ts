@@ -103,14 +103,11 @@ export class ProjectVillasComponent implements OnInit {
   }
 
   handleClickEvent(_project): void {
-    // Handle the click event from the child component
-    //alert('Click event received in parent component!');
-    // Additional logic can be added here
-    // if (_project["type"] == "2") {
-    //   this.router.navigate(['/project-villas', _project.projectId]);
-    // } else {
-    //   this.router.navigate(['/project', _project.projectId]);
-    // }
+    if (_project["type"] == "2") {
+      this.router.navigate(['/project-villas', _project.projectId]);
+    } else {
+      this.router.navigate(['/project', _project.projectId]);
+    }
 
   }
 

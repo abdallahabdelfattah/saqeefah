@@ -252,7 +252,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <app-project-card  (onClickNavigation)="handleClickEvent(project)"  [project]="project"></app-project-card>
+                <app-project-card [shouldToggleModal]="false"  (onClickNavigation)="handleClickEvent(project)"  [project]="project"></app-project-card>
               </div>
             </div>
           </div>
