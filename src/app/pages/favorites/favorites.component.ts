@@ -16,6 +16,9 @@ export class FavoritesComponent implements OnInit {
   constructor(public favorite:FavoritesService, private shared:SiteInformationSharedService) { }
 
   ngOnInit(): void {
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
     this.getFavorites()
     this.favorite.changeFavoriteStatus.subscribe((value)=>{
       this.getFavorites()
@@ -23,8 +26,7 @@ export class FavoritesComponent implements OnInit {
      }
     )}
     ngAfterContentChecked() {
-      this.siteInformation=this.shared.siteInformation;
-
+      //this.siteInformation=this.shared.siteInformation;
     }
    getFavorites(){
     this.propertyFavorites = []

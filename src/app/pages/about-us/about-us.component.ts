@@ -67,11 +67,15 @@ export class AboutUsComponent implements OnInit {
     this.language.changeLanguageStatus.subscribe((data) => {
       this.getAboutSetting()
       this.getAllProjects();
-    })
+    }); 
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
+
   }
 
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+   // this.siteInformation=this.shared.siteInformation;
 
   }
 

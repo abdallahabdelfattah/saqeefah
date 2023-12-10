@@ -20,7 +20,13 @@ export class VideoPlayerComponent implements OnInit {
   @Input() type: string = 'video/mp4';
   @Input() loop: string;
   siteInformation:siteInfo
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
+
+  }
 
   pause() {
     var myVideo: any = document.getElementById('singleVideo');

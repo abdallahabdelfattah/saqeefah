@@ -57,9 +57,12 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
   }
   ngAfterContentChecked() {
-    this.siteInformation = this.shared.siteInformation;
+   // this.siteInformation = this.shared.siteInformation;
   }
 
   ngOnDestroy() {

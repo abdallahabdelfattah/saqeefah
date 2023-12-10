@@ -30,9 +30,13 @@ siteInformation:siteInfo;
       this.getAllProjects();
     })
 
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
+
   }
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+   // this.siteInformation=this.shared.siteInformation;
   }
   ngAfterViewInit(): void{
   }

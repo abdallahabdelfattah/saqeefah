@@ -34,15 +34,13 @@ export class TopHeaderComponent implements OnInit, AfterViewInit {
     this.compare.removeCompareNullValue()
     this.compare.checkCompareCounter()
    })
-  //  this.getAllSiteInformation();
-  //  this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-  //   this.getAllSiteInformation();
-
-  // });
+   this.shared.siteInformationBS.subscribe(r => {
+    this.siteInformation = r;
+  });
 
   }
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+   // this.siteInformation=this.shared.siteInformation;
 
   }
   // getAllSiteInformation(){

@@ -14,35 +14,39 @@ import { siteInformationService } from 'src/app/shared/services/siteInformation.
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  siteInformation:siteInfo;
-  showError:boolean=false;
-  spaceRegex=/^(\s+\S+\s*)*(?!\s).*$/;
-  emailRegex=/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
+  siteInformation: siteInfo;
+  showError: boolean = false;
+  spaceRegex = /^(\s+\S+\s*)*(?!\s).*$/;
+  emailRegex = /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
 
-  form:FormGroup=new FormGroup({
-    id:new FormControl(0),
-    email:new FormControl('',[Validators.required,Validators.email,Validators.pattern(this.spaceRegex)]),
-    subject: new FormControl('',[Validators.required,Validators.pattern(this.spaceRegex)]),
+  form: FormGroup = new FormGroup({
+    id: new FormControl(0),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(this.spaceRegex)]),
+    subject: new FormControl('', [Validators.required, Validators.pattern(this.spaceRegex)]),
   })
 
-  constructor(private FB:FeedbackService,private toastr :ToastrService,
-    private language:changeLanguageService,
-    private siteInfo:siteInformationService,
-    private translate:TranslateService,
-    private shared:SiteInformationSharedService) { }
+  constructor(private FB: FeedbackService, private toastr: ToastrService,
+    private language: changeLanguageService,
+    private siteInfo: siteInformationService,
+    private translate: TranslateService,
+    private shared: SiteInformationSharedService) { }
 
   ngOnInit(): void {
     this.initializeForm();
+    this.shared.siteInformationBS.subscribe(r => {
+      this.siteInformation = r;
+    });
+
   }
   ngAfterContentChecked() {
-    this.siteInformation=this.shared.siteInformation;
+   // this.siteInformation = this.shared.siteInformation;
   }
 
 
-  onSubmit(){
+  onSubmit() {
     if (this.form.invalid) {
 
-      this.showError=true;
+      this.showError = true;
       return;
     }
 
@@ -59,7 +63,7 @@ export class FooterComponent implements OnInit {
         if (!res.errors) {
 
           this.toastr.success(' Successfully Submitted ');
-          this.showError=false;
+          this.showError = false;
           this.form.reset();
         }
         else {
@@ -72,11 +76,11 @@ export class FooterComponent implements OnInit {
   }
 
 
-  initializeForm(){
+  initializeForm() {
     this.form.setValue({
-      id:0,
-      email:'',
-      subject:'',
+      id: 0,
+      email: '',
+      subject: '',
     })
   }
 
